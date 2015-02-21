@@ -4,6 +4,7 @@
 #include "1.3-anagrams.h"
 #include "1.4-replaceSpaces.h"
 #include "1.6-matrixRotation.h"
+#include "list.h"
 
 #pragma clang diagnostic ignored "-Wunused-parameter"
 
@@ -13,5 +14,6 @@ int main(int argc, char* argv[])
     testAnagrams();
     replaceSpacesInPlace();
     testMatrixRotation();
+    testLinkedList();
     return 0;
 }

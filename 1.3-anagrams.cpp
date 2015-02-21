@@ -8,7 +8,7 @@
 
 #include "1.3-anagrams.h"
 #include "assert.h"
-
+#include <cstdio>
 
 int anagrams(char* a, char* b)
 {

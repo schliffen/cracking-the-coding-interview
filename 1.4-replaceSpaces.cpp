@@ -2,6 +2,7 @@
 #include "stdlib.h"
 #include "assert.h"
 #include "string.h"
+#include <cstdio>
 
 char * replaceSpacesWithPercent20(char* str)
 {
@@ -19,7 +20,7 @@ char * replaceSpacesWithPercent20(char* str)
     
     unsigned int newLen = len+numSpaces*2;
     
-    char* newStr = malloc(newLen +1);
+    char* newStr = (char*)malloc(newLen +1);
     
     newStr[newLen] = '\0';
     
@@ -71,7 +72,7 @@ void replaceSpacesWithPercent20InPlace(char** str)
     
     unsigned long newLen = len + numSpaces*2;
     
-    *str = realloc(*str, newLen+1);
+    *str = (char*)realloc(*str, newLen+1);
     memset(*str+len, '-', newLen-len);
     
     (*str)[newLen] = '\0';
@@ -103,7 +104,7 @@ void replaceSpacesInPlace()
     
     unsigned long len = strlen(str);
     
-    char* strAlloc = malloc(len+1);
+    char* strAlloc = (char*)malloc(len+1);
     strAlloc[len] = '\0';
     
     memcpy(strAlloc, str, strlen(str));

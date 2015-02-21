@@ -1,6 +1,6 @@
 #include "1.2-reverseString.h"
 #include <string.h>
-
+#include <cstdio>
 
 void removeDuplicates(char* str)
 {
