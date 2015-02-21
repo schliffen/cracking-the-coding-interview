@@ -1,10 +1,10 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
-class Node
+template <class a_type> class Node
 {
 public:
-    Node(int data);
+    Node(a_type data);
 
     void addToEnd(int data)
     {
@@ -18,8 +18,8 @@ public:
 
     static void print(Node* pNode);
 
-private:
-    int m_data;
+    // keep those public for simplicity
+    a_type m_data;
     Node* m_pNext;
 };
 
