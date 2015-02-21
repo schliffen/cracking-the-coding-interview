@@ -1,11 +1,3 @@
-//
-//  reverseString.c
-//  test
-//
-//  Created by Oliver Shyal Beardsley on 23/12/2014.
-//  Copyright (c) 2014 Oliver Shyal Beardsley. All rights reserved.
-//
-
 #include "1.2-reverseString.h"
 #include <string.h>
 

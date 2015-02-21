@@ -1,11 +1,3 @@
-//
-//  replaceSpaces.c
-//  test
-//
-//  Created by Oliver Shyal Beardsley on 23/12/2014.
-//  Copyright (c) 2014 Oliver Shyal Beardsley. All rights reserved.
-//
-
 #include "1.4-replaceSpaces.h"
 #include "stdlib.h"
 #include "assert.h"
@@ -104,6 +96,9 @@ void replaceSpacesWithPercent20InPlace(char** str)
 
 void replaceSpacesInPlace()
 {
+
+    printf("testing replaceSpaces");
+
     char* str = "A B C D E F G";
     
     unsigned long len = strlen(str);

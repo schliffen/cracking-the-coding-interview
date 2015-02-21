@@ -8,6 +8,7 @@
 
 #include "1.1-uniqueChars.h"
 #include "assert.h"
+#include <stdio.h>
 
 int eachCharIsUnique(char* str)
 {
@@ -17,9 +18,9 @@ int eachCharIsUnique(char* str)
     
     while (str[i] != '\0')
     {
-        if (asciiCounts[str[i]])
+        if (asciiCounts[(int)str[i]])
             return 0;
-        asciiCounts[str[i]]++;
+        asciiCounts[(int)str[i]]++;
         i++;
     }
     
