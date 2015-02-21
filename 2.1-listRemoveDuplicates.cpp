@@ -6,10 +6,11 @@
 
 using namespace std;
 
-void removeDuplicates(Node<int>* pNode)
+template<class t>
+void removeDuplicates(Node<t>* pNode)
 {
-    Node<int>* pPrevious = 0;
-    set<int> values;
+    Node<t>* pPrevious = 0;
+    set<t> values;
     while (pNode != 0)
     {
         if (values.find(pNode->m_data) != values.end())
