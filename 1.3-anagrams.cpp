@@ -17,12 +17,12 @@ int anagrams(char* a, char* b)
     int c = 0;
     
     while (a[c] != '\0')
-        count[a[c++]]++;
+        count[(int)a[c++]]++;
     
     c = 0;
     
     while (b[c] != '\0')
-        count[b[c++]]--;
+        count[(int)b[c++]]--;
     
     for (unsigned int i = 0; i < 128; i++)
         if (count[i] != 0)

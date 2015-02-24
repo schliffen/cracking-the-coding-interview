@@ -28,8 +28,8 @@ bool isSubstring(char* a, char* b)
      b = waterfall
      */
     
-    int aIndex = 0;
-    int numSimilarLetters = 0;
+    unsigned int aIndex = 0;
+    unsigned int numSimilarLetters = 0;
     bool previousSimilar = false;
     unsigned long aLen = strlen(a);
     unsigned long bLen = strlen(b);

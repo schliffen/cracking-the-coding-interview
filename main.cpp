@@ -7,7 +7,7 @@
 #include "2.1-listRemoveDuplicates.h"
 #include "list.h"
 
-#pragma clang diagnostic ignored "-Wunused-parameter"
+//#pragma clang diagnostic ignored "-Wunused-parameter"
 
 int main(int argc, char* argv[])
 {

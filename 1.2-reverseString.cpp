@@ -13,7 +13,7 @@ void removeDuplicates(char* str)
     
     int tail = 1;
     
-    for (int i = 1; i < len; i++)
+    for (unsigned int i = 1; i < len; i++)
     {
         printf("tail: %d\n", tail);
         
