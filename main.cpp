@@ -19,6 +19,6 @@ int main(int argc, char* argv[])
     testMatrixRotation();
     testLinkedList();
     testRemoveDuplicates();
-    testTree();
+    solution4_1();
     return 0;
 }

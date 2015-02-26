@@ -1,6 +1,5 @@
 #include <iostream>
 #include "binarytree.h"
-
 #include "binaryTreePrettyPrint.h"
 
 using namespace std;
@@ -15,14 +14,41 @@ void treeInsert(BinaryTree *&root, int newItem)
         treeInsert(root->right, newItem);
 }
 
-int testTree()
+void buildTree(BinaryTree *&root)
+{
+    int values[] = {30, 20, 40, 35, 50, 41, 20, 10, 25, 5, 15, 55, 36, 19};
+
+    for (int i = 0; i < 14; i++)
+        treeInsert(root, values[i]);
+
+}
+
+int minDepth(BinaryTree *root)
+{
+    if (!root)
+        return 0;
+    return 1 + min(minDepth(root->left), minDepth(root->right));
+}
+
+int maxDepth(BinaryTree *root)
+{
+    if (!root)
+        return 0;
+    return 1 + max(maxDepth(root->left), maxDepth(root->right));
+}
+
+bool isBalanced(BinaryTree *root)
+{
+    return (maxDepth(root) - minDepth(root) < 1);
+}
+
+void solution4_1()
 {
     BinaryTree* root = 0;
 
-    int values[] = {30, 20, 40, 35, 50, 41, 20, 10, 25, 5, 15, 42, 43};
-
-    for (int i = 0; i < 13; i++)
-        treeInsert(root, values[i]);
-
+    buildTree(root);
     printPretty(root, 1, 0, cout);
+    cout << "min depth " << minDepth(root) << endl;
+    cout << "max depth " << maxDepth(root) << endl;
+    cout << "is balanced " << isBalanced(root) << endl;
 }
