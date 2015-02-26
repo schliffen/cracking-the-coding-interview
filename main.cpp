@@ -6,6 +6,8 @@
 #include "1.6-matrixRotation.h"
 #include "2.1-listRemoveDuplicates.h"
 #include "list.h"
+#include "binaryTreePrettyPrint.h"
+#include "4.1-treeBalanced.h"
 
 //#pragma clang diagnostic ignored "-Wunused-parameter"
 
@@ -17,5 +19,6 @@ int main(int argc, char* argv[])
     testMatrixRotation();
     testLinkedList();
     testRemoveDuplicates();
+    testTree();
     return 0;
 }
