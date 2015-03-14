@@ -8,8 +8,12 @@
 #include "list.h"
 #include "binaryTreePrettyPrint.h"
 #include "4.1-treeBalanced.h"
+#include "utils.h"
+#include "5.1.h"
 
-//#pragma clang diagnostic ignored "-Wunused-parameter"
+#include <iostream>
+
+using namespace std;
 
 int main(int argc, char* argv[])
 {
@@ -20,5 +24,7 @@ int main(int argc, char* argv[])
     testLinkedList();
     testRemoveDuplicates();
     solution4_1();
+    testBitFunctions();
+    testFitBits();
     return 0;
 }

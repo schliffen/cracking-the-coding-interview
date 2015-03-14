@@ -91,3 +91,48 @@ void print4x4Matrix(int matrix[4][4])
         printf("\n");
     }
 }
+
+bool getBit(int num, int i)
+{
+    return ((num & (1 << i)) != 0);
+}
+
+int setBit(int num, int i)
+{
+    return (num | (1 << i));
+}
+
+int clearBit(int num, int i)
+{
+    int mask = ~(1 << i);
+    return num & mask;
+}
+
+int clearBitsMSBThroughI(int num, int i)
+{
+    int mask = (1 << i) - 1;
+    return num & mask;
+}
+
+int clearBitsIThrough0(int num, int i)
+{
+    int mask = ~((1 << (i+1)) - 1);
+    return num & mask;
+}
+
+int udpateBit(int num, int i, int v)
+{
+    int mask = ~(1 << i);
+    return (num & mask) | (v << i);
+}
+
+int testBitFunctions()
+{
+    assert(getBit(5, 0) == 1);
+    assert(setBit(8, 1) == 10);
+    assert(clearBit(10, 1) == 8);
+    assert(clearBitsMSBThroughI(10, 3) == 2);
+    assert(clearBitsIThrough0(10, 2) == 8);
+    assert(udpateBit(8, 1, 1) == 10);
+}
+

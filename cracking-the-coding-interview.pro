@@ -16,7 +16,8 @@ SOURCES += \
     list.cpp \
     2.1-listRemoveDuplicates.cpp \
     binaryTreePrettyPrint.cpp \
-    binarytree.cpp
+    binarytree.cpp \
+    5.1.cpp
 
 HEADERS += \
     1.2-reverseString.h	1.4-replaceSpaces.h \
@@ -31,6 +32,7 @@ HEADERS += \
     binaryTreePrettyPrint.h \
     2.1-listRemoveDuplicates.h \
     binarytree.h \
-    4.1-treeBalanced.h
+    4.1-treeBalanced.h \
+    5.1.h
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter
