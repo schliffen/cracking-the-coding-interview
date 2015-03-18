@@ -5,11 +5,12 @@
 #include "1.4-replaceSpaces.h"
 #include "1.6-matrixRotation.h"
 #include "2.1-listRemoveDuplicates.h"
-#include "list.h"
+#include "LinkedList.h"
 #include "binaryTreePrettyPrint.h"
 #include "4.1-treeBalanced.h"
 #include "utils.h"
 #include "5.1.h"
+#include "Stack.h"
 
 #include <iostream>
 
@@ -26,5 +27,6 @@ int main(int argc, char* argv[])
     solution4_1();
     testBitFunctions();
     testFitBits();
+    testStack();
     return 0;
 }

@@ -13,11 +13,13 @@ SOURCES += \
     4th-edition/isRotation.cpp \
     4th-edition/zeroRowColumns.cpp \
     4.1-treeBalanced.cpp \
-    list.cpp \
     2.1-listRemoveDuplicates.cpp \
     binaryTreePrettyPrint.cpp \
     binarytree.cpp \
-    5.1.cpp
+    5.1.cpp \
+    3.2.cpp \
+    LinkedList.cpp \
+    Stack.cpp
 
 HEADERS += \
     1.2-reverseString.h	1.4-replaceSpaces.h \
@@ -28,11 +30,13 @@ HEADERS += \
     1.6-matrixRotation.h \
     main.h \
     4th-edition/zeroRowColumns.h \
-    list.h \
     binaryTreePrettyPrint.h \
     2.1-listRemoveDuplicates.h \
     binarytree.h \
     4.1-treeBalanced.h \
-    5.1.h
+    5.1.h \
+    3.2.h \
+    LinkedList.h \
+    Stack.h
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter

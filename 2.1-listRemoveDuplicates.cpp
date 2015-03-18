@@ -2,7 +2,7 @@
 
 #include <set>
 #include <iostream>
-#include "list.h"
+#include "LinkedList.h"
 
 using namespace std;
 
