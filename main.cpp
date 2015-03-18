@@ -10,6 +10,7 @@
 #include "4.1-treeBalanced.h"
 #include "utils.h"
 #include "5.1.h"
+#include "3.2.h"
 #include "Stack.h"
 
 #include <iostream>
@@ -28,5 +29,6 @@ int main(int argc, char* argv[])
     testBitFunctions();
     testFitBits();
     testStack();
+    test32();
     return 0;
 }
