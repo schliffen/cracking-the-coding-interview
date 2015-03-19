@@ -19,7 +19,8 @@ SOURCES += \
     5.1.cpp \
     3.2.cpp \
     LinkedList.cpp \
-    Stack.cpp
+    Stack.cpp \
+    1.5.cpp
 
 HEADERS += \
     1.2-reverseString.h	1.4-replaceSpaces.h \
@@ -37,6 +38,7 @@ HEADERS += \
     5.1.h \
     3.2.h \
     LinkedList.h \
-    Stack.h
+    Stack.h \
+    1.5.h
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter

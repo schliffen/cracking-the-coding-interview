@@ -1,3 +1,4 @@
+*.user
 Info.plist
 cracking-the-coding-interview.pro.user
 test.xcodeproj/*

@@ -3,6 +3,7 @@
 #include "1.2-reverseString.h"
 #include "1.3-anagrams.h"
 #include "1.4-replaceSpaces.h"
+#include "1.5.h"
 #include "1.6-matrixRotation.h"
 #include "2.1-listRemoveDuplicates.h"
 #include "LinkedList.h"
@@ -30,5 +31,6 @@ int main(int argc, char* argv[])
     testFitBits();
     testStack();
     test32();
+    test1_5();
     return 0;
 }
