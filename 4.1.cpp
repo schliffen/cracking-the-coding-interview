@@ -1,6 +1,6 @@
 #include <iostream>
-#include "binarytree.h"
-#include "binaryTreePrettyPrint.h"
+#include "Binarytree.h"
+#include "BinaryTreePrettyPrint.h"
 
 using namespace std;
 

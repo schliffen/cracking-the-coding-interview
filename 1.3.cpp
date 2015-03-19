@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Oliver Shyal Beardsley. All rights reserved.
 //
 
-#include "1.3-anagrams.h"
+#include "1.3.h"
 #include "assert.h"
 #include <cstdio>
 

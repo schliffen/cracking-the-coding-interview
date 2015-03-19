@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Oliver Shyal Beardsley. All rights reserved.
 //
 
-#include "utils.h"
+#include "Utils.h"
 #include "stdbool.h"
 #include <string.h>
 #include <assert.h>
@@ -126,7 +126,7 @@ int udpateBit(int num, int i, int v)
     return (num & mask) | (v << i);
 }
 
-int testBitFunctions()
+void testBitFunctions()
 {
     assert(getBit(5, 0) == 1);
     assert(setBit(8, 1) == 10);

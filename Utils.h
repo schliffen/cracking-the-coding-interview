@@ -23,6 +23,6 @@ int clearBit(int num, int i);
 int clearBitsMSBThroughI(int num, int i);
 int clearBitsIThrough0(int num, int i);
 int udpateBit(int num, int i, int v);
-int testBitFunctions();
+void testBitFunctions();
 
 #endif /* defined(__test__utils__) */

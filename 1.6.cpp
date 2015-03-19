@@ -1,6 +1,6 @@
-#include "1.6-matrixRotation.h"
+#include "1.6.h"
 #include <cstdio>
-#include "utils.h"
+#include "Utils.h"
 
 void rotateMatrix(int matrix[][4])
 {

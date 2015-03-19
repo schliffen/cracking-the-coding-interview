@@ -1,4 +1,4 @@
-#include "1.2-reverseString.h"
+#include "1.2.h"
 #include <string.h>
 #include <cstdio>
 

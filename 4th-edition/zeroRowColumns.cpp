@@ -7,7 +7,7 @@
 //
 
 #include "zeroRowColumns.h"
-#include "utils.h"
+#include "Utils.h"
 
 void setZeroRowColumns4x4(int a[4][4])
 {

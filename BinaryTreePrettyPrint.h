@@ -1,6 +1,6 @@
 #ifndef _BINARY_PPRINT_
 #include <iostream>
-#include "binarytree.h"
+#include "Binarytree.h"
 
 int printIt();
 

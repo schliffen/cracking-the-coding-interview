@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Oliver Shyal Beardsley. All rights reserved.
 //
 
-#include "1.1-uniqueChars.h"
+#include "1.1.h"
 #include "assert.h"
 #include <stdio.h>
 
