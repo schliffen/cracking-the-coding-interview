@@ -7,6 +7,7 @@
 #include "1.7.h"
 #include "1.8.h"
 #include "2.1.h"
+#include "2.2.h"
 #include "3.2.h"
 #include "4.1.h"
 #include "5.1.h"
@@ -35,5 +36,6 @@ int main(int argc, char* argv[])
     test1_5();
     testZeroRowColumns();
     testIsRotation();
+    test2_2();
     return 0;
 }

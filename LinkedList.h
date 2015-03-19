@@ -6,7 +6,7 @@ template <class a_type> class Node
 public:
     Node(a_type data);
 
-    void addToEnd(int data)
+    void addToEnd(a_type data)
     {
         Node* pNew = new Node(data);
         Node* pEnd = this;

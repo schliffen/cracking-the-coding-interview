@@ -20,7 +20,8 @@ SOURCES += \
     Binarytree.cpp \
     BinaryTreePrettyPrint.cpp \
     Utils.cpp \
-    1.7.cpp
+    1.7.cpp \
+    2.2.cpp
 
 HEADERS += \
     1.8.h \
@@ -39,6 +40,7 @@ HEADERS += \
     Binarytree.h \
     BinaryTreePrettyPrint.h \
     Utils.h \
-    1.7.h
+    1.7.h \
+    2.2.h
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter
