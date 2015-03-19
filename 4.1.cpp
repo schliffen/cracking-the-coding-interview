@@ -42,7 +42,7 @@ bool isBalanced(BinaryTree *root)
     return (maxDepth(root) - minDepth(root) < 1);
 }
 
-void solution4_1()
+void test4_1()
 {
     BinaryTree* root = 0;
 

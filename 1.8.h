@@ -3,6 +3,6 @@
 
 #include <stdio.h>
 
-void testIsRotation();
+void test1_8();
 
 #endif

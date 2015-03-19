@@ -29,7 +29,7 @@ void setZeroRowColumns4x4(int a[4][4])
     }
 }
 
-void testZeroRowColumns()
+void test1_7()
 {
     int a[4][4] =
     {

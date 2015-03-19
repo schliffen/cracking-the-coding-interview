@@ -95,7 +95,7 @@ void replaceSpacesWithPercent20InPlace(char** str)
     }
 }
 
-void replaceSpacesInPlace()
+void test1_4()
 {
 
     printf("testing replaceSpaces");

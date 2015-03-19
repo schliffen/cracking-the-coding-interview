@@ -65,7 +65,7 @@ int MinStack::min() const
     return m_minimums[m_data.top().m_minIndex];
 }
 
-void test32()
+void test3_2()
 {
     MinStack minStack(10);
     minStack.push(3);

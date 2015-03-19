@@ -27,7 +27,7 @@ void rotateMatrix(int matrix[][4])
     }
 }
 
-void testMatrixRotation()
+void test1_6()
 {
     int a[4][4] =
     {

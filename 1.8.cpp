@@ -29,7 +29,7 @@ bool isRotation(char* a, char* b)
     return strstr(together, a);
 }
 
-void testIsRotation()
+void test1_8()
 {
     assert(isRotation("waterfall", "llwaterfa"));
     assert(isRotation("yellow", "owyell"));

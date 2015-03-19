@@ -1,6 +1,6 @@
 #ifndef _2_1LISTREMOVEDUPLICATES_H
 #define _2_1LISTREMOVEDUPLICATES_H
 
-void testRemoveDuplicates();
+void test2_1();
 
 #endif

@@ -19,7 +19,7 @@ int eachCharIsUnique(char* str)
     return 1;
 }
 
-void testUniqueChars()
+void test1_1()
 {
     assert(eachCharIsUnique("asdfqwer") == 1);
     assert(eachCharIsUnique("asdfqwera") == 0);

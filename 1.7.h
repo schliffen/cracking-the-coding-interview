@@ -3,6 +3,6 @@
 
 #include <stdio.h>
 
-void testZeroRowColumns();
+void test1_7();
 
 #endif

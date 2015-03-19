@@ -27,7 +27,7 @@ void removeDuplicates(Node<t>* pNode)
     }
 }
 
-void testRemoveDuplicates()
+void test2_1()
 {
     cout << "testing linked list removal" << endl;
     Node<int> n(0);

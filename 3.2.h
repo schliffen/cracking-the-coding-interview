@@ -33,7 +33,7 @@ private:
     Stack<int>  m_minimums;
 };
 
-void test32();
+void test3_2();
 
 
 #endif // _3_2_H

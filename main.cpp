@@ -22,20 +22,21 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-    testUniqueChars();
-    testAnagrams();
-    replaceSpacesInPlace();
-    testMatrixRotation();
     testLinkedList();
-    testRemoveDuplicates();
-    solution4_1();
     testBitFunctions();
     testFitBits();
     testStack();
-    test32();
+
+    test1_1();
+    test1_3();
+    test1_4();
     test1_5();
-    testZeroRowColumns();
-    testIsRotation();
+    test1_6();
+    test1_7();
+    test1_8();
+    test2_1();
     test2_2();
+    test3_2();
+    test4_1();
     return 0;
 }

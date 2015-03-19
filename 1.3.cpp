@@ -23,7 +23,7 @@ int anagrams(char* a, char* b)
     return 1;
 }
 
-void testAnagrams()
+void test1_3()
 {
     printf("testing anagrams\n");
     assert(anagrams("listen", "silent") == 1);

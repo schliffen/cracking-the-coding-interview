@@ -1,6 +1,6 @@
 #ifndef __test__testMatrixRotation__
 #define __test__testMatrixRotation__
 
-void testMatrixRotation();
+void test1_6();
 
 #endif
