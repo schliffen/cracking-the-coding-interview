@@ -3,4 +3,4 @@
 
 void testRemoveDuplicates();
 
-#endif // 2_1LISTREMOVEDUPLICATES_H
+#endif

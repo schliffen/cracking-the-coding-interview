@@ -1,11 +1,3 @@
-//
-//  utils.h
-//  test
-//
-//  Created by Oliver Shyal Beardsley on 24/12/2014.
-//  Copyright (c) 2014 Oliver Shyal Beardsley. All rights reserved.
-//
-
 #ifndef __test__utils__
 #define __test__utils__
 
@@ -25,4 +17,4 @@ int clearBitsIThrough0(int num, int i);
 int udpateBit(int num, int i, int v);
 void testBitFunctions();
 
-#endif /* defined(__test__utils__) */
+#endif

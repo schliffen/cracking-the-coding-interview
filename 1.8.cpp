@@ -1,11 +1,3 @@
-//
-//  isRotation.c
-//  test
-//
-//  Created by Oliver Shyal Beardsley on 24/12/2014.
-//  Copyright (c) 2014 Oliver Shyal Beardsley. All rights reserved.
-//
-
 #include "1.8.h"
 #include <stdbool.h>
 #include <string.h>

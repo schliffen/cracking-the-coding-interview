@@ -77,4 +77,4 @@ int Stack<Type>::size() const
 
 void testStack();
 
-#endif // STACK_H
+#endif

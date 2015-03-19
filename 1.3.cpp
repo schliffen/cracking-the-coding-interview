@@ -1,11 +1,3 @@
-//
-//  anagrams.c
-//  test
-//
-//  Created by Oliver Shyal Beardsley on 23/12/2014.
-//  Copyright (c) 2014 Oliver Shyal Beardsley. All rights reserved.
-//
-
 #include "1.3.h"
 #include "assert.h"
 #include <cstdio>

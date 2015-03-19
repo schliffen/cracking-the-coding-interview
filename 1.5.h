@@ -3,4 +3,4 @@
 
 void test1_5();
 
-#endif // 1_5_H
+#endif
