@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Oliver Shyal Beardsley. All rights reserved.
 //
 
-#include "zeroRowColumns.h"
+#include "1.7.h"
 #include "Utils.h"
 
 void setZeroRowColumns4x4(int a[4][4])

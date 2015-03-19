@@ -11,4 +11,6 @@
 
 #include <stdio.h>
 
+void testZeroRowColumns();
+
 #endif /* defined(__test__zeroRowColumns__) */

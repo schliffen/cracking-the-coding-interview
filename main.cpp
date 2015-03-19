@@ -4,6 +4,7 @@
 #include "1.4.h"
 #include "1.5.h"
 #include "1.6.h"
+#include "1.7.h"
 #include "2.1.h"
 #include "3.2.h"
 #include "4.1.h"
@@ -31,5 +32,6 @@ int main(int argc, char* argv[])
     testStack();
     test32();
     test1_5();
+    testZeroRowColumns();
     return 0;
 }

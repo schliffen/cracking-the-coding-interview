@@ -5,7 +5,6 @@ QT += core
 SOURCES += \
     main.cpp \
     4th-edition/isRotation.cpp \
-    4th-edition/zeroRowColumns.cpp \
     5.1.cpp \
     3.2.cpp \
     LinkedList.cpp \
@@ -20,11 +19,11 @@ SOURCES += \
     4.1.cpp \
     Binarytree.cpp \
     BinaryTreePrettyPrint.cpp \
-    Utils.cpp
+    Utils.cpp \
+    1.7.cpp
 
 HEADERS += \
     4th-edition/isRotation.h \
-    4th-edition/zeroRowColumns.h \
     5.1.h \
     3.2.h \
     LinkedList.h \
@@ -39,6 +38,7 @@ HEADERS += \
     4.1.h \
     Binarytree.h \
     BinaryTreePrettyPrint.h \
-    Utils.h
+    Utils.h \
+    1.7.h
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter
