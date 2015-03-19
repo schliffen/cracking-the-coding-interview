@@ -28,11 +28,18 @@ char* compressString(char* str)
             }
         }
         result[resulti++] = '\0';
-        char* ret = (char*)malloc(strlen(result)+1);
-        memcpy(ret, result, strlen(result)+1);
-        return ret;
+        int resultLen = strlen(result);
+        if (resultLen < len)
+        {
+            char* ret = (char*)malloc(resultLen+1);
+            memcpy(ret, result, resultLen+1);
+            return ret;
+        }
     }
-    return str;
+    char* ret = (char*)malloc(len+1);
+    memcpy(ret, str, len+1);
+    ret[len] = '\0';
+    return ret;
 }
 
 
