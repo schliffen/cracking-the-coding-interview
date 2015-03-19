@@ -11,4 +11,6 @@
 
 #include <stdio.h>
 
+void testIsRotation();
+
 #endif /* defined(__test__isRotation__) */
