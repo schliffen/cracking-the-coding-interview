@@ -4,6 +4,11 @@
 
 #include <iostream>
 
+/*
+    2.2 Implement an algorithm to find the kth to
+    last element of a singly linked list.
+*/
+
 Node<int>* findKFromEnd(Node<int>* head, int k)
 {
     int numCovered = 0;

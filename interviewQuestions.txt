@@ -1,23 +1,3 @@
-1.1 Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures?
-
-1.2 Implement a function void reverse(char* str) in C or C++ which reverses a null-terminated string.
-
-1.3 Given two strings, write a method to decide if one is a permutation of the other.
-
-1.4 Write a method to replace all spaces in a string with'%20'. You may assume that the string has sufficient space at the end of the string to hold the additional characters, and that you are given the "true" length of the string. (Note: if imple- menting in Java, please use a character array so that you can perform this operation in place.) EXAMPLE, Input: "Mr John Smith" Output: "Mr%20Dohn%20Smith"
-
-1.5 Implement a method to perform basic string compression using the counts of repeated characters. For example, the string aabcccccaaa would become a2b1c5a3. If the "compressed" string would not become smaller than the original string, your method should return the original string.
-
-1.6 Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
-
-1.7 Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are set to 0.
-
-1.8 Assume you have a method isSubstring which checks if one word is a substring of another. Given two strings, si and s2, write code to check if s2 is a rotation of si using only one call to isSubstring (e.g.,"waterbottle"is a rotation of "erbottlewat")
-
-2.1 Write code to remove duplicates from an unsorted linked list. - How would you solve this problem if a temporary buffer is not allowed?
-
-2.2 Implement an algorithm to find the kth to last element of a singly linked list.
-
 2.3 Implement an algorithm to delete a node in the middle of a singly linked list, given only access to that node. Input: the node c from the linked list a - > b - > c - > d - > e, Result: nothing is returned, but the new linked list looks like a->b->d->e
 
 2.4 Write code to partition a linked list around a value x, such that all nodes less than x come before all nodes greater than or equal to x.
@@ -30,8 +10,6 @@
 
 3.1 Describe how you could use a single array to implement three stacks.
 
-3.2 How would you design a stack which, in addition to push and pop, also has a function min which returns the minimum element? Push, pop and min should all operate in O(1) time.
-
 3.3 Imagine a (literal) stack of plates. If the stack gets too high, it might topple. Therefore, in real life, we would likely start a new stack when the previous stack exceeds some threshold. Implement a data structure SetOf Stacks that mimics this. SetOf Stacks should be composed of several stacks and should create a new stack once the previous one exceeds capacity. SetOf Stacks. push() and SetOf Stacks. pop() should behave identically to a single stack (that is, pop() should return the same values as it would if there were just a single stack). Implement a function popAt(int index) which performs a pop operation on a specific sub-stack.
 
 3.4 In the classic problem of the Towers of Hanoi, you have 3 towers and N disks of different sizes which can slide onto any tower. The puzzle starts with disks sorted in ascending order of size from top to bottom (i.e., each disk sits on top of an even larger one). You have the following constraints: (1) Only one disk can be moved at a time. (2) A disk is slid off the top of one tower onto the next tower. (3) A disk can only be placed on top of a larger disk. - Write a program to move the disks from the first tower to the last using stacks.
@@ -41,8 +19,6 @@
 3.6 Write a program to sort a stack in ascending order (with biggest items on top). You may use at most one additional stack to hold items, but you may not copy the elements into any other data structure (such as an array). The stack supports the following operations: push, pop, peek, and isEmpty.
 
 3.7 An animal shelter holds only dogs and cats, and operates on a strictly "first in, first out" basis. People must adopt either the "oldest" (based on arrival time) of all animals at the shelter, or they can select whether they would prefer a dog or a cat (and will receive the oldest animal of that type). They cannot select which specificanimal they would like. Create the data structures to maintain this system and implement operations such as enqueue, dequeueAny, dequeueDog and dequeueCat.You may use the built-in LinkedList data structure.
-
-4.1 Implement a function to check if a binary tree is balanced. For the purposes of this question, a balanced tree is defined to be a tree such that the heights of the two subtrees of any node never differ by more than one.
 
 4.2 Given a directed graph, design an algorithm to find out whether there is a route between two nodes.
 
@@ -59,8 +35,6 @@
 4.8 You have two very large binary trees: Tl, with millions of nodes, and T2, with hundreds of nodes. Create an algorithm to decide ifT2 is a subtree of Tl. A tree T2 is a subtree of Tl if there exists a node n in Tl such that the subtree of n is identical to T2. That is, if you cut off the tree at node n, the two trees would be identical.
 
 4.9 You are given a binary tree in which each node contains a value. Design an algorithm to print all paths which sum to a given value. The path does not need to start or end at the root or a leaf.
-
-5.1 You are given two 32-bit numbers, N and M, and two bit positions, land j. Write a method to insert M into N such that M starts at bit j and ends at bit i. You can assume that the bits j through i have enough space to fit all of M. That is, if M = 10011, you can assume that there are at least 5 bits between j and i. You would not, for example, have j = 3 and i = 2, because M could not fully fit between bit 3 and bit 2. EXAMPLE Input: N = 10000000000, M = 10011, i = 2, j = 6 Output: N = 10001001100
 
 5.2 Given a real number between 0 and 1 (e.g., 0.72) that is passed in as a double, print the binary representation. If the number cannot be represented accurately in binary with at most 32 characters, print "ERROR."
 

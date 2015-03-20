@@ -4,6 +4,11 @@
 #include <iostream>
 #include "LinkedList.h"
 
+/*
+    2.1 Write code to remove duplicates from an unsorted linked list.
+    How would you solve this problem if a temporary buffer is not allowed?
+*/
+
 using namespace std;
 
 template<class t>

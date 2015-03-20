@@ -1,6 +1,11 @@
 #include "1.7.h"
 #include "Utils.h"
 
+/*
+    1.7 Write an algorithm such that if an element in an MxN
+    matrix is 0, its entire row and column are set to 0.
+*/
+
 void setZeroRowColumns4x4(int a[4][4])
 {
     int rows[4] = {0};
