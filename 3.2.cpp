@@ -1,81 +1,44 @@
 #include "3.2.h"
-
+#include "LinkedList.h"
 #include <iostream>
-using namespace std;
+#include <assert.h>
 
 /*
-3.2 How would you design a stack which, in addition to push and pop,
-also has a function min which returns the minimum element? Push,
-pop and min should all operate in O(1) time.
-*/
+ * 2.3 Implement an algorithm to delete a node in the middle of a singly linked list,
+ * given only access to that node. Input: the node c from the linked
+ * list a->b->c->d->e,
+ * Result: nothing is returned, but the new linked list looks like a->b->d->e
+ */
 
-Data::Data(int value, int minIndex):
-    m_value(value),
-    m_minIndex(minIndex)
+void deleteNode(Node<int>* pNode)
 {
-
-}
-
-Data::Data():
-    m_value(0),
-    m_minIndex(-1)
-{
-
-}
-
-MinStack::MinStack(int capacity):
-    m_data(capacity),
-    m_minimums(capacity)
-{
-}
-
-void MinStack::push(int value)
-{
-    if (m_data.size() == 0)
-    {
-        m_data.push(Data(value, 0));
-        m_minimums.push(value);
-    }
-    else
-    {
-        if (value < m_minimums.top())
-            m_minimums.push(value);
-
-        m_data.push(Data(value, m_minimums.size()-1));
-    }
-}
-
-int MinStack::pop()
-{
-    return m_data.pop().m_value;
-}
-
-int MinStack::capacity() const
-{
-    return m_data.capacity();
-}
-
-int MinStack::size() const
-{
-    return m_data.size();
-}
-
-int MinStack::min() const
-{
-    return m_minimums[m_data.top().m_minIndex];
+    Node<int>* pNext = pNode->m_pNext;
+    pNode->m_data = pNext->m_data;
+    pNode->m_pNext = pNext->m_pNext;
+    delete pNext;
+    pNext = 0;
 }
 
 void test3_2()
 {
-    MinStack minStack(10);
-    minStack.push(3);
-    minStack.push(5);
-    minStack.push(2);
-    minStack.push(7);
-    assert(minStack.min() == 2);
-    assert(minStack.pop() == 7);
-    assert(minStack.pop() == 2);
-    assert(minStack.min() == 3);
+    Node<int> head(1);
+    head.addToEnd(2);
+    head.addToEnd(3);
+    Node<int>* n = head.addToEnd(4);
+    head.addToEnd(5);
+    head.addToEnd(6);
+    head.addToEnd(7);
 
-    cout << "min " << minStack.min() << endl;
+    Node<int>::print(&head);
+
+    deleteNode(n);
+    n = 0;
+
+    std::cout << "-----" << std::endl;
+
+    Node<int>::print(&head);
+
+    assert(head.find(4) == 0);
+
+    std::cout << "3.2 passed" << std::endl;
 }
