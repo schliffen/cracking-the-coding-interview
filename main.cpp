@@ -8,7 +8,7 @@
 #include "1.8.h"
 #include "2.1.h"
 #include "2.2.h"
-#include "3.2.h"
+#include "2.3.h"
 #include "4.1.h"
 #include "5.1.h"
 #include "LinkedList.h"
@@ -36,7 +36,7 @@ int main(int argc, char* argv[])
     test1_8();
     test2_1();
     test2_2();
-    test3_2();
+    test2_3();
     test4_1();
     return 0;
 }

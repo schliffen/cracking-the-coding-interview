@@ -6,7 +6,6 @@ SOURCES += \
     main.cpp \
     1.8.cpp \
     5.1.cpp \
-    3.2.cpp \
     1.5.cpp \
     1.4.cpp \
     1.3.cpp \
@@ -21,12 +20,12 @@ SOURCES += \
     BinaryTreePrettyPrint.cpp \
     Utils.cpp \
     1.7.cpp \
-    2.2.cpp
+    2.2.cpp \
+    2.3.cpp
 
 HEADERS += \
     1.8.h \
     5.1.h \
-    3.2.h \
     1.5.h \
     1.1.h \
     1.2.h \
@@ -41,6 +40,7 @@ HEADERS += \
     BinaryTreePrettyPrint.h \
     Utils.h \
     1.7.h \
-    2.2.h
+    2.2.h \
+    2.3.h
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter

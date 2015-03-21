@@ -1,4 +1,4 @@
-#include "3.2.h"
+#include "2.3.h"
 #include "LinkedList.h"
 #include <iostream>
 #include <assert.h>
@@ -19,7 +19,7 @@ void deleteNode(Node<int>* pNode)
     pNext = 0;
 }
 
-void test3_2()
+void test2_3()
 {
     Node<int> head(1);
     head.addToEnd(2);
@@ -40,5 +40,5 @@ void test3_2()
 
     assert(head.find(4) == 0);
 
-    std::cout << "3.2 passed" << std::endl;
+    std::cout << "2.3 passed" << std::endl;
 }
