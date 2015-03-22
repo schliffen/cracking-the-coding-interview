@@ -12,5 +12,5 @@ void testLinkedList()
     n.addToEnd(3);
     n.addToEnd(4);
     n.addToEnd(5);
-    n.print(&n);
+    n.printList();
 }

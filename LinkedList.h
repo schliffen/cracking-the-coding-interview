@@ -37,11 +37,11 @@ public:
         return 0;
     }
 
-    static void print(Node* pNode);
+    void printList();
 
     // keep those public for simplicity
     a_type m_data;
-    Node* m_pNext;
+    Node<a_type>* m_pNext;
 };
 
 template<class a_type>
@@ -59,9 +59,10 @@ Node<a_type>::Node():
 }
 
 template<class a_type>
-void Node<a_type>::print(Node<a_type> *pNode)
+void Node<a_type>::printList()
 {
-    while (pNode->m_pNext)
+    Node<a_type> *pNode = this;
+    while (pNode)
     {
         std::cout << "Node: " << pNode->m_data << std::endl;
         pNode = pNode->m_pNext;

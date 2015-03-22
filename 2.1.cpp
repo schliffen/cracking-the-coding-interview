@@ -48,8 +48,8 @@ void test2_1()
     n.addToEnd(6);
     n.addToEnd(8);
     cout << "before removal" << endl;
-    n.print(&n);
+    n.printList();
     removeDuplicates(&n);
     cout << "after removal" << endl;
-    n.print(&n);
+    n.printList();
 }

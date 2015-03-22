@@ -29,14 +29,14 @@ void test2_3()
     head.addToEnd(6);
     head.addToEnd(7);
 
-    Node<int>::print(&head);
+    head.printList();
 
     deleteNode(n);
     n = 0;
 
     std::cout << "-----" << std::endl;
 
-    Node<int>::print(&head);
+    head.printList();
 
     assert(head.find(4) == 0);
 

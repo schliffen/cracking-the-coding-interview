@@ -49,7 +49,7 @@ void test2_4()
 
     std::cout << "less than x:" << std::endl;
 
-    Node<int>::print(pLess);
+    pLess->printList();
 
     pNode = pLess;
 
@@ -61,7 +61,7 @@ void test2_4()
 
     std::cout << "more than x:" << std::endl;
 
-    Node<int>::print(pMore);
+    pMore->printList();
 
     pNode = pMore;
 

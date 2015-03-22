@@ -10,6 +10,7 @@
 #include "2.2.h"
 #include "2.3.h"
 #include "2.4.h"
+#include "2.5.h"
 #include "4.1.h"
 #include "5.1.h"
 #include "LinkedList.h"
@@ -39,6 +40,7 @@ int main(int argc, char* argv[])
     test2_2();
     test2_3();
     test2_4();
-    test4_1();
+    test2_5();
+    //test4_1();
     return 0;
 }
