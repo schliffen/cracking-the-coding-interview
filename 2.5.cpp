@@ -34,8 +34,6 @@ Node<int>* addLists(Node<int>* pA, Node<int>* pB, int carry)
     if (pB)
         value += pB->m_data;
 
-    std::cout << "value : " << value << std::endl;
-
     Node<int>* result = new Node<int>(value % 10);
 
     if (pA && pB)
