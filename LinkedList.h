@@ -8,6 +8,7 @@ template <class a_type> class Node
 public:
     Node(a_type data);
     Node(a_type data, Node<a_type>* pNext);
+    Node(a_type data[], int n);
     Node();
 
     Node* addToEnd(a_type data)
@@ -38,6 +39,20 @@ public:
         return 0;
     }
 
+    Node* operator[](int index)
+    {
+        Node<a_type>* pNode = this;
+        for (int i = 0; i < index; i++)
+        {
+            pNode = pNode->m_pNext;
+            if (i == index)
+            {
+                break;
+            }
+        }
+        return pNode;
+    }
+
     void printList();
 
     // keep those public for simplicity
@@ -64,6 +79,21 @@ Node<a_type>::Node():
     m_data(a_type()),
     m_pNext(0)
 {
+}
+
+template<class a_type>
+Node<a_type>::Node(a_type data[], int n):
+    m_data(0),
+    m_pNext(0)
+{
+    m_data = data[0];
+    Node<a_type>* pNode = this;
+    for (int i = 1; i < n; i++)
+    {
+        Node<a_type>* pNew = new Node<a_type>(data[i]);
+        pNode->m_pNext = pNew;
+        pNode = pNew;
+    }
 }
 
 template<class a_type>

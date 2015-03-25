@@ -12,6 +12,7 @@
 #include "2.4.h"
 #include "2.5.h"
 #include "2.6.h"
+#include "2.7.h"
 #include "4.1.h"
 #include "5.1.h"
 #include "9.1.h"
@@ -45,6 +46,7 @@ int main(int argc, char* argv[])
     test2_4();
     test2_5();
     test2_6();
+    test2_7();
     test4_1();
     test9x0();
     test9_1();

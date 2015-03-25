@@ -21,13 +21,9 @@ void deleteNode(Node<int>* pNode)
 
 void test2_3()
 {
-    Node<int> head(1);
-    head.addToEnd(2);
-    head.addToEnd(3);
-    Node<int>* n = head.addToEnd(4);
-    head.addToEnd(5);
-    head.addToEnd(6);
-    head.addToEnd(7);
+    int data[] = {1,2,3,4,5,6,7,8,9};
+    Node<int> head(data, 9);
+    Node<int>* n = head.find(4);
 
     head.printList();
 

@@ -13,16 +13,8 @@
 
 void test2_4()
 {
-    Node<int>* pHead = new Node<int>(5);
-    pHead->addToEnd(10);
-    pHead->addToEnd(1);
-    pHead->addToEnd(8);
-    pHead->addToEnd(2);
-    pHead->addToEnd(6);
-    pHead->addToEnd(4);
-    pHead->addToEnd(3);
-    pHead->addToEnd(11);
-    pHead->addToEnd(0);
+    int data[] = {5, 10, 1, 8, 2, 6, 4, 3, 11, 0};
+    Node<int>* pHead = new Node<int>(data, 10);
 
     int x = 5;
 

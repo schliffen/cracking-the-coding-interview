@@ -1,6 +1,7 @@
 #include "LinkedList.h"
 #include <stdio.h>
 #include <iostream>
+#include <assert.h>
 
 using namespace std;
 
@@ -12,5 +13,9 @@ void testLinkedList()
     n.addToEnd(3);
     n.addToEnd(4);
     n.addToEnd(5);
-    n.printList();
+    assert(n[5]->m_data == 5);
+
+    int data[] = {0,1,2,3,4,5};
+    Node<int> m(data, 6);
+    assert(m[5]->m_data == 5);
 }
