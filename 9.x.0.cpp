@@ -52,4 +52,7 @@ void test9x0()
         cout << fibCached(50+i) << " ";
     }
     cout << endl;
+    assert(fib(9) == 34);
+    assert(fibCached(59) == 956722026041);
+    cout << "fibonacci passed!" << endl;
 }
