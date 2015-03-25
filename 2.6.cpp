@@ -1,4 +1,9 @@
 #include "2.6.h"
+#include "LinkedList.h"
+#include <assert.h>
+#include <iostream>
+
+using namespace std;
 
 // 2.6 Given a circular linked list, implement an algorithm which
 // returns the node at the beginning of the loop. DEFINITION Circular
@@ -8,3 +13,49 @@
 // EXAMPLE Input: A - > B - > C - > D - > E - > C [the same C as earlier]
 // Output: C
 
+
+Node<int>* findBeginning(Node<int>* head)
+{
+    Node<int>* slow = head;
+    Node<int>* fast = head;
+
+    /* Find meeting point. This will be LOOP_SIZE - k steps into the * linked list. */
+    while (fast != 0 && fast->m_pNext != 0)
+    {
+        slow = slow->m_pNext;
+        fast = fast->m_pNext->m_pNext;
+        if (slow == fast)
+        {
+            break;
+        }
+    }
+
+    if (!fast && !slow)
+        return 0;
+
+    slow = head;
+    while (slow != fast)
+    {
+        slow = slow->m_pNext;
+        fast = fast->m_pNext;
+    }
+    return fast;
+}
+
+void test2_6()
+{
+    Node<int> head(0);
+    head.addToEnd(1);
+    head.addToEnd(2);
+    head.addToEnd(3);
+    head.addToEnd(4);
+    head.addToEnd(5);
+    head.addToEnd(6);
+    head.addToEnd(7);
+    head.addToEnd(8);
+    head.addToEnd(9);
+
+    head.find(9)->m_pNext = head.find(4);
+
+    assert(findBeginning(&head)->m_data == 4);
+}

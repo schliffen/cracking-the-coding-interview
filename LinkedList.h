@@ -7,6 +7,7 @@ template <class a_type> class Node
 {
 public:
     Node(a_type data);
+    Node(a_type data, Node<a_type>* pNext);
     Node();
 
     Node* addToEnd(a_type data)
@@ -48,6 +49,13 @@ template<class a_type>
 Node<a_type>::Node(a_type data):
     m_data(data),
     m_pNext(0)
+{
+}
+
+template<class a_type>
+Node<a_type>::Node(a_type data, Node<a_type>* pNext):
+    m_data(data),
+    m_pNext(pNext)
 {
 }
 
