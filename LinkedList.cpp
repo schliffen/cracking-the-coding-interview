@@ -18,4 +18,12 @@ void testLinkedList()
     int data[] = {0,1,2,3,4,5};
     Node<int> m(data, 6);
     assert(m[5]->m_data == 5);
+
+    Node<int>* r = m.reverse();
+    assert((*r)[0]->m_data == 5);
+    assert((*r)[5]->m_data == 0);
+
+    Node<int>* pDuplicate = r->duplicate();
+    assert((*pDuplicate)[0]->m_data == 5);
+    assert((*pDuplicate)[0] != (*r)[0]);
 }

@@ -6,10 +6,11 @@
 template <class a_type> class Node
 {
 public:
+    Node();
     Node(a_type data);
     Node(a_type data, Node<a_type>* pNext);
     Node(a_type data[], int n);
-    Node();
+    Node(const Node& rOther);
 
     Node* addToEnd(a_type data)
     {
@@ -24,18 +25,15 @@ public:
 
     Node* find(a_type data)
     {
-        std::cout << "looking for " << data << std::endl;
         Node* pNode = this;
         while (pNode)
         {
             if (pNode->m_data == data)
             {
-                std::cout << "returning " << pNode->m_data << std::endl;
                 return pNode;
             }
             pNode = pNode->m_pNext;
         }
-        std::cout << "returning 0" << std::endl;
         return 0;
     }
 
@@ -53,6 +51,38 @@ public:
         return pNode;
     }
 
+    // reverse in place
+    Node* reverse()
+    {
+        Node<a_type>* pNewOrder = 0;
+        Node<a_type>* pNode = this;
+        while (pNode)
+        {
+            Node<a_type>* pNext = pNode->m_pNext;
+            pNode->m_pNext = pNewOrder;
+            pNewOrder = pNode;
+            pNode = pNext;
+        }
+        return pNewOrder;
+    }
+
+    Node* duplicate()
+    {
+        Node<a_type>* pNewNode = new Node<a_type>(*this);
+        Node<a_type>* pNewHead = pNewNode;
+        Node<a_type>* pNode = this;
+        while (pNode)
+        {
+            if (pNode->m_pNext)
+            {
+                pNewNode = new Node<a_type>(*pNode->m_pNext);
+                pNode->m_pNext = pNewNode;
+            }
+            pNode = pNode->m_pNext;
+        }
+        return pNewHead;
+    }
+
     void printList();
 
     // keep those public for simplicity
@@ -64,6 +94,13 @@ template<class a_type>
 Node<a_type>::Node(a_type data):
     m_data(data),
     m_pNext(0)
+{
+}
+
+template<class a_type>
+Node<a_type>::Node(const Node<a_type>& rOther):
+    m_data(rOther.m_data),
+    m_pNext(rOther.m_pNext)
 {
 }
 

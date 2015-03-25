@@ -31,14 +31,8 @@ Node<int>* findKFromEnd(Node<int>* head, int k)
 
 void test2_2()
 {
-    Node<int> head(0);
-    head.addToEnd(1);
-    head.addToEnd(2);
-    head.addToEnd(3);
-    head.addToEnd(4);
-    head.addToEnd(5);
-    head.addToEnd(6);
-    head.addToEnd(7);
+    int data[] = {0,1,2,3,4,5,6,7};
+    Node<int> head(data, 8);
 
     Node<int>* kth = findKFromEnd(&head, 4);
 

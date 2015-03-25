@@ -44,16 +44,8 @@ Node<int>* findBeginning(Node<int>* head)
 
 void test2_6()
 {
-    Node<int> head(0);
-    head.addToEnd(1);
-    head.addToEnd(2);
-    head.addToEnd(3);
-    head.addToEnd(4);
-    head.addToEnd(5);
-    head.addToEnd(6);
-    head.addToEnd(7);
-    head.addToEnd(8);
-    head.addToEnd(9);
+    int data[] = {0,1,2,3,4,5,6,7,8,9};
+    Node<int> head(data, 10);
 
     head.find(9)->m_pNext = head.find(4);
 
