@@ -16,7 +16,7 @@ public:
     }
 
     Vector(int capacity):
-        m_top(capacity),
+        m_top(capacity-1),
         m_internalSize(0),
         m_pData((a_type*)malloc(capacity*sizeof(a_type)))
     {
@@ -35,13 +35,13 @@ public:
 
     int size() const
     {
-        return m_top;
+        return m_top+1;
     }
 
     void resize(int newSize)
     {
         m_pData = (a_type*)realloc(m_pData, newSize*sizeof(a_type));
-        m_top = newSize;
+        m_top = newSize-1;
         m_internalSize = newSize;
     }
 

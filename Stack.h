@@ -16,11 +16,15 @@ public:
 
     Type top() const;
 
-    Type operator[](int index) const;
+    Type& operator[](int index) const;
 
     int capacity() const;
 
     int size() const;
+    
+    bool isFull() const;
+    
+    bool isEmpty() const;
 
 protected:
     Type*           m_data;
@@ -58,7 +62,7 @@ Type Stack<Type>::top() const
 }
 
 template<class Type>
-Type Stack<Type>::operator[](int index) const
+Type& Stack<Type>::operator[](int index) const
 {
     return m_data[index];
 }
@@ -73,6 +77,18 @@ template<class Type>
 int Stack<Type>::size() const
 {
     return m_top+1;
+}
+
+template<class Type>
+bool Stack<Type>::isFull() const
+{
+    return size() >= capacity();
+}
+
+template<class Type>
+bool Stack<Type>::isEmpty() const
+{
+    return size() <= 0;
 }
 
 void testStack();

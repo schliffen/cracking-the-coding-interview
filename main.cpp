@@ -31,6 +31,8 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
+    (void)argc;
+    (void)argv;
     testLinkedList();
     testBitFunctions();
     testFitBits();
@@ -52,10 +54,10 @@ int main(int argc, char* argv[])
     test2_6();
     test2_7();
     test3_1();
-    test3_3();
     test4_1();
     test9x0();
     test9_1();
+    test3_3();
 
     return 0;
 }

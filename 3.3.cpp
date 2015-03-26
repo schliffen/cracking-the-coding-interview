@@ -13,8 +13,11 @@
 
 #include "Stack.h"
 #include "Vector.h"
+#include <assert.h>
+#include <iostream>
 
-/*
+using namespace std;
+
 template<class a_type>
 class SetOfStacks
 {
@@ -25,14 +28,68 @@ public:
     {
     }
 
+    Stack<a_type>* getLastStack()
+    {
+        int size = m_stacks.size();
+        assert(size >= 0);
+        if (size)
+        {
+            return &m_stacks[m_stacks.size()-1];
+        }
+        return 0;
+    }
+    
+    void push(a_type data)
+    {
+        Stack<a_type>* pStack = getLastStack();
+        if (pStack && !pStack->isFull())
+        {
+            pStack->push(data);
+        }
+        else
+        {
+            Stack<a_type> newStack(m_capacity);
+            newStack.push(data);
+            m_stacks.push_back(newStack);
+        }
+    }
+
+    a_type top()
+    {
+        return getLastStack()->top();
+    }
+    
+    a_type pop()
+    {
+        assert(m_stacks.size() != 0);
+        Stack<a_type>* pStack = getLastStack();
+        assert(pStack);
+        if (pStack->isEmpty())
+        {
+            m_stacks.resize(m_stacks.size()-1);
+            pStack = getLastStack();
+            assert(pStack);
+        }
+        return pStack->pop();
+    }
+    
 private:
     int                          m_capacity;
     Vector<Stack<a_type> >       m_stacks;
 };
-*/
 
 void test3_3()
 {
-
+    SetOfStacks<int> stacks(10);;
+    for (int i = 0; i < 100; i++)
+    {
+        stacks.push(i);
+        assert(stacks.top() == i);
+    }
+    for (int i = 99; i > 0; i--)
+    {
+        assert(stacks.pop() == i);
+    }
+    cout << "3.3 passed!" << endl;
 }
 
