@@ -30,7 +30,8 @@ SOURCES += \
     2.7.cpp \
     3.1.cpp \
     3.3.cpp \
-    Vector.cpp
+    Vector.cpp \
+    3.4.cpp
 
 HEADERS += \
     1.8.h \
@@ -59,6 +60,7 @@ HEADERS += \
     2.7.h \
     3.1.h \
     3.3.h \
-    Vector.h
+    Vector.h \
+    3.4.h
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter
