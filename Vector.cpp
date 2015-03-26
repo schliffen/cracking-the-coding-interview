@@ -41,8 +41,18 @@ void testZeroSize()
         assert(data[i] == i);
 }
 
+void testPushBack()
+{
+    Vector<int> data;
+    for (int i = 0; i < 1e6; i++)
+        data.push_back(i);
+    for (int i = 0; i < 1e6; i++)
+        assert(data[i] == i);
+}
+
 void testVector()
 {
     testSetSize();
     testZeroSize();
+    testPushBack();
 }
