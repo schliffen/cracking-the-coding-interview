@@ -44,12 +44,15 @@ public:
         Stack<a_type>* pStack = getLastStack();
         if (pStack && !pStack->isFull())
         {
+            cout << "pushing " << data << " onto stack" << endl;
             pStack->push(data);
         }
         else
         {
+            cout << "creating a stack" << endl;
             Stack<a_type> newStack(m_capacity);
             newStack.push(data);
+            cout << "pushing " << data << " onto stack" << endl;
             m_stacks.push_back(newStack);
         }
     }
@@ -73,6 +76,16 @@ public:
         return pStack->pop();
     }
     
+    a_type popAt(int index)
+    {
+        return m_stacks[index].pop();
+    }
+    
+    int numStacks()
+    {
+        return m_stacks.size();
+    }
+    
 private:
     int                          m_capacity;
     Vector<Stack<a_type> >       m_stacks;
@@ -80,16 +93,26 @@ private:
 
 void test3_3()
 {
-    SetOfStacks<int> stacks(10);;
+    SetOfStacks<int> stacks(10);
     for (int i = 0; i < 100; i++)
     {
         stacks.push(i);
         assert(stacks.top() == i);
     }
-    for (int i = 99; i > 0; i--)
+    for (int i = 99; i >= 0; i--)
     {
+        cout << "i " << i << endl;
         assert(stacks.pop() == i);
     }
+    
+    for (int i = 0; i < 100; i++)
+    {
+        stacks.push(i);
+        assert(stacks.top() == i);
+    }
+    assert(stacks.popAt(0) == 9);
+    assert(stacks.popAt(1) == 19);
+    assert(stacks.popAt(2) == 29);
     cout << "3.3 passed!" << endl;
 }
 
