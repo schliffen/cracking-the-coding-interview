@@ -14,6 +14,7 @@
 #include "2.6.h"
 #include "2.7.h"
 #include "3.1.h"
+#include "3.3.h"
 #include "4.1.h"
 #include "5.1.h"
 #include "9.1.h"
@@ -22,6 +23,7 @@
 #include "BinaryTreePrettyPrint.h"
 #include "Utils.h"
 #include "Stack.h"
+#include "Vector.h"
 
 #include <iostream>
 
@@ -33,6 +35,7 @@ int main(int argc, char* argv[])
     testBitFunctions();
     testFitBits();
     testStack();
+    testVector();
 
     test1_1();
     test1_3();
@@ -49,6 +52,7 @@ int main(int argc, char* argv[])
     test2_6();
     test2_7();
     test3_1();
+ //   test3_3();
     test4_1();
     test9x0();
     test9_1();
