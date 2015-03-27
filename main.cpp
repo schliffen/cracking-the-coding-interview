@@ -20,6 +20,7 @@
 #include "5.1.h"
 #include "9.1.h"
 #include "9.x.0.h"
+#include "11.1.h"
 #include "LinkedList.h"
 #include "BinaryTreePrettyPrint.h"
 #include "Utils.h"
@@ -63,11 +64,12 @@ int main(int argc, char* argv[])
     test2_7();
     test3_1();
     test3_3();
+    test3_4();
     test4_1();
     test5_1();
     test9x0();
     test9_1();
-    test3_4();
+    test11_1();
 
     return 0;
 }
