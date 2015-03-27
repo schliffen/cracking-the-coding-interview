@@ -1,81 +1,46 @@
 #include "testvector.h"
 #include "Vector.h"
 #include <assert.h>
+#include <string>
+#include <map>
+#include <iostream>
 
-void testSetSize()
+using namespace std;
+
+void testStringVec()
 {
-    Vector<int> data(10);
-
-    assert(data.size() == 10);
-
-    for (int i = 0; i < 10; i++)
-        data[i] = i;
-
-    for (int i = 0; i < 10; i++)
-        assert(data[i] == i);
-
-    data.resize(20);
-
-    assert(data.size() == 20);
-
-    for (int i = 0; i < 20; i++)
-        data[i] = i;
-
-    for (int i = 0; i < 20; i++)
-        assert(data[i] == i);
-
-    data.resize(10);
-
-    assert(data.size() == 10);
-
-    for (int i = 0; i < 10; i++)
-        data[i] = i;
-
-    for (int i = 0; i < 10; i++)
-        assert(data[i] == i);
+    Vector<string> vec;
+    vec.push_back("hello");
+    vec.push_back("how");
+    vec.push_back("are");
+    vec.push_back("you");
+    
+    assert(vec[0] == "hello");
+    assert(vec[1] == "how");
+    assert(vec[2] == "are");
+    assert(vec[3] == "you");
 }
 
-void testZeroSize()
+void testMapVec()
 {
-    Vector<int> data;
-
-    assert(data.size() == 0);
-
-    data.resize(10);
-
-    assert(data.size() == 10);
-
-    for (int i = 0; i < 10; i++)
-        data[i] = i;
-
-    for (int i = 0; i < 10; i++)
-        assert(data[i] == i);
-
-    data.resize(20);
-
-    assert(data.size() == 20);
-
-    for (int i = 0; i < 20; i++)
-        data[i] = i;
-
-    for (int i = 0; i < 20; i++)
-        assert(data[i] == i);
+    map<int, string> m;
+    m[0] = "hello";
+    m[1] = "how";
+    m[2] = "are";
+    m[3] = "you";
+    
+    Vector<map<int, string> > vec;
+    vec.push_back(m);
+    assert(vec[0][0] == "hello");
+    assert(vec[0][1] == "how");
+    assert(vec[0][2] == "are");
+    assert(vec[0][3] == "you");
 }
 
-void testPushBack()
-{
-    Vector<int> data;
-    for (int i = 0; i < 1e6; i++)
-        data.push_back(i);
-    for (int i = 0; i < 1e6; i++)
-        assert(data[i] == i);
-
-    assert(data.size() == 1e6);
-}
 
 void testVector()
 {
-    testSetSize();
-    testZeroSize();
-    testPushBack();
+    testStringVec();
+    testMapVec();
+    cout << "testing Vector passed!" << endl;
 }

@@ -8,11 +8,12 @@ template <class a_type> class DNode
 {
 public:
                     DNode(a_type data);
+                    DNode();
     void            printList();
     DNode<a_type>*  addToEnd(a_type data);
 
-    DNode<a_type>*  next();
-    DNode<a_type>*  prev();
+    DNode<a_type> *&next();
+    DNode<a_type> *&prev();
     a_type          data();
 
 private:
@@ -24,6 +25,14 @@ private:
 template<class a_type>
 DNode<a_type>::DNode(a_type data):
     m_data(data),
+    m_pNext(0),
+    m_pPrev(0)
+{
+}
+
+template<class a_type>
+DNode<a_type>::DNode():
+    m_data(),
     m_pNext(0),
     m_pPrev(0)
 {
@@ -56,13 +65,13 @@ DNode<a_type>* DNode<a_type>::addToEnd(a_type data)
 }
 
 template<class a_type>
-DNode<a_type>* DNode<a_type>::next()
+DNode<a_type> *&DNode<a_type>::next()
 {
     return m_pNext;
 }
 
 template<class a_type>
-DNode<a_type>* DNode<a_type>::prev()
+DNode<a_type> *&DNode<a_type>::prev()
 {
     return m_pPrev;
 }

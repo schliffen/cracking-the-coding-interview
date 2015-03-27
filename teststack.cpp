@@ -2,23 +2,39 @@
 #include "Stack.h"
 #include <assert.h>
 
+
+
 void testStack()
 {
-    Stack<int> stack(10);
+    Stack<int> stack;
 
     assert(stack.size() == 0);
 
-    stack.push(5);
-    stack.push(6);
-    stack.push(7);
-    stack.push(2);
+    // populate
+    for (int i = 0; i <= 1e6; i++)
+    {
+        stack.push(i);
+    }
 
-    assert(stack.size() == 4);
-    assert(stack.pop() == 2);
-    assert(stack.top() == 7);
-    assert(stack.pop() == 7);
-    assert(stack.pop() == 6);
-    assert(stack.pop() == 5);
-
+    // copy
+    Stack<int> copy(stack);
+    
+    // shred
+    for (int i = 1e6; i >= 0; i--)
+    {
+        assert(stack.top() == i);
+        assert(stack.pop() == i);
+    }
+    
     assert(stack.size() == 0);
+
+    // shred copy
+    for (int i = 1e6; i >= 0; i--)
+    {
+        int top = copy.top();
+        assert(top == i);
+        assert(copy.pop() == i);
+    }
+    
+    assert(copy.size() == 0);
 }

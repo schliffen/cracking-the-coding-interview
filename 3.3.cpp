@@ -12,7 +12,8 @@
 // which performs a pop operation on a specific sub-stack.
 
 #include "Stack.h"
-#include "Vector.h"
+#include <vector>
+
 #include <assert.h>
 #include <iostream>
 
@@ -50,7 +51,7 @@ public:
         else
         {
             cout << "creating a stack" << endl;
-            Stack<a_type> newStack(m_capacity);
+            Stack<a_type> newStack;
             newStack.push(data);
             cout << "pushing " << data << " onto stack" << endl;
             m_stacks.push_back(newStack);
@@ -88,7 +89,7 @@ public:
     
 private:
     int                          m_capacity;
-    Vector<Stack<a_type> >       m_stacks;
+    vector<Stack<a_type> >       m_stacks;
 };
 
 void test3_3()
