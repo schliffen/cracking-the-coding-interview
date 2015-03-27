@@ -14,8 +14,6 @@ SOURCES += \
     1.6.cpp \
     2.1.cpp \
     4.1.cpp \
-    LinkedList.cpp \
-    Stack.cpp \
     Binarytree.cpp \
     BinaryTreePrettyPrint.cpp \
     Utils.cpp \
@@ -30,8 +28,12 @@ SOURCES += \
     2.7.cpp \
     3.1.cpp \
     3.3.cpp \
-    Vector.cpp \
-    3.4.cpp
+    3.4.cpp \
+    DLinkedList.cpp \
+    testdlinkedlist.cpp \
+    testlinkedlist.cpp \
+    testvector.cpp \
+    teststack.cpp
 
 HEADERS += \
     1.8.h \
@@ -61,6 +63,11 @@ HEADERS += \
     3.1.h \
     3.3.h \
     Vector.h \
-    3.4.h
+    3.4.h \
+    DLinkedList.h \
+    testdlinkedlist.h \
+    testlinkedlist.h \
+    testvector.h \
+    teststack.h
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter

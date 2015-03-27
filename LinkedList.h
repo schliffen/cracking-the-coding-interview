@@ -144,6 +144,4 @@ void Node<a_type>::printList()
     }
 }
 
-void testLinkedList();
-
 #endif

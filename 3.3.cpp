@@ -42,7 +42,7 @@ public:
     void push(a_type data)
     {
         Stack<a_type>* pStack = getLastStack();
-        if (pStack && !pStack->isFull())
+        if (pStack && pStack->size() != m_capacity)
         {
             cout << "pushing " << data << " onto stack" << endl;
             pStack->push(data);

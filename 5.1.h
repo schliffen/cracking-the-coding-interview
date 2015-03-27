@@ -1,6 +1,6 @@
 #ifndef _5_1_H
 #define _5_1_H
 
-void testFitBits();
+void test5_1();
 
 #endif

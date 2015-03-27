@@ -28,7 +28,7 @@ int fitBits(int N, int M, int i, int j)
     return result;
 }
 
-void testFitBits()
+void test5_1()
 {
     fitBits(129, 10, 1, 4);
 }

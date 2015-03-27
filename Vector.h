@@ -66,6 +66,4 @@ private:
     a_type*     m_pData;
 };
 
-void testVector();
-
 #endif

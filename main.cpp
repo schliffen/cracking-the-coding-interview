@@ -24,6 +24,10 @@
 #include "Utils.h"
 #include "Stack.h"
 #include "Vector.h"
+#include "testdlinkedlist.h"
+#include "testlinkedlist.h"
+#include "testvector.h"
+#include "teststack.h"
 
 #include <iostream>
 
@@ -33,12 +37,15 @@ int main(int argc, char* argv[])
 {
     (void)argc;
     (void)argv;
+
+    // unit test data structures
     testLinkedList();
     testBitFunctions();
-    testFitBits();
     testStack();
     testVector();
+    testDLinkedList();
 
+    // run solution tests
     test1_1();
     test1_3();
     test1_4();
@@ -54,10 +61,11 @@ int main(int argc, char* argv[])
     test2_6();
     test2_7();
     test3_1();
+    test3_3();
     test4_1();
+    test5_1();
     test9x0();
     test9_1();
-    test3_3();
 
     return 0;
 }

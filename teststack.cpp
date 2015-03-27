@@ -1,3 +1,4 @@
+#include "teststack.h"
 #include "Stack.h"
 #include <assert.h>
 
@@ -13,8 +14,6 @@ void testStack()
     stack.push(2);
 
     assert(stack.size() == 4);
-    assert(stack[0] == 5);
-    assert(stack[3] == 2);
     assert(stack.pop() == 2);
     assert(stack.top() == 7);
     assert(stack.pop() == 7);
@@ -22,6 +21,4 @@ void testStack()
     assert(stack.pop() == 5);
 
     assert(stack.size() == 0);
-
-    assert(stack.capacity() == 10);
 }

@@ -1,3 +1,4 @@
+#include "testvector.h"
 #include "Vector.h"
 #include <assert.h>
 
@@ -26,10 +27,10 @@ void testSetSize()
     data.resize(10);
 
     assert(data.size() == 10);
-    
+
     for (int i = 0; i < 10; i++)
         data[i] = i;
-    
+
     for (int i = 0; i < 10; i++)
         assert(data[i] == i);
 }
@@ -39,7 +40,7 @@ void testZeroSize()
     Vector<int> data;
 
     assert(data.size() == 0);
-    
+
     data.resize(10);
 
     assert(data.size() == 10);

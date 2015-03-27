@@ -13,3 +13,45 @@
  * top of a larger disk. - Write a program to move
  * the disks from the first tower to the last using stacks.
  */
+
+#include "Stack.h"
+
+void MoveTowerofHanoi(int disk, Stack<int> *source, Stack<int> *temp, Stack<int> *destination)
+{
+    if (disk==1)
+    {
+        destination->push(source->pop());
+    }
+    else
+    {
+        MoveTowerofHanoi(disk-1,source,destination,temp);
+        destination->push(source->pop());
+        MoveTowerofHanoi(disk-1,temp,source,destination);
+    }
+}
+
+/*
+void solveFor(int n)
+{
+    int disks;
+    Stack<int>* source = new Stack<int>();
+    for(int i=disks; i>0; --i) {
+        source->push(i);
+    }
+
+    cout<<"Printing Source!"<<endl;
+    source->printstack();
+    Stack<int>* temp = new Stack<int>();
+    Stack<int>* destination = new Stack<int>();
+    MoveTowerofHanoi(disks,source,temp,destination);
+    cout<<"Printing Destination!"<<endl;
+    destination->printstack();
+    delete source;
+    delete temp;
+    delete destination;
+}
+*/
+void test3_4()
+{
+    //solveFor(1);
+}
