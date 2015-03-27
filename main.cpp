@@ -21,6 +21,7 @@
 #include "9.1.h"
 #include "9.x.0.h"
 #include "11.1.h"
+#include "12.1.h"
 #include "LinkedList.h"
 #include "BinaryTreePrettyPrint.h"
 #include "Utils.h"
@@ -70,6 +71,7 @@ int main(int argc, char* argv[])
     test9x0();
     test9_1();
     test11_1();
+    test12_1();
 
     return 0;
 }
