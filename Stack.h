@@ -123,7 +123,12 @@ bool Stack<Type>::isEmpty() const
 template<class Type>
 void Stack<Type>::print() const
 {
-    DNode<Type>* pNode = m_pTop;
+    DNode<Type>* pNode = m_pRoot;
+    while (pNode)
+    {
+        cout << "Node: " << pNode->data() << endl;
+        pNode = pNode->next();
+    }
 }
 
 #endif

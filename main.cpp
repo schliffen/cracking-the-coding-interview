@@ -15,6 +15,7 @@
 #include "2.7.h"
 #include "3.1.h"
 #include "3.3.h"
+#include "3.4.h"
 #include "4.1.h"
 #include "5.1.h"
 #include "9.1.h"
@@ -44,7 +45,6 @@ int main(int argc, char* argv[])
     testStack();
     testVector();
     testDLinkedList();
-
     
     // run solution tests
     test1_1();
@@ -67,6 +67,7 @@ int main(int argc, char* argv[])
     test5_1();
     test9x0();
     test9_1();
+    test3_4();
 
     return 0;
 }

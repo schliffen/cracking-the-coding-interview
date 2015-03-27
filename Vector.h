@@ -2,15 +2,15 @@ template <class T>
 class  Vector
 {
 public:
-    
+
     typedef T * iterator;
-    
+
     Vector();
     Vector(unsigned int size);
     Vector(unsigned int size, const T & initial);
     Vector(const Vector<T> & v);
     ~Vector();
-    
+
     unsigned int capacity() const;
     unsigned int size() const;
     bool empty() const;
@@ -20,10 +20,10 @@ public:
     T & back();
     void push_back(const T & value);
     void pop_back();
-    
+
     void reserve(unsigned int capacity);
     void resize(unsigned int size);
-    
+
     T & operator[](unsigned int index);
     Vector<T> & operator=(const Vector<T> &);
     void clear();
@@ -132,10 +132,10 @@ void Vector<T>::reserve(unsigned int capacity)
     //assert(Newbuffer);
     unsigned int l_Size = capacity < my_size ? capacity : my_size;
     //copy (buffer, buffer + l_Size, Newbuffer);
-    
+
     for (unsigned int i = 0; i < l_Size; i++)
         Newbuffer[i] = buffer[i];
-    
+
     my_capacity = capacity;
     delete[] buffer;
     buffer = Newbuffer;

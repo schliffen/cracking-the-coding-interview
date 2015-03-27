@@ -30,28 +30,28 @@ void MoveTowerofHanoi(int disk, Stack<int> *source, Stack<int> *temp, Stack<int>
     }
 }
 
-/*
-void solveFor(int n)
+
+void solveFor(int disks)
 {
-    int disks;
     Stack<int>* source = new Stack<int>();
     for(int i=disks; i>0; --i) {
         source->push(i);
     }
 
     cout<<"Printing Source!"<<endl;
-    source->printstack();
+    source->print();
     Stack<int>* temp = new Stack<int>();
     Stack<int>* destination = new Stack<int>();
     MoveTowerofHanoi(disks,source,temp,destination);
     cout<<"Printing Destination!"<<endl;
-    destination->printstack();
+    destination->print();
+    assert(destination->top() == 1);
     delete source;
     delete temp;
     delete destination;
 }
-*/
+
 void test3_4()
 {
-    //solveFor(1);
+    solveFor(4);
 }
