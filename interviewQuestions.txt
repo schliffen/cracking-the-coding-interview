@@ -142,7 +142,6 @@ method to find the location of a given string.
 
 12.6 How would you test an ATM in a distributed banking system?
 
-13.1 Write a method to print the last K lines of an input file using C++.
 
 13.2 Compare and contrast a hash table and an STL map. How is a hash table implemented? If the number of inputs is small, which data structure options can be used instead of a hash table?
 

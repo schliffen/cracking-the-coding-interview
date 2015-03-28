@@ -35,7 +35,8 @@ SOURCES += \
     testvector.cpp \
     teststack.cpp \
     11.1.cpp \
-    12.1.cpp
+    12.1.cpp \
+    13.1.cpp
 
 HEADERS += \
     1.8.h \
@@ -72,6 +73,7 @@ HEADERS += \
     testvector.h \
     teststack.h \
     11.1.h \
-    12.1.h
+    12.1.h \
+    13.1.h
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter
