@@ -36,7 +36,9 @@ SOURCES += \
     teststack.cpp \
     11.1.cpp \
     12.1.cpp \
-    13.1.cpp
+    13.1.cpp \
+    3.5.cpp \
+    testqeueue.cpp
 
 HEADERS += \
     1.8.h \
@@ -74,6 +76,9 @@ HEADERS += \
     teststack.h \
     11.1.h \
     12.1.h \
-    13.1.h
+    13.1.h \
+    3.5.h \
+    Queue.h \
+    testqeueue.h
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter

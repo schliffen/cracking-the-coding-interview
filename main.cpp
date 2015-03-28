@@ -16,6 +16,7 @@
 #include "3.1.h"
 #include "3.3.h"
 #include "3.4.h"
+#include "3.5.h"
 #include "4.1.h"
 #include "5.1.h"
 #include "9.1.h"
@@ -32,6 +33,7 @@
 #include "testlinkedlist.h"
 #include "testvector.h"
 #include "teststack.h"
+#include "testqeueue.h"
 
 #include <iostream>
 
@@ -74,6 +76,9 @@ int main(int argc, char* argv[])
     test11_1();
     test12_1();
     test13_1();
+    test3_5();
+
+    testQueue();
 
     return 0;
 }
