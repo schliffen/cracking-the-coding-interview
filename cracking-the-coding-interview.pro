@@ -28,7 +28,6 @@ SOURCES += \
     3.1.cpp \
     3.3.cpp \
     3.4.cpp \
-    DLinkedList.cpp \
     testdlinkedlist.cpp \
     testlinkedlist.cpp \
     testvector.cpp \
@@ -37,7 +36,8 @@ SOURCES += \
     12.1.cpp \
     13.1.cpp \
     3.5.cpp \
-    testqeueue.cpp
+    testqeueue.cpp \
+    3_6.cpp
 
 HEADERS += \
     1.8.h \
@@ -78,6 +78,7 @@ HEADERS += \
     13.1.h \
     3.5.h \
     Queue.h \
-    testqeueue.h
+    testqeueue.h \
+    3_6.h
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter
