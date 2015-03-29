@@ -22,7 +22,7 @@ void testStack()
     // shred
     for (int i = 1e6; i >= 0; i--)
     {
-        assert(stack.top() == i);
+        assert(stack.peek() == i);
         assert(stack.pop() == i);
     }
     
@@ -31,7 +31,7 @@ void testStack()
     // shred copy
     for (int i = 1e6; i >= 0; i--)
     {
-        int top = copy.top();
+        int top = copy.peek();
         assert(top == i);
         assert(copy.pop() == i);
     }

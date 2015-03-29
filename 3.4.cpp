@@ -45,7 +45,7 @@ void solveFor(int disks)
     MoveTowerofHanoi(disks,source,temp,destination);
     cout<<"Printing Destination!"<<endl;
     destination->print();
-    assert(destination->top() == 1);
+    assert(destination->peek() == 1);
     delete source;
     delete temp;
     delete destination;

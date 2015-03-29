@@ -60,7 +60,7 @@ public:
 
     a_type top()
     {
-        return getLastStack()->top();
+        return getLastStack()->peek();
     }
     
     a_type pop()

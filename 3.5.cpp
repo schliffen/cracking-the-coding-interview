@@ -57,7 +57,7 @@ public:
             transfer(&m_s0, &m_s1);
             m_s = 1;
         }
-        return m_s1.top();
+        return m_s1.peek();
     }
 };
 

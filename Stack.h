@@ -18,7 +18,7 @@ public:
 
     Type            pop();
 
-    Type            top() const;
+    Type            peek() const;
 
     int             size() const;
         
@@ -102,7 +102,7 @@ Type Stack<Type>::pop()
 }
 
 template<class Type>
-Type Stack<Type>::top() const
+Type Stack<Type>::peek() const
 {
     assert(m_pTop);
     return m_pTop->data();
