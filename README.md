@@ -14,6 +14,8 @@ Please note that I have decided to use common classes, such as:
 
 This enables me to focus on the solutions, without having to re-write boilerplate code each time. I could have used STL containers, and I do so, in a few places, where my own containers didn't cut it. But since writing a container can come up in an interview, I thought it would be a good exercise.
 
+Please note that all the containers, and solutions are test driven, and that I aimed to get as close to 100% coverage as I could.
+
 ## Building
 
 Please build using qmake.
