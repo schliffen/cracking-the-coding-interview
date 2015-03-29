@@ -2,6 +2,7 @@
 
 #include <set>
 #include <iostream>
+#include <assert.h>
 #include "LinkedList.h"
 
 /*
@@ -36,6 +37,7 @@ void test2_1()
 {
     cout << "testing linked list removal" << endl;
     Node<int> n(0);
+    assert(n[0]->m_data == 0);
     n.addToEnd(1);
     n.addToEnd(2);
     n.addToEnd(3);
@@ -47,9 +49,8 @@ void test2_1()
     n.addToEnd(7);
     n.addToEnd(6);
     n.addToEnd(8);
-    cout << "before removal" << endl;
-    n.printList();
+    assert(n[11]->m_data == 8);
     removeDuplicates(&n);
-    cout << "after removal" << endl;
-    n.printList();
+    assert(n[8]->m_data == 8);
+    cout << "2.1 passed!" << endl;
 }
