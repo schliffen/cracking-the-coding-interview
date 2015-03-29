@@ -12,77 +12,13 @@ public:
     Node(a_type data[], int n);
     Node(const Node& rOther);
 
-    Node* addToEnd(a_type data)
-    {
-        Node* pNew = new Node(data);
-        Node* pEnd = this;
-        while (pEnd->m_pNext)
-            pEnd = pEnd->m_pNext;
-
-        pEnd->m_pNext = pNew;
-        return pNew;
-    }
-
-    Node* find(a_type data)
-    {
-        Node* pNode = this;
-        while (pNode)
-        {
-            if (pNode->m_data == data)
-            {
-                return pNode;
-            }
-            pNode = pNode->m_pNext;
-        }
-        return 0;
-    }
-
-    Node* operator[](int index)
-    {
-        Node<a_type>* pNode = this;
-        for (int i = 0; i < index; i++)
-        {
-            pNode = pNode->m_pNext;
-            if (i == index)
-            {
-                break;
-            }
-        }
-        return pNode;
-    }
+    Node* addToEnd(a_type data);
+    Node* find(a_type data);
+    Node* operator[](int index);
 
     // reverse in place
-    Node* reverse()
-    {
-        Node<a_type>* pNewOrder = 0;
-        Node<a_type>* pNode = this;
-        while (pNode)
-        {
-            Node<a_type>* pNext = pNode->m_pNext;
-            pNode->m_pNext = pNewOrder;
-            pNewOrder = pNode;
-            pNode = pNext;
-        }
-        return pNewOrder;
-    }
-
-    Node* duplicate()
-    {
-        Node<a_type>* pNewNode = new Node<a_type>(*this);
-        Node<a_type>* pNewHead = pNewNode;
-        Node<a_type>* pNode = this;
-        while (pNode)
-        {
-            if (pNode->m_pNext)
-            {
-                pNewNode = new Node<a_type>(*pNode->m_pNext);
-                pNode->m_pNext = pNewNode;
-            }
-            pNode = pNode->m_pNext;
-        }
-        return pNewHead;
-    }
-
+    Node* reverse();
+    Node* duplicate();
     void printList();
 
     // keep those public for simplicity
@@ -131,6 +67,81 @@ Node<a_type>::Node(a_type data[], int n):
         pNode->m_pNext = pNew;
         pNode = pNew;
     }
+}
+
+template <class a_type>
+Node<a_type>* Node<a_type>::addToEnd(a_type data)
+{
+    Node* pNew = new Node(data);
+    Node* pEnd = this;
+    while (pEnd->m_pNext)
+        pEnd = pEnd->m_pNext;
+
+    pEnd->m_pNext = pNew;
+    return pNew;
+}
+
+template<class a_type>
+Node<a_type>* Node<a_type>::find(a_type data)
+{
+    Node* pNode = this;
+    while (pNode)
+    {
+        if (pNode->m_data == data)
+        {
+            return pNode;
+        }
+        pNode = pNode->m_pNext;
+    }
+    return 0;
+}
+
+template<class a_type>
+Node<a_type>* Node<a_type>::operator[](int index)
+{
+    Node<a_type>* pNode = this;
+    for (int i = 0; i < index; i++)
+    {
+        pNode = pNode->m_pNext;
+        if (i == index)
+        {
+            break;
+        }
+    }
+    return pNode;
+}
+
+template<class a_type>
+Node<a_type>* Node<a_type>::reverse()
+{
+    Node<a_type>* pNewOrder = 0;
+    Node<a_type>* pNode = this;
+    while (pNode)
+    {
+        Node<a_type>* pNext = pNode->m_pNext;
+        pNode->m_pNext = pNewOrder;
+        pNewOrder = pNode;
+        pNode = pNext;
+    }
+    return pNewOrder;
+}
+
+template<class a_type>
+Node<a_type>* Node<a_type>::duplicate()
+{
+    Node<a_type>* pNewNode = new Node<a_type>(*this);
+    Node<a_type>* pNewHead = pNewNode;
+    Node<a_type>* pNode = this;
+    while (pNode)
+    {
+        if (pNode->m_pNext)
+        {
+            pNewNode = new Node<a_type>(*pNode->m_pNext);
+            pNode->m_pNext = pNewNode;
+        }
+        pNode = pNode->m_pNext;
+    }
+    return pNewHead;
 }
 
 template<class a_type>
