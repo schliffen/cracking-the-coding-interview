@@ -14,7 +14,6 @@ SOURCES += \
     1.6.cpp \
     2.1.cpp \
     4.1.cpp \
-    Binarytree.cpp \
     BinaryTreePrettyPrint.cpp \
     Utils.cpp \
     1.7.cpp \
