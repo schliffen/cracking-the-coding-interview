@@ -3,6 +3,14 @@
 
 #include <stdio.h>
 
+template<class a_type>
+void swap(a_type* a, a_type* b)
+{
+    a_type tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
 void swap(void* a, void* b, unsigned short size);
 
 void print3x3Matrix(int matrix[3][3]);
