@@ -9,7 +9,7 @@ void bubbleSort(a_type* data, int n)
     {
         swapped = false;
 
-        for (int i = 0; i < n; i++)
+        for (int i = 1; i < n; i++)
         {
             if (data[i-1] > data[i])
             {
