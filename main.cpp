@@ -34,6 +34,7 @@
 #include "testvector.h"
 #include "teststack.h"
 #include "testqeueue.h"
+#include "testsorting.h"
 
 #include <iostream>
 
@@ -79,6 +80,7 @@ int main(int argc, char* argv[])
     test3_5();
 
     testQueue();
+    testsorting();
 
     return 0;
 }

@@ -37,7 +37,8 @@ SOURCES += \
     13.1.cpp \
     3.5.cpp \
     testqeueue.cpp \
-    3_6.cpp
+    3_6.cpp \
+    testsorting.cpp
 
 HEADERS += \
     1.8.h \
@@ -79,6 +80,8 @@ HEADERS += \
     3.5.h \
     Queue.h \
     testqeueue.h \
-    3_6.h
+    3_6.h \
+    bubblesort.h \
+    testsorting.h
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter

@@ -1,5 +1,5 @@
-#ifndef 3_6_H
-#define 3_6_H
+#ifndef _3_6_H
+#define _3_6_H
 
 class test36
 {
