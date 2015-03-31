@@ -7,3 +7,10 @@
  * following operations: push, pop, peek, and isEmpty.
  */
 
+#include "Stack.h"
+
+
+void test3_6()
+{
+    //Stack<int> a();
+}

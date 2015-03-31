@@ -14,6 +14,16 @@ Stack<Type>::Stack():
 }
 
 template<class Type>
+Stack<Type>::Stack(Type* data, int n):
+    m_pRoot(0),
+    m_pTop(0),
+    m_size(0)
+{
+    for (int i = 0; i < n; i++)
+        push(data[i]);
+}
+
+template<class Type>
 Stack<Type>::Stack(const Stack<Type> &rOther):
     m_pRoot(0),
     m_pTop(0),
@@ -37,6 +47,23 @@ Stack<Type>::~Stack()
         delete pNode;
         pNode = pPrev;
     }
+}
+
+template<class Type>
+Stack<Type>& Stack<Type>::operator=(const Stack<Type> &rOther)
+{
+    if (this == &rOther)
+        return *this;
+    m_pRoot = 0;
+    m_pTop = 0;
+    m_size = 0;
+    DNode<Type>* pNode = rOther.m_pRoot;
+    while (pNode)
+    {
+        push(pNode->data());
+        pNode = pNode->next();
+    }
+    return *this;
 }
 
 template<class Type>
