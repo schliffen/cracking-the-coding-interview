@@ -82,6 +82,12 @@ HEADERS += \
     testqeueue.h \
     3_6.h \
     bubblesort.h \
-    testsorting.h
+    testsorting.h \
+    bubblesort.hpp \
+    DLinkedList.hpp \
+    LinkedList.hpp \
+    Vector.hpp \
+    Queue.hpp \
+    Stack.hpp
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter

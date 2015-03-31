@@ -16,6 +16,11 @@
 
 #include "Stack.h"
 
+#include <iostream>
+#include <assert.h>
+
+using namespace std;
+
 void MoveTowerofHanoi(int disk, Stack<int> *source, Stack<int> *temp, Stack<int> *destination)
 {
     if (disk==1)
