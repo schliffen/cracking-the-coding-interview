@@ -12,5 +12,17 @@
 
 void test3_6()
 {
-    //Stack<int> a();
+    int arr[] = {2,1,6,4,8,9,7,5,6,14,2,3,5,4,9,4,5,6,2,1};
+    Stack<int> a(arr, 20);
+    Stack<int> b;
+
+    int n = 20;
+    do
+    {
+        for (int i = 1; i < n; i++)
+        {
+
+        }
+    }
+    while (n > 0);
 }
