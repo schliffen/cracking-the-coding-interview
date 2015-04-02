@@ -32,12 +32,12 @@ string* printLastKLines(char* fileName, int k)
         
         for (int i = 0; i < count; i++)
         {
-            cout << circularArray[(start+i)%k] << endl;
+            //cout << circularArray[(start+i)%k] << endl;
         }
     }
     else
     {
-        cout << "ERROR: could not find/open file" << endl;
+        //cout << "ERROR: could not find/open file" << endl;
         return 0;
     }
     return circularArray;

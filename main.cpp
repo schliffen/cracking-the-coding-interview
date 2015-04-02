@@ -17,6 +17,7 @@
 #include "3.3.h"
 #include "3.4.h"
 #include "3.5.h"
+#include "3_6.h"
 #include "4.1.h"
 #include "5.1.h"
 #include "9.1.h"
@@ -81,6 +82,8 @@ int main(int argc, char* argv[])
 
     testQueue();
     testsorting();
+
+    test3_6();
 
     return 0;
 }
