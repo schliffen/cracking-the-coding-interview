@@ -11,6 +11,16 @@ void swap(a_type* a, a_type* b)
     *b = tmp;
 }
 
+template<class a_type>
+bool isArraySorted(a_type* data, int n)
+{
+    bool sorted = true;
+    for (int i = 1; i < n; i++)
+        if (data[i-1] > data[i])
+            sorted = false;
+    return sorted;
+}
+
 void swap(void* a, void* b, unsigned short size);
 
 void print3x3Matrix(int matrix[3][3]);

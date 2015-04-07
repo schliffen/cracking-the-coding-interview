@@ -2,17 +2,10 @@
 #include "bubblesort.h"
 #include <assert.h>
 #include <iostream>
+#include "Utils.h"
 
 using namespace std;
 
-bool isArraySorted(int* data, int n)
-{
-    bool sorted = true;
-    for (int i = 1; i < n; i++)
-        if (data[i-1] > data[i])
-            sorted = false;
-    return sorted;
-}
 
 void testBubbleSort()
 {

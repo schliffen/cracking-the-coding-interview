@@ -17,7 +17,7 @@
 #include "3.3.h"
 #include "3.4.h"
 #include "3.5.h"
-#include "3_6.h"
+#include "3.6.h"
 #include "4.1.h"
 #include "5.1.h"
 #include "9.1.h"
@@ -52,6 +52,10 @@ int main(int argc, char* argv[])
     testStack();
     testVector();
     testDLinkedList();
+    testQueue();
+
+    // unit test algorithms
+    testsorting();
     
     // run solution tests
     test1_1();
@@ -71,6 +75,8 @@ int main(int argc, char* argv[])
     test3_1();
     test3_3();
     test3_4();
+    test3_5();
+    test3_6();
     test4_1();
     test5_1();
     test9x0();
@@ -78,12 +84,6 @@ int main(int argc, char* argv[])
     test11_1();
     test12_1();
     test13_1();
-    test3_5();
-
-    testQueue();
-    testsorting();
-
-    test3_6();
 
     return 0;
 }
