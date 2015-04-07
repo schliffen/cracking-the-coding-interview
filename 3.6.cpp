@@ -26,7 +26,7 @@ void test3_6()
     {
         changed = false;
         int pivot = a->pop();
-        for (int i = 1; i < n; i++)
+        while (!a->isEmpty())
         {
             int cmp = a->pop();
             if (direction ? pivot > cmp : pivot < cmp)
