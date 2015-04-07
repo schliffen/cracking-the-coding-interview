@@ -1,4 +1,5 @@
 #include <iostream>
+#include <assert.h>
 #include "Binarytree.h"
 #include "BinaryTreePrettyPrint.h"
 
@@ -23,9 +24,9 @@ void treeInsert(BinaryTree *&root, int newItem)
 
 void buildTree(BinaryTree *&root)
 {
-    int values[] = {30, 20, 40, 35, 50, 41, 20, 10, 25, 5, 15, 55, 36, 19};
+    int values[] = {30, 20, 40, 35, 50, 41, 22, 10, 25, 5, 15, 55, 36, 34, 21};
 
-    for (int i = 0; i < 14; i++)
+    for (int i = 0; i < 15; i++)
         treeInsert(root, values[i]);
 
 }
@@ -53,9 +54,11 @@ void test4_1()
 {
     BinaryTree* root = 0;
 
-    buildTree(root);
-    printPretty(root, 1, 0, cout);
-    cout << "min depth " << minDepth(root) << endl;
-    cout << "max depth " << maxDepth(root) << endl;
-    cout << "is balanced " << isBalanced(root) << endl;
+    //buildTree(root);
+    //printPretty(root, 1, 0, cout);
+    //cout << "min depth " << minDepth(root) << endl;
+    //cout << "max depth " << maxDepth(root) << endl;
+    //cout << "is balanced " << isBalanced(root) << endl;
+    assert(isBalanced(root));
+    cout << "4.1 passed!" << endl;
 }

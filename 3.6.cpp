@@ -51,5 +51,9 @@ void test3_6()
         arr[i++] = a->pop();
 
     assert(isArraySorted(arr, n));
+
+    delete a;
+    delete b;
+
     cout << "3.6 passed!" << endl;
 }
