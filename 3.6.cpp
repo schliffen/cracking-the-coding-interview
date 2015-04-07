@@ -41,9 +41,7 @@ void test3_6()
             }
         }
         b->push(pivot);
-        Stack<int>* t = a;
-        a = b;
-        b = t;
+        swap(&a, &b, sizeof(Stack<int>*));
         direction = !direction;
     }
     while (changed);
@@ -53,4 +51,5 @@ void test3_6()
         arr[i++] = a->pop();
 
     assert(isArraySorted(arr, n));
+    cout << "3.6 passed!" << endl;
 }
