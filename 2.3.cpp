@@ -25,14 +25,8 @@ void test2_3()
     Node<int> head(data, 9);
     Node<int>* n = head.find(4);
 
-    head.printList();
-
     deleteNode(n);
     n = 0;
-
-    std::cout << "-----" << std::endl;
-
-    head.printList();
 
     assert(head.find(4) == 0);
 

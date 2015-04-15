@@ -46,5 +46,5 @@ void test1_7()
     
     setZeroRowColumns4x4(a);
     
-    print4x4Matrix(a);
+    //print4x4Matrix(a);
 }

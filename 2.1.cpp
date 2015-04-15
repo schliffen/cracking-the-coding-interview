@@ -35,7 +35,6 @@ void removeDuplicates(Node<t>* pNode)
 
 void test2_1()
 {
-    cout << "testing linked list removal" << endl;
     Node<int> n(0);
     assert(n[0]->m_data == 0);
     n.addToEnd(1);

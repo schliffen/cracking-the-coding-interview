@@ -34,7 +34,6 @@ void DNode<a_type>::printList()
 template<class a_type>
 DNode<a_type>* DNode<a_type>::addToEnd(a_type data)
 {
-    cout << "adding " << data << " to end" << endl;
     DNode<a_type>* pNode = this;
     while (pNode->m_pNext)
     {

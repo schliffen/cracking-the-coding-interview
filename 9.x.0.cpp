@@ -41,18 +41,7 @@ long long int fibCached(int i)
 
 void test9x0()
 {
-    for (int i = 0; i < 10; i++)
-    {
-        cout << fib(i) << " ";
-    }
-    cout << endl;
-
-    for (int i = 0; i < 10; i++)
-    {
-        cout << fibCached(50+i) << " ";
-    }
-    cout << endl;
     assert(fib(9) == 34);
     assert(fibCached(59) == 956722026041);
-    cout << "fibonacci passed!" << endl;
+    cout << "9.x.0 passed!" << endl;
 }

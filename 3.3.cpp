@@ -45,15 +45,12 @@ public:
         Stack<a_type>* pStack = getLastStack();
         if (pStack && pStack->size() != m_capacity)
         {
-            cout << "pushing " << data << " onto stack" << endl;
             pStack->push(data);
         }
         else
         {
-            cout << "creating a stack" << endl;
             Stack<a_type> newStack;
             newStack.push(data);
-            cout << "pushing " << data << " onto stack" << endl;
             m_stacks.push_back(newStack);
         }
     }
@@ -102,7 +99,6 @@ void test3_3()
     }
     for (int i = 99; i >= 0; i--)
     {
-        cout << "i " << i << endl;
         assert(stacks.pop() == i);
     }
     

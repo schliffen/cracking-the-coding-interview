@@ -39,10 +39,6 @@ void test2_4()
         pNode = pNext;
     }
 
-    std::cout << "less than x:" << std::endl;
-
-    pLess->printList();
-
     pNode = pLess;
 
     while (pNode)
@@ -50,10 +46,6 @@ void test2_4()
         assert(pNode->m_data < x);
         pNode = pNode->m_pNext;
     }
-
-    std::cout << "more than x:" << std::endl;
-
-    pMore->printList();
 
     pNode = pMore;
 

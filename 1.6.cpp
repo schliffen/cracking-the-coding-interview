@@ -13,7 +13,7 @@ void rotateMatrix(int matrix[][4])
     int n = 4;
     for (int layer = 0; layer < n / 2; ++layer)
     {
-        printf("layer %i\n", layer);
+        //printf("layer %i\n", layer);
         int first = layer;
         int last=n-1-layer;
         
@@ -22,13 +22,13 @@ void rotateMatrix(int matrix[][4])
             int offset = i - first;
             int top = matrix[first][i];
             matrix[first][i] = matrix[last-offset][first];
-            print4x4Matrix(matrix);
+            //print4x4Matrix(matrix);
             matrix[last-offset][first] = matrix[last][last - offset];
-            print4x4Matrix(matrix);
+            //print4x4Matrix(matrix);
             matrix[last][last - offset] = matrix[i][last];
-            print4x4Matrix(matrix);
+            //print4x4Matrix(matrix);
             matrix[i][last] = top;
-            print4x4Matrix(matrix);
+            //print4x4Matrix(matrix);
         }
     }
 }
@@ -43,9 +43,9 @@ void test1_6()
         {12, 13, 14,  15},
     };
     
-    print4x4Matrix(a);
+    //print4x4Matrix(a);
     
     rotateMatrix(a);
     
-    print4x4Matrix(a);
+    //print4x4Matrix(a);
 }

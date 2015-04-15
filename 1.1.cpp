@@ -28,5 +28,5 @@ void test1_1()
 {
     assert(eachCharIsUnique("asdfqwer") == 1);
     assert(eachCharIsUnique("asdfqwera") == 0);
-    printf("unique chars passed\n");
+    printf("1.1 passed!\n");
 }

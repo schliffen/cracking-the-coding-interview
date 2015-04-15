@@ -54,11 +54,8 @@ void test4_1()
 {
     BinaryTree* root = 0;
 
-    //buildTree(root);
+    buildTree(root);
     //printPretty(root, 1, 0, cout);
-    //cout << "min depth " << minDepth(root) << endl;
-    //cout << "max depth " << maxDepth(root) << endl;
-    //cout << "is balanced " << isBalanced(root) << endl;
     assert(isBalanced(root));
     cout << "4.1 passed!" << endl;
 }

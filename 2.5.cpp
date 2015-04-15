@@ -44,7 +44,6 @@ Node<int>* addLists(Node<int>* pA, Node<int>* pB, int carry)
 
 void test2_5()
 {
-    std::cout << "------ 617 + 295 = ------" << std::endl;
     Node<int>* pA = new Node<int>(7);
     pA->addToEnd(1);
     pA->addToEnd(6);
@@ -54,6 +53,4 @@ void test2_5()
     pB->addToEnd(2);
 
     Node<int>* pResult = addLists(pA, pB, 0);
-
-    pResult->printList();
 }

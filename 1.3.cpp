@@ -30,7 +30,7 @@ int anagrams(char* a, char* b)
 
 void test1_3()
 {
-    printf("testing anagrams\n");
     assert(anagrams("listen", "silent") == 1);
     assert(anagrams("theearthquakes", "thatqueershake") == 1);
+    printf("1.3 passed!\n");
 }

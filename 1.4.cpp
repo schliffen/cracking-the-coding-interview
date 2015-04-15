@@ -64,7 +64,7 @@ void replaceSpaces()
     
     assert(memcmp(newStr, expected, strlen(expected)) == 0);
     
-    printf("%s\n", newStr);
+    //printf("%s\n", newStr);
     
     free(newStr);
     newStr = 0;
@@ -102,14 +102,14 @@ void replaceSpacesWithPercent20InPlace(char** str)
             (*str)[newLen-1] = (*str)[i];
             newLen--;
         }
-        printf("%s\n", *str);
+        //printf("%s\n", *str);
     }
 }
 
 void test1_4()
 {
 
-    printf("testing replaceSpaces");
+    //printf("testing replaceSpaces");
 
     char* str = "A B C D E F G";
     
@@ -122,5 +122,5 @@ void test1_4()
     
     replaceSpacesWithPercent20InPlace(&strAlloc);
     
-    printf("%s\n", strAlloc);
+    //printf("%s\n", strAlloc);
 }
