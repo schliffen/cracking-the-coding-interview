@@ -39,7 +39,9 @@ SOURCES += \
     testqeueue.cpp \
     testsorting.cpp \
     3.6.cpp \
-    3.7.cpp
+    3.7.cpp \
+    digraph.cpp \
+    4.2.cpp
 
 HEADERS += \
     1.8.h \
@@ -90,6 +92,8 @@ HEADERS += \
     Queue.hpp \
     Stack.hpp \
     3.6.h \
-    3.7.h
+    3.7.h \
+    digraph.h \
+    4.2.h
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter

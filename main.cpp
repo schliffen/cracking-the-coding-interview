@@ -20,6 +20,7 @@
 #include "3.6.h"
 #include "3.7.h"
 #include "4.1.h"
+#include "4.2.h"
 #include "5.1.h"
 #include "9.1.h"
 #include "9.x.0.h"
@@ -80,6 +81,7 @@ int main(int argc, char* argv[])
     test3_6();
     test3_7();
     test4_1();
+    test4_2();
     test5_1();
     test9x0();
     test9_1();
