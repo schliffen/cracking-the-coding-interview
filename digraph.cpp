@@ -16,7 +16,7 @@ const std::vector<DiGraph *> &DiGraph::getConnectedNodes() const
     return m_nodes;
 }
 
-bool DiGraph::getPathTo(DiGraph* pTarget, std::vector<DiGraph*>& path, std::vector<DiGraph*>& visited)
+bool DiGraph::getPathTo(DiGraph* pTarget, std::deque<DiGraph*>& path, std::vector<DiGraph*>& visited)
 {
     for (int i = 0; i < m_nodes.size(); i++)
     {
@@ -36,7 +36,7 @@ bool DiGraph::getPathTo(DiGraph* pTarget, std::vector<DiGraph*>& path, std::vect
 
         if (found)
         {
-            path.push_back(pOther);
+            path.push_front(pOther);
             return true;
         }
     }

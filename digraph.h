@@ -1,6 +1,7 @@
 #ifndef DIGRAPH_H
 #define DIGRAPH_H
 
+#include <deque>
 #include <vector>
 #include <string>
 
@@ -14,7 +15,7 @@ public:
     const std::vector<DiGraph*>&    getConnectedNodes() const;
 
     bool                            getPathTo(DiGraph* pTarget,
-                                              std::vector<DiGraph *> &path,
+                                              std::deque<DiGraph *> &path,
                                               std::vector<DiGraph*>& visited);
 
 private:

@@ -28,15 +28,15 @@ void test4_2()
     f.connect(&g);
     g.connect(&e);
 
-    std::vector<DiGraph*> path;
+    std::deque<DiGraph*> path;
     std::vector<DiGraph*> visited;
 
     bool found = a.getPathTo(&g, path, visited);
 
     assert(found);
 
-    assert(path[0] == &f);
-    assert(path[1] == &d);
-    assert(path[2] == &c);
-    assert(path[3] == &b);
+    assert(path[0] == &b);
+    assert(path[1] == &c);
+    assert(path[2] == &d);
+    assert(path[3] == &f);
 }
