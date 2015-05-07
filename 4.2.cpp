@@ -1,6 +1,6 @@
 #include "4.2.h"
-#include "Vector.h"
-#include "digraph.h"
+#include "datastructures/Vector.h"
+#include "datastructures/digraph.h"
 
 #include <assert.h>
 

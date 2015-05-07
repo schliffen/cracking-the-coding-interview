@@ -7,10 +7,10 @@
  * following operations: push, pop, peek, and isEmpty.
  */
 
-#include "Stack.h"
 #include <iostream>
 #include <assert.h>
-#include "Utils.h"
+#include "datastructures/Stack.h"
+#include "utils/Utils.h"
 
 using namespace std;
 

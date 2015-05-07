@@ -1,8 +1,8 @@
-#include "testsorting.h"
-#include "bubblesort.h"
+#include "unittests/testsorting.h"
+#include "algorithms/bubblesort.h"
 #include <assert.h>
 #include <iostream>
-#include "Utils.h"
+#include "utils/Utils.h"
 
 using namespace std;
 

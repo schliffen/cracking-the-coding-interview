@@ -1,7 +1,7 @@
 #include <iostream>
 #include <assert.h>
-#include "Binarytree.h"
-#include "BinaryTreePrettyPrint.h"
+#include "datastructures/Binarytree.h"
+#include "utils/BinaryTreePrettyPrint.h"
 
 /*
     4.1 Implement a function to check if a binary tree is balanced.

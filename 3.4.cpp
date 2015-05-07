@@ -14,7 +14,7 @@
  * the disks from the first tower to the last using stacks.
  */
 
-#include "Stack.h"
+#include "datastructures/Stack.h"
 
 #include <iostream>
 #include <assert.h>

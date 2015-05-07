@@ -14,8 +14,8 @@ SOURCES += \
     1.6.cpp \
     2.1.cpp \
     4.1.cpp \
-    BinaryTreePrettyPrint.cpp \
-    Utils.cpp \
+    utils/BinaryTreePrettyPrint.cpp \
+    utils/Utils.cpp \
     1.7.cpp \
     2.2.cpp \
     2.3.cpp \
@@ -40,7 +40,7 @@ SOURCES += \
     unittests/testsorting.cpp \
     3.6.cpp \
     3.7.cpp \
-    digraph.cpp \
+    datastructures/digraph.cpp \
     4.2.cpp \
     4.3.cpp \
     5.2.cpp
@@ -56,11 +56,11 @@ HEADERS += \
     1.6.h \
     2.1.h \
     4.1.h \
-    LinkedList.h \
-    Stack.h \
-    Binarytree.h \
-    BinaryTreePrettyPrint.h \
-    Utils.h \
+    datastructures/LinkedList.h \
+    datastructures/Stack.h \
+    datastructures/Binarytree.h \
+    datastructures/BinaryTreePrettyPrint.h \
+    utils/Utils.h \
     1.7.h \
     2.2.h \
     2.3.h \
@@ -72,9 +72,9 @@ HEADERS += \
     2.7.h \
     3.1.h \
     3.3.h \
-    Vector.h \
+    datastructures/Vector.h \
     3.4.h \
-    DLinkedList.h \
+    datastructures/DLinkedList.h \
     unittests/testdlinkedlist.h \
     unittests/testlinkedlist.h \
     unittests/testvector.h \
@@ -83,19 +83,19 @@ HEADERS += \
     12.1.h \
     13.1.h \
     3.5.h \
-    Queue.h \
+    datastructures/Queue.h \
     unittests/testqeueue.h \
-    bubblesort.h \
+    algorithms/bubblesort.h \
     unittests/testsorting.h \
-    bubblesort.hpp \
-    DLinkedList.hpp \
-    LinkedList.hpp \
-    Vector.hpp \
-    Queue.hpp \
-    Stack.hpp \
+    algorithms/bubblesort.hpp \
+    datastructures/DLinkedList.hpp \
+    datastructures/LinkedList.hpp \
+    datastructures/Vector.hpp \
+    datastructures/Queue.hpp \
+    datastructures/Stack.hpp \
     3.6.h \
     3.7.h \
-    digraph.h \
+    datastructures/digraph.h \
     4.2.h \
     4.3.h \
     5.2.h

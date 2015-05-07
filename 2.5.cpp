@@ -1,6 +1,6 @@
 #include "2.5.h"
 #include <iostream>
-#include <LinkedList.h>
+#include "datastructures/LinkedList.h"
 #include <assert.h>
 
 /*

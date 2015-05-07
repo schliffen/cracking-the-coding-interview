@@ -1,5 +1,5 @@
-#include "testvector.h"
-#include "Vector.h"
+#include "unittests/testvector.h"
+#include "datastructures/Vector.h"
 #include <assert.h>
 #include <string>
 #include <map>
