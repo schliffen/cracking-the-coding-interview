@@ -53,4 +53,8 @@ void test2_5()
     pB->addToEnd(2);
 
     Node<int>* pResult = addLists(pA, pB, 0);
+    assert(pResult->m_data = 2);
+    assert(pResult->m_pNext->m_data = 1);
+    assert(pResult->m_pNext->m_pNext->m_data = 9);
+    std::cout << "2.5 passed!" << std::endl;
 }

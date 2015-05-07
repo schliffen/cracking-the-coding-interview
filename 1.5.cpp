@@ -54,7 +54,7 @@ char* compressString(char* str)
 void test1_5()
 {
     char* result = compressString("aabcccccaaa");
-    printf("%s\n", result);
     assert(strcmp(result, "a2b1c5a3") == 0);
     free(result);
+    printf("1.5 passed!\n");
 }

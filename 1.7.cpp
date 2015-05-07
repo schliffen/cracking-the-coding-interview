@@ -1,5 +1,6 @@
 #include "1.7.h"
 #include "Utils.h"
+#include "assert.h"
 
 /*
     1.7 Write an algorithm such that if an element in an MxN
@@ -47,4 +48,15 @@ void test1_7()
     setZeroRowColumns4x4(a);
     
     //print4x4Matrix(a);
+    
+    assert(a[0][0] == 0);
+    assert(a[0][1] == 0);
+    assert(a[0][2] == 0);
+    assert(a[0][3] == 0);
+    assert(a[0][0] == 0);
+    assert(a[1][0] == 0);
+    assert(a[2][0] == 0);
+    assert(a[3][0] == 0);
+    
+    printf("1.7 passed!\n");
 }

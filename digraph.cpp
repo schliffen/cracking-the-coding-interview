@@ -18,11 +18,11 @@ const std::vector<DiGraph *> &DiGraph::getConnectedNodes() const
 
 bool DiGraph::getPathTo(DiGraph* pTarget, std::deque<DiGraph*>& path, std::vector<DiGraph*>& visited)
 {
-    for (int i = 0; i < m_nodes.size(); i++)
+    for (int i = 0; i < (int)m_nodes.size(); i++)
     {
         DiGraph* pOther = m_nodes[i];
 
-        for (int j = 0; j < visited.size(); j++)
+        for (int j = 0; j < (int)visited.size(); j++)
             if (visited[j] == pOther)
                 return false;
 

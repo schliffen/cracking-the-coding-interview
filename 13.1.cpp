@@ -8,7 +8,7 @@ using namespace std;
 
 /* 13.1 Write a method to print the last K lines of an input file using C++. */
 
-string* printLastKLines(char* fileName, int k)
+string* printLastKLines(char* fileName, int k, bool print)
 {
     if (k == 0)
         return 0;
@@ -27,17 +27,21 @@ string* printLastKLines(char* fileName, int k)
         }
         f.close();
         
-        int start = size > k ? (size%k) : 0;
-        int count = min(k, size);
-        
-        for (int i = 0; i < count; i++)
+        if (print)
         {
-            //cout << circularArray[(start+i)%k] << endl;
+            int start = size > k ? (size%k) : 0;
+            int count = min(k, size);
+        
+            for (int i = 0; i < count; i++)
+            {
+                cout << circularArray[(start+i)%k] << endl;
+            }
         }
     }
     else
     {
-        //cout << "ERROR: could not find/open file" << endl;
+        if (print)
+            cout << "ERROR: could not find/open file" << endl;
         return 0;
     }
     return circularArray;
@@ -45,7 +49,7 @@ string* printLastKLines(char* fileName, int k)
 
 void test13_1()
 {
-    string* pLines = printLastKLines(__FILE__, 10);
+    string* pLines = printLastKLines(__FILE__, 10, false);
     bool passed = false;
     if (pLines)
     {

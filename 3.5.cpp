@@ -93,5 +93,5 @@ void test3_5()
         assert(mq.pop() == i);
     }
     
-    cout << "test3_5 passed!" << endl;
+    cout << "3.5 passed!" << endl;
 }

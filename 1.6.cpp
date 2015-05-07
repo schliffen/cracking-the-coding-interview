@@ -1,5 +1,6 @@
 #include "1.6.h"
 #include <cstdio>
+#include "assert.h"
 #include "Utils.h"
 
 /*
@@ -48,4 +49,11 @@ void test1_6()
     rotateMatrix(a);
     
     //print4x4Matrix(a);
+
+    assert(a[0][0] == 12);
+    assert(a[1][1] == 9);
+    assert(a[2][2] == 6);
+    assert(a[3][3] == 3);
+    
+    printf("1.6 passed!\n");
 }

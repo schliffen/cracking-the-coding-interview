@@ -108,9 +108,6 @@ void replaceSpacesWithPercent20InPlace(char** str)
 
 void test1_4()
 {
-
-    //printf("testing replaceSpaces");
-
     char* str = "A B C D E F G";
     
     unsigned long len = strlen(str);
@@ -122,5 +119,7 @@ void test1_4()
     
     replaceSpacesWithPercent20InPlace(&strAlloc);
     
-    //printf("%s\n", strAlloc);
+    assert(strcmp("A20%B20%C20%D20%E20%F20%G", strAlloc) == 0);
+    
+    printf("1.4 passed!\n");
 }

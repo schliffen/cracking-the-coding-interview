@@ -65,10 +65,7 @@ void test2_1()
     n.addToEnd(6);
     n.addToEnd(8);
     assert(n[11]->m_data == 8);
-    n.printList();
     removeDuplicates(&n);
-    std::cout << "-----------------" << std::endl;
-    n.printList();
     assert(n[8]->m_data == 8);
     cout << "2.1 passed!" << endl;
 }

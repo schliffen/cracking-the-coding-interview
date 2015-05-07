@@ -34,4 +34,5 @@ void test1_8()
     assert(isRotation("waterfall", "llwaterfa"));
     assert(isRotation("yellow", "owyell"));
     assert(!isRotation("yellow", "oyellw"));
+    printf("1.8 passed!\n");
 }
