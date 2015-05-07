@@ -50,7 +50,6 @@ HEADERS += \
     utils/Utils.h \
     datastructures/LinkedList.h \
     datastructures/Stack.h \
-    datastructures/Binarytree.h \
     datastructures/Vector.h \
     datastructures/DLinkedList.h \
     datastructures/Queue.h \
@@ -99,7 +98,9 @@ HEADERS += \
     solutions/5.1.h \
     solutions/5.2.h \
     solutions/9.1.h \
-    solutions/9.x.0.h
+    solutions/9.x.0.h \
+    datastructures/BinaryTree.h \
+    datastructures/BinarySearchTree.h
 
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter

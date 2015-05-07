@@ -33,7 +33,6 @@ int countWays(int n)
 void test9_1()
 {
     int ways = countWays(4);
-    cout << ways << endl;
     assert(ways == 7);
     cout << "9.1 passed!" << endl;
 }
