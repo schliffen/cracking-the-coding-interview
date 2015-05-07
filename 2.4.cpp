@@ -54,4 +54,5 @@ void test2_4()
         assert(pNode->m_data >= x);
         pNode = pNode->m_pNext;
     }
+    printf("2.4 passed!\n");
 }

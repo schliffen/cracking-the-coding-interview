@@ -50,4 +50,5 @@ void test2_6()
     head.find(9)->m_pNext = head.find(4);
 
     assert(findBeginning(&head)->m_data == 4);
+    printf("2.6 passed!\n");
 }

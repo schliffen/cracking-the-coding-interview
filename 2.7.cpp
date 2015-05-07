@@ -27,4 +27,5 @@ void test2_7()
     }
 
     assert(palindrome);
+    printf("2.7 passed!\n");
 }

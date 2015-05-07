@@ -28,20 +28,22 @@ SOURCES += \
     3.1.cpp \
     3.3.cpp \
     3.4.cpp \
-    testdlinkedlist.cpp \
-    testlinkedlist.cpp \
-    testvector.cpp \
-    teststack.cpp \
+    unittests/testdlinkedlist.cpp \
+    unittests/testlinkedlist.cpp \
+    unittests/testvector.cpp \
+    unittests/teststack.cpp \
     11.1.cpp \
     12.1.cpp \
     13.1.cpp \
     3.5.cpp \
-    testqeueue.cpp \
-    testsorting.cpp \
+    unittests/testqeueue.cpp \
+    unittests/testsorting.cpp \
     3.6.cpp \
     3.7.cpp \
     digraph.cpp \
-    4.2.cpp
+    4.2.cpp \
+    4.3.cpp \
+    5.2.cpp
 
 HEADERS += \
     1.8.h \
@@ -73,18 +75,18 @@ HEADERS += \
     Vector.h \
     3.4.h \
     DLinkedList.h \
-    testdlinkedlist.h \
-    testlinkedlist.h \
-    testvector.h \
-    teststack.h \
+    unittests/testdlinkedlist.h \
+    unittests/testlinkedlist.h \
+    unittests/testvector.h \
+    unittests/teststack.h \
     11.1.h \
     12.1.h \
     13.1.h \
     3.5.h \
     Queue.h \
-    testqeueue.h \
+    unittests/testqeueue.h \
     bubblesort.h \
-    testsorting.h \
+    unittests/testsorting.h \
     bubblesort.hpp \
     DLinkedList.hpp \
     LinkedList.hpp \
@@ -94,6 +96,8 @@ HEADERS += \
     3.6.h \
     3.7.h \
     digraph.h \
-    4.2.h
+    4.2.h \
+    4.3.h \
+    5.2.h
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter

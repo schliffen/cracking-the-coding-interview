@@ -32,12 +32,12 @@
 #include "Utils.h"
 #include "Stack.h"
 #include "Vector.h"
-#include "testdlinkedlist.h"
-#include "testlinkedlist.h"
-#include "testvector.h"
-#include "teststack.h"
-#include "testqeueue.h"
-#include "testsorting.h"
+#include "unittests/testdlinkedlist.h"
+#include "unittests/testlinkedlist.h"
+#include "unittests/testvector.h"
+#include "unittests/teststack.h"
+#include "unittests/testqeueue.h"
+#include "unittests/testsorting.h"
 
 #include <iostream>
 
