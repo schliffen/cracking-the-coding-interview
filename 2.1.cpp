@@ -1,6 +1,5 @@
 #include "2.1.h"
 
-#include <set>
 #include <iostream>
 #include <assert.h>
 #include "LinkedList.h"
@@ -13,22 +12,39 @@
 using namespace std;
 
 template<class t>
-void removeDuplicates(Node<t>* pNode)
+void removeDuplicates(Node<t>* pHead)
 {
-    Node<t>* pPrevious = 0;
-    set<t> values;
-    while (pNode != 0)
+    Node<int>* pNode = pHead;
+    Node<int>* pPrev = 0;
+    
+    while(pNode)
     {
-        if (values.find(pNode->m_data) != values.end())
+        Node<int>* pComp = pNode->m_pNext;
+
+        while (pComp)
         {
-            pPrevious->m_pNext = pNode->m_pNext;
-            delete(pNode);
+            if (pNode->m_data == pComp->m_data)
+            {
+                Node<int>* pNext = pComp->m_pNext;
+                if (pPrev)
+                {
+                    pPrev->m_pNext = pComp->m_pNext;
+                }
+                else
+                {
+                    pNode->m_pNext = pComp->m_pNext;
+                }
+                delete pComp;
+                pComp = pNext;
+            }
+            else
+            {
+                pPrev = pComp;
+                pComp = pComp->m_pNext;
+            }
         }
-        else
-        {
-            values.insert(pNode->m_data);
-            pPrevious = pNode;
-        }
+        pPrev = 0;
+
         pNode = pNode->m_pNext;
     }
 }
@@ -49,7 +65,10 @@ void test2_1()
     n.addToEnd(6);
     n.addToEnd(8);
     assert(n[11]->m_data == 8);
+    n.printList();
     removeDuplicates(&n);
+    std::cout << "-----------------" << std::endl;
+    n.printList();
     assert(n[8]->m_data == 8);
     cout << "2.1 passed!" << endl;
 }
