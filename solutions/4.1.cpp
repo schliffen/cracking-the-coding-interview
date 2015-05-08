@@ -1,6 +1,7 @@
 #include <iostream>
 #include <assert.h>
-#include "datastructures/Binarytree.h"
+#include <cstdio>
+#include "datastructures/BinaryTree.h"
 #include "utils/BinaryTreePrettyPrint.h"
 
 /*

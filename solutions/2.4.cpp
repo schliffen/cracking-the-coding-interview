@@ -3,6 +3,7 @@
 #include "datastructures/LinkedList.h"
 #include <assert.h>
 #include <iostream>
+#include <cstdio>
 
 /*
  * 2.4 Write code to partition a linked list around a value x,

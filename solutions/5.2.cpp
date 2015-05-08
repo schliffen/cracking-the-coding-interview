@@ -1,6 +1,8 @@
 #include "5.2.h"
 #include <bitset>
 #include <iostream>
+#include <cstdio>
+#include <limits.h>
 
 using namespace std;
 

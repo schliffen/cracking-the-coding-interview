@@ -1,6 +1,6 @@
 #ifndef _BINARY_PPRINT_
 #include <iostream>
-#include "datastructures/Binarytree.h"
+#include "datastructures/BinaryTree.h"
 
 int printIt();
 

@@ -105,3 +105,6 @@ HEADERS += \
 
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter
+
+OTHER_FILES += \
+    interviewQuestions.txt

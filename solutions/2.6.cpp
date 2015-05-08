@@ -2,6 +2,7 @@
 #include "datastructures/LinkedList.h"
 #include <assert.h>
 #include <iostream>
+#include <cstdio>
 
 using namespace std;
 
