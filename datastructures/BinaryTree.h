@@ -23,6 +23,50 @@ public:
       return pNode;
   }
 
+    static bool isBST(BinaryTree* pRoot, BinaryTree* pLeft, BinaryTree* pRight)
+    {
+        if (pLeft && pRight)
+        {
+            if (pLeft->data <= pRoot->data && pRoot->data <= pRight->data)
+            {
+                return isBST(pLeft, pLeft->left, pLeft->right);
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else if (pLeft && !pRight)
+        {
+            if (pLeft->data <= pRoot->data)
+            {
+                return isBST(pLeft, pLeft->left, 0);
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else if (!pLeft && pRight)
+        {
+            if (pRoot->data <= pRight->data)
+            {
+                return isBST(pRight, 0, pRight->right);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+  bool hasChildren() const
+  {
+    return left || right;
+  }
+
   void preOrder(BinaryTree* pNode)
   {
       if (pNode == 0)
