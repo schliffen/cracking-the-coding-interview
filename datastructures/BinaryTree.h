@@ -35,6 +35,14 @@ public:
 
     static void traverse(BinaryTree<T>* pNode, TraversalOrder order, std::vector<T>& vec);
 
+    static int size(BinaryTree<T>* pNode);
+
+    static int minDepth(BinaryTree<T> *root);
+
+    static int maxDepth(BinaryTree<T> *root);
+
+    static bool isBalanced(BinaryTree<T> *root);
+
     BinaryTree<T> *left, *right;
     T data;
 };

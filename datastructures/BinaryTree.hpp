@@ -146,4 +146,42 @@ void BinaryTree<T>::traverse(BinaryTree<T>* pNode, BinaryTree<T>::TraversalOrder
     }
 }
 
+template<class T>
+int BinaryTree<T>::size(BinaryTree<T>* pNode)
+{
+    int leftChildren = 0;
+    int rightChildren = 0;
+    if (!pNode)
+        return 0;
+    if (pNode->left)
+        leftChildren = size(pNode->left);
+    if (pNode->right)
+        rightChildren = size(pNode->right);
+
+    return leftChildren + rightChildren + 1;
+}
+
+template<class T>
+int BinaryTree<T>::minDepth(BinaryTree<T> *root)
+{
+    if (!root)
+        return 0;
+    return 1 + min(minDepth(root->left), minDepth(root->right));
+}
+
+template<class T>
+int BinaryTree<T>::maxDepth(BinaryTree<T> *root)
+{
+    if (!root)
+        return 0;
+    return 1 + max(maxDepth(root->left), maxDepth(root->right));
+}
+
+template<class T>
+bool BinaryTree<T>::isBalanced(BinaryTree<T> *root)
+{
+    return (maxDepth(root) - minDepth(root) < 1);
+}
+
+
 #endif // BINARYTREE_HPP
