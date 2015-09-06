@@ -113,7 +113,8 @@ HEADERS += \
     solutions/4.6.h \
     datastructures/BinaryTreeP.h \
     unittests/testbinarytree.h \
-    utils/SampleBinaryTrees.h
+    utils/SampleBinaryTrees.h \
+    datastructures/BinaryTree.hpp
 
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter

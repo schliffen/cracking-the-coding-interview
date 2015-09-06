@@ -4,6 +4,8 @@
 #include "datastructures/BinaryTree.h"
 #include <string>
 
-BinaryTree<string>* buildPreorderAlphabetBinaryTree();
+BinaryTree<int> *buildPreorderBinaryTree();
+BinaryTree<int> *buildPostorderBinaryTree();
+BinaryTree<int> *buildInorderBinaryTree();
 
 #endif // SAMPLEBINARYTREES_H

@@ -2,98 +2,43 @@
 #define BINARYTREE_H
 
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-template<typename T>
+template<class T>
 class BinaryTree
 {
 public:
-  BinaryTree *left, *right;
-  T data;
-  BinaryTree(T val) : left(0), right(0), data(val) { }
+    BinaryTree(T val);
 
-  static BinaryTree* createMinimalBST(T array[], int start, int end)
-  {
-      if (end < start)
-          return 0;
-      int mid = (start + end) / 2;
-      BinaryTree* pNode = new BinaryTree(array[mid]);
-      pNode->left = createMinimalBST(array, start, mid-1);
-      pNode->right = createMinimalBST(array, mid+1, end);
-      return pNode;
-  }
-
-    static bool isBST(BinaryTree* pRoot, BinaryTree* pLeft, BinaryTree* pRight)
+    enum TraversalOrder
     {
-        if (pLeft && pRight)
-        {
-            if (pLeft->data <= pRoot->data && pRoot->data <= pRight->data)
-            {
-                return isBST(pLeft, pLeft->left, pLeft->right);
-            }
-            else
-            {
-                return false;
-            }
-        }
-        else if (pLeft && !pRight)
-        {
-            if (pLeft->data <= pRoot->data)
-            {
-                return isBST(pLeft, pLeft->left, 0);
-            }
-            else
-            {
-                return false;
-            }
-        }
-        else if (!pLeft && pRight)
-        {
-            if (pRoot->data <= pRight->data)
-            {
-                return isBST(pRight, 0, pRight->right);
-            }
-            else
-            {
-                return false;
-            }
-        }
+        ePreOrder,
+        ePostOrder,
+        eInOrder
+    };
 
-        return true;
-    }
+    static BinaryTree<T>* createMinimalBST(T array[], int start, int end);
 
-  bool hasChildren() const
-  {
-    return left || right;
-  }
+    static bool isBST(BinaryTree<T>* pRoot, BinaryTree<T>* pLeft, BinaryTree<T>* pRight);
 
-  void preOrder(BinaryTree* pNode)
-  {
-      if (pNode == 0)
-          return;
-      cout << data << endl;
-      preOrder(left);
-      preOrder(right);
-  }
+    bool hasChildren() const;
 
-  void inOrder(BinaryTree* pNode)
-  {
-      if (pNode == 0)
-          return;
-      preOrder(left);
-      cout << data << endl;
-      preOrder(right);
-  }
+    static void preOrder(BinaryTree<T>* pNode);
 
-  void postOrder(BinaryTree* pNode)
-  {
-      if (pNode == 0)
-          return;
-      postOrder(left);
-      postOrder(right);
-      cout << data << endl;
-  }
+    static void inOrder(BinaryTree<T>* pNode);
+
+    static void postOrder(BinaryTree<T>* pNode);
+
+    static void traverse(BinaryTree<T>* pNode, TraversalOrder order);
+
+    static void traverse(BinaryTree<T>* pNode, TraversalOrder order, std::vector<T>& vec);
+
+    BinaryTree<T> *left, *right;
+    T data;
 };
+
+#include "BinaryTree.hpp"
 
 #endif

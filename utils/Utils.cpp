@@ -128,3 +128,20 @@ void testBitFunctions()
     assert(udpateBit(8, 1, 1) == 10);
 }
 
+
+// in case we're not in c++11
+bool is_sorted(std::vector<int>::const_iterator begin, std::vector<int>::const_iterator end)
+{
+    if (begin == end)
+        return false;
+
+    int prev = *begin;
+    while (begin != end)
+    {
+        if (prev > *begin)
+            return false;
+        prev = *begin;
+        begin++;
+    }
+    return true;
+}

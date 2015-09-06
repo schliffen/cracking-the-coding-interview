@@ -43,6 +43,7 @@
 #include "unittests/teststack.h"
 #include "unittests/testqeueue.h"
 #include "unittests/testsorting.h"
+#include "unittests/testbinarytree.h"
 
 #include <iostream>
 
@@ -60,6 +61,7 @@ int main(int argc, char* argv[])
     testVector();
     testDLinkedList();
     testQueue();
+    testBinaryTree();
 
     // unit test algorithms
     testsorting();

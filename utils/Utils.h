@@ -2,6 +2,8 @@
 #define __test__utils__
 
 #include <stdio.h>
+#include <vector>
+#include <iterator>
 
 template<class a_type>
 void swap(a_type* a, a_type* b)
@@ -34,5 +36,7 @@ int clearBitsMSBThroughI(int num, int i);
 int clearBitsIThrough0(int num, int i);
 int udpateBit(int num, int i, int v);
 void testBitFunctions();
+
+bool is_sorted(std::vector<int>::const_iterator begin, std::vector<int>::const_iterator end);
 
 #endif
