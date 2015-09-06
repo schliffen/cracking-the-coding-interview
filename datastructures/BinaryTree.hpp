@@ -183,5 +183,26 @@ bool BinaryTree<T>::isBalanced(BinaryTree<T> *root)
     return (maxDepth(root) - minDepth(root) < 1);
 }
 
+template <class T>
+BinaryTree<T>* BinaryTree<T>::find(T toFind)
+{
+    if (data == toFind)
+        return this;
+
+    if (left)
+    {
+        BinaryTree<T>* l = left->find(toFind);
+        if (l && l->data == toFind)
+            return l;
+    }
+    if (right)
+    {
+        BinaryTree<T>* r = right->find(toFind);
+        if (r && r->data == toFind)
+            return r;
+    }
+    
+    return 0;
+}
 
 #endif // BINARYTREE_HPP

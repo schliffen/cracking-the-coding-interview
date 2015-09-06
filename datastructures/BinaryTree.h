@@ -43,6 +43,8 @@ public:
 
     static bool isBalanced(BinaryTree<T> *root);
 
+    BinaryTree<T>* find(T);
+
     BinaryTree<T> *left, *right;
     T data;
 };

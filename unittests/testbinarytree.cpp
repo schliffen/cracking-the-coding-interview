@@ -16,7 +16,6 @@ using namespace std;
 void testPreOrderTraversal()
 {
     BinaryTree<int>* pNode = buildPreOrderBinaryTree();
-    //printPretty(pNode, 0, 1, cout);
     vector<int> vec;
     pNode->traverse(pNode, BinaryTree<int>::ePreOrder, vec);
     assert(is_sorted(vec.begin(), vec.end()));
@@ -25,7 +24,6 @@ void testPreOrderTraversal()
 void testPostOrderTraversal()
 {
     BinaryTree<int>* pNode = buildPostOrderBinaryTree();
-    //printPretty(pNode, 0, 1, cout);
     vector<int> vec;
     pNode->traverse(pNode, BinaryTree<int>::ePostOrder, vec);
     assert(is_sorted(vec.begin(), vec.end()));
@@ -34,7 +32,6 @@ void testPostOrderTraversal()
 void testInOrderTraversal()
 {
     BinaryTree<int>* pNode = buildInOrderBinaryTree();
-    //printPretty(pNode, 0, 1, cout);
     vector<int> vec;
     pNode->traverse(pNode, BinaryTree<int>::eInOrder, vec);
     assert(is_sorted(vec.begin(), vec.end()));
@@ -44,7 +41,6 @@ void testFullBinaryTreeBasicProperties()
 {
     BinaryTree<int>* pFull = new BinaryTree<int>(1);
     buildFullBinaryTree(pFull, 1, 5);
-    //printPretty(pFull, 1, 4, cout);
 
     int maxDepth = BinaryTree<int>::maxDepth(pFull);
     int minDepth = BinaryTree<int>::minDepth(pFull);
@@ -59,12 +55,28 @@ void testFullBinaryTreeBasicProperties()
     assert(size == pow(2, depth)-1);
 }
 
+void testFind()
+{
+    BinaryTree<int>* pFull = new BinaryTree<int>(1);
+    buildFullBinaryTree(pFull, 1, 5);
+
+    int size = BinaryTree<int>::size(pFull);
+
+    for (int i = 1; i < size; i++)
+    {
+        BinaryTree<int>* pFound = pFull->find(i);
+        assert(pFound);
+        assert(pFound->data == i);
+    }
+}
+
 void testBinaryTree()
 {
     testPreOrderTraversal();
     testPostOrderTraversal();
     testInOrderTraversal();
     testFullBinaryTreeBasicProperties();
+    testFind();
 
     cout << "binary tree tested!" << endl;
 }

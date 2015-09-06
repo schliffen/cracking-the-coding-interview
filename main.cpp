@@ -25,6 +25,7 @@
 #include "solutions/4.4.h"
 #include "solutions/4.5.h"
 #include "solutions/4.6.h"
+#include "solutions/4.7.h"
 #include "solutions/5.1.h"
 #include "solutions/9.1.h"
 #include "solutions/9.x.0.h"
@@ -101,6 +102,7 @@ int main(int argc, char* argv[])
     test13_1();
 
     test4_6();
+    test4_7();
 
 
     return 0;
