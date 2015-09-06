@@ -110,6 +110,7 @@ public:
             }
             pNode = pNode->prev();
         }
+        assert(false);
     }
 
 private:

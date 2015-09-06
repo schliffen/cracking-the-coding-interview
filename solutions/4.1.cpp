@@ -13,17 +13,17 @@
 
 using namespace std;
 
-void treeInsert(BinaryTree *&root, int newItem)
+void treeInsert(BinaryTree<int> *&root, int newItem)
 {
     if (!root)
-        root = new BinaryTree(newItem);
+        root = new BinaryTree<int>(newItem);
     else if (newItem < root->data)
         treeInsert(root->left, newItem);
     else
         treeInsert(root->right, newItem);
 }
 
-void buildTree(BinaryTree *&root)
+void buildTree(BinaryTree<int> *&root)
 {
     int values[] = {30, 20, 40, 35, 50, 41, 22, 10, 25, 5, 15, 55, 36, 34, 21};
 
@@ -32,28 +32,28 @@ void buildTree(BinaryTree *&root)
 
 }
 
-int minDepth(BinaryTree *root)
+int minDepth(BinaryTree<int> *root)
 {
     if (!root)
         return 0;
     return 1 + min(minDepth(root->left), minDepth(root->right));
 }
 
-int maxDepth(BinaryTree *root)
+int maxDepth(BinaryTree<int> *root)
 {
     if (!root)
         return 0;
     return 1 + max(maxDepth(root->left), maxDepth(root->right));
 }
 
-bool isBalanced(BinaryTree *root)
+bool isBalanced(BinaryTree<int> *root)
 {
     return (maxDepth(root) - minDepth(root) < 1);
 }
 
 void test4_1()
 {
-    BinaryTree* root = 0;
+    BinaryTree<int>* root = 0;
 
     buildTree(root);
     //printPretty(root, 1, 0, cout);

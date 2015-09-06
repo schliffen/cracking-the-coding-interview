@@ -24,11 +24,13 @@
 #include "solutions/4.3.h"
 #include "solutions/4.4.h"
 #include "solutions/4.5.h"
+#include "solutions/4.6.h"
 #include "solutions/5.1.h"
 #include "solutions/9.1.h"
 #include "solutions/9.x.0.h"
 #include "solutions/11.1.h"
 #include "solutions/12.1.h"
+#include "solutions/12.x.0.h"
 #include "solutions/13.1.h"
 #include "utils/Utils.h"
 #include "utils/BinaryTreePrettyPrint.h"
@@ -93,7 +95,11 @@ int main(int argc, char* argv[])
     test9_1();
     test11_1();
     test12_1();
+    test12_x_0();
     test13_1();
+
+    test4_6();
+
 
     return 0;
 }

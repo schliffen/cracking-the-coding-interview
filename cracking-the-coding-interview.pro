@@ -45,7 +45,12 @@ SOURCES += \
     solutions/9.1.cpp \
     solutions/9.x.0.cpp \
     solutions/4.4.cpp \
-    solutions/4.5.cpp
+    solutions/4.5.cpp \
+    solutions/12.x.0.cpp \
+    solutions/4.6.cpp \
+    datastructures/BinaryTreeP.cpp \
+    unittests/testbinarytree.cpp \
+    utils/SampleBinaryTrees.cpp
 
 
 HEADERS += \
@@ -103,7 +108,12 @@ HEADERS += \
     solutions/9.x.0.h \
     datastructures/BinaryTree.h \
     solutions/4.4.h \
-    solutions/4.5.h
+    solutions/4.5.h \
+    solutions/12.x.0.h \
+    solutions/4.6.h \
+    datastructures/BinaryTreeP.h \
+    unittests/testbinarytree.h \
+    utils/SampleBinaryTrees.h
 
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter

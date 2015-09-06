@@ -2,8 +2,6 @@
 #include <iostream>
 #include "datastructures/BinaryTree.h"
 
-int printIt();
-
-void printPretty(BinaryTree *root, int level, int indentSpace, std::ostream& out);
+void printPretty(BinaryTree<int> *root, int level, int indentSpace, std::ostream& out);
 
 #endif

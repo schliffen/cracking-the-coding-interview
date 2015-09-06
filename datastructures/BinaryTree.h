@@ -5,14 +5,15 @@
 
 using namespace std;
 
+template<typename T>
 class BinaryTree
 {
 public:
   BinaryTree *left, *right;
-  int data;
-  BinaryTree(int val) : left(0), right(0), data(val) { }
+  T data;
+  BinaryTree(T val) : left(0), right(0), data(val) { }
 
-  static BinaryTree* createMinimalBST(int array[], int start, int end)
+  static BinaryTree* createMinimalBST(T array[], int start, int end)
   {
       if (end < start)
           return 0;
@@ -89,8 +90,8 @@ public:
   {
       if (pNode == 0)
           return;
-      preOrder(left);
-      preOrder(right);
+      postOrder(left);
+      postOrder(right);
       cout << data << endl;
   }
 };

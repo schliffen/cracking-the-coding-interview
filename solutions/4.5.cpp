@@ -10,11 +10,11 @@
 void test4_5()
 {
     int array[] = {0,1,2,3,4,5,6,7,8};
-    BinaryTree* pBST = BinaryTree::createMinimalBST(array, 0, 8);
-    assert(BinaryTree::isBST(pBST, pBST->left, pBST->right));
+    BinaryTree<int>* pBST = BinaryTree<int>::createMinimalBST(array, 0, 8);
+    assert(BinaryTree<int>::isBST(pBST, pBST->left, pBST->right));
 
-    BinaryTree tree(8);
-    tree.left = new BinaryTree(3);
-    tree.right = new BinaryTree(2);
-    assert(!BinaryTree::isBST(&tree, tree.left, tree.right));
+    BinaryTree<int> tree(8);
+    tree.left = new BinaryTree<int>(3);
+    tree.right = new BinaryTree<int>(2);
+    assert(!BinaryTree<int>::isBST(&tree, tree.left, tree.right));
 }

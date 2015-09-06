@@ -10,7 +10,7 @@
 using namespace std;
 
 // Find the maximum height of the binary tree
-int maxHeight(BinaryTree *p) {
+int maxHeight(BinaryTree<int> *p) {
   if (!p) return 0;
   int leftHeight = maxHeight(p->left);
   int rightHeight = maxHeight(p->right);
@@ -25,8 +25,8 @@ string intToString(int val) {
 }
 
 // Print the arm branches (eg, /    \ ) on a line
-void printBranches(int branchLen, int nodeSpaceLen, int startLen, int nodesInThisLevel, const deque<BinaryTree*>& nodesQueue, ostream& out) {
-  deque<BinaryTree*>::const_iterator iter = nodesQueue.begin();
+void printBranches(int branchLen, int nodeSpaceLen, int startLen, int nodesInThisLevel, const deque<BinaryTree<int>*>& nodesQueue, ostream& out) {
+  deque<BinaryTree<int>*>::const_iterator iter = nodesQueue.begin();
   for (int i = 0; i < nodesInThisLevel / 2; i++) {
     out << ((i == 0) ? setw(startLen-1) : setw(nodeSpaceLen-2)) << "" << ((*iter++) ? "/" : " ");
     out << setw(2*branchLen+2) << "" << ((*iter++) ? "\\" : " ");
@@ -35,8 +35,8 @@ void printBranches(int branchLen, int nodeSpaceLen, int startLen, int nodesInThi
 }
 
 // Print the branches and node (eg, ___10___ )
-void printNodes(int branchLen, int nodeSpaceLen, int startLen, int nodesInThisLevel, const deque<BinaryTree*>& nodesQueue, ostream& out) {
-  deque<BinaryTree*>::const_iterator iter = nodesQueue.begin();
+void printNodes(int branchLen, int nodeSpaceLen, int startLen, int nodesInThisLevel, const deque<BinaryTree<int>*>& nodesQueue, ostream& out) {
+  deque<BinaryTree<int>*>::const_iterator iter = nodesQueue.begin();
   for (int i = 0; i < nodesInThisLevel; i++, iter++) {
     out << ((i == 0) ? setw(startLen) : setw(nodeSpaceLen)) << "" << ((*iter && (*iter)->left) ? setfill('_') : setfill(' '));
     out << setw(branchLen+2) << ((*iter) ? intToString((*iter)->data) : "");
@@ -46,8 +46,8 @@ void printNodes(int branchLen, int nodeSpaceLen, int startLen, int nodesInThisLe
 }
 
 // Print the leaves only (just for the bottom row)
-void printLeaves(int indentSpace, int level, int nodesInThisLevel, const deque<BinaryTree*>& nodesQueue, ostream& out) {
-  deque<BinaryTree*>::const_iterator iter = nodesQueue.begin();
+void printLeaves(int indentSpace, int level, int nodesInThisLevel, const deque<BinaryTree<int>*>& nodesQueue, ostream& out) {
+  deque<BinaryTree<int>*>::const_iterator iter = nodesQueue.begin();
   for (int i = 0; i < nodesInThisLevel; i++, iter++) {
     out << ((i == 0) ? setw(indentSpace+2) : setw(2*level+2)) << ((*iter) ? intToString((*iter)->data) : "");
   }
@@ -58,7 +58,7 @@ void printLeaves(int indentSpace, int level, int nodesInThisLevel, const deque<B
 // @ param
 // level  Control how wide you want the tree to sparse (eg, level 1 has the minimum space between nodes, while level 2 has a larger space between nodes)
 // indentSpace  Change this to add some indent space to the left (eg, indentSpace of 0 means the lowest level of the left node will stick to the left margin)
-void printPretty(BinaryTree *root, int level, int indentSpace, ostream& out) {
+void printPretty(BinaryTree<int> *root, int level, int indentSpace, ostream& out) {
   int h = maxHeight(root);
   int nodesInThisLevel = 1;
 
@@ -66,7 +66,7 @@ void printPretty(BinaryTree *root, int level, int indentSpace, ostream& out) {
   int nodeSpaceLen = 2 + (level+1)*(int)pow(2.0,h);  // distance between left neighbor node's right arm and right neighbor node's left arm
   int startLen = branchLen + (3-level) + indentSpace;  // starting space to the first node to print of each level (for the left most node of each level only)
 
-  deque<BinaryTree*> nodesQueue;
+  deque<BinaryTree<int>*> nodesQueue;
   nodesQueue.push_back(root);
   for (int r = 1; r < h; r++) {
     printBranches(branchLen, nodeSpaceLen, startLen, nodesInThisLevel, nodesQueue, out);
@@ -76,7 +76,7 @@ void printPretty(BinaryTree *root, int level, int indentSpace, ostream& out) {
     printNodes(branchLen, nodeSpaceLen, startLen, nodesInThisLevel, nodesQueue, out);
 
     for (int i = 0; i < nodesInThisLevel; i++) {
-      BinaryTree *currNode = nodesQueue.front();
+      BinaryTree<int> *currNode = nodesQueue.front();
       nodesQueue.pop_front();
       if (currNode) {
           nodesQueue.push_back(currNode->left);
@@ -90,31 +90,4 @@ void printPretty(BinaryTree *root, int level, int indentSpace, ostream& out) {
   }
   printBranches(branchLen, nodeSpaceLen, startLen, nodesInThisLevel, nodesQueue, out);
   printLeaves(indentSpace, level, nodesInThisLevel, nodesQueue, out);
-}
-
-int printIt()
-{
-  BinaryTree *root = new BinaryTree(30);
-  root->left = new BinaryTree(20);
-  root->right = new BinaryTree(40);
-  root->left->left = new BinaryTree(10);
-  root->left->right = new BinaryTree(25);
-  root->right->left = new BinaryTree(35);
-  root->right->right = new BinaryTree(50);
-  root->left->left->left = new BinaryTree(5);
-  root->left->left->right = new BinaryTree(15);
-  root->left->right->right = new BinaryTree(28);
-  root->right->right->left = new BinaryTree(41);
-
-  cout << "Tree pretty print with level=1 and indentSpace=0\n\n";
-  // Output to console
-  printPretty(root, 1, 0, cout);
-
-  cout << "\n\nTree pretty print with level=5 and indentSpace=3,\noutput to file \"tree_pretty.txt\".\n\n";
-  // Create a file and output to that file
-  ofstream fout("tree_pretty.txt");
-  // Now print a tree that's more spread out to the file
-  printPretty(root, 5, 0, fout);
-
-  return 0;
 }
