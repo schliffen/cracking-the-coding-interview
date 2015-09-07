@@ -13,14 +13,6 @@ SOURCES += \
     unittests/testqeueue.cpp \
     unittests/testsorting.cpp \
     datastructures/digraph.cpp \
-    solutions/1.1.cpp \
-    solutions/1.2.cpp \
-    solutions/1.3.cpp \
-    solutions/1.4.cpp \
-    solutions/1.5.cpp \
-    solutions/1.6.cpp \
-    solutions/1.7.cpp \
-    solutions/1.8.cpp \
     solutions/11.1.cpp \
     solutions/12.1.cpp \
     solutions/13.1.cpp \
@@ -54,7 +46,15 @@ SOURCES += \
     solutions/4.8.cpp \
     BinaryTreeRenderer.cpp \
     unittests/testbinarytreerenderer.cpp \
-    solutions/4.9.cpp
+    solutions/4.9.cpp \
+    solutions/dataStructures/arraysAndStrings/1.1.cpp \
+    solutions/dataStructures/arraysAndStrings/1.2.cpp \
+    solutions/dataStructures/arraysAndStrings/1.3.cpp \
+    solutions/dataStructures/arraysAndStrings/1.4.cpp \
+    solutions/dataStructures/arraysAndStrings/1.5.cpp \
+    solutions/dataStructures/arraysAndStrings/1.6.cpp \
+    solutions/dataStructures/arraysAndStrings/1.7.cpp \
+    solutions/dataStructures/arraysAndStrings/1.8.cpp
 
 
 HEADERS += \
@@ -79,14 +79,6 @@ HEADERS += \
     unittests/testvector.h \
     unittests/teststack.h \
     utils/BinaryTreePrettyPrint.h \
-    solutions/1.1.h \
-    solutions/1.2.h \
-    solutions/1.3.h \
-    solutions/1.4.h \
-    solutions/1.5.h \
-    solutions/1.6.h \
-    solutions/1.7.h \
-    solutions/1.8.h \
     solutions/11.1.h \
     solutions/12.1.h \
     solutions/13.1.h \
@@ -122,7 +114,15 @@ HEADERS += \
     solutions/4.8.h \
     BinaryTreeRenderer.h \
     unittests/testbinarytreerenderer.h \
-    solutions/4.9.h
+    solutions/4.9.h \
+    solutions/dataStructures/arraysAndStrings/1.1.h \
+    solutions/dataStructures/arraysAndStrings/1.2.h \
+    solutions/dataStructures/arraysAndStrings/1.3.h \
+    solutions/dataStructures/arraysAndStrings/1.4.h \
+    solutions/dataStructures/arraysAndStrings/1.5.h \
+    solutions/dataStructures/arraysAndStrings/1.6.h \
+    solutions/dataStructures/arraysAndStrings/1.7.h \
+    solutions/dataStructures/arraysAndStrings/1.8.h
 
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter
