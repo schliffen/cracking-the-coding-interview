@@ -18,47 +18,54 @@ using namespace std;
 // node n in Tl such that the subtree of n is identical to T2. That is,
 // if you cut off the tree at node n, the two trees would be identical.
 
-string newID()
-{
-    static int count = 0;
-    return SSTR(count++);
-}
-
 bool isSubArray(const vector<string>& aArray, const vector<string>& bSubArray, int& matchedIndex);
 
-bool doSubtreesMatch(BinaryTree<string>* pA, BinaryTree<string>* pB)
+// check whether two trees are identical
+bool doTreesMatch(BinaryTree<string>* pA, BinaryTree<string>* pB)
 {
+    // two null nodes, that matches
     if (!pA && !pB)
         return true;
 
+    // one or the other is null, no match
     if (!((bool)pA & (bool)pB))
         return false;
 
+    // if data matches
     if (pA->data == pB->data)
     {
-        return  doSubtreesMatch(pA->left, pB->left) &&
-                doSubtreesMatch(pA->right, pB->right);
+        // recurse
+        return  doTreesMatch(pA->left, pB->left) &&
+                doTreesMatch(pA->right, pB->right);
     }
 
     return false;
 }
 
+// find binary tree T2 within binary tree T1
 BinaryTree<string>* findSubtree(BinaryTree<string>* T1, BinaryTree<string>* T2)
 {
     if (!T1)
         return 0;
 
+    // pre order
+    // we've that T2's root data matches T1's
     if (T1->data == T2->data)
-        if (doSubtreesMatch(T1, T2))
+        // so try matching these two subtrees
+        if (doTreesMatch(T1, T2))
             return T2;
 
+    // recurse to the left
     BinaryTree<string>* foundLeft = findSubtree(T1->left, T2);
 
+    // if found, then return
     if (foundLeft)
         return foundLeft;
 
+    // recurse to the right
     BinaryTree<string>* foundRight = findSubtree(T1->right, T2);
 
+    // if found, then return
     if (foundRight)
         return foundRight;
 
