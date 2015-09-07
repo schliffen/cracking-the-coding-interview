@@ -23,7 +23,11 @@ public:
 
     static bool isBST(BinaryTree<T>* pRoot, BinaryTree<T>* pLeft, BinaryTree<T>* pRight);
 
-    bool hasChildren() const;
+    bool isLeaf() const;
+
+    bool nodeIsFull() const;
+
+    int getNumChildren() const;
 
     static void preOrder(BinaryTree<T>* pNode);
 

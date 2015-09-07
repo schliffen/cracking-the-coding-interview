@@ -59,9 +59,21 @@ bool BinaryTree<T>::isBST(BinaryTree<T>* pRoot, BinaryTree<T>* pLeft, BinaryTree
 }
 
 template<class T>
-bool BinaryTree<T>::hasChildren() const
+bool BinaryTree<T>::isLeaf() const
 {
-  return left || right;
+  return !left && !right;
+}
+
+template<class T>
+bool BinaryTree<T>::nodeIsFull() const
+{
+  return left && right;
+}
+
+template<class T>
+int BinaryTree<T>::getNumChildren() const
+{
+  return bool(left) + bool(right);
 }
 
 template<class T>

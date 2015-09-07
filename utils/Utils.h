@@ -39,4 +39,6 @@ void testBitFunctions();
 
 bool is_sorted(std::vector<int>::const_iterator begin, std::vector<int>::const_iterator end);
 
+std::string newUUID();
+
 #endif

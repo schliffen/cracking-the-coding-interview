@@ -3,6 +3,7 @@
 #include <string.h>
 #include <assert.h>
 #include <stdlib.h>
+#include <string>
 
 void swap(void* a, void* b, unsigned short size)
 {
@@ -144,4 +145,34 @@ bool is_sorted(std::vector<int>::const_iterator begin, std::vector<int>::const_i
         begin++;
     }
     return true;
+}
+
+extern "C"
+{
+#ifdef WIN32
+#include <Rpc.h>
+#else
+#include <uuid/uuid.h>
+#endif
+}
+
+std::string newUUID()
+{
+#ifdef WIN32
+    UUID uuid;
+    UuidCreate ( &uuid );
+
+    unsigned char * str;
+    UuidToStringA ( &uuid, &str );
+
+    std::string s( ( char* ) str );
+
+    RpcStringFreeA ( &str );
+#else
+    uuid_t uuid;
+    uuid_generate_random ( uuid );
+    char s[37];
+    uuid_unparse ( uuid, s );
+#endif
+    return s;
 }
