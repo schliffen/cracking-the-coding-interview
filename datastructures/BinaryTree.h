@@ -37,7 +37,7 @@ public:
 
     static void traverse(BinaryTree<T>* pNode, TraversalOrder order);
 
-    static void traverse(BinaryTree<T>* pNode, TraversalOrder order, std::vector<T>& vec);
+    static void traverse(BinaryTree<T>* pNode, TraversalOrder order, std::vector<T>& vec, bool keepNull = false);
 
     static int size(BinaryTree<T>* pNode);
 

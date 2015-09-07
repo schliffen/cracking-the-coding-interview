@@ -26,19 +26,16 @@ string newID()
 
 bool isSubArray(const vector<string>& aArray, const vector<string>& bSubArray, int& matchedIndex);
 
-void test4_8()
+void buildTrees(int T1Size, int T2Size, BinaryTree<string> *&T1, BinaryTree<string> *&T2)
 {
     idFunc idF = &newUUID;
 
-    int T1Size = 2e6;
-    int T2Size = 200;
-
     // build random binary tree with 2 million nodes
-    BinaryTree<string> *T1 = new BinaryTree<string>((*idF)());
+    T1 = new BinaryTree<string>((*idF)());
     buildRandomBinaryTree(T1, T1Size, idF);
 
     // build random binary tree with 2 hundred nodes
-    BinaryTree<string> *T2 = new BinaryTree<string>((*idF)());
+    T2 = new BinaryTree<string>((*idF)());
     buildRandomBinaryTree(T2, T2Size, idF);
 
     // compute max depth of T1
@@ -55,21 +52,39 @@ void test4_8()
 
     // make sure that the size of our new tree is the size of the two combined trees
     assert(T1->size(T1) == (T1Size + T2Size));
+}
 
+bool variation1(BinaryTree<string> *T2, BinaryTree<string> *T1)
+{
     // do preorder traveral of T1, and place results in array
     vector<string> T1Values;
-    T1->traverse(T1, BinaryTree<string>::ePreOrder, T1Values);
+    T1->traverse(T1, BinaryTree<string>::ePreOrder, T1Values, true);
 
     // do preorder traveral of T2, and place results in array
     vector<string> T2Values;
-    T2->traverse(T2, BinaryTree<string>::ePreOrder, T2Values);
+    T2->traverse(T2, BinaryTree<string>::ePreOrder, T2Values, true);
 
     // check whether T2's traversed array is a subarray of T1's traversed subarray
     int startIndex = -1;
     bool foundSubArray = isSubArray(T1Values, T2Values, startIndex);
 
-    // if so, we have successfully found the subtree, at index: startIndex
-    if (foundSubArray)
+    // if foundSubArray is true, then we've found our subtree in the T1,
+    // and its position preOrder position in the tree is startIndex
+    return foundSubArray;
+}
+
+void test4_8()
+{
+    int T1Size = 2e4; // set this to 2e6 for "millions" of nodes in T1
+    int T2Size = 200;
+
+    BinaryTree<string> *T1 = 0, *T2 = 0;
+
+    buildTrees(T1Size, T2Size, T1, T2);
+
+    bool isSubtree = variation1(T2, T1);
+
+    if (isSubtree)
         cout << "4.8 passed!" << endl;
     else
         cout << "4.8 NOT passed!" << endl;
