@@ -4,8 +4,8 @@
 // of a given node in a binary search tree. You may assume that
 // each node has a link to its parent.
 
-#include "datastructures/BinaryTree.h"
-#include "utils/BinaryTreePrettyPrint.h"
+#include "lib/datastructures/BinaryTree.h"
+#include "lib/utils/BinaryTreePrettyPrint.h"
 #include <iostream>
 #include <assert.h>
 

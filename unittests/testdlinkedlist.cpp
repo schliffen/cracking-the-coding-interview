@@ -1,6 +1,6 @@
 #include "testdlinkedlist.h"
 
-#include "datastructures/DLinkedList.h"
+#include "lib/datastructures/DLinkedList.h"
 #include <assert.h>
 #include <iostream>
 

@@ -9,8 +9,8 @@
 
 #include <iostream>
 #include <assert.h>
-#include "datastructures/Stack.h"
-#include "utils/Utils.h"
+#include "lib/datastructures/Stack.h"
+#include "lib/utils/Utils.h"
 
 using namespace std;
 

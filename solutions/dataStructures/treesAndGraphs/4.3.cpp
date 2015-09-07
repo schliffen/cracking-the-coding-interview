@@ -1,7 +1,7 @@
 #include "4.3.h"
 
-#include "datastructures/BinaryTree.h"
-#include "utils/BinaryTreePrettyPrint.h"
+#include "lib/datastructures/BinaryTree.h"
+#include "lib/utils/BinaryTreePrettyPrint.h"
 
 #include <iostream>
 #include <assert.h>

@@ -4,17 +4,17 @@ CONFIG += debug
 QT += core
 SOURCES += \
     main.cpp \
-    utils/BinaryTreePrettyPrint.cpp \
-    utils/Utils.cpp \
+    lib/utils/BinaryTreePrettyPrint.cpp \
+    lib/utils/Utils.cpp \
     unittests/testdlinkedlist.cpp \
     unittests/testlinkedlist.cpp \
     unittests/testvector.cpp \
     unittests/teststack.cpp \
     unittests/testqeueue.cpp \
     unittests/testsorting.cpp \
-    datastructures/digraph.cpp \
+    lib/datastructures/digraph.cpp \
     unittests/testbinarytree.cpp \
-    utils/SampleBinaryTrees.cpp \
+    lib/utils/SampleBinaryTrees.cpp \
     unittests/testbinarytreerenderer.cpp \
     solutions/dataStructures/arraysAndStrings/1.1.cpp \
     solutions/dataStructures/arraysAndStrings/1.2.cpp \
@@ -53,36 +53,36 @@ SOURCES += \
     solutions/conceptsAndAlgorithms/bitManipulation/5.2.cpp \
     solutions/conceptsAndAlgorithms/recursionAndDynamicProgramming/9.1.cpp \
     solutions/conceptsAndAlgorithms/recursionAndDynamicProgramming/9.x.0.cpp \
-    utils/BinaryTreeRenderer.cpp \
+    lib/utils/BinaryTreeRenderer.cpp \
     solutions/conceptsAndAlgorithms/sortingAndSearching/11.1.cpp
 
 
 HEADERS += \
-    utils/Utils.h \
-    datastructures/LinkedList.h \
-    datastructures/Stack.h \
-    datastructures/Vector.h \
-    datastructures/DLinkedList.h \
-    datastructures/Queue.h \
-    datastructures/DLinkedList.hpp \
-    datastructures/LinkedList.hpp \
-    datastructures/Vector.hpp \
-    datastructures/Queue.hpp \
-    datastructures/digraph.h \
-    datastructures/Stack.hpp \
-    algorithms/bubblesort.h \
-    algorithms/bubblesort.hpp \
+    lib/utils/Utils.h \
+    lib/datastructures/LinkedList.h \
+    lib/datastructures/Stack.h \
+    lib/datastructures/Vector.h \
+    lib/datastructures/DLinkedList.h \
+    lib/datastructures/Queue.h \
+    lib/datastructures/DLinkedList.hpp \
+    lib/datastructures/LinkedList.hpp \
+    lib/datastructures/Vector.hpp \
+    lib/datastructures/Queue.hpp \
+    lib/datastructures/digraph.h \
+    lib/datastructures/Stack.hpp \
+    lib/algorithms/bubblesort.h \
+    lib/algorithms/bubblesort.hpp \
     unittests/testdlinkedlist.h \
     unittests/testlinkedlist.h \
     unittests/testqeueue.h \
     unittests/testsorting.h \
     unittests/testvector.h \
     unittests/teststack.h \
-    utils/BinaryTreePrettyPrint.h \
-    datastructures/BinaryTree.h \
+    lib/utils/BinaryTreePrettyPrint.h \
+    lib/datastructures/BinaryTree.h \
     unittests/testbinarytree.h \
-    utils/SampleBinaryTrees.h \
-    datastructures/BinaryTree.hpp \
+    lib/utils/SampleBinaryTrees.h \
+    lib/datastructures/BinaryTree.hpp \
     unittests/testbinarytreerenderer.h \
     solutions/dataStructures/arraysAndStrings/1.1.h \
     solutions/dataStructures/arraysAndStrings/1.2.h \
@@ -121,7 +121,7 @@ HEADERS += \
     solutions/conceptsAndAlgorithms/bitManipulation/5.2.h \
     solutions/conceptsAndAlgorithms/recursionAndDynamicProgramming/9.1.h \
     solutions/conceptsAndAlgorithms/recursionAndDynamicProgramming/9.x.0.h \
-    utils/BinaryTreeRenderer.h \
+    lib/utils/BinaryTreeRenderer.h \
     solutions/conceptsAndAlgorithms/sortingAndSearching/11.1.h
 
 

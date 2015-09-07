@@ -1,5 +1,5 @@
 #include "3.7.h"
-#include "datastructures/DLinkedList.h"
+#include "lib/datastructures/DLinkedList.h"
 #include <string>
 #include <assert.h>
 #include <iostream>

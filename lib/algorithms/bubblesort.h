@@ -1,7 +1,7 @@
 #ifndef BUBBLESORT_H
 #define BUBBLESORT_H
 
-#include "utils/Utils.h"
+#include "lib/utils/Utils.h"
 
 template <class a_type>
 void bubbleSort(a_type* data, int n);

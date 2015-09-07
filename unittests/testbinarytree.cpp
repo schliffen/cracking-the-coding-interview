@@ -7,9 +7,9 @@
 
 #include "testbinarytree.h"
 
-#include "utils/Utils.h"
-#include "utils/SampleBinaryTrees.h"
-#include "utils/BinaryTreePrettyPrint.h"
+#include "lib/utils/Utils.h"
+#include "lib/utils/SampleBinaryTrees.h"
+#include "lib/utils/BinaryTreePrettyPrint.h"
 
 using namespace std;
 

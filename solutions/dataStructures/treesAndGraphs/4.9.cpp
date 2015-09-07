@@ -5,8 +5,8 @@ using namespace std;
 
 #include "4.9.h"
 
-#include "datastructures/BinaryTree.h"
-#include "utils/SampleBinaryTrees.h"
+#include "lib/datastructures/BinaryTree.h"
+#include "lib/utils/SampleBinaryTrees.h"
 
 
 // 4.9 You are given a binary tree in which each node contains a value.

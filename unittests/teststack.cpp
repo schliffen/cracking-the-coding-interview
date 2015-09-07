@@ -1,5 +1,5 @@
 #include "teststack.h"
-#include "datastructures/Stack.h"
+#include "lib/datastructures/Stack.h"
 #include <assert.h>
 
 

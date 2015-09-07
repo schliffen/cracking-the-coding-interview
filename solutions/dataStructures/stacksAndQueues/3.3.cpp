@@ -11,7 +11,7 @@
 // were just a single stack). Implement a function popAt(int index)
 // which performs a pop operation on a specific sub-stack.
 
-#include "datastructures/Stack.h"
+#include "lib/datastructures/Stack.h"
 #include <vector>
 
 #include <assert.h>

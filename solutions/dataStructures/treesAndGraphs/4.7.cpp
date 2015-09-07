@@ -8,8 +8,8 @@ using namespace std;
 // of two nodes in a binary tree. Avoid storing additional nodes in a data structure.
 // NOTE: This is not necessarily a binary search tree.
 
-#include "utils/SampleBinaryTrees.h"
-#include "utils/BinaryTreePrettyPrint.h"
+#include "lib/utils/SampleBinaryTrees.h"
+#include "lib/utils/BinaryTreePrettyPrint.h"
 #include <assert.h>
 
 BinaryTree<int>* findCommonAncestor(BinaryTree<int>* pRoot, BinaryTree<int>* pA, BinaryTree<int>* pB)

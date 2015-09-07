@@ -1,6 +1,6 @@
 #include "4.5.h"
 
-#include "datastructures/BinaryTree.h"
+#include "lib/datastructures/BinaryTree.h"
 #include "assert.h"
 
 /*

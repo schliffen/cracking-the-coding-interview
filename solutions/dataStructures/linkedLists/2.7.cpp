@@ -1,5 +1,5 @@
 #include "2.7.h"
-#include "datastructures/LinkedList.h"
+#include "lib/datastructures/LinkedList.h"
 #include <assert.h>
 #include <cstdio>
 
