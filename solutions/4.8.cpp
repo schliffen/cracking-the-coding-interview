@@ -26,15 +26,54 @@ string newID()
 
 bool isSubArray(const vector<string>& aArray, const vector<string>& bSubArray, int& matchedIndex);
 
+bool doSubtreesMatch(BinaryTree<string>* pA, BinaryTree<string>* pB)
+{
+    if (!pA && !pB)
+        return true;
+
+    if (!((bool)pA & (bool)pB))
+        return false;
+
+    if (pA->data == pB->data)
+    {
+        return  doSubtreesMatch(pA->left, pB->left) &&
+                doSubtreesMatch(pA->right, pB->right);
+    }
+
+    return false;
+}
+
+BinaryTree<string>* findSubtree(BinaryTree<string>* T1, BinaryTree<string>* T2)
+{
+    if (!T1)
+        return 0;
+
+    if (T1->data == T2->data)
+        if (doSubtreesMatch(T1, T2))
+            return T2;
+
+    BinaryTree<string>* foundLeft = findSubtree(T1->left, T2);
+
+    if (foundLeft)
+        return foundLeft;
+
+    BinaryTree<string>* foundRight = findSubtree(T1->right, T2);
+
+    if (foundRight)
+        return foundRight;
+
+    return 0;
+}
+
 void buildTrees(int T1Size, int T2Size, BinaryTree<string> *&T1, BinaryTree<string> *&T2)
 {
     idFunc idF = &newUUID;
 
-    // build random binary tree with 2 million nodes
+    // build random binary tree with lots of nodes
     T1 = new BinaryTree<string>((*idF)());
     buildRandomBinaryTree(T1, T1Size, idF);
 
-    // build random binary tree with 2 hundred nodes
+    // build random binary tree with less nodes
     T2 = new BinaryTree<string>((*idF)());
     buildRandomBinaryTree(T2, T2Size, idF);
 
@@ -73,6 +112,11 @@ bool variation1(BinaryTree<string> *T2, BinaryTree<string> *T1)
     return foundSubArray;
 }
 
+BinaryTree<string>* variation2(BinaryTree<string>* T1, BinaryTree<string>* T2)
+{
+    return findSubtree(T1, T2);
+}
+
 void test4_8()
 {
     int T1Size = 2e4; // set this to 2e6 for "millions" of nodes in T1
@@ -84,7 +128,9 @@ void test4_8()
 
     bool isSubtree = variation1(T2, T1);
 
-    if (isSubtree)
+    BinaryTree<string> *pFoundSubtree = variation2(T1, T2);
+
+    if (isSubtree && pFoundSubtree)
         cout << "4.8 passed!" << endl;
     else
         cout << "4.8 NOT passed!" << endl;
