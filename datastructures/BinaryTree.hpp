@@ -19,43 +19,23 @@ BinaryTree<T>* BinaryTree<T>::createMinimalBST(T array[], int start, int end)
 }
 
 template<class T>
-bool BinaryTree<T>::isBST(BinaryTree<T>* pRoot, BinaryTree<T>* pLeft, BinaryTree<T>* pRight)
+bool BinaryTree<T>::isBST(BinaryTree<T>* pRoot)
 {
-    if (pLeft && pRight)
-    {
-        if (pLeft->data <= pRoot->data && pRoot->data <= pRight->data)
-        {
-            return isBST(pLeft, pLeft->left, pLeft->right);
-        }
-        else
-        {
-            return false;
-        }
-    }
-    else if (pLeft && !pRight)
-    {
-        if (pLeft->data <= pRoot->data)
-        {
-            return isBST(pLeft, pLeft->left, 0);
-        }
-        else
-        {
-            return false;
-        }
-    }
-    else if (!pLeft && pRight)
-    {
-        if (pRoot->data <= pRight->data)
-        {
-            return isBST(pRight, 0, pRight->right);
-        }
-        else
-        {
-            return false;
-        }
-    }
+    if (!pRoot)
+        return true;
 
-    return true;
+    bool leftIsBST = !pRoot->left;
+    bool rightIsBST = !pRoot->right;
+
+    if (pRoot->left && pRoot->left->data < pRoot->data)
+    {
+        leftIsBST = isBST(pRoot->left);
+    }
+    if (pRoot->right && pRoot->right->data > pRoot->data)
+    {
+        rightIsBST = isBST(pRoot->right);
+    }
+    return leftIsBST && rightIsBST;
 }
 
 template<class T>

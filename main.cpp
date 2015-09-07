@@ -96,6 +96,10 @@ int main(int argc, char* argv[])
     test4_3();
     test4_4();
     test4_5();
+    test4_6();
+    test4_7();
+    test4_8();
+    test4_9();
     test5_1();
     test9x0();
     test9_1();
@@ -103,11 +107,6 @@ int main(int argc, char* argv[])
     test12_1();
     test12_x_0();
     test13_1();
-
-    test4_6();
-    test4_7();
-    test4_8();
-    test4_9();
 
     testBinaryTreeRenderer();
 

@@ -63,5 +63,5 @@ void test4_7()
 
     assert(pCommonAncestor && pCommonAncestor->data == 2);
 
-    cout << "test 4.7 passed!" << endl;
+    cout << "4.7 passed!" << endl;
 }

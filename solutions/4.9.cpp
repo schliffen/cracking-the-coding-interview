@@ -82,7 +82,7 @@ void test4_9()
     int pathsFound = findPathsWithValue(pRoot, paths, value);
 
     if (pathsFound > 0)
-        cout << "test 4.9 passed!" << endl;
+        cout << "4.9 passed!" << endl;
     else
-        cout << "test 4.9 NOT passed!" << endl;
+        cout << "4.9 NOT passed!" << endl;
 }

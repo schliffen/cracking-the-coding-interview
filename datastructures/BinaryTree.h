@@ -21,7 +21,7 @@ public:
 
     static BinaryTree<T>* createMinimalBST(T array[], int start, int end);
 
-    static bool isBST(BinaryTree<T>* pRoot, BinaryTree<T>* pLeft, BinaryTree<T>* pRight);
+    static bool isBST(BinaryTree<T>* pRoot);
 
     bool isLeaf() const;
 
