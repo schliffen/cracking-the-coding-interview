@@ -46,6 +46,7 @@
 #include "unittests/testqeueue.h"
 #include "unittests/testsorting.h"
 #include "unittests/testbinarytree.h"
+#include "unittests/testbinarytreerenderer.h"
 
 #include <iostream>
 
@@ -106,6 +107,7 @@ int main(int argc, char* argv[])
     test4_7();
     test4_8();
 
+    testBinaryTreeRenderer();
 
     return 0;
 }

@@ -1,0 +1,6 @@
+#ifndef TESTBINARYTREERENDERER_H
+#define TESTBINARYTREERENDERER_H
+
+void testBinaryTreeRenderer();
+
+#endif // TESTBINARYTREERENDERER_H
