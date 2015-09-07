@@ -11,7 +11,7 @@
 
 #include "utils/Utils.h"
 #include "utils/SampleBinaryTrees.h"
-#include "BinaryTreeRenderer.h"
+#include "utils/BinaryTreeRenderer.h"
 
 using namespace std;
 

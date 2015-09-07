@@ -10,7 +10,7 @@ using namespace std;
 #include "utils/SampleBinaryTrees.h"
 #include "utils/Utils.h"
 #include "utils/BinaryTreePrettyPrint.h"
-#include "BinaryTreeRenderer.h"
+#include "utils/BinaryTreeRenderer.h"
 
 // 4.8 You have two very large binary trees: Tl, with millions of nodes,
 // and T2, with hundreds of nodes. Create an algorithm to decide ifT2
