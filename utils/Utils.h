@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <vector>
 #include <iterator>
+#include <sstream>
 
 template<class a_type>
 void swap(a_type* a, a_type* b)
@@ -40,5 +41,8 @@ void testBitFunctions();
 bool is_sorted(std::vector<int>::const_iterator begin, std::vector<int>::const_iterator end);
 
 std::string newUUID();
+
+#define SSTR( x ) dynamic_cast< std::ostringstream & >( \
+        ( std::ostringstream() << std::dec << x ) ).str()
 
 #endif

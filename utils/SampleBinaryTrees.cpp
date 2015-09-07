@@ -87,7 +87,7 @@ BinaryTree<string>* getRandomNodeWithFreeSpace(BinaryTree<string>* pRoot, int ra
     return 0; // suppress compiler warning
 }
 
-void buildRandomUUIDBinaryTree(BinaryTree<std::string>* pRoot, int& count, int limit)
+void buildRandomBinaryTree(BinaryTree<std::string>* pRoot, int& count, int limit, idFunc idFunc)
 {
     srand (time(NULL));
 
@@ -116,16 +116,16 @@ void buildRandomUUIDBinaryTree(BinaryTree<std::string>* pRoot, int& count, int l
             switch(r)
             {
             case 0:
-                pLeaf->left = new BinaryTree<std::string>(newUUID());
-                pLeaf->right = new BinaryTree<std::string>(newUUID());
+                pLeaf->left = new BinaryTree<std::string>((*idFunc)());
+                pLeaf->right = new BinaryTree<std::string>((*idFunc)());
                 count += 2;
                 break;
             case 1:
-                pLeaf->left = new BinaryTree<std::string>(newUUID());
+                pLeaf->left = new BinaryTree<std::string>((*idFunc)());
                 count += 1;
                 break;
             case 2:
-                pLeaf->right = new BinaryTree<std::string>(newUUID());
+                pLeaf->right = new BinaryTree<std::string>((*idFunc)());
                 count += 1;
                 break;
             case 4:
@@ -141,14 +141,14 @@ void buildRandomUUIDBinaryTree(BinaryTree<std::string>* pRoot, int& count, int l
             case 1:
                 if (!pLeaf->left)
                 {
-                    pLeaf->left = new BinaryTree<std::string>(newUUID());
+                    pLeaf->left = new BinaryTree<std::string>((*idFunc)());
                     count += 1;
                 }
                 break;
             case 2:
                 if (!pLeaf->right)
                 {
-                    pLeaf->right = new BinaryTree<std::string>(newUUID());
+                    pLeaf->right = new BinaryTree<std::string>((*idFunc)());
                     count += 1;
                 }
                 break;
