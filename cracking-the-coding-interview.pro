@@ -53,7 +53,8 @@ SOURCES += \
     solutions/4.7.cpp \
     solutions/4.8.cpp \
     BinaryTreeRenderer.cpp \
-    unittests/testbinarytreerenderer.cpp
+    unittests/testbinarytreerenderer.cpp \
+    solutions/4.9.cpp
 
 
 HEADERS += \
@@ -120,7 +121,8 @@ HEADERS += \
     solutions/4.7.h \
     solutions/4.8.h \
     BinaryTreeRenderer.h \
-    unittests/testbinarytreerenderer.h
+    unittests/testbinarytreerenderer.h \
+    solutions/4.9.h
 
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter
