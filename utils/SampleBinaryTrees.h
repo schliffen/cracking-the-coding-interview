@@ -10,6 +10,7 @@ BinaryTree<int> *buildPreOrderBinaryTree();
 BinaryTree<int> *buildPostOrderBinaryTree();
 BinaryTree<int> *buildInOrderBinaryTree();
 void buildFullBinaryTree(BinaryTree<int>* pHead, int level, int limit);
-void buildRandomBinaryTree(BinaryTree<string> *pRoot, int &count, int limit, idFunc idFunc);
+BinaryTree<string>* getRandomNodeWithFreeSpace(BinaryTree<string>* pRoot, int randLeafDepth, int currentDepth = 0);
+void buildRandomBinaryTree(BinaryTree<string> *pRoot, int limit, idFunc idFunc);
 
 #endif // SAMPLEBINARYTREES_H

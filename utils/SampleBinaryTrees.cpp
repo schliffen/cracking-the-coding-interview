@@ -57,7 +57,7 @@ void buildFullBinaryTree(BinaryTree<int>* pHead, int level, int limit)
     buildFullBinaryTree(pHead->right, level+1, limit);
 }
 
-BinaryTree<string>* getRandomNodeWithFreeSpace(BinaryTree<string>* pRoot, int randLeafDepth, int currentDepth = 0)
+BinaryTree<string>* getRandomNodeWithFreeSpace(BinaryTree<string>* pRoot, int randLeafDepth, int currentDepth)
 {
     assert(pRoot);
 
@@ -87,12 +87,13 @@ BinaryTree<string>* getRandomNodeWithFreeSpace(BinaryTree<string>* pRoot, int ra
     return 0; // suppress compiler warning
 }
 
-void buildRandomBinaryTree(BinaryTree<std::string>* pRoot, int& count, int limit, idFunc idFunc)
+void buildRandomBinaryTree(BinaryTree<std::string>* pRoot, int limit, idFunc idFunc)
 {
     srand (time(NULL));
 
     // the max depth of a full tree is
     int maxDepth = log2(limit + 1);
+    int count = 1;
 
     while (count < limit)
     {
@@ -117,8 +118,12 @@ void buildRandomBinaryTree(BinaryTree<std::string>* pRoot, int& count, int limit
             {
             case 0:
                 pLeaf->left = new BinaryTree<std::string>((*idFunc)());
-                pLeaf->right = new BinaryTree<std::string>((*idFunc)());
-                count += 2;
+                count += 1;
+                if (count < limit)
+                {
+                    pLeaf->right = new BinaryTree<std::string>((*idFunc)());
+                    count += 1;
+                }
                 break;
             case 1:
                 pLeaf->left = new BinaryTree<std::string>((*idFunc)());
@@ -158,4 +163,5 @@ void buildRandomBinaryTree(BinaryTree<std::string>* pRoot, int& count, int limit
             }
         }
     }
+    assert(pRoot->size(pRoot) == limit);
 }
