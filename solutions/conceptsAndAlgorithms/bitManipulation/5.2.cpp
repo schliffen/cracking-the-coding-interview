@@ -20,7 +20,7 @@ void showDoubleBits(double in)
          int   output;
     }    data;
 
-    data.input = 0;
+    data.input = in;
     std::cout << std::bitset<sizeof(float) * CHAR_BIT>(data.output) << std::endl;
 }
 

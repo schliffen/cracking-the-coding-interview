@@ -1,4 +1,3 @@
-#include "BinaryTreePrettyPrint.h"
 #include <fstream>
 #include <iostream>
 #include <deque>
@@ -6,6 +5,8 @@
 #include <sstream>
 #include <string>
 #include <cmath>
+
+#include "lib/datastructures/BinaryTree.h"
 
 using namespace std;
 

@@ -9,7 +9,6 @@ using namespace std;
 // NOTE: This is not necessarily a binary search tree.
 
 #include "lib/utils/SampleBinaryTrees.h"
-#include "lib/utils/BinaryTreePrettyPrint.h"
 #include <assert.h>
 
 BinaryTree<int>* findCommonAncestor(BinaryTree<int>* pRoot, BinaryTree<int>* pA, BinaryTree<int>* pB)

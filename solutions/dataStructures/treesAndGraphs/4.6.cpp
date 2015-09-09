@@ -5,7 +5,6 @@
 // each node has a link to its parent.
 
 #include "lib/datastructures/BinaryTree.h"
-#include "lib/utils/BinaryTreePrettyPrint.h"
 #include <iostream>
 #include <assert.h>
 

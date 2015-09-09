@@ -36,7 +36,6 @@
 #include "solutions/conceptsAndAlgorithms/testing/12.x.0.h"
 #include "solutions/knowledgeBased/cAndCpp/13.1.h"
 #include "lib/utils/Utils.h"
-#include "lib/utils/BinaryTreePrettyPrint.h"
 #include "lib/datastructures/LinkedList.h"
 #include "lib/datastructures/Stack.h"
 #include "lib/datastructures/Vector.h"

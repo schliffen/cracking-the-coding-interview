@@ -9,7 +9,6 @@
 
 #include "lib/utils/Utils.h"
 #include "lib/utils/SampleBinaryTrees.h"
-#include "lib/utils/BinaryTreePrettyPrint.h"
 
 using namespace std;
 
