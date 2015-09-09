@@ -73,15 +73,11 @@ BinaryTree<string>* findSubtree(BinaryTree<string>* T1, BinaryTree<string>* T2)
 
 void buildTrees(int T1Size, int T2Size, BinaryTree<string> *&T1, BinaryTree<string> *&T2)
 {
-    idFunc idF = &newUUID;
-
     // build random binary tree with lots of nodes
-    T1 = new BinaryTree<string>((*idF)());
-    buildRandomBinaryTree(T1, T1Size, idF);
+    buildRandomBinaryTree<string, idFunc>(T1, T1Size, &newUUID);
 
     // build random binary tree with less nodes
-    T2 = new BinaryTree<string>((*idF)());
-    buildRandomBinaryTree(T2, T2Size, idF);
+    buildRandomBinaryTree<string, idFunc>(T2, T2Size, &newUUID);
 
     // compute max depth of T1
     int maxDepth = log2(T1Size + 1);

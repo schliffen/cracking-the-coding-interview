@@ -70,11 +70,9 @@ int findPathsWithValue(BinaryTree<int>*pRoot, vector<int>path, int value)
 
 void test4_9()
 {
-    idFunci idF = &newID;
-
     // build our random binary tree
-    BinaryTree<int>* pRoot = new BinaryTree<int>((*idF)());
-    buildRandomBinaryTree(pRoot, 20000, idF);
+    BinaryTree<int>* pRoot = 0;
+    buildRandomBinaryTree<int, idFunci>(pRoot, 20000, &newID);
 
     // call our recursive sum finding function
     vector<int> paths;

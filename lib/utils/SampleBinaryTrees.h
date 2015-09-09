@@ -48,8 +48,12 @@ BinaryTree<S>* getRandomNodeWithFreeSpace(BinaryTree<S>* pRoot, int randLeafDept
 }
 
 template<class S, class T>
-void buildRandomBinaryTree(BinaryTree<S> *pRoot, int limit, T idFunc)
+void buildRandomBinaryTree(BinaryTree<S> *&pRoot, int limit, T idFunc)
 {
+    if (!pRoot)
+        pRoot = new BinaryTree<S>((*idFunc)());
+
+
     srand (time(NULL));
 
     // the max depth of a full tree is

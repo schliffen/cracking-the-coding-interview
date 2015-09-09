@@ -4,7 +4,6 @@ CONFIG += debug
 QT += core
 SOURCES += \
     main.cpp \
-    lib/utils/BinaryTreePrettyPrint.cpp \
     lib/utils/Utils.cpp \
     unittests/testdlinkedlist.cpp \
     unittests/testlinkedlist.cpp \
@@ -78,7 +77,6 @@ HEADERS += \
     unittests/testsorting.h \
     unittests/testvector.h \
     unittests/teststack.h \
-    lib/utils/BinaryTreePrettyPrint.h \
     lib/datastructures/BinaryTree.h \
     unittests/testbinarytree.h \
     lib/utils/SampleBinaryTrees.h \

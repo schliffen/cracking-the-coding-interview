@@ -53,6 +53,22 @@ public:
     T data;
 };
 
+template<class T>
+class BinaryTreeP: public BinaryTree<T>
+{
+    BinaryTreeP(T val, BinaryTreeP<T>* pParent = 0):
+        left(0),
+        right(0),
+        data(val),
+        parent(pParent)
+    {
+    }
+
+    BinaryTreeP<T> *left, *right;
+    T data;
+    BinaryTreeP<T> *parent;
+};
+
 #include "BinaryTree.hpp"
 
 #endif
