@@ -9,6 +9,7 @@ namespace ctci
     public:
 
         typedef T * iterator;
+        typedef const T * const_iterator;
 
         vector();
         vector(unsigned int size);
@@ -20,7 +21,9 @@ namespace ctci
         unsigned int size() const;
         bool empty() const;
         iterator begin();
+        const_iterator const_begin();
         iterator end();
+        const_iterator const_end();
         T & front();
         T & back();
         void push_back(const T & value);
@@ -38,7 +41,6 @@ namespace ctci
         unsigned int my_capacity;
         T * buffer;
     };
-
 }
 
 #include "vector.hpp"

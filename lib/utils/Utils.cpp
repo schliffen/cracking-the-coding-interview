@@ -3,6 +3,7 @@
 #include <string>
 #include <assert.h>
 #include <stdlib.h>
+#include "lib/datastructures/vector.h"
 
 void swap(void* a, void* b, unsigned short size)
 {
@@ -130,7 +131,7 @@ void testBitFunctions()
 
 
 // in case we're not in c++11
-bool is_sorted(std::vector<int>::const_iterator begin, std::vector<int>::const_iterator end)
+bool is_sorted(ctci::vector<int>::const_iterator begin, ctci::vector<int>::const_iterator end)
 {
     if (begin == end)
         return false;

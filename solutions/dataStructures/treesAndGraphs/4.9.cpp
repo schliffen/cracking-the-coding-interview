@@ -1,13 +1,12 @@
 #include <iostream>
-#include <vector>
-
-using namespace std;
 
 #include "4.9.h"
 
 #include "lib/datastructures/BinaryTree.h"
+#include "lib/datastructures/vector.h"
 #include "lib/utils/SampleBinaryTrees.h"
 
+using namespace std;
 
 // 4.9 You are given a binary tree in which each node contains a value.
 // Design an algorithm to print all paths which sum to a given value.
@@ -28,7 +27,7 @@ int newID()
 }
 
 // Main recursive function to find paths that add up to the given value
-int findPathsWithValue(BinaryTree<int>*pRoot, vector<int>path, int value)
+int findPathsWithValue(BinaryTree<int>*pRoot, ctci::vector<int>path, int value)
 {
     if (!pRoot)
         return 0;
@@ -75,7 +74,7 @@ void test4_9()
     buildRandomBinaryTree<int, idFunci>(pRoot, 20000, &newID);
 
     // call our recursive sum finding function
-    vector<int> paths;
+    ctci::vector<int> paths;
     int value = 26;
     int pathsFound = findPathsWithValue(pRoot, paths, value);
 

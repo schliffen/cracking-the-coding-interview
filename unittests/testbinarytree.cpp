@@ -1,6 +1,5 @@
 #include <iostream>
 #include <iterator>
-#include <vector>
 #include <algorithm>
 #include <assert.h>
 #include <math.h>
@@ -9,31 +8,32 @@
 
 #include "lib/utils/Utils.h"
 #include "lib/utils/SampleBinaryTrees.h"
+#include "lib/datastructures/vector.h"
 
 using namespace std;
 
 void testPreOrderTraversal()
 {
     BinaryTree<int>* pNode = buildPreOrderBinaryTree();
-    vector<int> vec;
+    ctci::vector<int> vec;
     pNode->traverse(pNode, BinaryTree<int>::ePreOrder, vec);
-    assert(is_sorted(vec.begin(), vec.end()));
+    assert(is_sorted(vec.const_begin(), vec.const_end()));
 }
 
 void testPostOrderTraversal()
 {
     BinaryTree<int>* pNode = buildPostOrderBinaryTree();
-    vector<int> vec;
+    ctci::vector<int> vec;
     pNode->traverse(pNode, BinaryTree<int>::ePostOrder, vec);
-    assert(is_sorted(vec.begin(), vec.end()));
+    assert(is_sorted(vec.const_begin(), vec.const_end()));
 }
 
 void testInOrderTraversal()
 {
     BinaryTree<int>* pNode = buildInOrderBinaryTree();
-    vector<int> vec;
+    ctci::vector<int> vec;
     pNode->traverse(pNode, BinaryTree<int>::eInOrder, vec);
-    assert(is_sorted(vec.begin(), vec.end()));
+    assert(is_sorted(vec.const_begin(), vec.const_end()));
 }
 
 void testFullBinaryTreeBasicProperties()

@@ -2,11 +2,11 @@
 #define __test__utils__
 
 #include <stdio.h>
-#include <vector>
 #include <iterator>
 #include <sstream>
 
 #include "lib/datastructures/string.h"
+#include "lib/datastructures/vector.h"
 
 template<class a_type>
 void swap(a_type* a, a_type* b)
@@ -40,7 +40,7 @@ int clearBitsIThrough0(int num, int i);
 int udpateBit(int num, int i, int v);
 void testBitFunctions();
 
-bool is_sorted(std::vector<int>::const_iterator begin, std::vector<int>::const_iterator end);
+bool is_sorted(ctci::vector<int>::const_iterator begin, ctci::vector<int>::const_iterator end);
 
 std::string newUUID();
 ctci::string snewUUID();

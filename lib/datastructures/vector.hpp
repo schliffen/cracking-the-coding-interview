@@ -58,7 +58,19 @@ typename vector<T>::iterator vector<T>::begin()
 }
 
 template<class T>
+typename vector<T>::const_iterator vector<T>::const_begin()
+{
+    return buffer;
+}
+
+template<class T>
 typename vector<T>::iterator vector<T>::end()
+{
+    return buffer + size();
+}
+
+template<class T>
+typename vector<T>::const_iterator vector<T>::const_end()
 {
     return buffer + size();
 }

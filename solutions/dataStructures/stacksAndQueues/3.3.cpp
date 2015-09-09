@@ -12,7 +12,7 @@
 // which performs a pop operation on a specific sub-stack.
 
 #include "lib/datastructures/Stack.h"
-#include <vector>
+#include "lib/datastructures/vector.h"
 
 #include <assert.h>
 #include <iostream>
@@ -85,8 +85,8 @@ public:
     }
     
 private:
-    int                          m_capacity;
-    vector<Stack<a_type> >       m_stacks;
+    int                                 m_capacity;
+    ctci::vector<Stack<a_type> >        m_stacks;
 };
 
 void test3_3()

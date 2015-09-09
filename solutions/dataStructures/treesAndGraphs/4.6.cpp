@@ -1,6 +1,5 @@
 #include <iostream>
 #include <assert.h>
-#include <vector>
 
 #include "4.6.h"
 #include "lib/datastructures/BinaryTree.h"

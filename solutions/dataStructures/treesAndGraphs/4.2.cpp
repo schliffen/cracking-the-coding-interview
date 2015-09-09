@@ -1,16 +1,14 @@
+#include "assert.h"
+
 #include "4.2.h"
 #include "lib/datastructures/vector.h"
 #include "lib/datastructures/digraph.h"
-
-#include <assert.h>
+#include "lib/datastructures/string.h"
 
 /*
     4.2 Given a directed graph, design an algorithm to
     find out whether there is a route between two nodes.
 */
-
-#include "lib/datastructures/vector.h"
-#include "lib/datastructures/string.h"
 
 void test4_2()
 {
