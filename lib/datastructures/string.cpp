@@ -53,13 +53,12 @@ std::ostream& ctci::operator<<(std::ostream& ost, const ctci::string& ls)
 
 ctci::string ctci::operator+(const ctci::string& s1, const ctci::string& s2)
 {
+    ctci::string str;
+    free(str.buf);
     size_t l = s1.size()+s2.size()+1;
-    char* nbuf = (char*)calloc(1, l);
-    memcpy(nbuf, s1.buf, s1.size());
-    memcpy(nbuf+s1.size(), s2.buf, s2.size());
-    ctci::string str(nbuf);
-    str.assign();
-    free(nbuf);
+    str.buf = (char*)calloc(1, l);
+    memcpy(str.buf, s1.buf, s1.size());
+    memcpy(str.buf+s1.size(), s2.buf, s2.size());
     return str;
 }
 
