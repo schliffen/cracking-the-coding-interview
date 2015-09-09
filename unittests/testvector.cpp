@@ -1,17 +1,19 @@
 #include "unittests/testvector.h"
 #include "lib/datastructures/vector.h"
+#include "lib/datastructures/string.h"
 #include "testhelper.h"
 
 #include <assert.h>
 #include <string>
-#include <map>
+#include <vector>
 #include <iostream>
 
 using namespace std;
 
-void testStringVec()
+template<class T>
+void testVectorPushBack()
 {
-    ctci::vector<string> vec;
+    T vec;
     vec.push_back("hello");
     vec.push_back("how");
     vec.push_back("are");
@@ -23,24 +25,18 @@ void testStringVec()
     assert(vec[3] == "you");
 }
 
-void testMapVec()
+template<class T>
+void testGiantVectorPushBack()
 {
-    map<int, string> m;
-    m[0] = "hello";
-    m[1] = "how";
-    m[2] = "are";
-    m[3] = "you";
-    
-    ctci::vector<map<int, string> > vec;
-    vec.push_back(m);
-    assert(vec[0][0] == "hello");
-    assert(vec[0][1] == "how");
-    assert(vec[0][2] == "are");
-    assert(vec[0][3] == "you");
+    T vec;
+    for (int i = 0; i < 1e3; i++)
+        vec.push_back("hello");
 }
 
 START_TEST(testVector)
-TEST(testStringVec)
-TEST(testMapVec)
+TEST(testVectorPushBack<ctci::vector<ctci::string> >)
+TEST(testVectorPushBack<std::vector<std::string> >)
+TEST(testGiantVectorPushBack<ctci::vector<ctci::string> >)
+TEST(testGiantVectorPushBack<std::vector<std::string> >)
 END_TEST
 
