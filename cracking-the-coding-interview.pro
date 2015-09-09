@@ -120,7 +120,8 @@ HEADERS += \
     solutions/conceptsAndAlgorithms/recursionAndDynamicProgramming/9.1.h \
     solutions/conceptsAndAlgorithms/recursionAndDynamicProgramming/9.x.0.h \
     lib/utils/BinaryTreeRenderer.h \
-    solutions/conceptsAndAlgorithms/sortingAndSearching/11.1.h
+    solutions/conceptsAndAlgorithms/sortingAndSearching/11.1.h \
+    assert.h
 
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter

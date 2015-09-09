@@ -1,14 +1,8 @@
-#include "testbinarytreerenderer.h"
-
 #include <iostream>
-#include <iterator>
-#include <vector>
-#include <algorithm>
 #include <assert.h>
-#include <math.h>
 #include <sys/stat.h>
 
-#include "testbinarytree.h"
+#include "testbinarytreerenderer.h"
 
 #include "lib/utils/Utils.h"
 #include "lib/utils/SampleBinaryTrees.h"

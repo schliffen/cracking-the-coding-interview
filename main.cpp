@@ -29,6 +29,7 @@
 #include "solutions/dataStructures/treesAndGraphs/4.8.h"
 #include "solutions/dataStructures/treesAndGraphs/4.9.h"
 #include "solutions/conceptsAndAlgorithms/bitManipulation/5.1.h"
+#include "solutions/conceptsAndAlgorithms/bitManipulation/5.2.h"
 #include "solutions/conceptsAndAlgorithms/recursionAndDynamicProgramming/9.1.h"
 #include "solutions/conceptsAndAlgorithms/recursionAndDynamicProgramming/9.x.0.h"
 #include "solutions/conceptsAndAlgorithms/sortingAndSearching/11.1.h"
@@ -101,6 +102,7 @@ int main(int argc, char* argv[])
     test4_8();
     test4_9();
     test5_1();
+    test5_2();
     test9x0();
     test9_1();
     test11_1();

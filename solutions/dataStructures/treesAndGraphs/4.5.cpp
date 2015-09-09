@@ -1,11 +1,13 @@
+#include <iostream>
+
 #include "4.5.h"
 
 #include "lib/datastructures/BinaryTree.h"
 #include "assert.h"
 
-/*
-    4.5 Implement a function to check if a binary tree is a binary search tree.
-*/
+using namespace std;
+
+// 4.5 Implement a function to check if a binary tree is a binary search tree.
 
 void test4_5()
 {
@@ -17,4 +19,6 @@ void test4_5()
     tree.left = new BinaryTree<int>(3);
     tree.right = new BinaryTree<int>(2);
     assert(!BinaryTree<int>::isBST(&tree));
+
+    cout << "4.5 passed!" << endl;
 }

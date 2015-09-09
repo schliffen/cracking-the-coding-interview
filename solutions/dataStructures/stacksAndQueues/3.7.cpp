@@ -19,11 +19,12 @@ struct Animal
 {
     enum Type
     {
+        GodKnows,
         Cat,
         Dog
     };
 
-    Animal(string name, Type type):
+    Animal(string name = "", Type type = GodKnows):
         m_name(name),
         m_type(type)
     {
@@ -111,6 +112,7 @@ public:
             pNode = pNode->prev();
         }
         assert(false);
+        return Animal();
     }
 
 private:

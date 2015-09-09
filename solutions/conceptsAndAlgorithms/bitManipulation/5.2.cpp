@@ -1,30 +1,25 @@
-#include "5.2.h"
-#include <bitset>
 #include <iostream>
-#include <cstdio>
 #include <limits.h>
+#include <string>
+
+#include "5.2.h"
 
 using namespace std;
 
-/*
-Given a real number between 0 and 1 (e.g., 0.72) that is passed in as a double,
-print the binary representation. If the number cannot be represented accurately
-in binary with at most 32 characters, print "ERROR."
-*/
+// Given a real number between 0 and 1 (e.g., 0.72) that is passed in as a double,
+// print the binary representation. If the number cannot be represented accurately
+// in binary with at most 32 characters, print "ERROR."
 
-void showDoubleBits(double in)
+
+string getBitsForDouble(double d)
 {
-    union
-    {
-         float input;
-         int   output;
-    }    data;
-
-    data.input = in;
-    std::cout << std::bitset<sizeof(float) * CHAR_BIT>(data.output) << std::endl;
+    if (0.0f < d || d > 1.0f)
+        return "ERROR";
+    return "";
 }
 
-void testShowDoubleBits()
+void test5_2()
 {
-    showDoubleBits(0.72);
+    getBitsForDouble(0.0f);
+    cout << "5.2 NOT passed!" << endl;
 }
