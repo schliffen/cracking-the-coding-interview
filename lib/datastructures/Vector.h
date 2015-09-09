@@ -28,6 +28,7 @@ public:
     void resize(unsigned int size);
 
     T & operator[](unsigned int index);
+    T & operator[](unsigned int index) const;
     Vector<T> & operator=(const Vector<T> &);
     void clear();
 private:

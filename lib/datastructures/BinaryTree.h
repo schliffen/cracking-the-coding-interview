@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include "lib/datastructures/Vector.h"
 
 using namespace std;
 
@@ -39,7 +40,8 @@ public:
 
     static void traverse(BinaryTree<T>* pNode, TraversalOrder order);
 
-    static void traverse(BinaryTree<T>* pNode, TraversalOrder order, std::vector<T>& vec, bool keepNull = false);
+    template<class U>
+    static void traverse(BinaryTree<T>* pNode, TraversalOrder order, U& vec, bool keepNull = false);
 
     static int size(BinaryTree<T>* pNode);
 

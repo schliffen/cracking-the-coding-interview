@@ -1,9 +1,6 @@
 #ifndef VECTOR_HPP
 #define VECTOR_HPP
 
-
-
-// Your code goes here ...
 template<class T>
 Vector<T>::Vector()
 {
@@ -126,6 +123,13 @@ void Vector<T>::resize(unsigned int size)
 
 template<class T>
 T& Vector<T>::operator[](unsigned int index)
+{
+    return buffer[index];
+}
+
+
+template<class T>
+T& Vector<T>::operator[](unsigned int index) const
 {
     return buffer[index];
 }

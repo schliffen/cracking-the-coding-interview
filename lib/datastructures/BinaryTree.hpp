@@ -124,7 +124,8 @@ void BinaryTree<T>::traverse(BinaryTree<T>* pNode, BinaryTree<T>::TraversalOrder
 }
 
 template<class T>
-void BinaryTree<T>::traverse(BinaryTree<T>* pNode, BinaryTree<T>::TraversalOrder order, std::vector<T>& vec, bool keepNull)
+template<class U>
+void BinaryTree<T>::traverse(BinaryTree<T>* pNode, BinaryTree<T>::TraversalOrder order, U& vec, bool keepNull)
 {
     if (pNode == 0)
     {
