@@ -120,7 +120,7 @@ BinaryTree<ctci::string>* variation2(BinaryTree<ctci::string>* T1, BinaryTree<ct
 
 void test4_8()
 {
-    int T1Size = 2e4; // set this to 2e6 for "millions" of nodes in T1
+    int T1Size = 2e3; // set this to 2e6 for "millions" of nodes in T1
     int T2Size = 200;
 
     BinaryTree<ctci::string> *T1 = 0, *T2 = 0;
@@ -130,6 +130,8 @@ void test4_8()
     bool isSubtree = variation1(T2, T1);
 
     BinaryTree<ctci::string> *pFoundSubtree = variation2(T1, T2);
+
+    delete T1;
 
     if (isSubtree && pFoundSubtree)
         cout << "4.8 passed!" << endl;

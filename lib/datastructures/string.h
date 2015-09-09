@@ -36,6 +36,7 @@ namespace ctci
     private:
         char* buf;
         bool isAllocated;
+        mutable int bsize;
     };
 }
 

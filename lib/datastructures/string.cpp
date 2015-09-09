@@ -2,13 +2,15 @@
 
 ctci::string::string(char *s):
     buf(s),
-    isAllocated(false)
+    isAllocated(false),
+    bsize(0)
 {
 }
 
 ctci::string::string(const char *s):
     buf((char*)s),
-    isAllocated(false)
+    isAllocated(false),
+    bsize(0)
 {
 }
 
@@ -17,6 +19,7 @@ ctci::string::string()
     buf = (char*)malloc(1);
     buf[0]='\0';
     isAllocated = true;
+    bsize = 0;
 }
 
 ctci::string::~string()
@@ -27,15 +30,20 @@ ctci::string::~string()
 
 void ctci::string::assign()
 {
-    char* p = (char*)malloc(size());
+    int s = size();
+    char* p = (char*)calloc(1,s+1);
     memcpy(p, buf, size());
-    buf = p;
     isAllocated = true;
+    buf = p;
 }
 
 size_t ctci::string::size() const
 {
-    return strlen(buf);
+    if (bsize == 0)
+    {
+        bsize = strlen(buf);
+    }
+    return bsize;
 }
 
 std::ostream& ctci::operator<<(std::ostream& ost, const ctci::string& ls)
@@ -46,12 +54,12 @@ std::ostream& ctci::operator<<(std::ostream& ost, const ctci::string& ls)
 ctci::string ctci::operator+(const ctci::string& s1, const ctci::string& s2)
 {
     size_t l = s1.size()+s2.size()+1;
-    char* nbuf = (char*)malloc(l);
+    char* nbuf = (char*)calloc(1, l);
     memcpy(nbuf, s1.buf, s1.size());
     memcpy(nbuf+s1.size(), s2.buf, s2.size());
-    nbuf[l-1]='\0';
     ctci::string str(nbuf);
     str.assign();
+    free(nbuf);
     return str;
 }
 

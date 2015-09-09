@@ -59,6 +59,11 @@ int main(int argc, char* argv[])
     (void)argc;
     (void)argv;
 
+
+    teststring();
+
+    return 0;
+
     // unit test data structures
     testLinkedList();
     testBitFunctions();
@@ -110,8 +115,6 @@ int main(int argc, char* argv[])
     test12_1();
     test12_x_0();
     test13_1();
-
-    teststring();
 
     return 0;
 }

@@ -27,7 +27,7 @@ int newID()
 }
 
 // Main recursive function to find paths that add up to the given value
-int findPathsWithValue(BinaryTree<int>*pRoot, ctci::vector<int>path, int value)
+int findPathsWithValue(BinaryTree<int>*pRoot, ctci::vector<int> &path, int value)
 {
     if (!pRoot)
         return 0;
@@ -71,12 +71,14 @@ void test4_9()
 {
     // build our random binary tree
     BinaryTree<int>* pRoot = 0;
-    buildRandomBinaryTree<int, idFunci>(pRoot, 20000, &newID);
+    buildRandomBinaryTree<int, idFunci>(pRoot, 200, &newID);
 
     // call our recursive sum finding function
     ctci::vector<int> paths;
     int value = 26;
     int pathsFound = findPathsWithValue(pRoot, paths, value);
+
+    delete pRoot;
 
     if (pathsFound > 0)
         cout << "4.9 passed!" << endl;

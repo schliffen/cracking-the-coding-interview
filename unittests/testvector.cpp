@@ -1,5 +1,7 @@
 #include "unittests/testvector.h"
 #include "lib/datastructures/vector.h"
+#include "testhelper.h"
+
 #include <assert.h>
 #include <string>
 #include <map>
@@ -44,3 +46,6 @@ void testVector()
     testMapVec();
     cout << "testing Vector passed!" << endl;
 }
+
+//TEST(testVector());
+

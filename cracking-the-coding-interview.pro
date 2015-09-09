@@ -125,10 +125,15 @@ HEADERS += \
     lib/datastructures/string.h \
     unittests/teststring.h \
     lib/datastructures/vector.h \
-    lib/datastructures/vector.hpp
+    lib/datastructures/vector.hpp \
+    unittests/testhelper.h
 
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter
 
 OTHER_FILES += \
     interviewQuestions.txt
+
+DISTFILES += \
+    valgrindReport.txt \
+    unittests/makefile
