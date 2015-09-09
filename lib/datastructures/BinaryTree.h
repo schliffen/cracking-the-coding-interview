@@ -12,6 +12,8 @@ class BinaryTree
 public:
     BinaryTree(T val);
 
+    ~BinaryTree();
+
     enum TraversalOrder
     {
         ePreOrder,
@@ -49,25 +51,26 @@ public:
 
     BinaryTree<T>* find(T);
 
-    BinaryTree<T> *left, *right;
-    T data;
-};
-
-template<class T>
-class BinaryTreeP: public BinaryTree<T>
-{
-    BinaryTreeP(T val, BinaryTreeP<T>* pParent = 0):
-        left(0),
-        right(0),
-        data(val),
-        parent(pParent)
+    static void setParentsOnChildren(BinaryTree<T> *root)
     {
+        if (!root)
+            return;
+        if (root->left)
+        {
+            root->left->parent = root;
+            setParentsOnChildren(root->left);
+        }
+        if (root->right)
+        {
+            root->right->parent = root;
+            setParentsOnChildren(root->right);
+        }
     }
 
-    BinaryTreeP<T> *left, *right;
+    BinaryTree<T> *left, *right, *parent;
     T data;
-    BinaryTreeP<T> *parent;
 };
+
 
 #include "BinaryTree.hpp"
 

@@ -2,8 +2,19 @@
 #define BINARYTREE_HPP
 
 template<class T>
-BinaryTree<T>::BinaryTree(T val) : left(0), right(0), data(val)
+BinaryTree<T>::BinaryTree(T val):
+    left(0),
+    right(0),
+    parent(0),
+    data(val)
 {
+}
+
+template<class T>
+BinaryTree<T>::~BinaryTree()
+{
+    delete left;
+    delete right;
 }
 
 template<class T>

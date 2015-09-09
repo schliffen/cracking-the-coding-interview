@@ -65,6 +65,7 @@ int main(int argc, char* argv[])
     testDLinkedList();
     testQueue();
     testBinaryTree();
+    testBinaryTreeRenderer();
 
     // unit test algorithms
     testsorting();
@@ -106,8 +107,6 @@ int main(int argc, char* argv[])
     test12_1();
     test12_x_0();
     test13_1();
-
-    testBinaryTreeRenderer();
 
     return 0;
 }

@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <assert.h>
 #include <math.h>
+#include <sys/stat.h>
 
 #include "testbinarytree.h"
 
@@ -20,9 +21,8 @@ void testBinaryTreeRenderer()
     BinaryTree<int>* pFull = new BinaryTree<int>(1);
     buildFullBinaryTree(pFull, 1, 5);
 
-    FILE* pStream = fopen("binaryTree.dot", "w");
-
-    bst_print_dot(pFull, pStream);
-
+    renderBinaryTree(pFull, "binaryTree");
+    struct stat buffer;
+    assert(stat ("binaryTree.dot", &buffer) == 0);
     cout << "binary tree renderer tested!" << endl;
 }

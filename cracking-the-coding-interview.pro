@@ -1,5 +1,5 @@
 TEMPLATE = app
-TARGET = test
+TARGET = cracking_the_coding_interview
 CONFIG += debug
 QT += core
 SOURCES += \
