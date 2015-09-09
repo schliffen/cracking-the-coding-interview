@@ -9,6 +9,9 @@
     find out whether there is a route between two nodes.
 */
 
+#include "lib/datastructures/vector.h"
+#include "lib/datastructures/string.h"
+
 void test4_2()
 {
     DiGraph a("A");
@@ -29,7 +32,7 @@ void test4_2()
     g.connect(&e);
 
     std::deque<DiGraph*> path;
-    std::vector<DiGraph*> visited;
+    ctci::vector<DiGraph*> visited;
 
     bool found = a.getPathTo(&g, path, visited);
 

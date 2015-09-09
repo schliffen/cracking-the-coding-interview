@@ -2,25 +2,25 @@
 #define DIGRAPH_H
 
 #include <deque>
-#include <vector>
-#include <string>
+#include "lib/datastructures/string.h"
+#include "lib/datastructures/vector.h"
 
 class DiGraph
 {
 public:
-                                    DiGraph(std::string label);
+                                    DiGraph(ctci::string label);
 
     void                            connect(DiGraph* pNode);
 
-    const std::vector<DiGraph*>&    getConnectedNodes() const;
+    const ctci::vector<DiGraph*>&    getConnectedNodes() const;
 
     bool                            getPathTo(DiGraph* pTarget,
                                               std::deque<DiGraph *> &path,
-                                              std::vector<DiGraph*>& visited);
+                                              ctci::vector<DiGraph*>& visited);
 
 private:
-    std::vector<DiGraph*>       m_nodes;
-    std::string                 m_label;
+    ctci::vector<DiGraph*>       m_nodes;
+    ctci::string                 m_label;
 };
 
 #endif // DIGRAPH_H

@@ -1,6 +1,6 @@
 #include "digraph.h"
 
-DiGraph::DiGraph(std::string label):
+DiGraph::DiGraph(ctci::string label):
     m_nodes(),
     m_label(label)
 {
@@ -11,12 +11,12 @@ void DiGraph::connect(DiGraph *pNode)
     m_nodes.push_back(pNode);
 }
 
-const std::vector<DiGraph *> &DiGraph::getConnectedNodes() const
+const ctci::vector<DiGraph *> &DiGraph::getConnectedNodes() const
 {
     return m_nodes;
 }
 
-bool DiGraph::getPathTo(DiGraph* pTarget, std::deque<DiGraph*>& path, std::vector<DiGraph*>& visited)
+bool DiGraph::getPathTo(DiGraph* pTarget, std::deque<DiGraph*>& path, ctci::vector<DiGraph*>& visited)
 {
     for (int i = 0; i < (int)m_nodes.size(); i++)
     {
