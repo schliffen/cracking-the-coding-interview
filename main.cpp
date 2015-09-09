@@ -39,7 +39,7 @@
 #include "lib/utils/Utils.h"
 #include "lib/datastructures/LinkedList.h"
 #include "lib/datastructures/Stack.h"
-#include "lib/datastructures/Vector.h"
+#include "lib/datastructures/vector.h"
 #include "unittests/testdlinkedlist.h"
 #include "unittests/testlinkedlist.h"
 #include "unittests/testvector.h"

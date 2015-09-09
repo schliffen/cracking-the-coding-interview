@@ -1,8 +1,10 @@
-#ifndef VECTOR_HPP
-#define VECTOR_HPP
+#ifndef vector_HPP
+#define vector_HPP
+
+namespace ctci {
 
 template<class T>
-Vector<T>::Vector()
+vector<T>::vector()
 {
     my_capacity = 0;
     my_size = 0;
@@ -10,7 +12,7 @@ Vector<T>::Vector()
 }
 
 template<class T>
-Vector<T>::Vector(const Vector<T> & v)
+vector<T>::vector(const vector<T> & v)
 {
     my_size = v.my_size;
     my_capacity = v.my_capacity;
@@ -20,7 +22,7 @@ Vector<T>::Vector(const Vector<T> & v)
 }
 
 template<class T>
-Vector<T>::Vector(unsigned int size)
+vector<T>::vector(unsigned int size)
 {
     my_capacity = size;
     my_size = size;
@@ -28,7 +30,7 @@ Vector<T>::Vector(unsigned int size)
 }
 
 template<class T>
-Vector<T>::Vector(unsigned int size, const T & initial)
+vector<T>::vector(unsigned int size, const T & initial)
 {
     my_size = size;
     my_capacity = size;
@@ -38,7 +40,7 @@ Vector<T>::Vector(unsigned int size, const T & initial)
 }
 
 template<class T>
-Vector<T> & Vector<T>::operator = (const Vector<T> & v)
+vector<T> & vector<T>::operator = (const vector<T> & v)
 {
     delete[ ] buffer;
     my_size = v.my_size;
@@ -50,31 +52,31 @@ Vector<T> & Vector<T>::operator = (const Vector<T> & v)
 }
 
 template<class T>
-typename Vector<T>::iterator Vector<T>::begin()
+typename vector<T>::iterator vector<T>::begin()
 {
     return buffer;
 }
 
 template<class T>
-typename Vector<T>::iterator Vector<T>::end()
+typename vector<T>::iterator vector<T>::end()
 {
     return buffer + size();
 }
 
 template<class T>
-T& Vector<T>::front()
+T& vector<T>::front()
 {
     return buffer[0];
 }
 
 template<class T>
-T& Vector<T>::back()
+T& vector<T>::back()
 {
     return buffer[my_size - 1];
 }
 
 template<class T>
-void Vector<T>::push_back(const T & v)
+void vector<T>::push_back(const T & v)
 {
     if (my_size >= my_capacity)
         reserve(my_capacity +5);
@@ -82,13 +84,13 @@ void Vector<T>::push_back(const T & v)
 }
 
 template<class T>
-void Vector<T>::pop_back()
+void vector<T>::pop_back()
 {
     my_size--;
 }
 
 template<class T>
-void Vector<T>::reserve(unsigned int capacity)
+void vector<T>::reserve(unsigned int capacity)
 {
     if(buffer == 0)
     {
@@ -109,49 +111,50 @@ void Vector<T>::reserve(unsigned int capacity)
 }
 
 template<class T>
-unsigned int Vector<T>::size()const//
+unsigned int vector<T>::size()const//
 {
     return my_size;
 }
 
 template<class T>
-void Vector<T>::resize(unsigned int size)
+void vector<T>::resize(unsigned int size)
 {
     reserve(size);
     my_size = size;
 }
 
 template<class T>
-T& Vector<T>::operator[](unsigned int index)
+T& vector<T>::operator[](unsigned int index)
 {
     return buffer[index];
 }
 
 
 template<class T>
-T& Vector<T>::operator[](unsigned int index) const
+T& vector<T>::operator[](unsigned int index) const
 {
     return buffer[index];
 }
 
 template<class T>
-unsigned int Vector<T>::capacity()const
+unsigned int vector<T>::capacity()const
 {
     return my_capacity;
 }
 
 template<class T>
-Vector<T>::~Vector()
+vector<T>::~vector()
 {
     delete[ ] buffer;
 }
 template <class T>
-void Vector<T>::clear()
+void vector<T>::clear()
 {
     my_capacity = 0;
     my_size = 0;
     buffer = 0;
 }
 
+}
 
-#endif // VECTOR_HPP
+#endif // vector_HPP

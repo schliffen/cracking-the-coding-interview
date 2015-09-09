@@ -1,5 +1,5 @@
 #include "unittests/testvector.h"
-#include "lib/datastructures/Vector.h"
+#include "lib/datastructures/vector.h"
 #include <assert.h>
 #include <string>
 #include <map>
@@ -9,7 +9,7 @@ using namespace std;
 
 void testStringVec()
 {
-    Vector<string> vec;
+    ctci::vector<string> vec;
     vec.push_back("hello");
     vec.push_back("how");
     vec.push_back("are");
@@ -29,7 +29,7 @@ void testMapVec()
     m[2] = "are";
     m[3] = "you";
     
-    Vector<map<int, string> > vec;
+    ctci::vector<map<int, string> > vec;
     vec.push_back(m);
     assert(vec[0][0] == "hello");
     assert(vec[0][1] == "how");

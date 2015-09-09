@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <vector>
-#include "lib/datastructures/Vector.h"
+#include "lib/datastructures/vector.h"
 
 using namespace std;
 

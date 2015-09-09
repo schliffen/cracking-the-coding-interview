@@ -62,12 +62,10 @@ HEADERS += \
     lib/utils/Utils.h \
     lib/datastructures/LinkedList.h \
     lib/datastructures/Stack.h \
-    lib/datastructures/Vector.h \
     lib/datastructures/DLinkedList.h \
     lib/datastructures/Queue.h \
     lib/datastructures/DLinkedList.hpp \
     lib/datastructures/LinkedList.hpp \
-    lib/datastructures/Vector.hpp \
     lib/datastructures/Queue.hpp \
     lib/datastructures/digraph.h \
     lib/datastructures/Stack.hpp \
@@ -125,7 +123,9 @@ HEADERS += \
     solutions/conceptsAndAlgorithms/sortingAndSearching/11.1.h \
     assert.h \
     lib/datastructures/string.h \
-    unittests/teststring.h
+    unittests/teststring.h \
+    lib/datastructures/vector.h \
+    lib/datastructures/vector.hpp
 
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter

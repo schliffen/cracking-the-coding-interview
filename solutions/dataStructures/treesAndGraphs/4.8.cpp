@@ -8,7 +8,7 @@
 #include "lib/utils/Utils.h"
 #include "lib/utils/BinaryTreeRenderer.h"
 #include "lib/datastructures/string.h"
-#include "lib/datastructures/Vector.h"
+#include "lib/datastructures/vector.h"
 
 // 4.8 You have two very large binary trees: Tl, with millions of nodes,
 // and T2, with hundreds of nodes. Create an algorithm to decide ifT2
@@ -16,7 +16,7 @@
 // node n in Tl such that the subtree of n is identical to T2. That is,
 // if you cut off the tree at node n, the two trees would be identical.
 
-bool isSubArray(const Vector<ctci::string>& aArray, const Vector<ctci::string>& bSubArray, int& matchedIndex);
+bool isSubArray(const ctci::vector<ctci::string>& aArray, const ctci::vector<ctci::string>& bSubArray, int& matchedIndex);
 
 // check whether two trees are identical
 bool doTreesMatch(BinaryTree<ctci::string>* pA, BinaryTree<ctci::string>* pB)
@@ -97,11 +97,11 @@ void buildTrees(int T1Size, int T2Size, BinaryTree<ctci::string> *&T1, BinaryTre
 bool variation1(BinaryTree<ctci::string> *T2, BinaryTree<ctci::string> *T1)
 {
     // do preorder traveral of T1, and place results in array
-    Vector<ctci::string> T1Values;
+    ctci::vector<ctci::string> T1Values;
     T1->traverse(T1, BinaryTree<ctci::string>::ePreOrder, T1Values, true);
 
     // do preorder traveral of T2, and place results in array
-    Vector<ctci::string> T2Values;
+    ctci::vector<ctci::string> T2Values;
     T2->traverse(T2, BinaryTree<ctci::string>::ePreOrder, T2Values, true);
 
     // check whether T2's traversed array is a subarray of T1's traversed subarray
@@ -137,7 +137,7 @@ void test4_8()
         cout << "4.8 NOT passed!" << endl;
 }
 
-bool isSubArray(const Vector<ctci::string>& aArray, const Vector<ctci::string>& bSubArray, int& matchedIndex)
+bool isSubArray(const ctci::vector<ctci::string>& aArray, const ctci::vector<ctci::string>& bSubArray, int& matchedIndex)
 {
     for (size_t i = 0; i < aArray.size(); i++)
     {
