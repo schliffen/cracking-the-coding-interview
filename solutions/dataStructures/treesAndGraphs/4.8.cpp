@@ -1,15 +1,13 @@
 #include <iostream>
-#include <string>
 #include <sstream>
 #include <math.h>
 #include <assert.h>
-
-using namespace std;
 
 #include "4.8.h"
 #include "lib/utils/SampleBinaryTrees.h"
 #include "lib/utils/Utils.h"
 #include "lib/utils/BinaryTreeRenderer.h"
+#include "lib/datastructures/string.h"
 
 // 4.8 You have two very large binary trees: Tl, with millions of nodes,
 // and T2, with hundreds of nodes. Create an algorithm to decide ifT2
@@ -17,10 +15,10 @@ using namespace std;
 // node n in Tl such that the subtree of n is identical to T2. That is,
 // if you cut off the tree at node n, the two trees would be identical.
 
-bool isSubArray(const vector<string>& aArray, const vector<string>& bSubArray, int& matchedIndex);
+bool isSubArray(const std::vector<ctci::string>& aArray, const std::vector<ctci::string>& bSubArray, int& matchedIndex);
 
 // check whether two trees are identical
-bool doTreesMatch(BinaryTree<string>* pA, BinaryTree<string>* pB)
+bool doTreesMatch(BinaryTree<ctci::string>* pA, BinaryTree<ctci::string>* pB)
 {
     // two null nodes, that matches
     if (!pA && !pB)
@@ -42,7 +40,7 @@ bool doTreesMatch(BinaryTree<string>* pA, BinaryTree<string>* pB)
 }
 
 // find binary tree T2 within binary tree T1
-BinaryTree<string>* findSubtree(BinaryTree<string>* T1, BinaryTree<string>* T2)
+BinaryTree<ctci::string>* findSubtree(BinaryTree<ctci::string>* T1, BinaryTree<ctci::string>* T2)
 {
     if (!T1)
         return 0;
@@ -55,14 +53,14 @@ BinaryTree<string>* findSubtree(BinaryTree<string>* T1, BinaryTree<string>* T2)
             return T2;
 
     // recurse to the left
-    BinaryTree<string>* foundLeft = findSubtree(T1->left, T2);
+    BinaryTree<ctci::string>* foundLeft = findSubtree(T1->left, T2);
 
     // if found, then return
     if (foundLeft)
         return foundLeft;
 
     // recurse to the right
-    BinaryTree<string>* foundRight = findSubtree(T1->right, T2);
+    BinaryTree<ctci::string>* foundRight = findSubtree(T1->right, T2);
 
     // if found, then return
     if (foundRight)
@@ -71,19 +69,19 @@ BinaryTree<string>* findSubtree(BinaryTree<string>* T1, BinaryTree<string>* T2)
     return 0;
 }
 
-void buildTrees(int T1Size, int T2Size, BinaryTree<string> *&T1, BinaryTree<string> *&T2)
+void buildTrees(int T1Size, int T2Size, BinaryTree<ctci::string> *&T1, BinaryTree<ctci::string> *&T2)
 {
     // build random binary tree with lots of nodes
-    buildRandomBinaryTree<string, idFunc>(T1, T1Size, &newUUID);
+    buildRandomBinaryTree<ctci::string, sidFunc>(T1, T1Size, &snewUUID);
 
     // build random binary tree with less nodes
-    buildRandomBinaryTree<string, idFunc>(T2, T2Size, &newUUID);
+    buildRandomBinaryTree<ctci::string, sidFunc>(T2, T2Size, &snewUUID);
 
     // compute max depth of T1
     int maxDepth = log2(T1Size + 1);
 
     // find a random free node on T1
-    BinaryTree<string>* pT1RandLeaf = getRandomNodeWithFreeSpace(T1, maxDepth);
+    BinaryTree<ctci::string>* pT1RandLeaf = getRandomNodeWithFreeSpace(T1, maxDepth);
 
     // graft T2 onto T1
     if (!pT1RandLeaf->left)
@@ -95,15 +93,15 @@ void buildTrees(int T1Size, int T2Size, BinaryTree<string> *&T1, BinaryTree<stri
     assert(T1->size(T1) == (T1Size + T2Size));
 }
 
-bool variation1(BinaryTree<string> *T2, BinaryTree<string> *T1)
+bool variation1(BinaryTree<ctci::string> *T2, BinaryTree<ctci::string> *T1)
 {
     // do preorder traveral of T1, and place results in array
-    vector<string> T1Values;
-    T1->traverse(T1, BinaryTree<string>::ePreOrder, T1Values, true);
+    vector<ctci::string> T1Values;
+    T1->traverse(T1, BinaryTree<ctci::string>::ePreOrder, T1Values, true);
 
     // do preorder traveral of T2, and place results in array
-    vector<string> T2Values;
-    T2->traverse(T2, BinaryTree<string>::ePreOrder, T2Values, true);
+    vector<ctci::string> T2Values;
+    T2->traverse(T2, BinaryTree<ctci::string>::ePreOrder, T2Values, true);
 
     // check whether T2's traversed array is a subarray of T1's traversed subarray
     int startIndex = -1;
@@ -114,7 +112,7 @@ bool variation1(BinaryTree<string> *T2, BinaryTree<string> *T1)
     return foundSubArray;
 }
 
-BinaryTree<string>* variation2(BinaryTree<string>* T1, BinaryTree<string>* T2)
+BinaryTree<ctci::string>* variation2(BinaryTree<ctci::string>* T1, BinaryTree<ctci::string>* T2)
 {
     return findSubtree(T1, T2);
 }
@@ -124,13 +122,13 @@ void test4_8()
     int T1Size = 2e4; // set this to 2e6 for "millions" of nodes in T1
     int T2Size = 200;
 
-    BinaryTree<string> *T1 = 0, *T2 = 0;
+    BinaryTree<ctci::string> *T1 = 0, *T2 = 0;
 
     buildTrees(T1Size, T2Size, T1, T2);
 
     bool isSubtree = variation1(T2, T1);
 
-    BinaryTree<string> *pFoundSubtree = variation2(T1, T2);
+    BinaryTree<ctci::string> *pFoundSubtree = variation2(T1, T2);
 
     if (isSubtree && pFoundSubtree)
         cout << "4.8 passed!" << endl;
@@ -138,7 +136,7 @@ void test4_8()
         cout << "4.8 NOT passed!" << endl;
 }
 
-bool isSubArray(const vector<string>& aArray, const vector<string>& bSubArray, int& matchedIndex)
+bool isSubArray(const vector<ctci::string>& aArray, const vector<ctci::string>& bSubArray, int& matchedIndex)
 {
     for (size_t i = 0; i < aArray.size(); i++)
     {

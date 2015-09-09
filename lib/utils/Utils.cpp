@@ -1,9 +1,8 @@
 #include "Utils.h"
 #include "stdbool.h"
-#include <string.h>
+#include <string>
 #include <assert.h>
 #include <stdlib.h>
-#include <string>
 
 void swap(void* a, void* b, unsigned short size)
 {
@@ -157,6 +156,27 @@ extern "C"
 }
 
 std::string newUUID()
+{
+#ifdef WIN32
+    UUID uuid;
+    UuidCreate ( &uuid );
+
+    unsigned char * str;
+    UuidToStringA ( &uuid, &str );
+
+    std::string s( ( char* ) str );
+
+    RpcStringFreeA ( &str );
+#else
+    uuid_t uuid;
+    uuid_generate_random ( uuid );
+    char s[37];
+    uuid_unparse ( uuid, s );
+#endif
+    return s;
+}
+
+ctci::string snewUUID()
 {
 #ifdef WIN32
     UUID uuid;

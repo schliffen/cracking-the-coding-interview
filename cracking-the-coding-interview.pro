@@ -53,7 +53,9 @@ SOURCES += \
     solutions/conceptsAndAlgorithms/recursionAndDynamicProgramming/9.1.cpp \
     solutions/conceptsAndAlgorithms/recursionAndDynamicProgramming/9.x.0.cpp \
     lib/utils/BinaryTreeRenderer.cpp \
-    solutions/conceptsAndAlgorithms/sortingAndSearching/11.1.cpp
+    solutions/conceptsAndAlgorithms/sortingAndSearching/11.1.cpp \
+    unittests/teststring.cpp \
+    lib/datastructures/string.cpp
 
 
 HEADERS += \
@@ -121,7 +123,9 @@ HEADERS += \
     solutions/conceptsAndAlgorithms/recursionAndDynamicProgramming/9.x.0.h \
     lib/utils/BinaryTreeRenderer.h \
     solutions/conceptsAndAlgorithms/sortingAndSearching/11.1.h \
-    assert.h
+    assert.h \
+    lib/datastructures/string.h \
+    unittests/teststring.h
 
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter

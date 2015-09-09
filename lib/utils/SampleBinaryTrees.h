@@ -6,9 +6,11 @@
 #define SAMPLEBINARYTREES_H
 
 #include "lib/datastructures/BinaryTree.h"
+#include "lib/datastructures/string.h"
 #include <string>
 
 typedef std::string(*idFunc)();
+typedef ctci::string(*sidFunc)();
 typedef int(*idFunci)();
 
 BinaryTree<int> *buildPreOrderBinaryTree();

@@ -48,6 +48,7 @@
 #include "unittests/testsorting.h"
 #include "unittests/testbinarytree.h"
 #include "unittests/testbinarytreerenderer.h"
+#include "unittests/teststring.h"
 
 #include <iostream>
 
@@ -109,6 +110,8 @@ int main(int argc, char* argv[])
     test12_1();
     test12_x_0();
     test13_1();
+
+    teststring();
 
     return 0;
 }
