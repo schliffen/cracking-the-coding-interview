@@ -1,6 +1,7 @@
-#include <iostream>
 #include <assert.h>
 #include <sys/stat.h>
+
+#include "testhelper.h"
 
 #include "testbinarytreerenderer.h"
 
@@ -10,7 +11,7 @@
 
 using namespace std;
 
-void testBinaryTreeRenderer()
+void testBinaryTreeRendererMain()
 {
     BinaryTree<int>* pFull = new BinaryTree<int>(1);
     buildFullBinaryTree(pFull, 1, 5);
@@ -18,5 +19,8 @@ void testBinaryTreeRenderer()
     renderBinaryTree(pFull, "binaryTree");
     struct stat buffer;
     assert(stat ("binaryTree.dot", &buffer) == 0);
-    cout << "binary tree renderer tested!" << endl;
 }
+
+START_TEST(testBinaryTreeRenderer)
+TEST(testBinaryTreeRendererMain)
+END_TEST

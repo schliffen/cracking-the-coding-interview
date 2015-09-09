@@ -2,9 +2,9 @@
 #include "lib/datastructures/Stack.h"
 #include <assert.h>
 
+#include "testhelper.h"
 
-
-void testStack()
+void testStackMain()
 {
     Stack<int> stack;
 
@@ -48,3 +48,7 @@ void testStack()
     }
     assert(stack.size() == 0);
 }
+
+START_TEST(testStack)
+TEST(testStackMain)
+END_TEST

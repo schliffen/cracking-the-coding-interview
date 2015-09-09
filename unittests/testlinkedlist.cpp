@@ -1,13 +1,11 @@
 #include "testlinkedlist.h"
 
+#include "testhelper.h"
 #include "lib/datastructures/LinkedList.h"
 #include <stdio.h>
-#include <iostream>
 #include <assert.h>
 
-using namespace std;
-
-void testLinkedList()
+void testLinkedListMain()
 {
     Node<int> n(0);
     n.addToEnd(1);
@@ -29,3 +27,7 @@ void testLinkedList()
     assert((*pDuplicate)[0]->m_data == 5);
     assert((*pDuplicate)[0] != (*r)[0]);
 }
+
+START_TEST(testLinkedList)
+TEST(testLinkedListMain)
+END_TEST

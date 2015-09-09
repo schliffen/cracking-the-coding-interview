@@ -39,13 +39,8 @@ void testMapVec()
     assert(vec[0][3] == "you");
 }
 
-
-void testVector()
-{
-    testStringVec();
-    testMapVec();
-    cout << "testing Vector passed!" << endl;
-}
-
-//TEST(testVector());
+START_TEST(testVector)
+TEST(testStringVec)
+TEST(testMapVec)
+END_TEST
 

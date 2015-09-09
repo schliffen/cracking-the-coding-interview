@@ -1,14 +1,12 @@
 #include "testdlinkedlist.h"
 
+#include "testhelper.h"
+
 #include "lib/datastructures/DLinkedList.h"
 #include <assert.h>
-#include <iostream>
 
-using namespace std;
-
-void testDLinkedList()
+void testDLinkedListMain()
 {
-    cout << "testing testDLinkedList" << endl;
     DNode<int> head(0);
     assert(head.next() == 0);
     head.addToEnd(1);
@@ -23,6 +21,8 @@ void testDLinkedList()
     
     assert(pNode->data() == 2);
     assert(pNode->prev()->data() == 1);
-
-    cout << "testing DLinkedList passed!" << endl;
 }
+
+START_TEST(testDLinkedList)
+TEST(testDLinkedListMain)
+END_TEST

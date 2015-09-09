@@ -60,9 +60,6 @@ int main(int argc, char* argv[])
     (void)argv;
 
 
-    teststring();
-
-    return 0;
 
     // unit test data structures
     testLinkedList();
@@ -73,6 +70,7 @@ int main(int argc, char* argv[])
     testQueue();
     testBinaryTree();
     testBinaryTreeRenderer();
+    teststring();
 
     // unit test algorithms
     testsorting();

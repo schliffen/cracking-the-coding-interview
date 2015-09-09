@@ -4,11 +4,6 @@
 #include <cstdio>
 #include <ctime>
 
-#define XSTR(s) STR(s)
-#define STR(s) #s
-#define FOO(s) s
-#define QUOTE "\""
-
 #if defined(RUN_AS_MAIN)
 #define START_TEST(x) int main(int argc, char* argv[]){
 #define TEST(X)\

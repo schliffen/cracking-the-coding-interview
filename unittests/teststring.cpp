@@ -33,12 +33,16 @@ void testConcat()
     assert(str4.size() == 6);
 }
 
+#define COMPARE_WITH_STANDARD_LIBRARY 0
+
 START_TEST(teststring)
 TEST(testConstruct<std::string>)
 TEST(testAssignment<std::string>)
 TEST(testConcat<std::string>)
 
+#if COMPARE_WITH_STANDARD_LIBRARY
 TEST(testConstruct<ctci::string>)
 TEST(testAssignment<ctci::string>)
 TEST(testConcat<ctci::string>)
+#endif
 END_TEST

@@ -1,10 +1,9 @@
 #include "unittests/testsorting.h"
 #include "lib/algorithms/bubblesort.h"
 #include <assert.h>
-#include <iostream>
 #include "lib/utils/Utils.h"
 
-using namespace std;
+#include "testhelper.h"
 
 
 void testBubbleSort()
@@ -12,7 +11,6 @@ void testBubbleSort()
     int data[] = {2,4,6,8,8,1,2,6,7,8,9,4,5,6,3,1,5,6,4,8};
     bubbleSort<int>(data, 20);
     assert(isArraySorted(data, 20));
-    cout << "bubble sort passed!" << endl;
 }
 
 
@@ -21,11 +19,9 @@ void testBubbleSortOptimised()
     int data[] = {2,4,6,8,8,1,2,6,7,8,9,4,5,6,3,1,5,6,4,8};
     bubbleSortOptimised<int>(data, 20);
     assert(isArraySorted(data, 20));
-    cout << "optimised bubble sort passed!" << endl;
 }
 
-void testsorting()
-{
-    testBubbleSort();
-    testBubbleSortOptimised();
-}
+START_TEST(testsorting)
+TEST(testBubbleSort)
+TEST(testBubbleSortOptimised)
+END_TEST

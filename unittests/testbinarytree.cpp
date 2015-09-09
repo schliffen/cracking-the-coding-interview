@@ -4,6 +4,8 @@
 #include <assert.h>
 #include <math.h>
 
+#include "testhelper.h"
+
 #include "testbinarytree.h"
 
 #include "lib/utils/Utils.h"
@@ -69,13 +71,10 @@ void testFind()
     }
 }
 
-void testBinaryTree()
-{
-    testPreOrderTraversal();
-    testPostOrderTraversal();
-    testInOrderTraversal();
-    testFullBinaryTreeBasicProperties();
-    testFind();
-
-    cout << "binary tree tested!" << endl;
-}
+START_TEST(testBinaryTree)
+TEST(testPreOrderTraversal)
+TEST(testPostOrderTraversal)
+TEST(testInOrderTraversal)
+TEST(testFullBinaryTreeBasicProperties)
+TEST(testFind)
+END_TEST

@@ -2,7 +2,9 @@
 #include "lib/datastructures/Queue.h"
 #include <assert.h>
 
-void testQueue()
+#include "testhelper.h"
+
+void testQueueMain()
 {
     Queue<int> q;
 
@@ -12,3 +14,7 @@ void testQueue()
     for (int i = 0; i < 1e6; i++)
         assert(q.dequeue() == i);
 }
+
+START_TEST(testQueue)
+TEST(testQueueMain)
+END_TEST
