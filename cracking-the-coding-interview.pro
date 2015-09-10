@@ -49,13 +49,13 @@ SOURCES += \
     solutions/dataStructures/treesAndGraphs/4.8.cpp \
     solutions/dataStructures/treesAndGraphs/4.9.cpp \
     solutions/conceptsAndAlgorithms/bitManipulation/5.1.cpp \
-    solutions/conceptsAndAlgorithms/bitManipulation/5.2.cpp \
     solutions/conceptsAndAlgorithms/recursionAndDynamicProgramming/9.1.cpp \
     solutions/conceptsAndAlgorithms/recursionAndDynamicProgramming/9.x.0.cpp \
     lib/utils/BinaryTreeRenderer.cpp \
     solutions/conceptsAndAlgorithms/sortingAndSearching/11.1.cpp \
     unittests/teststring.cpp \
-    lib/datastructures/string.cpp
+    lib/datastructures/string.cpp \
+    solutions/conceptsAndAlgorithms/bitManipulation/5.2.cpp
 
 
 HEADERS += \

@@ -1,6 +1,8 @@
 #ifndef vector_HPP
 #define vector_HPP
 
+#include <cstdlib>
+
 namespace ctci {
 
 template<class T>
@@ -9,6 +11,7 @@ vector<T>::vector()
     my_capacity = 0;
     my_size = 0;
     buffer = 0;
+    reallocatable = false;
 }
 
 template<class T>
@@ -91,7 +94,7 @@ template<class T>
 void vector<T>::push_back(const T & v)
 {
     if (my_size >= my_capacity)
-        reserve(my_capacity +5);
+        reserve(my_capacity == 0 ? 5 : my_capacity * 2);
     buffer [my_size++] = v;
 }
 
@@ -109,17 +112,30 @@ void vector<T>::reserve(unsigned int capacity)
         my_size = 0;
         my_capacity = 0;
     }
-    T * Newbuffer = new T [capacity];
-    //assert(Newbuffer);
-    unsigned int l_Size = capacity < my_size ? capacity : my_size;
-    //copy (buffer, buffer + l_Size, Newbuffer);
 
-    for (unsigned int i = 0; i < l_Size; i++)
-        Newbuffer[i] = buffer[i];
+    if (reallocatable)
+    {
+        if (my_capacity == 0)
+        {
+            buffer = (T*)malloc(sizeof(T)*capacity);
+        }
+        else
+        {
+            buffer = (T*)realloc(buffer, sizeof(T)*capacity);
+        }
+    }
+    else
+    {
+        T * Newbuffer = new T [capacity];
+        unsigned int l_Size = capacity < my_size ? capacity : my_size;
 
+        for (unsigned int i = 0; i < l_Size; i++)
+            Newbuffer[i] = buffer[i];
+
+        delete[] buffer;
+        buffer = Newbuffer;
+    }
     my_capacity = capacity;
-    delete[] buffer;
-    buffer = Newbuffer;
 }
 
 template<class T>
@@ -157,7 +173,10 @@ unsigned int vector<T>::capacity()const
 template<class T>
 vector<T>::~vector()
 {
-    delete[ ] buffer;
+    if (reallocatable)
+        free(buffer);
+    else
+        delete[ ] buffer;
 }
 template <class T>
 void vector<T>::clear()

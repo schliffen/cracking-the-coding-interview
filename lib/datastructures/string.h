@@ -14,6 +14,7 @@ namespace ctci
     class string;
     std::ostream&   operator<<(std::ostream& ost, const string& ls);
     string          operator+(const string& s1, const string& s2);
+    string          operator+=(const string& s1, const string& s2);
     bool            operator==(const string& s1, const string& s2);
 
     class string
@@ -31,6 +32,7 @@ namespace ctci
 
         friend std::ostream& operator<<(std::ostream&, const string&);
         friend string operator+(const string& s1, const string& s2);
+        friend string operator+=(string& s1, const string& s2);
         friend bool operator==(const string& s1, const string& s2);
 
     private:

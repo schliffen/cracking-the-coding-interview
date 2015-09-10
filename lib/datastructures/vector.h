@@ -3,6 +3,8 @@
 
 namespace ctci
 {
+    class Reallocatable;
+
     template <class T>
     class  vector
     {
@@ -36,9 +38,15 @@ namespace ctci
         T & operator[](unsigned int index) const;
         vector<T> & operator=(const vector<T> &);
         void clear();
+        void setReallocatable(bool r)
+        {
+            reallocatable = r;
+        }
+
     private:
         unsigned int my_size;
         unsigned int my_capacity;
+        bool reallocatable;
         T * buffer;
     };
 }

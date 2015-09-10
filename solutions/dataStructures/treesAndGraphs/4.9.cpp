@@ -71,10 +71,11 @@ void test4_9()
 {
     // build our random binary tree
     BinaryTree<int>* pRoot = 0;
-    buildRandomBinaryTree<int, idFunci>(pRoot, 200, &newID);
+    buildRandomBinaryTree<int, idFunci>(pRoot, 2000, &newID);
 
     // call our recursive sum finding function
     ctci::vector<int> paths;
+    paths.setReallocatable(true);
     int value = 26;
     int pathsFound = findPathsWithValue(pRoot, paths, value);
 

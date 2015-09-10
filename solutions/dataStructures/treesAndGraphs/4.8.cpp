@@ -98,10 +98,12 @@ bool variation1(BinaryTree<ctci::string> *T2, BinaryTree<ctci::string> *T1)
 {
     // do preorder traveral of T1, and place results in array
     ctci::vector<ctci::string> T1Values;
+    T1Values.setReallocatable(true);
     T1->traverse(T1, BinaryTree<ctci::string>::ePreOrder, T1Values, true);
 
     // do preorder traveral of T2, and place results in array
     ctci::vector<ctci::string> T2Values;
+    T2Values.setReallocatable(true);
     T2->traverse(T2, BinaryTree<ctci::string>::ePreOrder, T2Values, true);
 
     // check whether T2's traversed array is a subarray of T1's traversed subarray
@@ -120,7 +122,7 @@ BinaryTree<ctci::string>* variation2(BinaryTree<ctci::string>* T1, BinaryTree<ct
 
 void test4_8()
 {
-    int T1Size = 2e3; // set this to 2e6 for "millions" of nodes in T1
+    int T1Size = 2e5; // set this to 2e6 for "millions" of nodes in T1
     int T2Size = 200;
 
     BinaryTree<ctci::string> *T1 = 0, *T2 = 0;
