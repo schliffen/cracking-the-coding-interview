@@ -62,10 +62,52 @@ void testGiantVectorPushBackCtci()
         vec.push_back("hello");
 }
 
+void testEraseCtci()
+{
+    ctci::vector<ctci::string> vec;
+
+    vec.setReallocatable(true);
+
+    vec.push_back("foo");
+    vec.push_back("bar");
+    vec.push_back("spam");
+    vec.push_back("eggs");
+    vec.push_back("bacon");
+
+    assert(*vec.erase(vec.begin() + 2) == "eggs");
+
+    assert(vec.size() == 4);
+    assert(vec[0] == "foo");
+    assert(vec[1] == "bar");
+    assert(vec[2] == "eggs");
+    assert(vec[3] == "bacon");
+}
+
+void testEraseStd()
+{
+    std::vector<std::string> vec;
+
+    vec.push_back("foo");
+    vec.push_back("bar");
+    vec.push_back("spam");
+    vec.push_back("eggs");
+    vec.push_back("bacon");
+
+    assert(*vec.erase(vec.begin() + 2) == "eggs");
+
+    assert(vec.size() == 4);
+    assert(vec[0] == "foo");
+    assert(vec[1] == "bar");
+    assert(vec[2] == "eggs");
+    assert(vec[3] == "bacon");
+}
+
 START_TEST(testVector)
 TEST(testVectorPushBackStd)
 TEST(testVectorPushBackCtci)
 TEST(testGiantVectorPushBackStd)
 TEST(testGiantVectorPushBackCtci)
+TEST(testEraseCtci)
+TEST(testEraseStd)
 END_TEST
 

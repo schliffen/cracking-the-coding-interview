@@ -31,6 +31,8 @@ namespace ctci
         void push_back(const T & value);
         void pop_back();
 
+        iterator erase(iterator it);
+
         void reserve(unsigned int capacity);
         void resize(unsigned int size);
 

@@ -8,37 +8,35 @@ using namespace std;
 
 int findMissingElementInArray(int missingElement)
 {
-    int arraySize = missingElement + 10 - 1;
+    size_t arraySize = missingElement + 10 - 1;
     ctci::vector<int> ar(arraySize);
-    for (int i = 0, j = 0; i < arraySize; i++, j == missingElement-1 ? j+=2 : j++)
-            ar[i] = j;
+    for (size_t i = 0; i < arraySize; i++)
+            ar[i] = i;
 
-    int missing = -1;
+    ar.erase(ar.begin() + missingElement);
+
     int t = 0;
 
-    for (int i = 0; i <= arraySize; i++)
+    for (size_t i = 0; i <= arraySize; i++)
     {
         short b0 = bitset<sizeof(i)*8>(ar[i])[0];
-        if ((t == 0 || t == 6) && b0 == 0)
-        {
-        }
-        else if (t % 2 == b0)
-        {
-        }
-        else if (t % 2 != 0 && b0 == 1)
-        {
-        }
+
+        if ((t == 0 || t == 6) && b0 == 0){}
+        else if (t % 2 == b0){}
+        else if (t % 2 != !b0){}
         else
         {
-            missing = ar[i]-1;
-            break;
+            return i;
         }
         t = t == 9 ? 0 : t + 1;
     }
-    return missing;
+    return 0;
 }
 
 void test5_7()
 {
+    assert(findMissingElementInArray(0) == 0);
+    assert(findMissingElementInArray(6) == 6);
     assert(findMissingElementInArray(14) == 14);
+    assert(findMissingElementInArray(1e4+14) == 1e4+14);
 }

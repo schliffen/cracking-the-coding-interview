@@ -2,6 +2,8 @@
 #define vector_HPP
 
 #include <cstdlib>
+#include <cstring>
+#include <iostream>
 
 namespace ctci {
 
@@ -102,6 +104,40 @@ template<class T>
 void vector<T>::pop_back()
 {
     my_size--;
+}
+
+template<class T>
+unsigned int distance(T* a, T* b)
+{
+    return ((long unsigned int)b - (long unsigned)a)/sizeof(T);
+}
+
+template<class T>
+typename vector<T>::iterator vector<T>::erase(vector<T>::iterator it) {
+    if (reallocatable) {
+        size_t dist = distance(buffer, it);
+        T* dest = buffer + dist;
+        T* source = buffer + dist + 1;
+        size_t size = distance(source, end());
+        memmove(dest, source, size*sizeof(T));
+        it = dest;
+    }
+    else{
+        T* newBuffer = new T[my_capacity-1];
+        int iti = 0;
+        for (vector<T>::iterator iit = begin(); iit != end(); iit++) {
+            if (iit != it) {
+                newBuffer[iti++] = *iit;
+            }
+            else {
+                it = newBuffer+iti;
+            }
+        }
+        delete[] buffer;
+        buffer = newBuffer;
+    }
+    my_size--;
+    return it;
 }
 
 template<class T>
