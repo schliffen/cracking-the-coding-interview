@@ -52,19 +52,19 @@ bool BinaryTree<T>::isBST(BinaryTree<T>* pRoot)
 template<class T>
 bool BinaryTree<T>::isLeaf() const
 {
-  return !left && !right;
+    return !left && !right;
 }
 
 template<class T>
 bool BinaryTree<T>::nodeIsFull() const
 {
-  return left && right;
+    return left && right;
 }
 
 template<class T>
 int BinaryTree<T>::getNumChildren() const
 {
-  return bool(left) + bool(right);
+    return bool(left) + bool(right);
 }
 
 template<class T>
@@ -209,7 +209,7 @@ BinaryTree<T>* BinaryTree<T>::find(T toFind)
         if (r && r->data == toFind)
             return r;
     }
-    
+
     return 0;
 }
 
