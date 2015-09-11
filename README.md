@@ -1,16 +1,16 @@
 # cracking-the-coding-interview
 
-The technical interview topic gets thrown around message boards like a hot potatoe these days. There's a rising notion that technical interviews are stupid, and useless, and that there's no proof that hiring developers who perform well in a technical interviews will necessarily yield a good team.
+The technical interview topic is being discussed a lot these days. There's a strong and valid argument floating around message boards and developer meets: that focussing on hiring developers through technical interviews yields a team that is good at solving technical interviews, as opposed to a team that is good at writing clean, mature, maintainable code.
 
-I won't enter the debate here, but the only way I could get myself to truely enjoy the process of going through this great book, 'Cracking the Coding Interview' was to have fun with it, by writing my own stl compatible containers, then try and solve the challenges myself, and only looking at the solutions if I really needed to.
+But technical interviews remain a reality. So until things change, the correct approach is to get good at the game and beat it. Using it to your advantage, and learning new things along the way. This what I try to achieve in this repo.
 
-The good news is, in doing so, I got to learn a lot about how to write containers that outperform the STL's by a huge factor, sometimes up to 8x. You'll find those in the lib/datastructures section.
+My way to have fun with this process is to write my own containers and algorithms, and use them in the solutions I provide. The good news is, in doing so, I got to learn a lot about how to write containers that outperform the STL's by a large factor, sometimes up to 8x. You'll find those in the lib/datastructures section.
 
-This repository is for learning purposes, and in this spirit I strongly suggest opening the Qt project file in QtCreator, and stepping through the solutions with the debugger. While doing so, you'll also be able to step into the data structures, and algorithms, and see how they work too.
+This repository is for learning purposes, and in this spirit I strongly recommend opening the project file in QtCreator, and stepping through the solutions with the debugger. While doing so, you'll also be able to step into the world of data structures, and algorithms.
 
-Another reason I decided to write my own containers, was that enabled me to focus on the solutions, without having to re-write boilerplate code each time. I could have used STL containers, and I do so, in a few places, where my own containers didn't cut it. But in some cases, using the STL is a cope-out of the interview question, and although it would demonstrate your knowledge of the STL, it wouldnt' necessarily display our skillset at writing algorithms that are optimised for the given problem.
+Also, writing a container is quite a typical interview question. Knowing how to write a high performance container will certaintly not hinder your candidacy; on the contrary.
 
-Every solution, container, and algorithm is test driven. The tests for the solutions are in the solutions themselves. The tests for my containers are in the unittest section.
+Every solution, container, and algorithm is test driven. The tests for the solutions are in the solutions themselves. The unit tests for my containers are in the unittest section.
 
 ## Building
 
