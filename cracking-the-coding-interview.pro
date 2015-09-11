@@ -50,14 +50,14 @@ SOURCES += \
     solutions/conceptsAndAlgorithms/bitManipulation/5.2.cpp \
     solutions/conceptsAndAlgorithms/bitManipulation/5.3.cpp \
     solutions/conceptsAndAlgorithms/bitManipulation/5.7.cpp \
-    arraysAndStrings1.1.cxx \
-    arraysAndStrings1.2.cxx \
-    arraysAndStrings1.3.cxx \
-    arraysAndStrings1.4.cxx \
-    arraysAndStrings1.5.cxx \
-    arraysAndStrings1.6.cxx \
-    arraysAndStrings1.7.cxx \
-    arraysAndStrings1.8.cxx
+    1.2-arraysAndStrings.cxx \
+    1.1-arraysAndStrings.cxx \
+    1.3-arraysAndStrings.cxx \
+    1.4-arraysAndStrings.cxx \
+    1.5-arraysAndStrings.cxx \
+    1.6-arraysAndStrings.cxx \
+    1.7-arraysAndStrings.cxx \
+    1.8-arraysAndStrings.cxx
 
 
 HEADERS += \
