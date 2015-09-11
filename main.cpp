@@ -35,6 +35,7 @@ void test5_3();
 void test5_7();
 
 void test9_1();
+void test9_6();
 void test9x0();
 void test11_1();
 void test12_1();
@@ -117,6 +118,7 @@ int main(int argc, char* argv[])
     test5_7();
     test9x0();
     test9_1();
+    test9_6();
     test11_1();
     test12_1();
     test12_x_0();

@@ -58,7 +58,8 @@ SOURCES += \
     5.3-bitManipulation.cxx\
     5.7-bitManipulation.cxx\
     9.1-recursionAndDynamicProgramming.cxx\
-    9.x.0-recursionAndDynamicProgramming.cxx
+    9.x.0-recursionAndDynamicProgramming.cxx \
+    9.6-recursionAndDynamicProgramming.cxx
 
 
 
@@ -103,4 +104,5 @@ OTHER_FILES += \
 DISTFILES += \
     valgrindReport.txt \
     unittests/makefile \
-    bin/style
+    bin/style \
+    README.md

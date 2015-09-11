@@ -60,8 +60,6 @@
 
 9.5 Write a method to compute all permutations of a string.
 
-9.6 Implement an algorithm to print all valid (e.g., properly opened and closed) combinations of n-pairs of parentheses. EXAMPLE Input: 3 Output: ( ( ( ) ) ) , ( ( ) ( ) ) , ( ( ) ) ( ) , ( ) ( ( ) ) , ( ) ( ) ( )
-
 9.7 Implement the "paint fill" function that one might see on many image editing programs. That is, given a screen (represented by a two-dimensional array of colors), a point, and a new color, fill in the surrounding area until the color changes from the original color.
 
 9.8 Given an infinite number of quarters (25 cents), dimes (10 cents), nickels (5 cents) and pennies (1 cent), write code to calculate the number of ways of representing n cents.
