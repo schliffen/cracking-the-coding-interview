@@ -13,12 +13,12 @@ void testDLinkedListMain()
     head.addToEnd(2);
 
     DNode<int>* pNode = head.next();
-    
+
     assert(pNode->data() == 1);
     assert(pNode->prev()->data() == 0);
 
     pNode = pNode->next();
-    
+
     assert(pNode->data() == 2);
     assert(pNode->prev()->data() == 1);
 }

@@ -80,7 +80,7 @@ int main(int argc, char* argv[])
 
     // unit test algorithms
     testsorting();
-    
+
     // run solution tests
     test1_1();
     test1_3();

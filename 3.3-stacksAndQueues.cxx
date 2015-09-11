@@ -37,7 +37,7 @@ public:
         }
         return 0;
     }
-    
+
     void push(a_type data)
     {
         Stack<a_type>* pStack = getLastStack();
@@ -57,7 +57,7 @@ public:
     {
         return getLastStack()->peek();
     }
-    
+
     a_type pop()
     {
         assert(m_stacks.size() != 0);
@@ -71,17 +71,17 @@ public:
         }
         return pStack->pop();
     }
-    
+
     a_type popAt(int index)
     {
         return m_stacks[index].pop();
     }
-    
+
     int numStacks()
     {
         return m_stacks.size();
     }
-    
+
 private:
     int                                 m_capacity;
     ctci::vector<Stack<a_type> >        m_stacks;
@@ -99,7 +99,7 @@ void test3_3()
     {
         assert(stacks.pop() == i);
     }
-    
+
     for (int i = 0; i < 100; i++)
     {
         stacks.push(i);

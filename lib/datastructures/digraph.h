@@ -8,15 +8,15 @@
 class DiGraph
 {
 public:
-                                    DiGraph(ctci::string label);
+    DiGraph(ctci::string label);
 
     void                            connect(DiGraph* pNode);
 
     const ctci::vector<DiGraph*>&    getConnectedNodes() const;
 
     bool                            getPathTo(DiGraph* pTarget,
-                                              std::deque<DiGraph *> &path,
-                                              ctci::vector<DiGraph*>& visited);
+            std::deque<DiGraph *> &path,
+            ctci::vector<DiGraph*>& visited);
 
 private:
     ctci::vector<DiGraph*>       m_nodes;

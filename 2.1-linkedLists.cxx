@@ -14,7 +14,7 @@ void removeDuplicates(Node<t>* pHead)
 {
     Node<int>* pNode = pHead;
     Node<int>* pPrev = 0;
-    
+
     while(pNode)
     {
         Node<int>* pComp = pNode->m_pNext;

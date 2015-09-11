@@ -5,3 +5,4 @@ test.xcodeproj/*
 .DS_Store
 *.o
 *.bak
+*.orig

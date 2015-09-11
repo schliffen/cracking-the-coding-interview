@@ -5,8 +5,8 @@ template <class a_type>
 class DNode
 {
 public:
-                    DNode(a_type data);
-                    DNode();
+    DNode(a_type data);
+    DNode();
     void            printList();
     DNode<a_type>*  addToEnd(a_type data);
 

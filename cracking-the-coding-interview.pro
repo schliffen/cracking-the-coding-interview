@@ -102,4 +102,5 @@ OTHER_FILES += \
 
 DISTFILES += \
     valgrindReport.txt \
-    unittests/makefile
+    unittests/makefile \
+    bin/style

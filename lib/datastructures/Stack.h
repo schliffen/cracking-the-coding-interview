@@ -9,11 +9,11 @@ class Stack
 {
 public:
 
-                    Stack();
-                    Stack(Type* data, int n);
-                    Stack(const Stack<Type>& rOther);
-                    ~Stack();
-                    Stack& operator=(const Stack<Type>& rOther);
+    Stack();
+    Stack(Type* data, int n);
+    Stack(const Stack<Type>& rOther);
+    ~Stack();
+    Stack& operator=(const Stack<Type>& rOther);
 
     void            push(Type value);
 
@@ -22,7 +22,7 @@ public:
     Type            peek() const;
 
     int             size() const;
-        
+
     bool            isEmpty() const;
 
     void            print() const;

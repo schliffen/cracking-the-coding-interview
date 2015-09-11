@@ -28,7 +28,7 @@ void renderBinaryTree_aux(BinaryTree<int> *node, FILE* stream)
 }
 
 void renderBinaryTree(BinaryTree<int> *tree, string name)
-{    
+{
     FILE* stream = fopen((name + ".dot").c_str(), "w");
 
     fprintf(stream, "digraph BST {\n");

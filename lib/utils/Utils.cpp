@@ -20,7 +20,7 @@ bool isSubstring(char* a, char* b)
     /* a = wafer
      b = waterfall
      */
-    
+
     unsigned int aIndex = 0;
     unsigned int numSimilarLetters = 0;
     bool previousSimilar = false;
@@ -60,7 +60,7 @@ void testSubstring()
 void print3x3Matrix(int matrix[3][3])
 {
     printf("-----\n");
-    
+
     for (unsigned i = 0; i < 3; i++)
     {
         for (unsigned j = 0; j < 3; j++)
@@ -74,7 +74,7 @@ void print3x3Matrix(int matrix[3][3])
 void print4x4Matrix(int matrix[4][4])
 {
     printf("-----\n");
-    
+
     for (unsigned i = 0; i < 4; i++)
     {
         for (unsigned j = 0; j < 4; j++)

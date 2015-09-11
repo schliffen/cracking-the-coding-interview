@@ -41,9 +41,9 @@ BinaryTree<S>* getRandomNodeWithFreeSpace(BinaryTree<S>* pRoot, int randLeafDept
         }
     // node is full, we have have no space so let's keep on exploring
     case 2:
-            int direction = rand() % 2;
-            BinaryTree<S>* pLeaf = getRandomNodeWithFreeSpace(direction ? pRoot->left : pRoot->right, randLeafDepth, currentDepth + 1);
-            return pLeaf;
+        int direction = rand() % 2;
+        BinaryTree<S>* pLeaf = getRandomNodeWithFreeSpace(direction ? pRoot->left : pRoot->right, randLeafDepth, currentDepth + 1);
+        return pLeaf;
     }
     assert(false); // should not reach
     return 0; // suppress compiler warning

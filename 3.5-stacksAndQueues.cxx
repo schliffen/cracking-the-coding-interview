@@ -80,17 +80,17 @@ void test3_5()
     assert(mq.pop() == 4);
     assert(mq.pop() == 5);
     assert(mq.pop() == 6);
-    
+
     for (int i = 0; i < 1e3; i++)
     {
         mq.push(i);
         assert(mq.peek() == 0);
     }
-    
+
     for (int i = 0; i < 1e3; i++)
     {
         assert(mq.pop() == i);
     }
-    
+
     cout << "3.5 passed!" << endl;
 }

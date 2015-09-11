@@ -1,0 +1,7 @@
+#!/bin/bash
+
+astyleflags=--suffix=none --formatted --style=attach --lineend=linux --indent=tab --indent-classes --indent-switches --indent-col1-comments --pad-oper --pad-header --unpad-paren --align-pointer=type --align-reference=type
+
+for f in $(find . -name '*.h' -o -name '*.cpp' -o -name '*.cxx'); do
+    astyle $f $astyleflags
+done

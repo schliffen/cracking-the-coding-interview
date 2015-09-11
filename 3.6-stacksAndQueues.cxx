@@ -14,7 +14,8 @@ using namespace std;
 
 void test3_6()
 {
-    int arr[] = {2,1,6,4,8,9,7,5,6,14,2,3,5,4,9,4,5,6,2,1}; int n = 20;
+    int arr[] = {2,1,6,4,8,9,7,5,6,14,2,3,5,4,9,4,5,6,2,1};
+    int n = 20;
     Stack<int>* a = new Stack<int>(arr, n);
     Stack<int>* b = new Stack<int>;
 

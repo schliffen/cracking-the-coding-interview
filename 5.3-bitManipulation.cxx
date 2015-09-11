@@ -22,8 +22,12 @@ void getNextAndPrev(T num, T& prev, T& next)
     int numBitsInNum = getNum1Bits(num);
     next = num+1, prev = num-1;
     unsigned long int max = pow(2, sizeof(T)*CHAR_BIT);
-    while (numBitsInNum != getNum1Bits(next) && next < max){next++;}
-    while (numBitsInNum != getNum1Bits(prev) && prev > 0){prev--;}
+    while (numBitsInNum != getNum1Bits(next) && next < max) {
+        next++;
+    }
+    while (numBitsInNum != getNum1Bits(prev) && prev > 0) {
+        prev--;
+    }
 }
 
 template<class T>

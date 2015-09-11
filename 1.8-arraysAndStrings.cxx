@@ -15,15 +15,15 @@ bool isRotation(char* a, char* b)
 {
     unsigned long aLen = strlen(a);
     unsigned long bLen = strlen(b);
-    
+
     if (aLen != bLen)
         return false;
-    
+
     char together[aLen + bLen + 1];
-    
+
     strcpy(together, b);
     strcat(together, b);
-        
+
     return strstr(together, a);
 }
 

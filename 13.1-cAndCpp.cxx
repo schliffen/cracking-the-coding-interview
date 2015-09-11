@@ -11,7 +11,7 @@ string* printLastKLines(char* fileName, int k, bool print)
 {
     if (k == 0)
         return 0;
-    
+
     string line;
     string* circularArray = new string[k];
 
@@ -25,12 +25,12 @@ string* printLastKLines(char* fileName, int k, bool print)
             size++;
         }
         f.close();
-        
+
         if (print)
         {
             int start = size > k ? (size%k) : 0;
             int count = min(k, size);
-        
+
             for (int i = 0; i < count; i++)
             {
                 cout << circularArray[(start+i)%k] << endl;
