@@ -6,6 +6,15 @@ void test1_5();
 void test1_6();
 void test1_7();
 void test1_8();
+void test4_1();
+void test4_2();
+void test4_3();
+void test4_4();
+void test4_5();
+void test4_6();
+void test4_7();
+void test4_8();
+void test4_9();
 
 #include "solutions/dataStructures/linkedLists/2.1.h"
 #include "solutions/dataStructures/linkedLists/2.2.h"
@@ -20,15 +29,6 @@ void test1_8();
 #include "solutions/dataStructures/stacksAndQueues/3.5.h"
 #include "solutions/dataStructures/stacksAndQueues/3.6.h"
 #include "solutions/dataStructures/stacksAndQueues/3.7.h"
-#include "solutions/dataStructures/treesAndGraphs/4.1.h"
-#include "solutions/dataStructures/treesAndGraphs/4.2.h"
-#include "solutions/dataStructures/treesAndGraphs/4.3.h"
-#include "solutions/dataStructures/treesAndGraphs/4.4.h"
-#include "solutions/dataStructures/treesAndGraphs/4.5.h"
-#include "solutions/dataStructures/treesAndGraphs/4.6.h"
-#include "solutions/dataStructures/treesAndGraphs/4.7.h"
-#include "solutions/dataStructures/treesAndGraphs/4.8.h"
-#include "solutions/dataStructures/treesAndGraphs/4.9.h"
 #include "solutions/conceptsAndAlgorithms/bitManipulation/5.1.h"
 #include "solutions/conceptsAndAlgorithms/bitManipulation/5.2.h"
 #include "solutions/conceptsAndAlgorithms/bitManipulation/5.3.h"

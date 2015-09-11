@@ -1,6 +1,5 @@
 #include "assert.h"
 
-#include "4.2.h"
 #include "lib/datastructures/vector.h"
 #include "lib/datastructures/digraph.h"
 #include "lib/datastructures/string.h"
@@ -10,8 +9,7 @@
     find out whether there is a route between two nodes.
 */
 
-void test4_2()
-{
+void test4_2() {
     DiGraph a("A");
     DiGraph b("B");
     DiGraph c("C");

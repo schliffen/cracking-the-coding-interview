@@ -31,15 +31,6 @@ SOURCES += \
     solutions/dataStructures/stacksAndQueues/3.5.cpp \
     solutions/dataStructures/stacksAndQueues/3.6.cpp \
     solutions/dataStructures/stacksAndQueues/3.7.cpp \
-    solutions/dataStructures/treesAndGraphs/4.1.cpp \
-    solutions/dataStructures/treesAndGraphs/4.2.cpp \
-    solutions/dataStructures/treesAndGraphs/4.3.cpp \
-    solutions/dataStructures/treesAndGraphs/4.4.cpp \
-    solutions/dataStructures/treesAndGraphs/4.5.cpp \
-    solutions/dataStructures/treesAndGraphs/4.6.cpp \
-    solutions/dataStructures/treesAndGraphs/4.7.cpp \
-    solutions/dataStructures/treesAndGraphs/4.8.cpp \
-    solutions/dataStructures/treesAndGraphs/4.9.cpp \
     solutions/conceptsAndAlgorithms/bitManipulation/5.1.cpp \
     solutions/conceptsAndAlgorithms/recursionAndDynamicProgramming/9.1.cpp \
     solutions/conceptsAndAlgorithms/recursionAndDynamicProgramming/9.x.0.cpp \
@@ -57,7 +48,16 @@ SOURCES += \
     1.5-arraysAndStrings.cxx \
     1.6-arraysAndStrings.cxx \
     1.7-arraysAndStrings.cxx \
-    1.8-arraysAndStrings.cxx
+    1.8-arraysAndStrings.cxx \
+    4.1-treesAndGraphs.cxx \
+    4.2-treesAndGraphs.cxx \
+    4.3-treesAndGraphs.cxx \
+    4.4-treesAndGraphs.cxx \
+    4.5-treesAndGraphs.cxx \
+    4.6-treesAndGraphs.cxx \
+    4.7-treesAndGraphs.cxx \
+    4.8-treesAndGraphs.cxx \
+    4.9-treesAndGraphs.cxx
 
 
 HEADERS += \
@@ -100,15 +100,6 @@ HEADERS += \
     solutions/dataStructures/stacksAndQueues/3.5.h \
     solutions/dataStructures/stacksAndQueues/3.6.h \
     solutions/dataStructures/stacksAndQueues/3.7.h \
-    solutions/dataStructures/treesAndGraphs/4.1.h \
-    solutions/dataStructures/treesAndGraphs/4.2.h \
-    solutions/dataStructures/treesAndGraphs/4.3.h \
-    solutions/dataStructures/treesAndGraphs/4.4.h \
-    solutions/dataStructures/treesAndGraphs/4.5.h \
-    solutions/dataStructures/treesAndGraphs/4.6.h \
-    solutions/dataStructures/treesAndGraphs/4.7.h \
-    solutions/dataStructures/treesAndGraphs/4.8.h \
-    solutions/dataStructures/treesAndGraphs/4.9.h \
     solutions/conceptsAndAlgorithms/bitManipulation/5.1.h \
     solutions/conceptsAndAlgorithms/bitManipulation/5.2.h \
     solutions/conceptsAndAlgorithms/recursionAndDynamicProgramming/9.1.h \

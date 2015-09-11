@@ -3,7 +3,6 @@
 #include <math.h>
 #include <assert.h>
 
-#include "4.8.h"
 #include "lib/utils/SampleBinaryTrees.h"
 #include "lib/utils/Utils.h"
 #include "lib/utils/BinaryTreeRenderer.h"
@@ -19,8 +18,7 @@
 bool isSubArray(const ctci::vector<ctci::string>& aArray, const ctci::vector<ctci::string>& bSubArray, int& matchedIndex);
 
 // check whether two trees are identical
-bool doTreesMatch(BinaryTree<ctci::string>* pA, BinaryTree<ctci::string>* pB)
-{
+bool doTreesMatch(BinaryTree<ctci::string>* pA, BinaryTree<ctci::string>* pB) {
     // two null nodes, that matches
     if (!pA && !pB)
         return true;
@@ -30,8 +28,7 @@ bool doTreesMatch(BinaryTree<ctci::string>* pA, BinaryTree<ctci::string>* pB)
         return false;
 
     // if data matches
-    if (pA->data == pB->data)
-    {
+    if (pA->data == pB->data) {
         // recurse
         return  doTreesMatch(pA->left, pB->left) &&
                 doTreesMatch(pA->right, pB->right);
@@ -41,8 +38,7 @@ bool doTreesMatch(BinaryTree<ctci::string>* pA, BinaryTree<ctci::string>* pB)
 }
 
 // find binary tree T2 within binary tree T1
-BinaryTree<ctci::string>* findSubtree(BinaryTree<ctci::string>* T1, BinaryTree<ctci::string>* T2)
-{
+BinaryTree<ctci::string>* findSubtree(BinaryTree<ctci::string>* T1, BinaryTree<ctci::string>* T2) {
     if (!T1)
         return 0;
 
@@ -70,8 +66,7 @@ BinaryTree<ctci::string>* findSubtree(BinaryTree<ctci::string>* T1, BinaryTree<c
     return 0;
 }
 
-void buildTrees(int T1Size, int T2Size, BinaryTree<ctci::string> *&T1, BinaryTree<ctci::string> *&T2)
-{
+void buildTrees(int T1Size, int T2Size, BinaryTree<ctci::string>*& T1, BinaryTree<ctci::string>*& T2) {
     // build random binary tree with lots of nodes
     buildRandomBinaryTree<ctci::string, sidFunc>(T1, T1Size, &snewUUID);
 
@@ -94,8 +89,7 @@ void buildTrees(int T1Size, int T2Size, BinaryTree<ctci::string> *&T1, BinaryTre
     assert(T1->size(T1) == (T1Size + T2Size));
 }
 
-bool variation1(BinaryTree<ctci::string> *T2, BinaryTree<ctci::string> *T1)
-{
+bool variation1(BinaryTree<ctci::string>* T2, BinaryTree<ctci::string>* T1) {
     // do preorder traveral of T1, and place results in array
     ctci::vector<ctci::string> T1Values;
     T1Values.setReallocatable(true);
@@ -115,23 +109,21 @@ bool variation1(BinaryTree<ctci::string> *T2, BinaryTree<ctci::string> *T1)
     return foundSubArray;
 }
 
-BinaryTree<ctci::string>* variation2(BinaryTree<ctci::string>* T1, BinaryTree<ctci::string>* T2)
-{
+BinaryTree<ctci::string>* variation2(BinaryTree<ctci::string>* T1, BinaryTree<ctci::string>* T2) {
     return findSubtree(T1, T2);
 }
 
-void test4_8()
-{
+void test4_8() {
     int T1Size = 2e5; // set this to 2e6 for "millions" of nodes in T1
     int T2Size = 200;
 
-    BinaryTree<ctci::string> *T1 = 0, *T2 = 0;
+    BinaryTree<ctci::string>* T1 = 0, *T2 = 0;
 
     buildTrees(T1Size, T2Size, T1, T2);
 
     bool isSubtree = variation1(T2, T1);
 
-    BinaryTree<ctci::string> *pFoundSubtree = variation2(T1, T2);
+    BinaryTree<ctci::string>* pFoundSubtree = variation2(T1, T2);
 
     delete T1;
 
@@ -141,31 +133,23 @@ void test4_8()
         cout << "4.8 NOT passed!" << endl;
 }
 
-bool isSubArray(const ctci::vector<ctci::string>& aArray, const ctci::vector<ctci::string>& bSubArray, int& matchedIndex)
-{
-    for (size_t i = 0; i < aArray.size(); i++)
-    {
+bool isSubArray(const ctci::vector<ctci::string>& aArray, const ctci::vector<ctci::string>& bSubArray, int& matchedIndex) {
+    for (size_t i = 0; i < aArray.size(); i++) {
         int firstMatchIndex = -1;
         unsigned int numMatched = 0;
-        for (size_t j = 0; j < bSubArray.size(); j++)
-        {
-            if (aArray[i] == bSubArray[j])
-            {
+        for (size_t j = 0; j < bSubArray.size(); j++) {
+            if (aArray[i] == bSubArray[j]) {
                 firstMatchIndex = i;
-                for (size_t k = 0; k < bSubArray.size(); k++)
-                {
-                    if (aArray[i+k] == bSubArray[k])
-                    {
+                for (size_t k = 0; k < bSubArray.size(); k++) {
+                    if (aArray[i + k] == bSubArray[k]) {
                         numMatched++;
-                        if (numMatched == bSubArray.size())
-                        {
+                        if (numMatched == bSubArray.size()) {
                             matchedIndex = firstMatchIndex;
                             return true;
                         }
                     }
                 }
-            }
-            else
+            } else
                 numMatched = 0;
         }
     }

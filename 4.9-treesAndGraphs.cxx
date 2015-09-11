@@ -1,7 +1,5 @@
 #include <iostream>
 
-#include "4.9.h"
-
 #include "lib/datastructures/BinaryTree.h"
 #include "lib/datastructures/vector.h"
 #include "lib/utils/SampleBinaryTrees.h"
@@ -18,8 +16,7 @@ using namespace std;
 // data in the nodes will only ever be between 0 and 19
 // this way we'll have many paths that add up to the given
 // value, as long as the value remains quite low
-int newID()
-{
+int newID() {
     static int count = -10;
     if (count >= 20)
         count = 0;
@@ -27,8 +24,7 @@ int newID()
 }
 
 // Main recursive function to find paths that add up to the given value
-int findPathsWithValue(BinaryTree<int>* pRoot, ctci::vector<int>& path, int value)
-{
+int findPathsWithValue(BinaryTree<int>* pRoot, ctci::vector<int>& path, int value) {
     if (!pRoot)
         return 0;
 
@@ -63,8 +59,7 @@ int findPathsWithValue(BinaryTree<int>* pRoot, ctci::vector<int>& path, int valu
 }
 
 
-void test4_9()
-{
+void test4_9() {
     // build our random binary tree
     BinaryTree<int>* pRoot = 0;
     buildRandomBinaryTree<int, idFunci>(pRoot, 2000, &newID);
