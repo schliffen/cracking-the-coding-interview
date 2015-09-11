@@ -56,7 +56,8 @@ SOURCES += \
     unittests/teststring.cpp \
     lib/datastructures/string.cpp \
     solutions/conceptsAndAlgorithms/bitManipulation/5.2.cpp \
-    solutions/conceptsAndAlgorithms/bitManipulation/5.3.cpp
+    solutions/conceptsAndAlgorithms/bitManipulation/5.3.cpp \
+    solutions/conceptsAndAlgorithms/bitManipulation/5.7.cpp
 
 
 HEADERS += \
@@ -128,7 +129,8 @@ HEADERS += \
     lib/datastructures/vector.h \
     lib/datastructures/vector.hpp \
     unittests/testhelper.h \
-    solutions/conceptsAndAlgorithms/bitManipulation/5.3.h
+    solutions/conceptsAndAlgorithms/bitManipulation/5.3.h \
+    solutions/conceptsAndAlgorithms/bitManipulation/5.7.h
 
 
 QMAKE_CXXFLAGS = -Wno-write-strings -Wno-unused-parameter

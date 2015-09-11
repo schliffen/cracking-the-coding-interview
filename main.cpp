@@ -31,6 +31,7 @@
 #include "solutions/conceptsAndAlgorithms/bitManipulation/5.1.h"
 #include "solutions/conceptsAndAlgorithms/bitManipulation/5.2.h"
 #include "solutions/conceptsAndAlgorithms/bitManipulation/5.3.h"
+#include "solutions/conceptsAndAlgorithms/bitManipulation/5.7.h"
 #include "solutions/conceptsAndAlgorithms/recursionAndDynamicProgramming/9.1.h"
 #include "solutions/conceptsAndAlgorithms/recursionAndDynamicProgramming/9.x.0.h"
 #include "solutions/conceptsAndAlgorithms/sortingAndSearching/11.1.h"
@@ -109,6 +110,7 @@ int main(int argc, char* argv[])
     test5_1();
     test5_2();
     test5_3();
+    test5_7();
     test9x0();
     test9_1();
     test11_1();
