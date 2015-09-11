@@ -20,6 +20,7 @@ void testPreOrderTraversal()
     ctci::vector<int> vec;
     pNode->traverse(pNode, BinaryTree<int>::ePreOrder, vec);
     assert(is_sorted(vec.const_begin(), vec.const_end()));
+    delete(pNode);
 }
 
 void testPostOrderTraversal()
@@ -28,6 +29,7 @@ void testPostOrderTraversal()
     ctci::vector<int> vec;
     pNode->traverse(pNode, BinaryTree<int>::ePostOrder, vec);
     assert(is_sorted(vec.const_begin(), vec.const_end()));
+    delete(pNode);
 }
 
 void testInOrderTraversal()
@@ -36,6 +38,7 @@ void testInOrderTraversal()
     ctci::vector<int> vec;
     pNode->traverse(pNode, BinaryTree<int>::eInOrder, vec);
     assert(is_sorted(vec.const_begin(), vec.const_end()));
+    delete(pNode);
 }
 
 void testFullBinaryTreeBasicProperties()
@@ -54,6 +57,8 @@ void testFullBinaryTreeBasicProperties()
 
     // size of the tree should be (2**k)-1
     assert(size == pow(2, depth)-1);
+
+    delete(pFull);
 }
 
 void testFind()
@@ -69,6 +74,7 @@ void testFind()
         assert(pFound);
         assert(pFound->data == i);
     }
+    delete(pFull);
 }
 
 START_TEST(testBinaryTree)

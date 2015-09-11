@@ -3,3 +3,5 @@ Info.plist
 cracking-the-coding-interview.pro.user
 test.xcodeproj/*
 .DS_Store
+*.o
+*.bak

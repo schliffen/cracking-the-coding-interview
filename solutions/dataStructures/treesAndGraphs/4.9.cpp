@@ -27,30 +27,26 @@ int newID()
 }
 
 // Main recursive function to find paths that add up to the given value
-int findPathsWithValue(BinaryTree<int>*pRoot, ctci::vector<int> &path, int value)
+int findPathsWithValue(BinaryTree<int>* pRoot, ctci::vector<int>& path, int value)
 {
     if (!pRoot)
         return 0;
 
     int pathsFound = 0;
-
     int sum = 0;
 
     // for all the nodes from the start to the end of the path we've taken
-    for (int i = path.size()-1; i >= 0; i--)
-    {
+    for (int i = path.size() - 1; i >= 0; i--) {
         // sum up the values
         sum += path[i];
 
         // if the sum matches the value
-        if (sum == value)
-        {
+        if (sum == value) {
             pathsFound++;
 
             // print it in reverse
             // (uncomment cout)
-            for (int j = path.size()-1; j >= i; j--)
-            {
+            for (int j = path.size() - 1; j >= i; j--) {
                 // cout << path[j] << "  ";
             }
             // cout << endl;

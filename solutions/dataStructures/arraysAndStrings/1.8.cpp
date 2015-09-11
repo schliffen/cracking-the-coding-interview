@@ -23,9 +23,7 @@ bool isRotation(char* a, char* b)
     
     strcpy(together, b);
     strcat(together, b);
-    
-    //printf("%s\n", together);
-    
+        
     return strstr(together, a);
 }
 
