@@ -1,4 +1,3 @@
-#include "1.3.h"
 #include "assert.h"
 #include <cstdio>
 

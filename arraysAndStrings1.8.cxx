@@ -1,7 +1,7 @@
-#include "1.8.h"
 #include <stdbool.h>
 #include <string.h>
 #include <assert.h>
+#include <cstdio>
 
 /*
  Assume you have a method isSubstring which checks if one word

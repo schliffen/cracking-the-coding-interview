@@ -1,4 +1,3 @@
-#include "1.2.h"
 #include <string.h>
 #include <cstdio>
 
@@ -7,48 +6,39 @@
     in C or C++ which reverses a null-terminated string.
 */
 
-void removeDuplicates(char* str)
-{
+void test1_2(char* str) {
     if (!str)
         return;
     unsigned long len = strlen(str);
-    
+
     if (len < 2)
         return;
-    
+
     int tail = 1;
-    
-    for (unsigned int i = 1; i < len; i++)
-    {
+
+    for (unsigned int i = 1; i < len; i++) {
         //printf("tail: %d\n", tail);
-        
+
         int j;
         //printf("\n---%c---\n", str[i]);
-        
-        for (j = 0; j < tail; j++)
-        {
-           // printf("\tif %c == %c: ", str[i], str[j]);
-            if (str[i] == str[j])
-            {
+
+        for (j = 0; j < tail; j++) {
+            // printf("\tif %c == %c: ", str[i], str[j]);
+            if (str[i] == str[j]) {
                 //printf("match!\n");
                 break;
-            }
-            else
-            {
+            } else {
                 //printf("nope\n");
             }
         }
-        
+
         //printf("j=%d\n", j);
-        
-        if (j == tail)
-        {
+
+        if (j == tail) {
             //printf("str[%d] = %c\n", tail, str[i]);
             str[tail] = str[i];
             ++tail;
-        }
-        else
-        {
+        } else {
             //printf("skipped\n");
         }
         //printf("%s\n", str);

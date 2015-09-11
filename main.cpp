@@ -1,11 +1,12 @@
-#include "solutions/dataStructures/arraysAndStrings/1.1.h"
-#include "solutions/dataStructures/arraysAndStrings/1.2.h"
-#include "solutions/dataStructures/arraysAndStrings/1.3.h"
-#include "solutions/dataStructures/arraysAndStrings/1.4.h"
-#include "solutions/dataStructures/arraysAndStrings/1.5.h"
-#include "solutions/dataStructures/arraysAndStrings/1.6.h"
-#include "solutions/dataStructures/arraysAndStrings/1.7.h"
-#include "solutions/dataStructures/arraysAndStrings/1.8.h"
+void test1_1();
+void test1_2();
+void test1_3();
+void test1_4();
+void test1_5();
+void test1_6();
+void test1_7();
+void test1_8();
+
 #include "solutions/dataStructures/linkedLists/2.1.h"
 #include "solutions/dataStructures/linkedLists/2.2.h"
 #include "solutions/dataStructures/linkedLists/2.3.h"

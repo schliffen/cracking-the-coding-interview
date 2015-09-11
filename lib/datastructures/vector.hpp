@@ -5,7 +5,8 @@
 #include <cstring>
 #include <iostream>
 
-namespace ctci {
+namespace ctci
+{
 
 template<class T>
 vector<T>::vector()
@@ -17,7 +18,7 @@ vector<T>::vector()
 }
 
 template<class T>
-vector<T>::vector(const vector<T> & v)
+vector<T>::vector(const vector<T>& v)
 {
     my_size = v.my_size;
     my_capacity = v.my_capacity;
@@ -35,7 +36,7 @@ vector<T>::vector(unsigned int size)
 }
 
 template<class T>
-vector<T>::vector(unsigned int size, const T & initial)
+vector<T>::vector(unsigned int size, const T& initial)
 {
     my_size = size;
     my_capacity = size;
@@ -45,7 +46,7 @@ vector<T>::vector(unsigned int size, const T & initial)
 }
 
 template<class T>
-vector<T> & vector<T>::operator = (const vector<T> & v)
+vector<T>& vector<T>::operator = (const vector<T>& v)
 {
     delete[ ] buffer;
     my_size = v.my_size;
@@ -93,7 +94,7 @@ T& vector<T>::back()
 }
 
 template<class T>
-void vector<T>::push_back(const T & v)
+void vector<T>::push_back(const T& v)
 {
     if (my_size >= my_capacity)
         reserve(my_capacity == 0 ? 5 : my_capacity * 2);
@@ -109,28 +110,27 @@ void vector<T>::pop_back()
 template<class T>
 unsigned int distance(T* a, T* b)
 {
-    return ((long unsigned int)b - (long unsigned)a)/sizeof(T);
+    return ((long unsigned int)b - (long unsigned)a) / sizeof(T);
 }
 
 template<class T>
-typename vector<T>::iterator vector<T>::erase(vector<T>::iterator it) {
+typename vector<T>::iterator vector<T>::erase(vector<T>::iterator it)
+{
     if (reallocatable) {
         size_t dist = distance(buffer, it);
         T* dest = buffer + dist;
         T* source = buffer + dist + 1;
         size_t size = distance(source, end());
-        memmove(dest, source, size*sizeof(T));
+        memmove(dest, source, size * sizeof(T));
         it = dest;
-    }
-    else{
-        T* newBuffer = new T[my_capacity-1];
+    } else {
+        T* newBuffer = new T[my_capacity - 1];
         int iti = 0;
         for (vector<T>::iterator iit = begin(); iit != end(); iit++) {
             if (iit != it) {
                 newBuffer[iti++] = *iit;
-            }
-            else {
-                it = newBuffer+iti;
+            } else {
+                it = newBuffer + iti;
             }
         }
         delete[] buffer;
@@ -143,26 +143,19 @@ typename vector<T>::iterator vector<T>::erase(vector<T>::iterator it) {
 template<class T>
 void vector<T>::reserve(unsigned int capacity)
 {
-    if(buffer == 0)
-    {
+    if (buffer == 0) {
         my_size = 0;
         my_capacity = 0;
     }
 
-    if (reallocatable)
-    {
-        if (my_capacity == 0)
-        {
-            buffer = (T*)malloc(sizeof(T)*capacity);
+    if (reallocatable) {
+        if (my_capacity == 0) {
+            buffer = (T*)malloc(sizeof(T) * capacity);
+        } else {
+            buffer = (T*)realloc(buffer, sizeof(T) * capacity);
         }
-        else
-        {
-            buffer = (T*)realloc(buffer, sizeof(T)*capacity);
-        }
-    }
-    else
-    {
-        T * Newbuffer = new T [capacity];
+    } else {
+        T* Newbuffer = new T [capacity];
         unsigned int l_Size = capacity < my_size ? capacity : my_size;
 
         for (unsigned int i = 0; i < l_Size; i++)

@@ -15,14 +15,6 @@ SOURCES += \
     unittests/testbinarytree.cpp \
     lib/utils/SampleBinaryTrees.cpp \
     unittests/testbinarytreerenderer.cpp \
-    solutions/dataStructures/arraysAndStrings/1.1.cpp \
-    solutions/dataStructures/arraysAndStrings/1.2.cpp \
-    solutions/dataStructures/arraysAndStrings/1.3.cpp \
-    solutions/dataStructures/arraysAndStrings/1.4.cpp \
-    solutions/dataStructures/arraysAndStrings/1.5.cpp \
-    solutions/dataStructures/arraysAndStrings/1.6.cpp \
-    solutions/dataStructures/arraysAndStrings/1.7.cpp \
-    solutions/dataStructures/arraysAndStrings/1.8.cpp \
     solutions/dataStructures/linkedLists/2.1.cpp \
     solutions/dataStructures/linkedLists/2.2.cpp \
     solutions/dataStructures/linkedLists/2.3.cpp \
@@ -57,7 +49,15 @@ SOURCES += \
     lib/datastructures/string.cpp \
     solutions/conceptsAndAlgorithms/bitManipulation/5.2.cpp \
     solutions/conceptsAndAlgorithms/bitManipulation/5.3.cpp \
-    solutions/conceptsAndAlgorithms/bitManipulation/5.7.cpp
+    solutions/conceptsAndAlgorithms/bitManipulation/5.7.cpp \
+    arraysAndStrings1.1.cxx \
+    arraysAndStrings1.2.cxx \
+    arraysAndStrings1.3.cxx \
+    arraysAndStrings1.4.cxx \
+    arraysAndStrings1.5.cxx \
+    arraysAndStrings1.6.cxx \
+    arraysAndStrings1.7.cxx \
+    arraysAndStrings1.8.cxx
 
 
 HEADERS += \
@@ -84,14 +84,6 @@ HEADERS += \
     lib/utils/SampleBinaryTrees.h \
     lib/datastructures/BinaryTree.hpp \
     unittests/testbinarytreerenderer.h \
-    solutions/dataStructures/arraysAndStrings/1.1.h \
-    solutions/dataStructures/arraysAndStrings/1.2.h \
-    solutions/dataStructures/arraysAndStrings/1.3.h \
-    solutions/dataStructures/arraysAndStrings/1.4.h \
-    solutions/dataStructures/arraysAndStrings/1.5.h \
-    solutions/dataStructures/arraysAndStrings/1.6.h \
-    solutions/dataStructures/arraysAndStrings/1.7.h \
-    solutions/dataStructures/arraysAndStrings/1.8.h \
     solutions/dataStructures/linkedLists/2.1.h \
     solutions/dataStructures/linkedLists/2.2.h \
     solutions/dataStructures/linkedLists/2.3.h \

@@ -1,4 +1,3 @@
-#include "1.6.h"
 #include <cstdio>
 #include "assert.h"
 #include "lib/utils/Utils.h"
