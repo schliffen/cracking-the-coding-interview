@@ -15,30 +15,33 @@ void test4_6();
 void test4_7();
 void test4_8();
 void test4_9();
+void test2_1();
+void test2_2();
+void test2_3();
+void test2_4();
+void test2_5();
+void test2_6();
+void test2_7();
+void test3_1();
+void test3_3();
+void test3_4();
+void test3_5();
+void test3_6();
+void test3_7();
 
-#include "solutions/dataStructures/linkedLists/2.1.h"
-#include "solutions/dataStructures/linkedLists/2.2.h"
-#include "solutions/dataStructures/linkedLists/2.3.h"
-#include "solutions/dataStructures/linkedLists/2.4.h"
-#include "solutions/dataStructures/linkedLists/2.5.h"
-#include "solutions/dataStructures/linkedLists/2.6.h"
-#include "solutions/dataStructures/linkedLists/2.7.h"
-#include "solutions/dataStructures/stacksAndQueues/3.1.h"
-#include "solutions/dataStructures/stacksAndQueues/3.3.h"
-#include "solutions/dataStructures/stacksAndQueues/3.4.h"
-#include "solutions/dataStructures/stacksAndQueues/3.5.h"
-#include "solutions/dataStructures/stacksAndQueues/3.6.h"
-#include "solutions/dataStructures/stacksAndQueues/3.7.h"
-#include "solutions/conceptsAndAlgorithms/bitManipulation/5.1.h"
-#include "solutions/conceptsAndAlgorithms/bitManipulation/5.2.h"
-#include "solutions/conceptsAndAlgorithms/bitManipulation/5.3.h"
-#include "solutions/conceptsAndAlgorithms/bitManipulation/5.7.h"
-#include "solutions/conceptsAndAlgorithms/recursionAndDynamicProgramming/9.1.h"
-#include "solutions/conceptsAndAlgorithms/recursionAndDynamicProgramming/9.x.0.h"
-#include "solutions/conceptsAndAlgorithms/sortingAndSearching/11.1.h"
-#include "solutions/conceptsAndAlgorithms/testing/12.1.h"
-#include "solutions/conceptsAndAlgorithms/testing/12.x.0.h"
-#include "solutions/knowledgeBased/cAndCpp/13.1.h"
+void test5_1();
+void test5_2();
+void test5_3();
+void test5_7();
+
+void test9_1();
+void test9x0();
+void test11_1();
+void test12_1();
+void test12_x_0();
+
+void test13_1();
+
 #include "lib/utils/Utils.h"
 #include "lib/datastructures/LinkedList.h"
 #include "lib/datastructures/Stack.h"
