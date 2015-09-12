@@ -9,8 +9,7 @@
  * Result: nothing is returned, but the new linked list looks like a->b->d->e
  */
 
-void deleteNode(Node<int>* pNode)
-{
+void deleteNode(Node<int>* pNode) {
     Node<int>* pNext = pNode->m_pNext;
     pNode->m_data = pNext->m_data;
     pNode->m_pNext = pNext->m_pNext;
@@ -18,9 +17,8 @@ void deleteNode(Node<int>* pNode)
     pNext = 0;
 }
 
-void test2_3()
-{
-    int data[] = {1,2,3,4,5,6,7,8,9};
+void test2_3() {
+    int data[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     Node<int> head(data, 9);
     Node<int>* n = head.find(4);
 

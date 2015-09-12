@@ -10,8 +10,7 @@
  *
  */
 
-void test2_4()
-{
+void test2_4() {
     int data[] = {5, 10, 1, 8, 2, 6, 4, 3, 11, 0};
     Node<int>* pHead = new Node<int>(data, 10);
 
@@ -22,16 +21,12 @@ void test2_4()
 
     Node<int>* pNode = pHead;
 
-    while (pNode)
-    {
+    while (pNode) {
         Node<int>* pNext = pNode->m_pNext;
-        if (pNode->m_data < x)
-        {
+        if (pNode->m_data < x) {
             pNode->m_pNext = pLess;
             pLess = pNode;
-        }
-        else
-        {
+        } else {
             pNode->m_pNext = pMore;
             pMore = pNode;
         }
@@ -40,16 +35,14 @@ void test2_4()
 
     pNode = pLess;
 
-    while (pNode)
-    {
+    while (pNode) {
         assert(pNode->m_data < x);
         pNode = pNode->m_pNext;
     }
 
     pNode = pMore;
 
-    while (pNode)
-    {
+    while (pNode) {
         assert(pNode->m_data >= x);
         pNode = pNode->m_pNext;
     }

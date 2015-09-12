@@ -10,33 +10,24 @@
 using namespace std;
 
 template<class t>
-void removeDuplicates(Node<t>* pHead)
-{
+void removeDuplicates(Node<t>* pHead) {
     Node<int>* pNode = pHead;
     Node<int>* pPrev = 0;
 
-    while(pNode)
-    {
+    while (pNode) {
         Node<int>* pComp = pNode->m_pNext;
 
-        while (pComp)
-        {
-            if (pNode->m_data == pComp->m_data)
-            {
+        while (pComp) {
+            if (pNode->m_data == pComp->m_data) {
                 Node<int>* pNext = pComp->m_pNext;
-                if (pPrev)
-                {
+                if (pPrev) {
                     pPrev->m_pNext = pComp->m_pNext;
-                }
-                else
-                {
+                } else {
                     pNode->m_pNext = pComp->m_pNext;
                 }
                 delete pComp;
                 pComp = pNext;
-            }
-            else
-            {
+            } else {
                 pPrev = pComp;
                 pComp = pComp->m_pNext;
             }
@@ -47,8 +38,7 @@ void removeDuplicates(Node<t>* pHead)
     }
 }
 
-void test2_1()
-{
+void test2_1() {
     Node<int> n(0);
     assert(n[0]->m_data == 0);
     n.addToEnd(1);

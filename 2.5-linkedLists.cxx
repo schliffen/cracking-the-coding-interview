@@ -22,8 +22,7 @@
  * That is, 912.
  */
 
-Node<int>* addLists(Node<int>* pA, Node<int>* pB, int carry)
-{
+Node<int>* addLists(Node<int>* pA, Node<int>* pB, int carry) {
     if (pA == 0 && pB == 0 && carry == 0)
         return 0;
 
@@ -41,8 +40,7 @@ Node<int>* addLists(Node<int>* pA, Node<int>* pB, int carry)
     return result;
 }
 
-void test2_5()
-{
+void test2_5() {
     Node<int>* pA = new Node<int>(7);
     pA->addToEnd(1);
     pA->addToEnd(6);

@@ -32,70 +32,70 @@ struct Bounds {
 
 template<class T>
 class Image {
-    public:
-        Image(ushort w, ushort h) {
-            width = w;
-            height = h;
-            pixels = 0;
-        }
+public:
+    Image(ushort w, ushort h) {
+        width = w;
+        height = h;
+        pixels = 0;
+    }
 
-        ~Image() {
-            for (size_t i = 0; i < width; i++)
-                free(pixels[i]);
-            pixels = 0;
-        }
+    ~Image() {
+        for (size_t i = 0; i < width; i++)
+            free(pixels[i]);
+        pixels = 0;
+    }
 
-        void paintFill(ushort pX, ushort pY, T colour, T threshold, Bounds b) {
-            Image<bool> painted(width, height);
-            painted.alloc();
-            painted.fill(false, b);
-            paintFillR(pX, pY, colour, pixels[pX][pY], threshold, b, painted);
-        }
+    void paintFill(ushort pX, ushort pY, T colour, T threshold, Bounds b) {
+        Image<bool> painted(width, height);
+        painted.alloc();
+        painted.fill(false, b);
+        paintFillR(pX, pY, colour, pixels[pX][pY], threshold, b, painted);
+    }
 
-        void alloc() {
-            pixels = (T**)malloc(width * sizeof(T*));
-            for (size_t i = 0; i < width; i++)
-                pixels[i] = (T*)malloc(height * sizeof(T));
-        }
+    void alloc() {
+        pixels = (T**)malloc(width * sizeof(T*));
+        for (size_t i = 0; i < width; i++)
+            pixels[i] = (T*)malloc(height * sizeof(T));
+    }
 
-        void paintFillR(ushort pX, ushort pY, T colour, T initialColour, T threshold, Bounds& b, Image<bool>& painted) {
-            assert(pX < painted.width && pY < painted.height);
-            T diff = abs(pixels[pX][pY] - initialColour);
-            bool p = painted.pixels[pX][pY];
-            if (!p && diff <= threshold) {
-                pixels[pX][pY] = colour;
-                painted.pixels[pX][pY] = true;
-                if (pX > b.left && pX > 0)
-                    paintFillR(pX - 1, pY, colour, initialColour, threshold, b, painted);
-                if (pY < b.top && pY < height - 1)
-                    paintFillR(pX, pY + 1, colour, initialColour, threshold, b, painted);
-                if (pX < b.right && pX < width - 1)
-                    paintFillR(pX + 1, pY, colour, initialColour, threshold, b, painted);
-                if (pY >  b.bottom && pY > 0)
-                    paintFillR(pX, pY - 1, colour, initialColour, threshold, b, painted);
+    void paintFillR(ushort pX, ushort pY, T colour, T initialColour, T threshold, Bounds& b, Image<bool>& painted) {
+        assert(pX < painted.width && pY < painted.height);
+        T diff = abs(pixels[pX][pY] - initialColour);
+        bool p = painted.pixels[pX][pY];
+        if (!p && diff <= threshold) {
+            pixels[pX][pY] = colour;
+            painted.pixels[pX][pY] = true;
+            if (pX > b.left && pX > 0)
+                paintFillR(pX - 1, pY, colour, initialColour, threshold, b, painted);
+            if (pY < b.top && pY < height - 1)
+                paintFillR(pX, pY + 1, colour, initialColour, threshold, b, painted);
+            if (pX < b.right && pX < width - 1)
+                paintFillR(pX + 1, pY, colour, initialColour, threshold, b, painted);
+            if (pY >  b.bottom && pY > 0)
+                paintFillR(pX, pY - 1, colour, initialColour, threshold, b, painted);
+        }
+    }
+
+    void fill(T value, Bounds b) {
+        for (size_t i = b.left; i < b.right; i++)
+            for (size_t j = b.bottom; j < b.top; j++)
+                pixels[i][j] = value;
+    }
+
+    void render(Bounds b) {
+        for (int i = b.top - 1; i >= b.bottom; i--) {
+            for (int j = b.left; j < b.right; j++) {
+                uint numVal = (int)pixels[j][i];
+                numVal ? printf("%d ", numVal) : printf("  ");
             }
+            printf("\n");
         }
+    }
 
-        void fill(T value, Bounds b) {
-            for (size_t i = b.left; i < b.right; i++)
-                for (size_t j = b.bottom; j < b.top; j++)
-                    pixels[i][j] = value;
-        }
-
-        void render(Bounds b) {
-            for (int i = b.top - 1; i >= b.bottom; i--) {
-                for (int j = b.left; j < b.right; j++) {
-                    uint numVal = (int)pixels[j][i];
-                    numVal ? printf("%d ", numVal) : printf("  ");
-                }
-                printf("\n");
-            }
-        }
-
-        ushort width;
-        ushort height;
-        T** pixels;
-        bool isAllocated;
+    ushort width;
+    ushort height;
+    T** pixels;
+    bool isAllocated;
 };
 
 void test9_7() {

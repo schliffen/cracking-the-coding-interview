@@ -13,44 +13,36 @@
  */
 
 #include "lib/datastructures/Stack.h"
-
-#include <iostream>
 #include <assert.h>
 
-using namespace std;
-
-void MoveTowerofHanoi(int disk, Stack<int> *source, Stack<int> *temp, Stack<int> *destination)
-{
-    if (disk==1)
-    {
+void Move_tower_of_hanoi(int disk, Stack<int>* source, Stack<int>* temp, Stack<int>* destination) {
+    if (disk == 1) {
         destination->push(source->pop());
-    }
-    else
-    {
-        MoveTowerofHanoi(disk-1,source,destination,temp);
+    } else {
+        Move_tower_of_hanoi(disk - 1, source, destination, temp);
         destination->push(source->pop());
-        MoveTowerofHanoi(disk-1,temp,source,destination);
+        Move_tower_of_hanoi(disk - 1, temp, source, destination);
     }
 }
 
 
-void solveFor(int disks)
-{
+void solve_for(int disks) {
     Stack<int>* source = new Stack<int>();
-    for(int i=disks; i>0; --i) {
+    for (int i = disks; i > 0; --i)
         source->push(i);
-    }
 
     Stack<int>* temp = new Stack<int>();
     Stack<int>* destination = new Stack<int>();
-    MoveTowerofHanoi(disks,source,temp,destination);
+    Move_tower_of_hanoi(disks, source, temp, destination);
     assert(destination->peek() == 1);
     delete source;
     delete temp;
     delete destination;
 }
 
-void test3_4()
-{
-    solveFor(4);
+// TODO: is this finished?
+
+void test3_4() {
+    solve_for(4);
+    printf("3.4 not passed!\n");
 }

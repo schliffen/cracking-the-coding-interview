@@ -14,18 +14,15 @@ using namespace std;
 // Output: C
 
 
-Node<int>* findBeginning(Node<int>* head)
-{
+Node<int>* findBeginning(Node<int>* head) {
     Node<int>* slow = head;
     Node<int>* fast = head;
 
     /* Find meeting point. This will be LOOP_SIZE - k steps into the * linked list. */
-    while (fast != 0 && fast->m_pNext != 0)
-    {
+    while (fast != 0 && fast->m_pNext != 0) {
         slow = slow->m_pNext;
         fast = fast->m_pNext->m_pNext;
-        if (slow == fast)
-        {
+        if (slow == fast) {
             break;
         }
     }
@@ -34,17 +31,15 @@ Node<int>* findBeginning(Node<int>* head)
         return 0;
 
     slow = head;
-    while (slow != fast)
-    {
+    while (slow != fast) {
         slow = slow->m_pNext;
         fast = fast->m_pNext;
     }
     return fast;
 }
 
-void test2_6()
-{
-    int data[] = {0,1,2,3,4,5,6,7,8,9};
+void test2_6() {
+    int data[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     Node<int> head(data, 10);
 
     head.find(9)->m_pNext = head.find(4);

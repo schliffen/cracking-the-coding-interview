@@ -11,8 +11,7 @@
  */
 
 /* check if a is a rotation of b */
-bool isRotation(char* a, char* b)
-{
+bool isRotation(char* a, char* b) {
     int aLen = strlen(a);
     int bLen = strlen(b);
 
@@ -27,8 +26,7 @@ bool isRotation(char* a, char* b)
     return strstr(together, a);
 }
 
-void test1_8()
-{
+void test1_8() {
     assert(isRotation("waterfall", "llwaterfa"));
     assert(isRotation("yellow", "owyell"));
     assert(!isRotation("yellow", "oyellw"));

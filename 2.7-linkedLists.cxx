@@ -4,11 +4,13 @@
 
 using namespace std;
 
-// 2.7 Implement a function to check if a linked list is a palindrome.
+/*
+ * 2.7
+ * Implement a function to check if a linked list is a palindrome.
+ */
 
-void test2_7()
-{
-    char data[] = {'a','s','a','n','t','a','a','t','n','a','s','a'};
+void test2_7() {
+    char* data = "asantaatnasa";
     Node<char> head(data, 12);
     Node<char>* duplicate = head.duplicate();
     Node<char>* reversed = duplicate->reverse();
@@ -18,8 +20,7 @@ void test2_7()
 
     bool palindrome = true;
 
-    while (pNode)
-    {
+    while (pNode) {
         if (pNode->m_data != pRNode->m_data)
             palindrome = false;
         pNode = pNode->m_pNext;
