@@ -10,8 +10,6 @@
 #include "lib/datastructures/string.h"
 #include "lib/datastructures/vector.h"
 #include "assert.h"
-#include <string>
-#include <vector>
 
 template<class S, class V>
 void addParen(V& vec, S str, int leftRem, int rightRem, int count)
@@ -49,6 +47,5 @@ void testParenthesisPermutations() {
 }
 
 void test9_6() {
-    //testParenthesisPermutations<std::string, std::vector<std::string> >();
     testParenthesisPermutations<ctci::string, ctci::vector<ctci::string> >();
 }

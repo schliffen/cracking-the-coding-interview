@@ -36,6 +36,7 @@ void test5_7();
 
 void test9_1();
 void test9_6();
+void test9_7();
 void test9x0();
 void test11_1();
 void test12_1();
@@ -65,6 +66,10 @@ int main(int argc, char* argv[])
 {
     (void)argc;
     (void)argv;
+
+    test9_7();
+
+    return 0;
 
     // unit test data structures
 
