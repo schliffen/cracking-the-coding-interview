@@ -14,7 +14,7 @@ using namespace std;
 void testBinaryTreeRendererMain()
 {
     BinaryTree<int>* pFull = new BinaryTree<int>(1);
-    buildFullBinaryTree(pFull, 1, 5);
+    buildFullBinaryTree(pFull, 1, 4);
 
     renderBinaryTree(pFull, "binaryTree");
     struct stat buffer;

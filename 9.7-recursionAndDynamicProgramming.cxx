@@ -151,6 +151,7 @@ void test9_7() {
     //    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 
 
+    // paint the colour 6 black, with a threshold of 1
     img.paintFill(width * 0.5, height * 0.6, 0, 1, Bounds(0, width, 0, height));
     //img.render(Bounds(0, width, 0, height));
 

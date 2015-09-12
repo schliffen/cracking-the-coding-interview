@@ -11,7 +11,7 @@
     your method should return the original string.
 */
 
-char* compressString(char* str) {
+char* compress_string(char* str) {
     int len = strlen(str);
     if (len >= 2) {
         char result[len];
@@ -29,10 +29,10 @@ char* compressString(char* str) {
             }
         }
         result[resulti++] = '\0';
-        int resultLen = strlen(result);
-        if (resultLen < len) {
-            char* ret = (char*)malloc(resultLen + 1);
-            memcpy(ret, result, resultLen + 1);
+        int result_len = strlen(result);
+        if (result_len < len) {
+            char* ret = (char*)malloc(result_len + 1);
+            memcpy(ret, result, result_len + 1);
             return ret;
         }
     }
@@ -44,7 +44,7 @@ char* compressString(char* str) {
 
 
 void test1_5() {
-    char* result = compressString("aabcccccaaa");
+    char* result = compress_string("aabcccccaaa");
     assert(strcmp(result, "a2b1c5a3") == 0);
     free(result);
     printf("1.5 passed!\n");

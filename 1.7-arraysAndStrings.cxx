@@ -2,8 +2,9 @@
 #include "assert.h"
 
 /*
-    1.7 Write an algorithm such that if an element in an MxN
-    matrix is 0, its entire row and column are set to 0.
+ * 1.7
+ * Write an algorithm such that if an element in an MxN
+ * matrix is 0, its entire row and column are set to 0.
 */
 
 void setZeroRowColumns4x4(int a[4][4]) {
@@ -39,7 +40,10 @@ void test1_7() {
 
     setZeroRowColumns4x4(a);
 
-    //print4x4Matrix(a);
+    // 	 |0   1   2    3 |	        |0   0   0   0 |
+    //   |4   5   6    7 |  ------\ |0   5   6   7 |
+    //   |8   9   10   11|  ------/ |0   9   10  11|
+    // 	 |12  13  14   15|	        |0   13  14  15|
 
     assert(a[0][0] == 0);
     assert(a[0][1] == 0);

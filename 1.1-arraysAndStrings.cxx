@@ -2,27 +2,23 @@
 #include <stdio.h>
 
 /*
-    1.1 Implement an algorithm to determine if a string has all unique characters.
-    What if you cannot use additional data structures?
-*/
+ * 1.1 Implement an algorithm to determine if a string has
+ * all unique characters. What if you cannot use additional
+ * data structures?
+ */
 
-int eachCharIsUnique(char* str) {
-    int asciiCounts[128] = {0};
-
-    int i = 0;
-
-    while (str[i] != '\0') {
-        if (asciiCounts[(int)str[i]])
+int unique_c(char* s) {
+    int ascii_n[128] = {0};
+    for (int i = 0; s[i] != '\0'; ++i) {
+        if (ascii_n[(int)s[i]])
             return 0;
-        asciiCounts[(int)str[i]]++;
-        i++;
+        ascii_n[(int)s[i]]++;
     }
-
     return 1;
 }
 
 void test1_1() {
-    assert(eachCharIsUnique("asdfqwer") == 1);
-    assert(eachCharIsUnique("asdfqwera") == 0);
+    assert(unique_c("asdfqwer") == 1);
+    assert(unique_c("asdfqwera") == 0);
     printf("1.1 passed!\n");
 }

@@ -1,49 +1,35 @@
-#include <string.h>
 #include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include "assert.h"
 
 /*
-    1.2 Implement a function void reverse(char* str)
-    in C or C++ which reverses a null-terminated string.
-*/
+ * 1.2 Implement a function void reverse(char* str)
+ * in C or C++ which reverses a null-terminated string.
+ */
 
-void test1_2(char* str) {
+void reverse(char* str) {
     if (!str)
         return;
-    unsigned long len = strlen(str);
-
-    if (len < 2)
-        return;
-
+    int len = strlen(str);
     int tail = 1;
-
-    for (unsigned int i = 1; i < len; i++) {
-        //printf("tail: %d\n", tail);
-
-        int j;
-        //printf("\n---%c---\n", str[i]);
-
-        for (j = 0; j < tail; j++) {
-            // printf("\tif %c == %c: ", str[i], str[j]);
-            if (str[i] == str[j]) {
-                //printf("match!\n");
+    for (int i = 1, j = 0; i < len; i++) {
+        for (j = 0; j < tail; j++)
+            if (str[i] == str[j])
                 break;
-            } else {
-                //printf("nope\n");
-            }
-        }
-
-        //printf("j=%d\n", j);
-
         if (j == tail) {
-            //printf("str[%d] = %c\n", tail, str[i]);
             str[tail] = str[i];
             ++tail;
-        } else {
-            //printf("skipped\n");
         }
-        //printf("%s\n", str);
-        //printf("tail: %c\n", str[tail]);
-        //printf("--------------------------------\n");
     }
     str[tail] = 0;
+}
+
+void test1_2() {
+    char* c = (char*)calloc(7, 1);
+    strcpy(c, "foobar");
+    reverse(c);
+    free(c);
+    assert(strcmp(c, "raboof") == 0);
+    printf("1.2 passed!\n");
 }

@@ -8,7 +8,7 @@
     rotate the image by 90 degrees. Can you do this in place?
 */
 
-void rotateMatrix(int matrix[][4]) {
+void rotate_matrix(int m[][4]) {
     int n = 4;
     for (int layer = 0; layer < n / 2; ++layer) {
         int first = layer;
@@ -16,11 +16,11 @@ void rotateMatrix(int matrix[][4]) {
 
         for (int i = first; i < last; ++i) {
             int offset = i - first;
-            int top = matrix[first][i];
-            matrix[first][i] = matrix[last - offset][first];
-            matrix[last - offset][first] = matrix[last][last - offset];
-            matrix[last][last - offset] = matrix[i][last];
-            matrix[i][last] = top;
+            int top = m[first][i];
+            m[first][i] = m[last - offset][first];
+            m[last - offset][first] = m[last][last - offset];
+            m[last][last - offset] = m[i][last];
+            m[i][last] = top;
         }
     }
 }
@@ -33,7 +33,7 @@ void test1_6() {
         {12, 13, 14,  15},
     };
 
-    rotateMatrix(a);
+    rotate_matrix(a);
 
     assert(a[0][0] == 12);
     assert(a[1][1] == 9);

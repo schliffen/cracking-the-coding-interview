@@ -13,8 +13,8 @@
 /* check if a is a rotation of b */
 bool isRotation(char* a, char* b)
 {
-    unsigned long aLen = strlen(a);
-    unsigned long bLen = strlen(b);
+    int aLen = strlen(a);
+    int bLen = strlen(b);
 
     if (aLen != bLen)
         return false;
