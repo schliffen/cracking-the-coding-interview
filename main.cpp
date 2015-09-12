@@ -67,10 +67,6 @@ int main(int argc, char* argv[])
     (void)argc;
     (void)argv;
 
-    test9_7();
-
-    return 0;
-
     // unit test data structures
 
     teststring();
@@ -123,6 +119,7 @@ int main(int argc, char* argv[])
     test9x0();
     test9_1();
     test9_6();
+    test9_7();
     test11_1();
     test12_1();
     test12_x_0();

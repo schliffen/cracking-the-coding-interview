@@ -1,8 +1,17 @@
+/*
+ * 9.7 Implement the "paint fill" function that one might see on many
+ * image editing programs. That is, given a screen (represented by a
+ * two-dimensional array of colors), a point, and a new color, fill
+ * in the surrounding area until the color changes from the original color.
+ */
+
 #include <cstdlib>
 #include <cstring>
 #include <cmath>
 #include <cstdio>
-#include <assert.h>
+#include <unistd.h>
+
+#include "assert.h"
 
 typedef unsigned short ushort;
 typedef unsigned int uint;
@@ -12,13 +21,13 @@ struct Bounds {
     Bounds(ushort l, ushort r, ushort b, ushort t):
         left(l),
         right(r),
-        top(t),
-        bottom(b) {
+        bottom(b),
+        top(t) {
     }
     ushort left;
     ushort right;
-    ushort top;
     ushort bottom;
+    ushort top;
 };
 
 template<class T>
@@ -31,6 +40,9 @@ class Image {
         }
 
         ~Image() {
+            for (size_t i = 0; i < width; i++)
+                free(pixels[i]);
+            pixels = 0;
         }
 
         void paintFill(ushort pX, ushort pY, T colour, T threshold, Bounds b) {
@@ -49,7 +61,6 @@ class Image {
         void paintFillR(ushort pX, ushort pY, T colour, T initialColour, T threshold, Bounds& b, Image<bool>& painted) {
             assert(pX < painted.width && pY < painted.height);
             T diff = abs(pixels[pX][pY] - initialColour);
-            T pixelColour = pixels[pX][pY];
             bool p = painted.pixels[pX][pY];
             if (!p && diff <= threshold) {
                 pixels[pX][pY] = colour;
@@ -66,19 +77,16 @@ class Image {
         }
 
         void fill(T value, Bounds b) {
-            for (size_t i = b.left; i < b.right; i++) {
-                for (size_t j = b.bottom; j < b.top; j++) {
+            for (size_t i = b.left; i < b.right; i++)
+                for (size_t j = b.bottom; j < b.top; j++)
                     pixels[i][j] = value;
-                }
-            }
         }
 
         void render(Bounds b) {
-            for (int i = b.top-1; i >= b.bottom; i--) {
-                printf("// ");
+            for (int i = b.top - 1; i >= b.bottom; i--) {
                 for (int j = b.left; j < b.right; j++) {
                     uint numVal = (int)pixels[j][i];
-                    numVal ? printf("%d ", numVal) : printf("  ", numVal);
+                    numVal ? printf("%d ", numVal) : printf("  ");
                 }
                 printf("\n");
             }
@@ -102,24 +110,6 @@ void test9_7() {
 
     // draw two slightly overlapping rectangles, with values 5 and 6
     img.fill(5, Bounds(width * 0.1, width * 0.7, height * 0.1, height * 0.7));
-    // img.render(Bounds(0, width, 0, height));
-
-    //
-    //
-    //
-    //
-    //
-    //       5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    //       5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    //       5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    //       5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    //       5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    //       5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    //       5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    //       5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    //       5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    //
-
     img.fill(6, Bounds(width * 0.4, width * 0.8, height * 0.5, height * 0.8));
     // img.render(Bounds(0, width, 0, height));
 
@@ -161,9 +151,25 @@ void test9_7() {
     //    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 
 
-    img.paintFill(20, 10, 1, 3, Bounds(0, width, 0, height));
-    img.render(Bounds(0, width, 0, height));
+    img.paintFill(width * 0.5, height * 0.6, 0, 1, Bounds(0, width, 0, height));
+    //img.render(Bounds(0, width, 0, height));
 
+    // 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    // 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    // 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    // 1 1 1 1 1 1 1 1 1 1 1 1                         1 1 1 1 1 1
+    // 1 1 1 1 1 1 1 1 1 1 1 1                         1 1 1 1 1 1
+    // 1 1 1                                           1 1 1 1 1 1
+    // 1 1 1                                           1 1 1 1 1 1
+    // 1 1 1                                           1 1 1 1 1 1
+    // 1 1 1                                     1 1 1 1 1 1 1 1 1
+    // 1 1 1                                     1 1 1 1 1 1 1 1 1
+    // 1 1 1                                     1 1 1 1 1 1 1 1 1
+    // 1 1 1                                     1 1 1 1 1 1 1 1 1
+    // 1 1 1                                     1 1 1 1 1 1 1 1 1
+    // 1 1 1                                     1 1 1 1 1 1 1 1 1
+    // 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 
-
+    assert(img.pixels[0][0] == 1 && img.pixels[4][2] == 0);
+    printf("9.7 passed!\n");
 }
