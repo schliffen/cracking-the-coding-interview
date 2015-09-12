@@ -98,7 +98,10 @@ void vector<T>::push_back(const T& v)
 {
     if (my_size >= my_capacity)
         reserve(my_capacity == 0 ? 5 : my_capacity * 2);
-    buffer [my_size++] = v;
+    if (reallocatable)
+        memcpy(buffer + my_size++, &v, sizeof(T));
+    else
+        buffer[my_size++] = v;
 }
 
 template<class T>
@@ -207,12 +210,19 @@ vector<T>::~vector()
     else
         delete[ ] buffer;
 }
+
 template <class T>
 void vector<T>::clear()
 {
     my_capacity = 0;
     my_size = 0;
     buffer = 0;
+}
+
+template <class T>
+void setReallocatable(bool r)
+{
+    vector<T>::reallocatable = r;
 }
 
 }

@@ -1,32 +1,20 @@
 #ifndef STRING_H
 #define STRING_H
 
-#include <cstring>
 #include <ostream>
-#include <iostream>
-#include <ctime>
-#include <sstream>
-#include <fstream>
 
 namespace ctci
 {
 
-class string;
-std::ostream&   operator<<(std::ostream& ost, const string& ls);
-string          operator+(const string& s1, const string& s2);
-string          operator+=(const string& s1, const string& s2);
-bool            operator==(const string& s1, const string& s2);
-
 class string
 {
 public:
+    string();
     string(char* s);
     string(const char* s);
-    string();
+    string(const string& s);
 
     ~string();
-
-    void assign();
 
     size_t size() const;
 
@@ -34,11 +22,12 @@ public:
     friend string operator+(const string& s1, const string& s2);
     friend string operator+=(string& s1, const string& s2);
     friend bool operator==(const string& s1, const string& s2);
+    char& operator[](const unsigned int ind);
+    string& operator=(const string& other);
+    //string& operator=(string&& other);
 
 private:
     char* buf;
-    bool isAllocated;
-    mutable int bsize;
 };
 }
 
