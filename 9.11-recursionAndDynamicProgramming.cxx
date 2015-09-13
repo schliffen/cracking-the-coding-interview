@@ -20,8 +20,16 @@
 using namespace std;
 
 struct bt {
+
+    enum type {
+        eEXPR,
+        eOP,
+        eNUM
+    };
+
     bt* left;
     bt* right;
+    string expr;
     string op;
     int val;
     int op_on_op(char o, int l, int r) {
@@ -65,10 +73,10 @@ void parse(string st, bt* b) {
     bool opFound;
     if (p != string::npos) {
         size_t q = st.find_first_of(")");
-        parse(st.substr(p + 1, q), b);
+        parse(st.substr(p + 1, q-1), b);
         return;
     } else {
-        char* operators = "&|^";
+        char* operators = "&^|";
         for (int i = 0; i < 3 && !opFound; ++i) {
             p = st.find(operators[i]);
             if (p != string::npos) {
@@ -91,21 +99,28 @@ void test_parse(string s, int v) {
     assert(b.eval(&b) == v);
 }
 
-//void parenthesise(bt& b) {
-
-//}
+void test_parsing() {
+    test_parse("0&0", 0 & 0);
+    test_parse("1&1", 1 & 1);
+    test_parse("1^0", 1 ^ 0);
+    test_parse("(1^0)", (1 ^ 0));
+    test_parse("1^0|0|1", (1 ^ 0 | 0 | 1));
+    test_parse("(1^0)^(1|1)", (1^0)^(1|1));
+    test_parse("1^(0^1)|1", 1^(0^1)|1);
+    test_parse("(1^0|0|1^(1&0)|(0^1))^0", (1 ^ 0 | 0 | 1 ^ (1 & 0) | (0 ^ 1)) ^ 0);
+}
 
 void test9_11() {
-    test_parse("0&0", 0&0);
-    test_parse("1&1", 1&1);
-    test_parse("1^0", 1^0);
-    test_parse("(1^0)", (1^0));
-    test_parse("1^0|0|1", (1^0|0|1));
-    test_parse("(1^0|0|1^(1&0)|(0^1))^0", (1^0|0|1^(1&0)|(0^1))^0);
+    test_parsing();
     bt b;
-    parse("1^0|0|1", &b);
-    string str;
-    b.to_string(str, &b);
-    assert(str == "1^0|0|1");
+    parse("1^0|1", &b);
+    int r = b.eval(&b);
+    int tr = (1^0|1);
+    assert(r == tr);
+
+
+//    string str;
+//    b.to_string(str, &b);
+//    assert(str == "1^0|0|1");
     //parenthesise(&b);
 }
