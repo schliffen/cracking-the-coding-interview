@@ -9,9 +9,6 @@
 #include "assert.h"
 #include <cstdio>
 
-#include <vector>
-#include <numeric>
-
 void pennies(ctci::vector<int> P, int n, ctci::vector<ctci::vector<int> >& results, ctci::vector<int> path) {
     int s = ctci::accumulate(path.begin(), path.end(), 0);
     if (s == n)
@@ -21,6 +18,7 @@ void pennies(ctci::vector<int> P, int n, ctci::vector<ctci::vector<int> >& resul
             if (s + P[p] <= n) {
                 path.push_back(P[p]);
                 pennies(P, n, results, path);
+                path.pop_back();
             }
 }
 
@@ -36,17 +34,27 @@ void test9_8() {
     pennies(P, n, results, path);
     assert(results.size() != 0);
     for (size_t i = 0; i < results.size(); i++)
+    {
+        for (size_t j = 0; j < results[i].size(); j++)
+            printf("%d ", results[i][j]);
+        printf("= 11\n");
         assert(ctci::accumulate(results[i].begin(), results[i].end(), 0) == n);
+    }
 
     // results:
-    //    1 1 1 1 1 1 1 1 1 1 1 = 11
-    //    1 1 1 1 1 1 5 = 11
-    //    1 1 1 1 1 5 1 = 11
-    //    1 1 1 1 1 1 1 1 1 1 1 = 11
-    //    1 1 1 1 1 1 5 = 11
-    //    1 1 1 5 1 1 1 = 11
-    //    1 1 5 1 1 1 1 = 11
-    //    1 5 1 1 1 1 1 = 11
+    // 1 1 1 1 1 1 1 1 1 1 1 = 11
+    // 1 1 1 1 1 1 5 = 11
+    // 1 1 1 1 1 5 1 = 11
+    // 1 1 1 1 5 1 1 = 11
+    // 1 1 1 5 1 1 1 = 11
+    // 1 1 5 1 1 1 1 = 11
+    // 1 5 1 1 1 1 1 = 11
+    // 1 5 5 = 11
+    // 1 10 = 11
+    // 5 1 1 1 1 1 1 = 11
+    // 5 1 5 = 11
+    // 5 5 1 = 11
+    // 10 1 = 11
 
     printf("9.8 passed!\n");
 }

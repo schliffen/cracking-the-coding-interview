@@ -7,6 +7,7 @@
 # and pennies (1 cent), write code to calculate the number of ways of representing n cents.
 #
 
+
 def pennies(P, n, results, path=[]):
     s = sum(path)
     if s == n:
@@ -16,13 +17,28 @@ def pennies(P, n, results, path=[]):
             if s + P[p] <= n:
                 pennies(P, n, results, path + [P[p]])
 
+
 def test9_8():
-    n = 11
     results = []
-    pennies(P=[1, 5, 10, 25], n=11, results=results)
-    assert(len(results) == 13)
+    pennies(P=[1, 5, 10, 25], n=11, results=results, path=[])
     for r in results:
-        assert(sum(r) == n)
+        assert(sum(r) == 11)
+
+    # results:
+    # [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    # [1, 1, 1, 1, 1, 1, 5]
+    # [1, 1, 1, 1, 1, 5, 1]
+    # [1, 1, 1, 1, 5, 1, 1]
+    # [1, 1, 1, 5, 1, 1, 1]
+    # [1, 1, 5, 1, 1, 1, 1]
+    # [1, 5, 1, 1, 1, 1, 1]
+    # [1, 5, 5]
+    # [1, 10]
+    # [5, 1, 1, 1, 1, 1, 1]
+    # [5, 1, 5]
+    # [5, 5, 1]
+    # [10, 1]
+
     print("9.8 passed!")
 
 if __name__ == "__main__":
