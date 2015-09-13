@@ -43,7 +43,8 @@ void renderBinaryTree(BinaryTreeBase<int> *tree, string name)
 
     fprintf(stream, "}\n");
     fclose(stream);
-    const char* sysCmd = string("/opt/local/bin/dot -Tpng " + name + ".dot -o " + name + ".png &> /dev/null").c_str();
+    string cmd = string("/opt/local/bin/dot -Tpng " + name + ".dot -o " + name + ".png &> /dev/null");
+    const char* sysCmd = cmd.c_str();
     system(sysCmd);
 }
 

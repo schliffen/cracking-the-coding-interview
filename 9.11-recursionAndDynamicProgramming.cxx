@@ -22,6 +22,30 @@
 
 using namespace std;
 
+
+bool is_digit(string st) {
+    if (st.size() == 1) {
+        char c = st.c_str()[0];
+        return (c >= 48 && c <= 57);
+    }
+    return false;
+}
+
+bool is_digit(char c) {
+    return (c >= 48 && c <= 57);
+}
+
+bool is_numeral(string& st) {
+    bool is_num = st.size() > 0;
+    for (size_t i = 0; i < st.size(); i++)
+        if (!is_digit(st[i]))
+            is_num = false;
+    return is_num;
+}
+
+bool is_operator(string st) {
+    return (st == "&" || st == "^" || st == "|");
+}
 template<class T>
 class parsetree: public BinaryTreeBase<T> {
     public:
@@ -61,12 +85,12 @@ class parsetree: public BinaryTreeBase<T> {
         int eval(parsetree* b) {
             if (!b)
                 return 0;
-            if (b->data != "") {
+            if (is_operator(b->data)) {
                 int lv = eval(b->left);
                 int rv = eval(b->right);
-                int res = op_on_op(b->data[0], lv, rv);
+                int res = op_on_op(b->data, lv, rv);
                 return res;
-            } else
+            } else if (is_numeral(b->data))
                 return atoi(b->data.c_str());
         }
 
@@ -111,29 +135,6 @@ void parse(string st, parsetree<string>* b) {
         b->data = st;
 }
 
-bool is_digit(string st) {
-    if (st.size() == 1) {
-        char c = st.c_str()[0];
-        return (c >= 48 && c <= 57);
-    }
-    return false;
-}
-
-bool is_digit(char c) {
-    return (c >= 48 && c <= 57);
-}
-
-bool is_numeral(string& st) {
-    bool is_num = st.size() > 0;
-    for (size_t i = 0; i < st.size(); i++)
-        if (!is_digit(st[i]))
-            is_num = false;
-    return is_num;
-}
-
-bool is_operator(string st) {
-    return (st == "&" || st == "^" || st == "|");
-}
 
 int numeral_size(string& st) {
     int size = 0;
@@ -145,6 +146,19 @@ int numeral_size(string& st) {
     return size;
 }
 
+bool balanced_paren(string st) {
+    int count = 0;
+    for (size_t i = 0; i < st.size(); i++)
+        if (st[i] == '(')
+            ++count;
+        else if (st[i] == ')') {
+            --count;
+            if (count < 0)
+                return false;
+        }
+    return count == 0;
+}
+
 bool is_expr(string st, parsetree<string>* b = 0) {
     bool is_num = is_numeral(st);
     if (is_num) {
@@ -152,37 +166,45 @@ bool is_expr(string st, parsetree<string>* b = 0) {
             b->data = st;
         return true;
     }
+
+    if (!balanced_paren(st))
+        return false;
+
     bool expr_min_size = st.size() >= 5;
     bool is_ex = false;
-    if (expr_min_size) {
-        bool start_is_open_paren = st[0] == '(';
-        bool end_is_open_paren = st[st.size() - 1] == ')';
-        bool is_between_paren = start_is_open_paren && end_is_open_paren;
-        if (is_between_paren) {
-            int expr_end = 0;
-            string expr_no_paren = st.substr(1, st.size() - 2);
-            for (size_t i = 1; i < expr_no_paren.size(); ++i) {
-                if (is_expr(expr_no_paren.substr(0, i), 0))
-                    expr_end = i;
-            }
-            if (expr_end != 0) {
+    bool start_is_open_paren = st[0] == '(';
+    bool end_is_open_paren = st[st.size() - 1] == ')';
+    bool is_between_paren = start_is_open_paren && end_is_open_paren;
+    string expr_no_paren;
+    int expr_end = 0;
+    if (is_between_paren) {
+        string no_paren = st.substr(1, st.size() - 2);
+        bool balanced = balanced_paren(no_paren);
+        expr_no_paren = balanced ? no_paren : st;
+    } else {
+        expr_no_paren = st;
+    }
 
-                string expr_first_part = expr_no_paren.substr(0, expr_end);
-                if (b) {
-                    b->left = new parsetree<string>();
-                    is_expr(expr_first_part, b->left);
-                }
+    for (size_t i = 1; i < expr_no_paren.size(); ++i) {
+        if (is_expr(expr_no_paren.substr(0, i), 0))
+            expr_end = i;
+    }
+    if (expr_end != 0) {
 
-                if (is_operator(expr_no_paren.substr(expr_end, 1))) {
-                    string exp_second_part = expr_no_paren.substr(expr_end+1, expr_no_paren.size()-expr_end+1);
-                    if (b) {
-                        b->data = expr_no_paren.substr(expr_end, 1);
-                        b->right = new parsetree<string>();
-                    }
-                    bool second_part_is_expr = is_expr(exp_second_part, b ? b->right : 0);
-                    is_ex = second_part_is_expr;
-                }
+        string expr_first_part = expr_no_paren.substr(0, expr_end);
+        if (b) {
+            b->left = new parsetree<string>();
+            is_expr(expr_first_part, b->left);
+        }
+
+        if (is_operator(expr_no_paren.substr(expr_end, 1))) {
+            string exp_second_part = expr_no_paren.substr(expr_end + 1, expr_no_paren.size() - expr_end + 1);
+            if (b) {
+                b->data = expr_no_paren.substr(expr_end, 1);
+                b->right = new parsetree<string>();
             }
+            bool second_part_is_expr = is_expr(exp_second_part, b ? b->right : 0);
+            is_ex = second_part_is_expr;
         }
     }
     return is_num || is_ex;
@@ -194,30 +216,13 @@ void parse_expr(string st, parsetree<string>* b) {
 
 void test9_11() {
     parsetree<string> b;
+    assert(is_expr("1&5"));
     assert(is_expr("(1&5)"));
     assert(is_expr("(3&(500^2))"));
-    assert(!is_expr("(3&(500^2))|(3&(500^2))"));
-    assert(is_expr("((3&(500^2))|(3&(500^2)))", &b));
-//    bool is_ex = is_expr("((3&(500^2))|(3&(500^2)))", &b); // pass
-//    assert(is_ex);
+    assert(is_expr("(3&(500^2))|3&(500^2)"));
+    assert(is_expr("((3&(500^2))|(3&(5^2)))", &b));
 
-    //    bool is_ex = is_expr("((3&(500^2))|(3&(500^2)))", &b);
-    //    assert(is_ex);
+    printf("%d\n", b.eval(&b));
 
     renderBinaryTree(&b, "parse_tree");
 }
-
-/*
-            int operator_p = 0;
-            for (size_t i = 0; i < expr_no_paren.size(); i++)
-                if (is_operator(expr_no_paren[i]))
-                {
-                    operator_p = i;
-                    break;
-                }
-            if (operator_p != 0) {
-                string pre_op = expr_no_paren.substr(0, operator_p);
-                string post_op = expr_no_paren.substr(operator_p+1, expr_no_paren.size() - operator_p);
-                is_ex = is_expr(pre_op) && is_expr(post_op);
-            }
-*/
