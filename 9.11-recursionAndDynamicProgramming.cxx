@@ -131,16 +131,8 @@ bool is_numeral(string& st) {
     return is_num;
 }
 
-bool is_operator(string& st) {
-    return (st == "&" || st == "^" || st == "|");
-}
-
 bool is_operator(string st) {
     return (st == "&" || st == "^" || st == "|");
-}
-
-bool is_operator(char c) {
-    return (c == '&' || c == '^' || c == '|');
 }
 
 int numeral_size(string& st) {
@@ -153,10 +145,15 @@ int numeral_size(string& st) {
     return size;
 }
 
-bool is_expr(string st) {
+bool is_expr(string st, parsetree<string>* b = 0) {
     bool is_num = is_numeral(st);
+    if (is_num) {
+        if (b)
+            b->data = st;
+        return true;
+    }
     bool expr_min_size = st.size() >= 5;
-    bool is_ex;
+    bool is_ex = false;
     if (expr_min_size) {
         bool start_is_open_paren = st[0] == '(';
         bool end_is_open_paren = st[st.size() - 1] == ')';
@@ -164,14 +161,25 @@ bool is_expr(string st) {
         if (is_between_paren) {
             int expr_end = 0;
             string expr_no_paren = st.substr(1, st.size() - 2);
-            for (size_t i = 0; i < expr_no_paren.size(); ++i) {
-                if (is_expr(expr_no_paren.substr(0, i)))
+            for (size_t i = 1; i < expr_no_paren.size(); ++i) {
+                if (is_expr(expr_no_paren.substr(0, i), 0))
                     expr_end = i;
             }
             if (expr_end != 0) {
+
+                string expr_first_part = expr_no_paren.substr(0, expr_end);
+                if (b) {
+                    b->left = new parsetree<string>();
+                    is_expr(expr_first_part, b->left);
+                }
+
                 if (is_operator(expr_no_paren.substr(expr_end, 1))) {
                     string exp_second_part = expr_no_paren.substr(expr_end+1, expr_no_paren.size()-expr_end+1);
-                    bool second_part_is_expr = is_expr(exp_second_part);
+                    if (b) {
+                        b->data = expr_no_paren.substr(expr_end, 1);
+                        b->right = new parsetree<string>();
+                    }
+                    bool second_part_is_expr = is_expr(exp_second_part, b ? b->right : 0);
                     is_ex = second_part_is_expr;
                 }
             }
@@ -185,18 +193,18 @@ void parse_expr(string st, parsetree<string>* b) {
 }
 
 void test9_11() {
-    //    parsetree<string> b;
-    //    parse("(1&(0|2)^3^((4|5)^6))", &b);
-    //    renderBinaryTree(&b, "parse_tree");
-
+    parsetree<string> b;
     assert(is_expr("(1&5)"));
-    assert(is_expr("(10^2)"));
-    assert(is_expr("(1&500)"));
     assert(is_expr("(3&(500^2))"));
     assert(!is_expr("(3&(500^2))|(3&(500^2))"));
-    assert(is_expr("((3&(500^2))|(3&(500^2)))"));
+    assert(is_expr("((3&(500^2))|(3&(500^2)))", &b));
+//    bool is_ex = is_expr("((3&(500^2))|(3&(500^2)))", &b); // pass
+//    assert(is_ex);
 
-    bool is_ex = is_expr("(1&0)");
+    //    bool is_ex = is_expr("((3&(500^2))|(3&(500^2)))", &b);
+    //    assert(is_ex);
+
+    renderBinaryTree(&b, "parse_tree");
 }
 
 /*

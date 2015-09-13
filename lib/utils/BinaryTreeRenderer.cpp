@@ -66,16 +66,16 @@ void renderBinaryTree_aux(BinaryTreeBase<std::string> *node, FILE* stream)
         fprintf(stream, "    \"%p\" -> \"%p\";\n", node, node->get_left());
         renderBinaryTree_aux(node->get_left(), stream);
     }
-    else
-        renderBinaryTree_null(node, nullcount++, stream);
+    /*else
+        renderBinaryTree_null(node, nullcount++, stream);*/
 
     if (node->get_right())
     {
         fprintf(stream, "    \"%p\" -> \"%p\"\n", node, node->get_right());
         renderBinaryTree_aux(node->get_right(), stream);
     }
-    else
-        renderBinaryTree_null(node, nullcount++, stream);
+    /*else
+        renderBinaryTree_null(node, nullcount++, stream);*/
 }
 
 void renderBinaryTree(BinaryTreeBase<string> *tree, std::string name)
