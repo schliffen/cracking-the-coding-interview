@@ -139,6 +139,10 @@ bool is_operator(string st) {
     return (st == "&" || st == "^" || st == "|");
 }
 
+bool is_operator(char c) {
+    return (c == '&' || c == '^' || c == '|');
+}
+
 int numeral_size(string& st) {
     int size = 0;
     for (size_t i = 0; i < st.size(); ++i) {
@@ -160,22 +164,15 @@ bool is_expr(string st) {
         if (is_between_paren) {
             int expr_end = 0;
             string expr_no_paren = st.substr(1, st.size() - 2);
-            for (size_t i = 1; i < expr_no_paren.size(); ++i) {
-                if (!is_expr(expr_no_paren.substr(0, i)))
-                    break;
-                expr_end++;
+            for (size_t i = 0; i < expr_no_paren.size(); ++i) {
+                if (is_expr(expr_no_paren.substr(0, i)))
+                    expr_end = i;
             }
             if (expr_end != 0) {
                 if (is_operator(expr_no_paren.substr(expr_end, 1))) {
                     string exp_second_part = expr_no_paren.substr(expr_end+1, expr_no_paren.size()-expr_end+1);
-                    int expr_2_end = 0;
-                    for (size_t i = 0; i < exp_second_part.size(); ++i) {
-                        if (!is_expr(exp_second_part.substr(0, i+1)))
-                            break;
-                        expr_2_end++;
-                    }
-                    if (expr_end+1+expr_2_end == expr_no_paren.size())
-                        is_ex = true;
+                    bool second_part_is_expr = is_expr(exp_second_part);
+                    is_ex = second_part_is_expr;
                 }
             }
         }
@@ -196,6 +193,23 @@ void test9_11() {
     assert(is_expr("(10^2)"));
     assert(is_expr("(1&500)"));
     assert(is_expr("(3&(500^2))"));
+    assert(!is_expr("(3&(500^2))|(3&(500^2))"));
+    assert(is_expr("((3&(500^2))|(3&(500^2)))"));
 
     bool is_ex = is_expr("(1&0)");
 }
+
+/*
+            int operator_p = 0;
+            for (size_t i = 0; i < expr_no_paren.size(); i++)
+                if (is_operator(expr_no_paren[i]))
+                {
+                    operator_p = i;
+                    break;
+                }
+            if (operator_p != 0) {
+                string pre_op = expr_no_paren.substr(0, operator_p);
+                string post_op = expr_no_paren.substr(operator_p+1, expr_no_paren.size() - operator_p);
+                is_ex = is_expr(pre_op) && is_expr(post_op);
+            }
+*/
