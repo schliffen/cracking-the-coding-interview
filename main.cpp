@@ -38,6 +38,7 @@ void test9_1();
 void test9_6();
 void test9_7();
 void test9_8();
+void test9_11();
 void test9x0();
 void test11_1();
 void test12_1();
@@ -65,6 +66,10 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
+
+    test9_11();
+    return 0;
+
     (void)argc;
     (void)argv;
 

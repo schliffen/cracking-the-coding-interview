@@ -2,6 +2,7 @@
 
 #include <cstring>
 #include <iostream>
+#include "assert.h"
 
 ctci::string::string()
 {
@@ -35,6 +36,16 @@ ctci::string::string(const string& rOther)
 size_t ctci::string::size() const
 {
     return strlen(buf);
+}
+
+ctci::string ctci::string::substr(pos start, pos len)
+{
+    string s;
+    assert(start >= 0 && start + len <= size());
+    free(s.buf);
+    s.buf = (char*)calloc(len+1, 1);
+    memcpy(s.buf, buf+start, len);
+    return s;
 }
 
 std::ostream& ctci::operator<<(std::ostream& ost, const ctci::string& ls)

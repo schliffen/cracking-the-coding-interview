@@ -39,11 +39,8 @@ void testParenthesisPermutations() {
     V vec;
     addParen(vec,str, n, n, 0);
 
-    S first = vec[0];
-    S second = vec[1];
-
-    assert(first == "(())");
-    assert(second == "()()");
+    assert(vec[0] == "(())");
+    assert(vec[1] == "()()");
 }
 
 void test9_6() {

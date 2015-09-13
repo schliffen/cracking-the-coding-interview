@@ -14,9 +14,13 @@ public:
     string(const char* s);
     string(const string& s);
 
+    typedef size_t pos;
+
     ~string();
 
     size_t size() const;
+
+    string substr(pos start, pos len);
 
     friend std::ostream& operator<<(std::ostream&, const string&);
     friend string operator+(const string& s1, const string& s2);

@@ -78,6 +78,13 @@ void testStringInVector()
     assert(vec[2] == "baz");
 }
 
+template<class T>
+void testSubstr()
+{
+    T subtr = T("foobarbaz").substr(3, 3);
+    assert(subtr == "bar");
+}
+
 
 #define COMPARE_WITH_STANDARD_LIBRARY 1
 
@@ -88,6 +95,7 @@ TEST(testAssignment<std::string>)
 TEST(testConcat<std::string>)
 TEST(testPlusEquals<std::string>)
 TEST(testStringInVector<std::vector<std::string> >)
+TEST(testSubstr<std::string>)
 
 #if COMPARE_WITH_STANDARD_LIBRARY
 TEST(testConstruct<ctci::string>)
@@ -96,5 +104,6 @@ TEST(testAssignment<ctci::string>)
 TEST(testConcat<ctci::string>)
 TEST(testPlusEquals<ctci::string>)
 TEST(testStringInVector<ctci::vector<ctci::string> >)
+TEST(testSubstr<ctci::string>)
 #endif
 END_TEST

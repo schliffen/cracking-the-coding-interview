@@ -64,8 +64,6 @@
 
 9.10 You have a stack of n boxes, with widths w., heights h ir and depths d r The boxes cannot be rotated and can only be stacked on top of one another if each box in the stack is strictly larger than the box above it in width, height, and depth. Implement a method to build the tallest stack possible, where the height of a stack is the sum of the heights of each box.
 
-9.11 Given a boolean expression consisting of the symbols 0,1, &, |, and A , and a desired boolean result value result, implement a function to count the number of ways of parenthesizing the expression such that it evaluates to result. EXAMPLE Expression: 1^0|0|1 Desired result: false (0) Output: 2 ways. 1^((0|0)|1) and 1^(0|(0|1))
-
 10.1 Imagine you are building some sort of service that will be called by up to 1000 client applications to get simple end-of-day stock price information (open, close, high, low). You may assume that you already have the data, and you can store it in any format you wish. How would you design the client-facing service which provides the information to client applications? You are responsible for the development, rollout, and ongoing monitoring and maintenance of the feed. Describe the different methods you considered and why you would recommend your approach. Your service can use any technologies you wish, and can distribute the information to the client applications in any mechanism you choose.
 
 10.2 How would you design the data structures for a very large social network like Facebook or Linkedln? Describe how you would design an algorithm to show the connection, or path, between two people (e.g., Me -> Bob -> Susan -> Jason -> You).
