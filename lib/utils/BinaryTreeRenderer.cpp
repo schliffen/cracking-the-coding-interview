@@ -6,28 +6,28 @@ void renderBinaryTree_null(int data, int nullcount, FILE* stream)
     fprintf(stream, "    %d -> null%d;\n", data, nullcount);
 }
 
-void renderBinaryTree_aux(BinaryTree<int> *node, FILE* stream)
+void renderBinaryTree_aux(BinaryTreeBase<int> *node, FILE* stream)
 {
     static int nullcount = 0;
 
-    if (node->left)
+    if (node->get_left())
     {
-        fprintf(stream, "    %d -> %d;\n", node->data, node->left->data);
-        renderBinaryTree_aux(node->left, stream);
+        fprintf(stream, "    %d -> %d;\n", node->get_data(), node->get_left()->get_data());
+        renderBinaryTree_aux(node->get_left(), stream);
     }
     else
-        renderBinaryTree_null(node->data, nullcount++, stream);
+        renderBinaryTree_null(node->get_data(), nullcount++, stream);
 
-    if (node->right)
+    if (node->get_right())
     {
-        fprintf(stream, "    %d -> %d;\n", node->data, node->right->data);
-        renderBinaryTree_aux(node->right, stream);
+        fprintf(stream, "    %d -> %d;\n", node->get_data(), node->get_right()->get_data());
+        renderBinaryTree_aux(node->get_right(), stream);
     }
     else
-        renderBinaryTree_null(node->data, nullcount++, stream);
+        renderBinaryTree_null(node->get_data(), nullcount++, stream);
 }
 
-void renderBinaryTree(BinaryTree<int> *tree, string name)
+void renderBinaryTree(BinaryTreeBase<int> *tree, string name)
 {
     FILE* stream = fopen((name + ".dot").c_str(), "w");
 
@@ -36,8 +36,8 @@ void renderBinaryTree(BinaryTree<int> *tree, string name)
 
     if (!tree)
         fprintf(stream, "\n");
-    else if (!tree->right && !tree->left)
-        fprintf(stream, "    %d;\n", tree->data);
+    else if (!tree->get_right() && !tree->get_left())
+        fprintf(stream, "    %d;\n", tree->get_data());
     else
         renderBinaryTree_aux(tree, stream);
 
@@ -48,34 +48,37 @@ void renderBinaryTree(BinaryTree<int> *tree, string name)
 }
 
 
-void renderBinaryTree_null(std::string data, int nullcount, FILE* stream)
+void renderBinaryTree_null(BinaryTreeBase<std::string> *node, int nullcount, FILE* stream)
 {
+    fprintf(stream, "    \"%p\" [label=\"%s\"];\n", node, node->get_data().c_str());
     fprintf(stream, "    null%d [shape=point];\n", nullcount);
-    fprintf(stream, "    %s -> null%d;\n", data.c_str(), nullcount);
+    fprintf(stream, "    \"%p\" -> null%d;\n", node, nullcount);
 }
 
-void renderBinaryTree_aux(BinaryTree<std::string> *node, FILE* stream)
+void renderBinaryTree_aux(BinaryTreeBase<std::string> *node, FILE* stream)
 {
     static int nullcount = 0;
 
-    if (node->left)
-    {
-        fprintf(stream, "    %s -> %s;\n", node->data.c_str(), node->left->data.c_str());
-        renderBinaryTree_aux(node->left, stream);
-    }
-    else
-        renderBinaryTree_null(node->data, nullcount++, stream);
+    fprintf(stream, "    \"%p\" [label=\"%s\"];\n", node, node->get_data().c_str());
 
-    if (node->right)
+    if (node->get_left())
     {
-        fprintf(stream, "    %s -> %s\n", node->data.c_str(), node->right->data.c_str());
-        renderBinaryTree_aux(node->right, stream);
+        fprintf(stream, "    \"%p\" -> \"%p\";\n", node, node->get_left());
+        renderBinaryTree_aux(node->get_left(), stream);
     }
     else
-        renderBinaryTree_null(node->data, nullcount++, stream);
+        renderBinaryTree_null(node, nullcount++, stream);
+
+    if (node->get_right())
+    {
+        fprintf(stream, "    \"%p\" -> \"%p\"\n", node, node->get_right());
+        renderBinaryTree_aux(node->get_right(), stream);
+    }
+    else
+        renderBinaryTree_null(node, nullcount++, stream);
 }
 
-void renderBinaryTree(BinaryTree<std::string> *tree, std::string name)
+void renderBinaryTree(BinaryTreeBase<string> *tree, std::string name)
 {
     FILE* stream = fopen((name + ".dot").c_str(), "w");
 
@@ -84,13 +87,14 @@ void renderBinaryTree(BinaryTree<std::string> *tree, std::string name)
 
     if (!tree)
         fprintf(stream, "\n");
-    else if (!tree->right && !tree->left)
-        fprintf(stream, "    %s;\n", tree->data.c_str());
+    else if (!tree->get_right() && !tree->get_left())
+        fprintf(stream, "    \"%p\" [label=\"%s\"];\n", tree, tree->get_data().c_str());
     else
         renderBinaryTree_aux(tree, stream);
 
     fprintf(stream, "}\n");
     fclose(stream);
-    const char* sysCmd = string("/opt/local/bin/dot -Tpng " + name + ".dot -o " + name + ".png &> /dev/null").c_str();
+    const char* sysCmd = string("/opt/local/bin/dot -Tpng " + name + ".dot -o " + name + ".png > /dev/null").c_str();
+    printf("%s\n", sysCmd);
     system(sysCmd);
 }

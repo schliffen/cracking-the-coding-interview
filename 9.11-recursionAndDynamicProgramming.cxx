@@ -16,73 +16,92 @@
 #include <cstdlib>
 #include <assert.h>
 #include "lib/utils/Utils.h"
+#include "lib/datastructures/BinaryTree.h"
+#include "lib/utils/BinaryTreeRenderer.h"
+#include <vector>
 
 using namespace std;
 
-struct bt {
+template<class T>
+class parsetree: public BinaryTreeBase<T> {
+    public:
 
-    enum type {
-        eEXPR,
-        eOP,
-        eNUM
-    };
-
-    bt* left;
-    bt* right;
-    string expr;
-    string op;
-    int val;
-    int op_on_op(char o, int l, int r) {
-        switch (o) {
-            case '&':
-                return l & r;
-            case '^':
-                return l ^ r;
-            case '|':
-                return l | r;
-            default:
-                return 0;
+        parsetree():
+            BinaryTreeBase<T>(),
+            data(""),
+            left(0),
+            right(0)
+        {
         }
-        return 0;
-    }
 
-    int eval(bt* b) {
-        if (!b)
+        enum type {
+            eEXPR,
+            eOP,
+            eNUM
+        };
+
+        virtual T get_data() {
+            return data;
+        }
+
+        virtual parsetree* get_left() {
+            return left;
+        }
+
+        virtual parsetree* get_right() {
+            return right;
+        }
+
+        int op_on_op(string o, int l, int r) {
+            if (o == "&") return l & r;
+            if (o == "^") return l ^ r;
+            if (o == "|") return l | r;
             return 0;
-        if (b->op != "") {
-            int lv = eval(b->left);
-            int rv = eval(b->right);
-            int res = op_on_op(b->op[0], lv, rv);
-            return res;
-        } else
-            return b->val;
-    }
+        }
 
-    void to_string(string& str, bt* b) {
-        if (!b)
-            return;
-        to_string(str, b->left);
-        str += b->op != "" ? b->op : SSTR(b->val);
-        to_string(str, b->right);
-    }
+        int eval(parsetree* b) {
+            if (!b)
+                return 0;
+            if (b->data != "") {
+                int lv = eval(b->left);
+                int rv = eval(b->right);
+                int res = op_on_op(b->data[0], lv, rv);
+                return res;
+            } else
+                return atoi(b->data.c_str());
+        }
+
+        void to_string(string& str, parsetree* b) {
+            if (!b)
+                return;
+            to_string(str, b->left);
+            str += b->data;
+            to_string(str, b->right);
+        }
+        T data;
+        parsetree<T>* left;
+        parsetree<T>* right;
 };
 
-void parse(string st, bt* b) {
+void parse(string st, parsetree<string>* b) {
     size_t p = string::npos;
     p = st.find_last_of("(");
     bool opFound;
     if (p != string::npos) {
         size_t q = st.find_first_of(")");
-        parse(st.substr(p + 1, q-1), b);
+        parse(st.substr(p + 1, q - 1), b);
         return;
     } else {
-        char* operators = "&^|";
-        for (int i = 0; i < 3 && !opFound; ++i) {
+        vector<string> operators;
+        operators.push_back("&");
+        operators.push_back("^");
+        operators.push_back("|");
+        for (size_t i = 0; i < operators.size() && !opFound; ++i) {
             p = st.find(operators[i]);
             if (p != string::npos) {
-                b->left = new bt;
-                b->right = new bt;
-                b->op = operators[i];
+                b->left = new parsetree<string>;
+                b->right = new parsetree<string>;
+                b->data = operators[i];
                 parse(st.substr(0, p), b->left);
                 parse(st.substr(p + 1, st.size()), b->right);
                 opFound = true;
@@ -90,37 +109,12 @@ void parse(string st, bt* b) {
         }
     }
     if (!opFound)
-        b->val = atoi(st.c_str());
-}
-
-void test_parse(string s, int v) {
-    bt b;
-    parse(s, &b);
-    assert(b.eval(&b) == v);
-}
-
-void test_parsing() {
-    test_parse("0&0", 0 & 0);
-    test_parse("1&1", 1 & 1);
-    test_parse("1^0", 1 ^ 0);
-    test_parse("(1^0)", (1 ^ 0));
-    test_parse("1^0|0|1", (1 ^ 0 | 0 | 1));
-    test_parse("(1^0)^(1|1)", (1^0)^(1|1));
-    test_parse("1^(0^1)|1", 1^(0^1)|1);
-    test_parse("(1^0|0|1^(1&0)|(0^1))^0", (1 ^ 0 | 0 | 1 ^ (1 & 0) | (0 ^ 1)) ^ 0);
+        b->data = st;
 }
 
 void test9_11() {
-    test_parsing();
-    bt b;
-    parse("1^0|1", &b);
-    int r = b.eval(&b);
-    int tr = (1^0|1);
-    assert(r == tr);
+    parsetree<string> b;
+    parse("1&0", &b);
+    renderBinaryTree(&b, "parse_tree");
 
-
-//    string str;
-//    b.to_string(str, &b);
-//    assert(str == "1^0|0|1");
-    //parenthesise(&b);
 }

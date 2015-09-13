@@ -3,11 +3,12 @@
 
 template<class T>
 BinaryTree<T>::BinaryTree(T val):
-    left(0),
-    right(0),
-    parent(0),
-    data(val)
+    BinaryTreeBase<T>()
 {
+    left = 0;
+    right = 0;
+    parent = 0;
+    data = val;
 }
 
 template<class T>

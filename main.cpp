@@ -67,6 +67,8 @@ using namespace std;
 int main(int argc, char* argv[])
 {
 
+    //testBinaryTreeRenderer();
+
     test9_11();
     return 0;
 
@@ -83,7 +85,6 @@ int main(int argc, char* argv[])
     testDLinkedList();
     testQueue();
     testBinaryTree();
-    testBinaryTreeRenderer();
 
     // unit test algorithms
     testsorting();

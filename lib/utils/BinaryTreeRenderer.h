@@ -3,7 +3,7 @@
 
 #include "lib/datastructures/BinaryTree.h"
 
-void renderBinaryTree(BinaryTree<int>* tree, std::string name);
-void renderBinaryTree(BinaryTree<std::string>* tree, std::string name);
+void renderBinaryTree(BinaryTreeBase<int>* tree, std::string name);
+void renderBinaryTree(BinaryTreeBase<std::string>* tree, std::string name);
 
 #endif // BINARYTREERENDERER_H
