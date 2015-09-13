@@ -43,6 +43,6 @@ void solve_for(int disks) {
 // TODO: is this finished?
 
 void test3_4() {
-    solve_for(4);
+    //solve_for(4);
     printf("3.4 not passed!\n");
 }
