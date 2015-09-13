@@ -30,8 +30,7 @@ class parsetree: public BinaryTreeBase<T> {
             BinaryTreeBase<T>(),
             data(""),
             left(0),
-            right(0)
-        {
+            right(0) {
         }
 
         enum type {
@@ -93,9 +92,9 @@ void parse(string st, parsetree<string>* b) {
         return;
     } else {
         vector<string> operators;
-        operators.push_back("&");
-        operators.push_back("^");
         operators.push_back("|");
+        operators.push_back("^");
+        operators.push_back("&");
         for (size_t i = 0; i < operators.size() && !opFound; ++i) {
             p = st.find(operators[i]);
             if (p != string::npos) {
@@ -112,9 +111,91 @@ void parse(string st, parsetree<string>* b) {
         b->data = st;
 }
 
-void test9_11() {
-    parsetree<string> b;
-    parse("1&0", &b);
-    renderBinaryTree(&b, "parse_tree");
+bool is_digit(string st) {
+    if (st.size() == 1) {
+        char c = st.c_str()[0];
+        return (c >= 48 && c <= 57);
+    }
+    return false;
+}
 
+bool is_digit(char c) {
+    return (c >= 48 && c <= 57);
+}
+
+bool is_numeral(string& st) {
+    bool is_num = st.size() > 0;
+    for (size_t i = 0; i < st.size(); i++)
+        if (!is_digit(st[i]))
+            is_num = false;
+    return is_num;
+}
+
+bool is_operator(string& st) {
+    return (st == "&" || st == "^" || st == "|");
+}
+
+bool is_operator(string st) {
+    return (st == "&" || st == "^" || st == "|");
+}
+
+int numeral_size(string& st) {
+    int size = 0;
+    for (size_t i = 0; i < st.size(); ++i) {
+        if (!is_digit(st[i]))
+            return size;
+        ++size;
+    }
+    return size;
+}
+
+bool is_expr(string st) {
+    bool is_num = is_numeral(st);
+    bool expr_min_size = st.size() >= 5;
+    bool is_ex;
+    if (expr_min_size) {
+        bool start_is_open_paren = st[0] == '(';
+        bool end_is_open_paren = st[st.size() - 1] == ')';
+        bool is_between_paren = start_is_open_paren && end_is_open_paren;
+        if (is_between_paren) {
+            int expr_end = 0;
+            string expr_no_paren = st.substr(1, st.size() - 2);
+            for (size_t i = 1; i < expr_no_paren.size(); ++i) {
+                if (!is_expr(expr_no_paren.substr(0, i)))
+                    break;
+                expr_end++;
+            }
+            if (expr_end != 0) {
+                if (is_operator(expr_no_paren.substr(expr_end, 1))) {
+                    string exp_second_part = expr_no_paren.substr(expr_end+1, expr_no_paren.size()-expr_end+1);
+                    int expr_2_end = 0;
+                    for (size_t i = 0; i < exp_second_part.size(); ++i) {
+                        if (!is_expr(exp_second_part.substr(0, i+1)))
+                            break;
+                        expr_2_end++;
+                    }
+                    if (expr_end+1+expr_2_end == expr_no_paren.size())
+                        is_ex = true;
+                }
+            }
+        }
+    }
+    return is_num || is_ex;
+}
+
+void parse_expr(string st, parsetree<string>* b) {
+
+}
+
+void test9_11() {
+    //    parsetree<string> b;
+    //    parse("(1&(0|2)^3^((4|5)^6))", &b);
+    //    renderBinaryTree(&b, "parse_tree");
+
+    assert(is_expr("(1&5)"));
+    assert(is_expr("(10^2)"));
+    assert(is_expr("(1&500)"));
+    assert(is_expr("(3&(500^2))"));
+
+    bool is_ex = is_expr("(1&0)");
 }
