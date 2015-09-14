@@ -22,34 +22,28 @@
 
 using namespace std;
 
+/*
+ * I glanced at the provided code for this problem, it's clear that it's rather
+ * convoluted and specific to the problem at hand. So here's a more generic
+ * solution: we're going to build an expression parser, that builds a tree
+ * of the expression. We'll then have the luxury of evaluating it, turning
+ * it back into a string, rendering it to a dot file and generating alternate
+ * parenthalised permutations that evaluate to the same result.
+ */
 
-bool is_digit(string st) {
-    if (st.size() == 1) {
-        char c = st.c_str()[0];
-        return (c >= 48 && c <= 57);
-    }
-    return false;
-}
+// forward declarations of handy parsing functions
+bool is_digit(string st);
+bool is_digit(char c);
+bool is_numeral(string& st);
+bool is_operator(string st);
 
-bool is_digit(char c) {
-    return (c >= 48 && c <= 57);
-}
-
-bool is_numeral(string& st) {
-    bool is_num = st.size() > 0;
-    for (size_t i = 0; i < st.size(); i++)
-        if (!is_digit(st[i]))
-            is_num = false;
-    return is_num;
-}
-
-bool is_operator(string st) {
-    return (st == "&" || st == "^" || st == "|");
-}
+/* this is our parsetree class, it holds the parse expression
+ * in the form of a tree. It inherits off an interface class
+ * so that it can be rendered.
+ */
 template<class T>
 class parsetree: public BinaryTreeBase<T> {
     public:
-
         parsetree():
             BinaryTreeBase<T>(),
             data(""),
@@ -75,6 +69,8 @@ class parsetree: public BinaryTreeBase<T> {
             return right;
         }
 
+        // given an operator string and two values,
+        // perform the operation and return the result
         int op_on_op(string o, int l, int r) {
             if (o == "&") return l & r;
             if (o == "^") return l ^ r;
@@ -82,6 +78,7 @@ class parsetree: public BinaryTreeBase<T> {
             return 0;
         }
 
+        // evaluate the parsetree recursively
         int eval(parsetree* b) {
             if (!b)
                 return 0;
@@ -94,7 +91,8 @@ class parsetree: public BinaryTreeBase<T> {
                 return atoi(b->data.c_str());
         }
 
-        void to_string(string& str, parsetree* b) {
+        // turn the parsetree back into a string
+        void to_string(string& str, parsetree<T>* b) {
             if (!b)
                 return;
             to_string(str, b->left);
@@ -106,35 +104,32 @@ class parsetree: public BinaryTreeBase<T> {
         parsetree<T>* right;
 };
 
-void parse(string st, parsetree<string>* b) {
-    size_t p = string::npos;
-    p = st.find_last_of("(");
-    bool opFound;
-    if (p != string::npos) {
-        size_t q = st.find_first_of(")");
-        parse(st.substr(p + 1, q - 1), b);
-        return;
-    } else {
-        vector<string> operators;
-        operators.push_back("|");
-        operators.push_back("^");
-        operators.push_back("&");
-        for (size_t i = 0; i < operators.size() && !opFound; ++i) {
-            p = st.find(operators[i]);
-            if (p != string::npos) {
-                b->left = new parsetree<string>;
-                b->right = new parsetree<string>;
-                b->data = operators[i];
-                parse(st.substr(0, p), b->left);
-                parse(st.substr(p + 1, st.size()), b->right);
-                opFound = true;
-            }
-        }
+//######################################
+//     helper functions
+
+bool is_digit(string st) {
+    if (st.size() == 1) {
+        char c = st.c_str()[0];
+        return (c >= 48 && c <= 57);
     }
-    if (!opFound)
-        b->data = st;
+    return false;
 }
 
+bool is_digit(char c) {
+    return (c >= 48 && c <= 57);
+}
+
+bool is_numeral(string& st) {
+    bool is_num = st.size() > 0;
+    for (size_t i = 0; i < st.size(); i++)
+        if (!is_digit(st[i]))
+            is_num = false;
+    return is_num;
+}
+
+bool is_operator(string st) {
+    return (st == "&" || st == "^" || st == "|");
+}
 
 int numeral_size(string& st) {
     int size = 0;
@@ -159,7 +154,13 @@ bool balanced_paren(string st) {
     return count == 0;
 }
 
-bool is_expr(string st, parsetree<string>* b = 0) {
+// end of helper functions
+// ###############################################
+
+
+// parse the given expression recursively, and build
+// the tree into b if b is provided
+bool parse_expr(string st, parsetree<string>* b = 0) {
     bool is_num = is_numeral(st);
     if (is_num) {
         if (b)
@@ -170,23 +171,19 @@ bool is_expr(string st, parsetree<string>* b = 0) {
     if (!balanced_paren(st))
         return false;
 
-    bool expr_min_size = st.size() >= 5;
     bool is_ex = false;
-    bool start_is_open_paren = st[0] == '(';
-    bool end_is_open_paren = st[st.size() - 1] == ')';
-    bool is_between_paren = start_is_open_paren && end_is_open_paren;
+    bool is_between_paren = st[0] == '(' && st[st.size() - 1] == ')';
     string expr_no_paren;
     int expr_end = 0;
     if (is_between_paren) {
         string no_paren = st.substr(1, st.size() - 2);
-        bool balanced = balanced_paren(no_paren);
-        expr_no_paren = balanced ? no_paren : st;
+        expr_no_paren = balanced_paren(no_paren) ? no_paren : st;
     } else {
         expr_no_paren = st;
     }
 
     for (size_t i = 1; i < expr_no_paren.size(); ++i) {
-        if (is_expr(expr_no_paren.substr(0, i), 0))
+        if (parse_expr(expr_no_paren.substr(0, i), 0))
             expr_end = i;
     }
     if (expr_end != 0) {
@@ -194,7 +191,7 @@ bool is_expr(string st, parsetree<string>* b = 0) {
         string expr_first_part = expr_no_paren.substr(0, expr_end);
         if (b) {
             b->left = new parsetree<string>();
-            is_expr(expr_first_part, b->left);
+            parse_expr(expr_first_part, b->left);
         }
 
         if (is_operator(expr_no_paren.substr(expr_end, 1))) {
@@ -203,26 +200,33 @@ bool is_expr(string st, parsetree<string>* b = 0) {
                 b->data = expr_no_paren.substr(expr_end, 1);
                 b->right = new parsetree<string>();
             }
-            bool second_part_is_expr = is_expr(exp_second_part, b ? b->right : 0);
+            bool second_part_is_expr = parse_expr(exp_second_part, b ? b->right : 0);
             is_ex = second_part_is_expr;
         }
     }
     return is_num || is_ex;
 }
 
-void parse_expr(string st, parsetree<string>* b) {
-
-}
+//void reparen(string& str, parsetree<string>* b) {
+//    if (!b)
+//        return;
+//    reparen(str, b->left);
+//    str += b->data;
+//    reparen(str, b->right);
+//}
 
 void test9_11() {
     parsetree<string> b;
-    assert(is_expr("1&5"));
-    assert(is_expr("(1&5)"));
-    assert(is_expr("(3&(500^2))"));
-    assert(is_expr("(3&(500^2))|3&(500^2)"));
-    assert(is_expr("((3&(500^2))|(3&(5^2)))", &b));
+    assert(parse_expr("1&5"));
+    assert(parse_expr("(1&5)"));
+    assert(parse_expr("(3&(500^2))"));
+    assert(parse_expr("(3&(500^2))|3&(500^2)"));
+    assert(parse_expr("((3&(500^2))|(3&(5^2)))", &b));
 
     printf("%d\n", b.eval(&b));
+    string str;
+    b.to_string(str, &b);
+    printf("%s\n", str.c_str());
 
     renderBinaryTree(&b, "parse_tree");
 }
