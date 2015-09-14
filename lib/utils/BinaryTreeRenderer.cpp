@@ -58,7 +58,7 @@ void renderBinaryTree_null(BinaryTreeBase<std::string> *node, int nullcount, FIL
 
 void renderBinaryTree_aux(BinaryTreeBase<std::string> *node, FILE* stream)
 {
-    static int nullcount = 0;
+    //static int nullcount = 0;
 
     fprintf(stream, "    \"%p\" [label=\"%s\"];\n", node, node->get_data().c_str());
 

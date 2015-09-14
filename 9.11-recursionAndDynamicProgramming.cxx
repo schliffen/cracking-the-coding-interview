@@ -89,6 +89,7 @@ class parsetree: public BinaryTreeBase<T> {
                 return res;
             } else if (is_numeral(b->data))
                 return atoi(b->data.c_str());
+            return 0;
         }
 
         // turn the parsetree back into a string
