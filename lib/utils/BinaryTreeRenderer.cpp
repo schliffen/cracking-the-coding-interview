@@ -1,5 +1,8 @@
 #include "BinaryTreeRenderer.h"
 
+#include <unistd.h>
+#include <stdio.h>
+
 void renderBinaryTree_null(int data, int nullcount, FILE* stream)
 {
     fprintf(stream, "    null%d [shape=point];\n", nullcount);
@@ -97,5 +100,12 @@ void renderBinaryTree(BinaryTreeBase<string> *tree, std::string name)
     fclose(stream);
     const char* sysCmd = string("/opt/local/bin/dot -Tpng " + name + ".dot -o " + name + ".png > /dev/null").c_str();
     printf("%s\n", sysCmd);
-    system(sysCmd);
+
+    string dotname = name + ".dot";
+    string pngname = name + ".png";
+
+    int pid = fork();
+   if (pid==0) {
+      execl("/opt/local/bin/dot", "dot", "-Tpng", dotname.c_str(), "-o", pngname.c_str(), (char *) 0);
+   }
 }

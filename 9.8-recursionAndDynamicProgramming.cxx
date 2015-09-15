@@ -34,12 +34,7 @@ void test9_8() {
     pennies(P, n, results, path);
     assert(results.size() != 0);
     for (size_t i = 0; i < results.size(); i++)
-    {
-        for (size_t j = 0; j < results[i].size(); j++)
-            printf("%d ", results[i][j]);
-        printf("= 11\n");
         assert(ctci::accumulate(results[i].begin(), results[i].end(), 0) == n);
-    }
 
     // results:
     // 1 1 1 1 1 1 1 1 1 1 1 = 11

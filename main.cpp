@@ -32,13 +32,13 @@ void test3_7();
 void test5_1();
 void test5_2();
 void test5_3();
+void test5_4();
 void test5_7();
 
 void test9_1();
 void test9_6();
 void test9_7();
 void test9_8();
-void test9_11();
 void test9x0();
 void test11_1();
 void test12_1();
@@ -66,12 +66,6 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-
-    //testBinaryTreeRenderer();
-
-    test9_11();
-    return 0;
-
     (void)argc;
     (void)argv;
 
@@ -85,6 +79,7 @@ int main(int argc, char* argv[])
     testDLinkedList();
     testQueue();
     testBinaryTree();
+    testBinaryTreeRenderer();
 
     // unit test algorithms
     testsorting();
@@ -122,6 +117,7 @@ int main(int argc, char* argv[])
     test5_1();
     test5_2();
     test5_3();
+    test5_4();
     test5_7();
     test9x0();
     test9_1();

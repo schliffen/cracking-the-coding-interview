@@ -4,8 +4,6 @@
 
 5.3 Given a positive integer, print the next smallest and the next largest number that have the same number of 1 bits in their binary representation.
 
-5.4 Explain what the following code does: ((n & (n-1)) == 0).
-
 5.5 Write a function to determine the number of bits required to convert integer A to integer B. EXAMPLE Input: 31,14 Output: 2
 
 5.6 Write a program to swap odd and even bits in an integer with as few instructions as possible (e.g., bit 0 and bit 1 are swapped, bit 2 and bit 3 are swapped, and so on).
