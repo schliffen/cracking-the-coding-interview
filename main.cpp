@@ -34,7 +34,9 @@ void test5_2();
 void test5_3();
 void test5_4();
 void test5_5();
+void test5_6();
 void test5_7();
+void test5_8();
 
 void test9_1();
 void test9_6();
@@ -46,6 +48,8 @@ void test12_1();
 void test12_x_0();
 
 void test13_1();
+
+void assembly_fun();
 
 #include "lib/utils/Utils.h"
 #include "lib/datastructures/LinkedList.h"
@@ -120,7 +124,9 @@ int main(int argc, char* argv[])
     test5_3();
     test5_4();
     test5_5();
+    test5_6();
     test5_7();
+    test5_8();
     test9x0();
     test9_1();
     test9_6();
@@ -130,6 +136,7 @@ int main(int argc, char* argv[])
     test12_1();
     test12_x_0();
     test13_1();
+    assembly_fun();
 
     return 0;
 }
