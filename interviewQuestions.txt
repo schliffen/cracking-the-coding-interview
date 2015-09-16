@@ -18,8 +18,6 @@
 
 7.2 There are three ants on different vertices of a triangle. What is the probability of collision (between any two or all of them) if they start walking on the sides of the triangle? Assume that each ant randomly picks a direction, with either direction being equally likely to be chosen, and that they walk at the same speed. Similarly, find the probability of collision with n ants on an n-vertex polygon.
 
-7.4 Write methods to implement the multiply, subtract, and divide operations for integers. Use only the add operator.
-
 7.5 Given two squares on a two-dimensional plane, find a line that would cut these two squares in half. Assume that the top and the bottom sides of the square run parallel to the x-axis.
 
 7.6 Given a two-dimensional graph with points on it, find a line which passes the most number of points.

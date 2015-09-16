@@ -6,15 +6,10 @@ void test1_5();
 void test1_6();
 void test1_7();
 void test1_8();
-void test4_1();
-void test4_2();
-void test4_3();
-void test4_4();
-void test4_5();
-void test4_6();
-void test4_7();
-void test4_8();
-void test4_9();
+void test11_1();
+void test11_4();
+void test12_1();
+void test13_1();
 void test2_1();
 void test2_2();
 void test2_3();
@@ -28,7 +23,15 @@ void test3_4();
 void test3_5();
 void test3_6();
 void test3_7();
-
+void test4_1();
+void test4_2();
+void test4_3();
+void test4_4();
+void test4_5();
+void test4_6();
+void test4_7();
+void test4_8();
+void test4_9();
 void test5_1();
 void test5_2();
 void test5_3();
@@ -37,21 +40,14 @@ void test5_5();
 void test5_6();
 void test5_7();
 void test5_8();
-
 void test7_3();
-
+void test7_4();
 void test9_1();
 void test9_6();
 void test9_7();
 void test9_8();
-void test9x0();
-void test11_1();
-void test12_1();
-void test12_x_0();
 
-void test13_1();
-
-void assembly_fun();
+#include <cstdio>
 
 #include "lib/utils/Utils.h"
 #include "lib/datastructures/LinkedList.h"
@@ -71,12 +67,10 @@ void assembly_fun();
 
 using namespace std;
 
-int main(int argc, char* argv[])
-{
-    (void)argc;
-    (void)argv;
+void assembly_fun();
 
-    // unit test data structures
+int main() {
+
 
     teststring();
     testLinkedList();
@@ -90,15 +84,20 @@ int main(int argc, char* argv[])
 
     // unit test algorithms
     testsorting();
+    assembly_fun();
 
-    // run solution tests
     test1_1();
+    test1_2();
     test1_3();
     test1_4();
     test1_5();
     test1_6();
     test1_7();
     test1_8();
+    test11_1();
+    test11_4();
+    test12_1();
+    test13_1();
     test2_1();
     test2_2();
     test2_3();
@@ -130,16 +129,10 @@ int main(int argc, char* argv[])
     test5_7();
     test5_8();
     test7_3();
-    test9x0();
+    test7_4();
     test9_1();
     test9_6();
     test9_7();
     test9_8();
-    test11_1();
-    test12_1();
-    test12_x_0();
-    test13_1();
-    assembly_fun();
-
     return 0;
 }

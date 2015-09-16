@@ -26,7 +26,43 @@ def main():
     main_cxx.write("""
 #include <cstdio>
 
+#include "lib/utils/Utils.h"
+#include "lib/datastructures/LinkedList.h"
+#include "lib/datastructures/Stack.h"
+#include "lib/datastructures/vector.h"
+#include "unittests/testdlinkedlist.h"
+#include "unittests/testlinkedlist.h"
+#include "unittests/testvector.h"
+#include "unittests/teststack.h"
+#include "unittests/testqeueue.h"
+#include "unittests/testsorting.h"
+#include "unittests/testbinarytree.h"
+#include "unittests/testbinarytreerenderer.h"
+#include "unittests/teststring.h"
+
+#include <iostream>
+
+using namespace std;
+
+void assembly_fun();
+
 int main() {
+
+
+    teststring();
+    testLinkedList();
+    testBitFunctions();
+    testStack();
+    testVector();
+    testDLinkedList();
+    testQueue();
+    testBinaryTree();
+    testBinaryTreeRenderer();
+
+    // unit test algorithms
+    testsorting();
+    assembly_fun();
+
 """)
 
     for c in cxx:
