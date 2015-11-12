@@ -72,6 +72,33 @@ Not the most fun chapter, but definitely useful. Mastery of bit manipulation and
 
 Some of the questions are tortuous, though.
 
+-------------------------
+
 ## Chapter 7 - Mathematics and Probability
 
 Didn't get very far in this chapter. Some of the questions are really fundamental, and worth knowing. Some of them, like 7.4 are plain stupid.
+
+-------------------------
+
+## Chapter 9 - Recursion and Dynamic Programming
+
+Great chapter, which definitely provides food for thought. I particularly enjoyed question [9.7](9.7-recursionAndDynamicProgramming.cxx) which involved writing a paint fill. I went ahead and rendered them in ascii too, which was a lot of fun.
+
+```
+    // 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    // 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    // 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    // 1 1 1 1 1 1 1 1 1 1 1 1                         1 1 1 1 1 1
+    // 1 1 1 1 1 1 1 1 1 1 1 1                         1 1 1 1 1 1
+    // 1 1 1                                           1 1 1 1 1 1
+    // 1 1 1                                           1 1 1 1 1 1
+    // 1 1 1                                           1 1 1 1 1 1
+    // 1 1 1                                     1 1 1 1 1 1 1 1 1
+    // 1 1 1                                     1 1 1 1 1 1 1 1 1
+    // 1 1 1                                     1 1 1 1 1 1 1 1 1
+    // 1 1 1                                     1 1 1 1 1 1 1 1 1
+    // 1 1 1                                     1 1 1 1 1 1 1 1 1
+    // 1 1 1                                     1 1 1 1 1 1 1 1 1
+    // 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+```
+
