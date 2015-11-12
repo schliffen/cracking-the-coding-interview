@@ -25,7 +25,7 @@ void reverse(char* str) {
 }
 
 void test1_2() {
-    char* c = (char*)calloc(7, 1);
+    char* c = (char*)malloc(7);
     strcpy(c, "foobar");
     reverse(c);
     free(c);

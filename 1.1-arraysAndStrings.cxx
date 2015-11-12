@@ -7,6 +7,7 @@
  * data structures?
  */
 
+// ascii_n could be 255 in which case it could segfault, make this platform independent
 int unique_c(char* s) {
     int ascii_n[128] = {0};
     for (int i = 0; s[i] != '\0'; ++i) {
