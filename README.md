@@ -63,3 +63,11 @@ This allows to generate various binary trees, whether balanced, or random etc.
 This class allows to render out your binary trees using dot. It's a lot of fun being able to visualise trees as you're working with them.
 
 ![Int Binary Tree](https://raw.githubusercontent.com/shyal/cracking-the-coding-interview/master/binaryTreeInt.png "Int Binary Tree")
+
+-------------------------
+
+### Chapter 5 - Bit Manipulation
+
+Not the most fun chapter, but definitely useful. Mastery of bit manipulation and masking is handy, and often required in many programming jobs, so far from a waste of time.
+
+Some of the questions are tortuous, though.
