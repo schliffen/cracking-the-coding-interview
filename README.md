@@ -42,3 +42,22 @@ Whenever I needed to use other data structures, I wrote my own, such as the [lib
 I realise that writing your own data structures is a questionable practice in the real world, however writing your own data structures does come up in technical interviews.
 
 A bonus of the vector class is that it has the ability to use c arrays for objects that are reallocatable (as most are). This is very similar to the [FBVector class from folly at facebook](https://github.com/facebook/folly/blob/master/folly/docs/FBVector.md). The performance far exceeds that of std's vector class, but again, this is all dicey / showoff territory.
+
+-------------------------
+
+### Chapter 4 - Trees and Graphs
+
+By far the most fun and interesting chapter. Once again, I added my own data structures. e.g
+
+- [lib/datastructures/BinaryTree.h](lib/datastructures/BinaryTree.h)
+- [lib/datastructures/digraph.h](lib/datastructures/digraph.h)
+
+Some utils:
+
+- [lib/utils/SampleBinaryTrees.h](lib/utils/SampleBinaryTrees.h)
+
+This allows to generate various binary trees, whether balanced, or random etc.
+
+- [lib/utils/BinaryTreeRenderer.h](lib/utils/BinaryTreeRenderer.h)
+
+This class allows to render out your binary trees using dot. It's a lot of fun being able to visualise trees as you're working with them.
