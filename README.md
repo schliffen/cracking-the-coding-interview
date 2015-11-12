@@ -14,7 +14,7 @@ or simply open the .pro in QtCreator, build and run.
 
 ### Chapter 1 - Arrays and Strings
 
-This chapter contains very standard and entry levels on string and array manipulation. I got some interesting from reddit /r/programming saying I should probably use more pointer arithmetic, and less array subscripts. I may take this advice on board and go over these answers again.
+This chapter contains very standard and entry level questions on string and array manipulation. I got some interesting feedback from reddit /r/programming saying I should probably use more pointer arithmetic, and less array subscripts. I'm taking this advice on board and will go over these answers again.
 
 -------------------------
 
@@ -22,11 +22,11 @@ This chapter contains very standard and entry levels on string and array manipul
 
 These questions get more interesting. I actually wrote two linked list classes, so I wouldn't have to write as much boilerplate code.
 
-lib/datastructures/LinkedList.h
+[lib/datastructures/LinkedList.h](lib/datastructures/LinkedList.h)
 
 and
 
-lib/datastructures/DLinkedList.h
+[lib/datastructures/DLinkedList.h](lib/datastructures/DLinkedList.h)
 
 
 -------------------------
