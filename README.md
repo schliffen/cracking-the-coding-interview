@@ -30,3 +30,13 @@ and
 
 
 -------------------------
+
+### Chapter 3 - Stacks and Queues
+
+Once again, I wrote a DS for this one, to avoid re-writing boilerplate code.
+
+[lib/datastructures/Stack.h](lib/datastructures/Stack.h)
+
+Whenever I needed to use other data structures, I wrote my own, such as the [lib/datastructures/vector.h](lib/datastructures/vector.h) class.
+
+I realise that writing your own data structures is a questionable practice in the real world, however writing your own data structures does come up in technical interviews.
