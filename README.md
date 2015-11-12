@@ -31,6 +31,19 @@ A bonus of the vector class is that it has the ability to use c arrays for objec
 
 -------------------------
 
+### Templates
+
+The data structures are templated, to handle all the data types that take place in the questions. For this reason I placed the body of the code in .hpp files included at the end of the headers. This is a common practice, e.g boost.
+
+
+-------------------------
+
+### Namespace
+
+The data structures all reside in the ctci namespace, so they can be easily substitude with the STL.
+
+-------------------------
+
 ### Chapter 1 - Arrays and Strings
 
 This chapter contains very standard and entry level questions on string and array manipulation. I got some interesting feedback from reddit /r/programming saying I should probably use more pointer arithmetic, and less array subscripts. I'm taking this advice on board and will go over these answers again.
