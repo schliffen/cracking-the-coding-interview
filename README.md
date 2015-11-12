@@ -61,3 +61,5 @@ This allows to generate various binary trees, whether balanced, or random etc.
 - [lib/utils/BinaryTreeRenderer.h](lib/utils/BinaryTreeRenderer.h)
 
 This class allows to render out your binary trees using dot. It's a lot of fun being able to visualise trees as you're working with them.
+
+![Int Binary Tree](https://raw.githubusercontent.com/shyal/cracking-the-coding-interview/master/binaryTreeInt.png "Int Binary Tree")
