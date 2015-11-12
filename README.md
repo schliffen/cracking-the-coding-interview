@@ -40,3 +40,5 @@ Once again, I wrote a DS for this one, to avoid re-writing boilerplate code.
 Whenever I needed to use other data structures, I wrote my own, such as the [lib/datastructures/vector.h](lib/datastructures/vector.h) class.
 
 I realise that writing your own data structures is a questionable practice in the real world, however writing your own data structures does come up in technical interviews.
+
+A bonus of the vector class is that it has the ability to use c arrays for objects that are reallocatable (as most are). This is very similar to the [FBVector class from folly at facebook](https://github.com/facebook/folly/blob/master/folly/docs/FBVector.md). The performance far exceeds that of std's vector class, but again, this is all dicey / showoff territory.
