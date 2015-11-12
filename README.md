@@ -23,7 +23,7 @@ However I do realise that writing your own data structures is a dubious practice
 - [Queue.h](lib/datastructures/Queue.h) / [.hpp](lib/datastructures/Queue.hpp)
 - [Stack.h](lib/datastructures/Stack.h) / [.hpp](lib/datastructures/Stack.hpp)
 - [BinaryTree.h](lib/datastructures/BinaryTree.h) / [.hpp](lib/datastructures/BinaryTree.hpp)
-- [digraph.h](lib/datastructures/digraph.h) / [.hpp](lib/datastructures/digraph.hpp)
+- [digraph.h](lib/datastructures/digraph.h) / [.hpp](lib/datastructures/digraph.cpp)
 - [vector.h](lib/datastructures/vector.h) / [.hpp](lib/datastructures/vector.hpp)
 - [string.h](lib/datastructures/string.h) / [.hpp](lib/datastructures/string.hpp)
 
