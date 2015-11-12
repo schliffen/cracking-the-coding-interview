@@ -18,16 +18,29 @@ One question that occurs to many people facing a technical interview, is how sho
 
 However I do realise that writing your own data structures is a dubious practice in the real world, 
 
-- [lib/datastructures/LinkedList.h](lib/datastructures/LinkedList.h)
-- [lib/datastructures/DLinkedList.h](lib/datastructures/DLinkedList.h)
-- [lib/datastructures/Queue.h](lib/datastructures/Queue.h)
-- [lib/datastructures/Stack.h](lib/datastructures/Stack.h)
-- [lib/datastructures/BinaryTree.h](lib/datastructures/BinaryTree.h)
-- [lib/datastructures/digraph.h](lib/datastructures/digraph.h)
-- [lib/datastructures/vector.h](lib/datastructures/vector.h)
-- [lib/datastructures/string.h](lib/datastructures/string.h)
+- [LinkedList.h](lib/datastructures/LinkedList.h) / [.hpp](lib/datastructures/LinkedList.hpp)
+- [DLinkedList.h](lib/datastructures/DLinkedList.h) / [.hpp](lib/datastructures/DLinkedList.hpp)
+- [Queue.h](lib/datastructures/Queue.h) / [.hpp](lib/datastructures/Queue.hpp)
+- [Stack.h](lib/datastructures/Stack.h) / [.hpp](lib/datastructures/Stack.hpp)
+- [BinaryTree.h](lib/datastructures/BinaryTree.h) / [.hpp](lib/datastructures/BinaryTree.hpp)
+- [digraph.h](lib/datastructures/digraph.h) / [.cpp](lib/datastructures/digraph.cpp)
+- [vector.h](lib/datastructures/vector.h) / [.hpp](lib/datastructures/vector.hpp)
+- [string.h](lib/datastructures/string.h) / [.cpp](lib/datastructures/string.cpp)
 
 A bonus of the vector class is that it has the ability to use c arrays for objects that are reallocatable (as most are). This is very similar to the [FBVector class from folly at facebook](https://github.com/facebook/folly/blob/master/folly/docs/FBVector.md). The performance far exceeds that of std's vector class, but again, this is all dicey / showoff territory.
+
+-------------------------
+
+### Templates
+
+The data structures are templated, to handle all the data types that take place in the questions. For this reason I placed the body of the code in .hpp files included at the end of the headers. This is a common practice, e.g boost.
+
+
+-------------------------
+
+### Namespace
+
+The data structures all reside in the ctci namespace, so they can be easily substitude with the STL.
 
 -------------------------
 
