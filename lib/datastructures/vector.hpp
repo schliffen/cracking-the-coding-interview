@@ -20,6 +20,7 @@ vector<T>::vector()
 template<class T>
 vector<T>::vector(const vector<T>& v)
 {
+    reallocatable = v.reallocatable;
     my_size = v.my_size;
     my_capacity = v.my_capacity;
     buffer = new T[my_size];

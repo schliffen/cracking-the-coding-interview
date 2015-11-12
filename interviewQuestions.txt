@@ -44,8 +44,6 @@
 
 9.3 A magic index in an array A [ 0 . . .n-1] is defined to be an index such that A[i] = i. Given a sorted array of distinct integers, write a method to find a magic index, if one exists, in array A. FOLLOW UP What if the values are not distinct?
 
-9.4 Write a method to return all subsets of a set.
-
 9.5 Write a method to compute all permutations of a string.
 
 9.9 Write an algorithm to print all ways of arranging eight queens on an 8x8 chess board so that none of them share the same row, column or diagonal. In this case, "diagonal" means all diagonals, not just the two that bisect the board.

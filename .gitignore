@@ -6,3 +6,4 @@ test.xcodeproj/*
 *.o
 *.bak
 *.orig
+*.pyc

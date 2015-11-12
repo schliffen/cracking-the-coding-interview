@@ -101,6 +101,6 @@ void test5_4() {
         unsigned int n = pow(2, i);
         assert((n&(n-1)) == 0);
     }
-    printf("test 5.4 passed!\n");
+    printf("5.4 passed!\n");
 }
 

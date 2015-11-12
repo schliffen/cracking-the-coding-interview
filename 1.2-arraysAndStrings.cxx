@@ -1,6 +1,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
+#include <algorithm>
 #include "assert.h"
 
 /*
@@ -11,18 +12,16 @@
 void reverse(char* str) {
     if (!str)
         return;
-    int len = strlen(str);
-    int tail = 1;
-    for (int i = 1, j = 0; i < len; i++) {
-        for (j = 0; j < tail; j++)
-            if (str[i] == str[j])
-                break;
-        if (j == tail) {
-            str[tail] = str[i];
-            ++tail;
-        }
+    if (*str == '\0')
+        return;  // Handle empty string
+
+    // Make tail point to the last non-null character
+    char* tail = str;
+    while(*(tail+1)!='\0') ++tail;
+
+    for(; tail > str; ++str, --tail) {
+        std::swap(*str, *tail);
     }
-    str[tail] = 0;
 }
 
 void test1_2() {
@@ -30,6 +29,6 @@ void test1_2() {
     strcpy(c, "foobar");
     reverse(c);
     free(c);
-//    assert(strcmp(c, "raboof") == 0);
-    printf("1.2 NOT passed!\n");
+    assert(strcmp(c, "raboof") == 0);
+    printf("1.2 passed!\n");
 }
