@@ -71,3 +71,7 @@ This class allows to render out your binary trees using dot. It's a lot of fun b
 Not the most fun chapter, but definitely useful. Mastery of bit manipulation and masking is handy, and often required in many programming jobs, so far from a waste of time.
 
 Some of the questions are tortuous, though.
+
+## Chapter 7 - Mathematics and Probability
+
+Didn't get very far in this chapter. Some of the questions are really fundamental, and worth knowing. Some of them, like 7.4 are plain stupid.
