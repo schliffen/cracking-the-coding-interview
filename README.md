@@ -12,6 +12,25 @@ or simply open the .pro in QtCreator, build and run.
 
 -------------------------
 
+### Data Structures
+
+One question that occurs to many people facing a technical interview, is how should they handle data structures, should they write their own? Or use those of the standar library in that language. I know some of the companies I deal with ask you two write your own data structure as a technical interview, so I went ahead and wrote my own as an exercise.
+
+However I do realise that writing your own data structures is a dubious practice in the real world, 
+
+[lib/datastructures/LinkedList.h](lib/datastructures/LinkedList.h)
+[lib/datastructures/DLinkedList.h](lib/datastructures/DLinkedList.h)
+[lib/datastructures/Queue.h](lib/datastructures/Queue.h)
+[lib/datastructures/Stack.h](lib/datastructures/Stack.h)
+[lib/datastructures/BinaryTree.h](lib/datastructures/BinaryTree.h)
+[lib/datastructures/digraph.h](lib/datastructures/digraph.h)
+[lib/datastructures/vector.h](lib/datastructures/vector.h)
+[lib/datastructures/string.h](lib/datastructures/string.h)
+
+A bonus of the vector class is that it has the ability to use c arrays for objects that are reallocatable (as most are). This is very similar to the [FBVector class from folly at facebook](https://github.com/facebook/folly/blob/master/folly/docs/FBVector.md). The performance far exceeds that of std's vector class, but again, this is all dicey / showoff territory.
+
+-------------------------
+
 ### Chapter 1 - Arrays and Strings
 
 This chapter contains very standard and entry level questions on string and array manipulation. I got some interesting feedback from reddit /r/programming saying I should probably use more pointer arithmetic, and less array subscripts. I'm taking this advice on board and will go over these answers again.
@@ -44,10 +63,6 @@ I also wrote my Queue class:
 [lib/datastructures/Queue.h](lib/datastructures/Queue.h)
 
 But ended up not using it.
-
-I realise that writing your own data structures is a questionable practice in the real world, however writing your own data structures does come up in technical interviews.
-
-A bonus of the vector class is that it has the ability to use c arrays for objects that are reallocatable (as most are). This is very similar to the [FBVector class from folly at facebook](https://github.com/facebook/folly/blob/master/folly/docs/FBVector.md). The performance far exceeds that of std's vector class, but again, this is all dicey / showoff territory.
 
 -------------------------
 
