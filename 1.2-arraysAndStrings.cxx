@@ -28,7 +28,7 @@ void test1_2() {
     char* c = (char*)malloc(7);
     strcpy(c, "foobar\0");
     reverse(c);
-    free(c);
     assert(strcmp(c, "raboof") == 0);
+    free(c);
     printf("1.2 passed!\n");
 }
