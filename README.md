@@ -18,7 +18,7 @@ This chapter contains very standard and entry level questions on string and arra
 
 -------------------------
 
-### Chapture 2 - Linked Lists
+### Chapter 2 - Linked Lists
 
 These questions get more interesting. I actually wrote two linked list classes, so I wouldn't have to write as much boilerplate code.
 
