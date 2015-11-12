@@ -25,7 +25,7 @@ However I do realise that writing your own data structures is a dubious practice
 - [BinaryTree.h](lib/datastructures/BinaryTree.h) / [.hpp](lib/datastructures/BinaryTree.hpp)
 - [digraph.h](lib/datastructures/digraph.h) / [.cpp](lib/datastructures/digraph.cpp)
 - [vector.h](lib/datastructures/vector.h) / [.hpp](lib/datastructures/vector.hpp)
-- [string.h](lib/datastructures/string.h) / [.hpp](lib/datastructures/string.hpp)
+- [string.h](lib/datastructures/string.h) / [.cpp](lib/datastructures/string.cpp)
 
 A bonus of the vector class is that it has the ability to use c arrays for objects that are reallocatable (as most are). This is very similar to the [FBVector class from folly at facebook](https://github.com/facebook/folly/blob/master/folly/docs/FBVector.md). The performance far exceeds that of std's vector class, but again, this is all dicey / showoff territory.
 
