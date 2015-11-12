@@ -5,17 +5,14 @@ template <class a_type>
 Queue<a_type>::Queue():
     m_pTail(0),
     m_pHead(0),
-    m_size(0)
-{
+    m_size(0) {
 }
 
 template <class a_type>
-void Queue<a_type>::enqueue(const a_type& data)
-{
+void Queue<a_type>::enqueue(const a_type& data) {
     m_size++;
     DNode<a_type>* pNew = new DNode<a_type>(data);
-    if (m_pTail == 0 && m_pHead == 0)
-    {
+    if (m_pTail == 0 && m_pHead == 0) {
         m_pTail = pNew;
         m_pHead = pNew;
         return;
@@ -30,8 +27,7 @@ void Queue<a_type>::enqueue(const a_type& data)
 }
 
 template <class a_type>
-a_type Queue<a_type>::dequeue()
-{
+a_type Queue<a_type>::dequeue() {
     assert(m_pHead);
     assert(m_pTail);
     m_size--;
@@ -45,8 +41,7 @@ a_type Queue<a_type>::dequeue()
 }
 
 template <class a_type>
-int Queue<a_type>::size() const
-{
+int Queue<a_type>::size() const {
     return m_size;
 }
 

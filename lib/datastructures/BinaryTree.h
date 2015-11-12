@@ -9,9 +9,9 @@ using namespace std;
 template<class T>
 class BinaryTreeBase {
     public:
-    virtual T get_data() = 0;
-    virtual BinaryTreeBase* get_left() = 0;
-    virtual BinaryTreeBase* get_right() = 0;
+        virtual T get_data() = 0;
+        virtual BinaryTreeBase* get_left() = 0;
+        virtual BinaryTreeBase* get_right() = 0;
 };
 
 template<class T>
@@ -27,8 +27,7 @@ class BinaryTree: public BinaryTreeBase<T> {
             eInOrder
         };
 
-        virtual T get_data()
-        {
+        virtual T get_data() {
             return data;
         }
 

@@ -5,22 +5,21 @@
 #include "lib/datastructures/string.h"
 #include "lib/datastructures/vector.h"
 
-class DiGraph
-{
-public:
-    DiGraph(ctci::string label);
+class DiGraph {
+    public:
+        DiGraph(ctci::string label);
 
-    void                            connect(DiGraph* pNode);
+        void                            connect(DiGraph* pNode);
 
-    const ctci::vector<DiGraph*>&    getConnectedNodes() const;
+        const ctci::vector<DiGraph*>&    getConnectedNodes() const;
 
-    bool                            getPathTo(DiGraph* pTarget,
-            std::deque<DiGraph *> &path,
-            ctci::vector<DiGraph*>& visited);
+        bool                            getPathTo(DiGraph* pTarget,
+                std::deque<DiGraph*>& path,
+                ctci::vector<DiGraph*>& visited);
 
-private:
-    ctci::vector<DiGraph*>       m_nodes;
-    ctci::string                 m_label;
+    private:
+        ctci::vector<DiGraph*>       m_nodes;
+        ctci::string                 m_label;
 };
 
 #endif // DIGRAPH_H

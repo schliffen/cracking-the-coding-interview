@@ -3,35 +3,33 @@
 
 #include <ostream>
 
-namespace ctci
-{
+namespace ctci {
 
-class string
-{
-public:
-    string();
-    string(char* s);
-    string(const char* s);
-    string(const string& s);
+class string {
+    public:
+        string();
+        string(char* s);
+        string(const char* s);
+        string(const string& s);
 
-    typedef size_t pos;
+        typedef size_t pos;
 
-    ~string();
+        ~string();
 
-    size_t size() const;
+        size_t size() const;
 
-    string substr(pos start, pos len);
+        string substr(pos start, pos len);
 
-    friend std::ostream& operator<<(std::ostream&, const string&);
-    friend string operator+(const string& s1, const string& s2);
-    friend string operator+=(string& s1, const string& s2);
-    friend bool operator==(const string& s1, const string& s2);
-    char& operator[](const unsigned int ind);
-    string& operator=(const string& other);
-    //string& operator=(string&& other);
+        friend std::ostream& operator<<(std::ostream&, const string&);
+        friend string operator+(const string& s1, const string& s2);
+        friend string operator+=(string& s1, const string& s2);
+        friend bool operator==(const string& s1, const string& s2);
+        char& operator[](const unsigned int ind);
+        string& operator=(const string& other);
+        //string& operator=(string&& other);
 
-private:
-    char* buf;
+    private:
+        char* buf;
 };
 }
 
