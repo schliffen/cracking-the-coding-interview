@@ -12,29 +12,23 @@
 
 using namespace std;
 
-void test3_6()
-{
-    int arr[] = {2,1,6,4,8,9,7,5,6,14,2,3,5,4,9,4,5,6,2,1};
+void test3_6() {
+    int arr[] = {2, 1, 6, 4, 8, 9, 7, 5, 6, 14, 2, 3, 5, 4, 9, 4, 5, 6, 2, 1};
     int n = 20;
     Stack<int>* a = new Stack<int>(arr, n);
     Stack<int>* b = new Stack<int>;
 
     bool direction = false;
     bool changed = false;
-    do
-    {
+    do {
         changed = false;
         int pivot = a->pop();
-        while (!a->isEmpty())
-        {
+        while (!a->isEmpty()) {
             int cmp = a->pop();
-            if (direction ? pivot > cmp : pivot < cmp)
-            {
+            if (direction ? pivot > cmp : pivot < cmp) {
                 changed = true;
                 b->push(cmp);
-            }
-            else
-            {
+            } else {
                 b->push(pivot);
                 pivot = cmp;
             }
@@ -42,8 +36,7 @@ void test3_6()
         b->push(pivot);
         swap(&a, &b, sizeof(Stack<int>*));
         direction = !direction;
-    }
-    while (changed);
+    } while (changed);
 
     int i = 0;
     while (!a->isEmpty())

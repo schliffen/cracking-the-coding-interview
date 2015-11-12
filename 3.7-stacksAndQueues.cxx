@@ -14,10 +14,8 @@ using namespace std;
     built-in LinkedList data structure.
 */
 
-struct Animal
-{
-    enum Type
-    {
+struct Animal {
+    enum Type {
         GodKnows,
         Cat,
         Dog
@@ -25,102 +23,87 @@ struct Animal
 
     Animal(string name = "", Type type = GodKnows):
         m_name(name),
-        m_type(type)
-    {
+        m_type(type) {
     }
 
     string  m_name;
     Type    m_type;
 };
 
-class Shelter
-{
-public:
+class Shelter {
+    public:
 
-    Shelter():
-        m_pAnimals(0),
-        m_pLast(0)
-    {
-    }
-
-    ~Shelter()
-    {
-    }
-
-    void enqueue(Animal animal)
-    {
-        DNode<Animal>* pNewAnimal = new DNode<Animal>(animal);
-        if (m_pAnimals)
-        {
-            pNewAnimal->next() = m_pAnimals;
-            m_pAnimals->prev() = pNewAnimal;
+        Shelter():
+            m_pAnimals(0),
+            m_pLast(0) {
         }
-        m_pAnimals = pNewAnimal;
-        if (!m_pLast)
-        {
-            m_pLast = pNewAnimal;
+
+        ~Shelter() {
         }
-    }
 
-    Animal dequeueAny()
-    {
-        assert(m_pLast);
-        assert(m_pLast->prev());
-        Animal animal = m_pLast->data();
-        DNode<Animal>* pPrev = m_pLast->prev();
-        pPrev->next() = 0;
-        delete m_pLast;
-        m_pLast = pPrev;
-        return animal;
-    }
-
-    Animal dequeueCat()
-    {
-        return dequeue(Animal::Cat);
-    }
-
-    Animal dequeueDog()
-    {
-        return dequeue(Animal::Dog);
-    }
-
-    Animal dequeue(Animal::Type type)
-    {
-        DNode<Animal>* pNode = m_pLast;
-        while (pNode)
-        {
-            if (pNode->data().m_type == type)
-            {
-                Animal animal = pNode->data();
-                if (pNode->prev())
-                    pNode->prev()->next() = pNode->next();
-                if (pNode->next())
-                    pNode->next()->prev() = pNode->prev();
-                if (pNode == m_pLast)
-                {
-                    if (pNode->prev())
-                        m_pLast = pNode->prev();
-                    else
-                        m_pLast = 0;
-                }
-                if (pNode == m_pAnimals)
-                    m_pAnimals = 0;
-                delete pNode;
-                return animal;
+        void enqueue(Animal animal) {
+            DNode<Animal>* pNewAnimal = new DNode<Animal>(animal);
+            if (m_pAnimals) {
+                pNewAnimal->next() = m_pAnimals;
+                m_pAnimals->prev() = pNewAnimal;
             }
-            pNode = pNode->prev();
+            m_pAnimals = pNewAnimal;
+            if (!m_pLast) {
+                m_pLast = pNewAnimal;
+            }
         }
-        assert(false);
-        return Animal();
-    }
 
-private:
-    DNode<Animal>*   m_pAnimals;
-    DNode<Animal>*   m_pLast;
+        Animal dequeueAny() {
+            assert(m_pLast);
+            assert(m_pLast->prev());
+            Animal animal = m_pLast->data();
+            DNode<Animal>* pPrev = m_pLast->prev();
+            pPrev->next() = 0;
+            delete m_pLast;
+            m_pLast = pPrev;
+            return animal;
+        }
+
+        Animal dequeueCat() {
+            return dequeue(Animal::Cat);
+        }
+
+        Animal dequeueDog() {
+            return dequeue(Animal::Dog);
+        }
+
+        Animal dequeue(Animal::Type type) {
+            DNode<Animal>* pNode = m_pLast;
+            while (pNode) {
+                if (pNode->data().m_type == type) {
+                    Animal animal = pNode->data();
+                    if (pNode->prev())
+                        pNode->prev()->next() = pNode->next();
+                    if (pNode->next())
+                        pNode->next()->prev() = pNode->prev();
+                    if (pNode == m_pLast) {
+                        if (pNode->prev())
+                            m_pLast = pNode->prev();
+                        else
+                            m_pLast = 0;
+                    }
+                    if (pNode == m_pAnimals)
+                        m_pAnimals = 0;
+                    delete pNode;
+                    return animal;
+                }
+                pNode = pNode->prev();
+            }
+            assert(false);
+            return Animal();
+        }
+
+    private:
+        DNode<Animal>*   m_pAnimals;
+        DNode<Animal>*   m_pLast;
 };
 
-void test3_7()
-{
+void test3_7() {
     Shelter shelter;
     shelter.enqueue(Animal("cookie", Animal::Cat));
     shelter.enqueue(Animal("charms", Animal::Dog));

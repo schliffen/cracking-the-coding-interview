@@ -12,13 +12,11 @@
 
 using namespace std;
 
-short fetchTheJthBitOfAi(ctci::vector<int>& A, unsigned int j, unsigned int i)
-{
+short fetchTheJthBitOfAi(ctci::vector<int>& A, unsigned int j, unsigned int i) {
     return bitset<sizeof(i) * CHAR_BIT>(A[i])[j];
 }
 
-unsigned int findMissingElementInArray(unsigned int missingElement)
-{
+unsigned int findMissingElementInArray(unsigned int missingElement) {
     size_t arraySize = missingElement + 10 - 1;
     ctci::vector<int> ar(arraySize);
     for (size_t i = 0; i < arraySize; i++)
@@ -32,8 +30,7 @@ unsigned int findMissingElementInArray(unsigned int missingElement)
     return 0;
 }
 
-void test5_7()
-{
+void test5_7() {
     for (size_t i = 0; i < 100; i++)
         assert(findMissingElementInArray(i) == i);
     cout << "5.7 passed!" << endl;
