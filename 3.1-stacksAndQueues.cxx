@@ -13,7 +13,7 @@ class ArrayStacks {
         }
 
         ~ArrayStacks() {
-            delete m_data;
+            delete[] m_data;
         }
 
         void push(a_type t, int stack) {
