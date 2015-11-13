@@ -25,10 +25,8 @@ void reverse(char* str) {
 }
 
 void test1_2() {
-    char* c = (char*)malloc(7);
-    strcpy(c, "foobar\0");
+    char c[7] = "foobar";
     reverse(c);
-    free(c);
     assert(strcmp(c, "raboof") == 0);
     printf("1.2 passed!\n");
 }
