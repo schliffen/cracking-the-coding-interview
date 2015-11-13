@@ -28,5 +28,6 @@ void test1_2() {
     char c[7] = "foobar";
     reverse(c);
     assert(strcmp(c, "raboof") == 0);
+    free(c);
     printf("1.2 passed!\n");
 }
