@@ -87,6 +87,11 @@ char& ctci::string::operator[](const unsigned int ind)
     return buf[ind];
 }
 
+const char& ctci::string::operator[](const unsigned int ind) const
+{
+    return buf[ind];
+}
+
 ctci::string& ctci::string::operator=(const ctci::string& other) // copy assignment
 {
     if (this != &other)

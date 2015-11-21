@@ -42,6 +42,7 @@ void test5_7();
 void test5_8();
 void test7_3();
 void test7_4();
+void test8_10();
 void test9_1();
 void test9_4();
 void test9_6();
@@ -131,6 +132,7 @@ int main() {
     test5_8();
     test7_3();
     test7_4();
+    test8_10();
     test9_1();
     test9_4();
     test9_6();

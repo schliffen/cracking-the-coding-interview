@@ -31,8 +31,6 @@ void testVectorPushBackCtci()
 {
     ctci::vector<ctci::string> vec;
 
-    vec.setReallocatable(true);
-
     vec.push_back("hello");
     vec.push_back("how");
     vec.push_back("are");
@@ -56,8 +54,6 @@ void testGiantVectorPushBackCtci()
 {
     ctci::vector<ctci::string> vec;
 
-    vec.setReallocatable(true);
-
     for (int i = 0; i < 1e5; i++)
         vec.push_back("hello");
 }
@@ -65,8 +61,6 @@ void testGiantVectorPushBackCtci()
 void testEraseCtci()
 {
     ctci::vector<ctci::string> vec;
-
-    vec.setReallocatable(true);
 
     vec.push_back("foo");
     vec.push_back("bar");

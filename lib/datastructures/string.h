@@ -25,6 +25,7 @@ class string {
         friend string operator+=(string& s1, const string& s2);
         friend bool operator==(const string& s1, const string& s2);
         char& operator[](const unsigned int ind);
+        const char& operator[](const unsigned int ind) const;
         string& operator=(const string& other);
         //string& operator=(string&& other);
 

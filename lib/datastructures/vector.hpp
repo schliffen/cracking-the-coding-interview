@@ -12,12 +12,10 @@ vector<T>::vector() {
     my_capacity = 0;
     my_size = 0;
     buffer = 0;
-    reallocatable = false;
 }
 
 template<class T>
 vector<T>::vector(const vector<T>& v) {
-    reallocatable = v.reallocatable;
     my_size = v.my_size;
     my_capacity = v.my_capacity;
     buffer = new T[my_size];
@@ -86,10 +84,7 @@ template<class T>
 void vector<T>::push_back(const T& v) {
     if (my_size >= my_capacity)
         reserve(my_capacity == 0 ? 5 : my_capacity * 2);
-    if (reallocatable)
-        memcpy(buffer + my_size++, &v, sizeof(T));
-    else
-        buffer[my_size++] = v;
+    buffer[my_size++] = v;
 }
 
 template<class T>
@@ -104,53 +99,40 @@ unsigned int distance(T* a, T* b) {
 
 template<class T>
 typename vector<T>::iterator vector<T>::erase(vector<T>::iterator it) {
-    if (reallocatable) {
-        size_t dist = distance(buffer, it);
-        T* dest = buffer + dist;
-        T* source = buffer + dist + 1;
-        size_t size = distance(source, end());
-        memmove(dest, source, size * sizeof(T));
-        it = dest;
-    } else {
-        T* newBuffer = new T[my_capacity - 1];
-        int iti = 0;
-        for (vector<T>::iterator iit = begin(); iit != end(); iit++) {
-            if (iit != it) {
-                newBuffer[iti++] = *iit;
-            } else {
-                it = newBuffer + iti;
-            }
+    T* newBuffer = new T[my_capacity - 1];
+    int iti = 0;
+    for (vector<T>::iterator iit = begin(); iit != end(); iit++) {
+        if (iit != it) {
+            newBuffer[iti++] = *iit;
+        } else {
+            it = newBuffer + iti;
         }
-        delete[] buffer;
-        buffer = newBuffer;
     }
+    delete[] buffer;
+    buffer = newBuffer;
     my_size--;
     return it;
 }
 
 template<class T>
-void vector<T>::reserve(unsigned int capacity) {
+void vector<T>::reserve(unsigned int capacity, T val) {
     if (buffer == 0) {
         my_size = 0;
         my_capacity = 0;
     }
 
-    if (reallocatable) {
-        if (my_capacity == 0) {
-            buffer = (T*)malloc(sizeof(T) * capacity);
-        } else {
-            buffer = (T*)realloc(buffer, sizeof(T) * capacity);
-        }
-    } else {
-        T* Newbuffer = new T [capacity];
-        unsigned int l_Size = capacity < my_size ? capacity : my_size;
+    T* Newbuffer = new T [capacity];
+    unsigned int l_Size = capacity < my_size ? capacity : my_size;
 
-        for (unsigned int i = 0; i < l_Size; i++)
-            Newbuffer[i] = buffer[i];
+    for (unsigned int i = 0; i < l_Size; i++)
+        Newbuffer[i] = buffer[i];
 
-        delete[] buffer;
-        buffer = Newbuffer;
+    for (unsigned int i = l_Size; i < capacity; i++) {
+        Newbuffer[i] = val;
     }
+
+    delete[] buffer;
+    buffer = Newbuffer;
     my_capacity = capacity;
 }
 
@@ -160,8 +142,8 @@ unsigned int vector<T>::size()const { //
 }
 
 template<class T>
-void vector<T>::resize(unsigned int size) {
-    reserve(size);
+void vector<T>::resize(unsigned int size, T val) {
+    reserve(size, val);
     my_size = size;
 }
 
@@ -183,10 +165,7 @@ unsigned int vector<T>::capacity()const {
 
 template<class T>
 vector<T>::~vector() {
-    if (reallocatable)
-        free(buffer);
-    else
-        delete[ ] buffer;
+    delete[ ] buffer;
 }
 
 template <class T>

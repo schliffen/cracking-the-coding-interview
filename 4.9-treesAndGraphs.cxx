@@ -66,7 +66,7 @@ void test4_9() {
 
     // call our recursive sum finding function
     ctci::vector<int> paths;
-    paths.setReallocatable(true);
+    //paths.setReallocatable(true);
     int value = 26;
     int pathsFound = findPathsWithValue(pRoot, paths, value);
 

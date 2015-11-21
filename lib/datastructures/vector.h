@@ -4,7 +4,6 @@
 // TODO: implement assignment operator
 
 namespace ctci {
-class Reallocatable;
 
 template <class T>
 class  vector {
@@ -33,21 +32,17 @@ class  vector {
 
         iterator erase(iterator it);
 
-        void reserve(unsigned int capacity);
-        void resize(unsigned int size);
+        void reserve(unsigned int capacity, T val = T());
+        void resize(unsigned int size, T val = T());
 
         T& operator[](unsigned int index);
         T& operator[](unsigned int index) const;
         vector<T>& operator=(const vector<T>&);
         void clear();
-        void setReallocatable(bool r) {
-            reallocatable = r;
-        }
 
     private:
         unsigned int my_size;
         unsigned int my_capacity;
-        bool reallocatable;
         T* buffer;
 };
 }
