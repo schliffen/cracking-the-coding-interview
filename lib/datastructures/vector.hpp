@@ -127,9 +127,8 @@ void vector<T>::reserve(unsigned int capacity, T val) {
     for (unsigned int i = 0; i < l_Size; i++)
         Newbuffer[i] = buffer[i];
 
-    for (unsigned int i = l_Size; i < capacity; i++) {
+    for (unsigned int i = l_Size; i < capacity; i++)
         Newbuffer[i] = val;
-    }
 
     delete[] buffer;
     buffer = Newbuffer;

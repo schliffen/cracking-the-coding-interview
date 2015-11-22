@@ -11,6 +11,14 @@
 
 using namespace std;
 
+void testVectorInit() {
+    ctci::vector<ctci::string> vec(50);
+    ctci::string str = "";
+    for (size_t i = 0; i < vec.size(); i++) {
+        str += vec[i];
+    }
+}
+
 void testVectorPushBackStd()
 {
     std::vector<std::string> vec;
@@ -103,5 +111,6 @@ TEST(testGiantVectorPushBackStd)
 TEST(testGiantVectorPushBackCtci)
 TEST(testEraseCtci)
 TEST(testEraseStd)
+TEST(testVectorInit)
 END_TEST
 

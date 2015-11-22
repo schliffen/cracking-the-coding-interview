@@ -81,6 +81,10 @@ bool ctci::operator==(const ctci::string& s1, const ctci::string& s2)
     return strcmp(s1.buf, s2.buf) == 0;
 }
 
+bool ctci::operator!=(const ctci::string& s1, const ctci::string& s2)
+{
+    return strcmp(s1.buf, s2.buf) != 0;
+}
 
 char& ctci::string::operator[](const unsigned int ind)
 {
