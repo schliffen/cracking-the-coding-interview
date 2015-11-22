@@ -21,7 +21,7 @@ void test8_10() {
     for (int i = 0; i < 10000; i++) {
         ctci::string key = "key" + ctci::string(SSTR(i).c_str());
         ctci::string value = "value" + ctci::string(SSTR(i).c_str());
-        t.insert(key, value);
+        t[key] = value;
     }
 
     // now let's check the map contains what we expect it to
