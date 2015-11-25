@@ -2,7 +2,7 @@
 
 #include "testhelper.h"
 
-#include "lib/datastructures/DLinkedList.h"
+#include "lib/DLinkedList.h"
 #include <assert.h>
 
 void testDLinkedListMain()

@@ -18,15 +18,15 @@ One question that occurs to many people facing a technical interview, is how sho
 
 However I do realise that writing your own data structures is a dubious practice in the real world, 
 
-- [LinkedList.h](lib/datastructures/LinkedList.h) / [.hpp](lib/datastructures/LinkedList.hpp)
-- [DLinkedList.h](lib/datastructures/DLinkedList.h) / [.hpp](lib/datastructures/DLinkedList.hpp)
-- [Queue.h](lib/datastructures/Queue.h) / [.hpp](lib/datastructures/Queue.hpp)
-- [Stack.h](lib/datastructures/Stack.h) / [.hpp](lib/datastructures/Stack.hpp)
-- [BinaryTree.h](lib/datastructures/BinaryTree.h) / [.hpp](lib/datastructures/BinaryTree.hpp)
-- [digraph.h](lib/datastructures/digraph.h) / [.cpp](lib/datastructures/digraph.cpp)
-- [vector.h](lib/datastructures/vector.h) / [.hpp](lib/datastructures/vector.hpp)
-- [string.h](lib/datastructures/string.h) / [.cpp](lib/datastructures/string.cpp)
-- [hash_table.h](lib/datastructures/hash_table.h) / [.hpp](lib/datastructures/hash_table.hpp)
+- [LinkedList.h](lib/LinkedList.h) / [.hpp](lib/LinkedList.hpp)
+- [DLinkedList.h](lib/DLinkedList.h) / [.hpp](lib/DLinkedList.hpp)
+- [Queue.h](lib/Queue.h) / [.hpp](lib/Queue.hpp)
+- [Stack.h](lib/Stack.h) / [.hpp](lib/Stack.hpp)
+- [BinaryTree.h](lib/BinaryTree.h) / [.hpp](lib/BinaryTree.hpp)
+- [digraph.h](lib/digraph.h) / [.cpp](lib/digraph.cpp)
+- [vector.h](lib/vector.h) / [.hpp](lib/vector.hpp)
+- [string.h](lib/string.h) / [.cpp](lib/string.cpp)
+- [hash_table.h](lib/hash_table.h) / [.hpp](lib/hash_table.hpp)
 
 -------------------------
 
@@ -53,11 +53,11 @@ This chapter contains very standard and entry level questions on string and arra
 
 These questions get more interesting. I actually wrote two linked list classes, so I wouldn't have to write as much boilerplate code.
 
-[lib/datastructures/LinkedList.h](lib/datastructures/LinkedList.h)
+[lib/LinkedList.h](lib/LinkedList.h)
 
 and
 
-[lib/datastructures/DLinkedList.h](lib/datastructures/DLinkedList.h)
+[lib/DLinkedList.h](lib/DLinkedList.h)
 
 
 -------------------------
@@ -66,13 +66,13 @@ and
 
 Once again, I wrote a DS for this one, to avoid re-writing boilerplate code.
 
-[lib/datastructures/Stack.h](lib/datastructures/Stack.h)
+[lib/Stack.h](lib/Stack.h)
 
-Whenever I needed to use other data structures, I wrote my own, such as the [lib/datastructures/vector.h](lib/datastructures/vector.h) class.
+Whenever I needed to use other data structures, I wrote my own, such as the [lib/vector.h](lib/vector.h) class.
 
 I also wrote my Queue class:
 
-[lib/datastructures/Queue.h](lib/datastructures/Queue.h)
+[lib/Queue.h](lib/Queue.h)
 
 But ended up not using it.
 
@@ -82,8 +82,8 @@ But ended up not using it.
 
 By far the most fun and interesting chapter. Once again, I added my own data structures. e.g
 
-- [lib/datastructures/BinaryTree.h](lib/datastructures/BinaryTree.h)
-- [lib/datastructures/digraph.h](lib/datastructures/digraph.h)
+- [lib/BinaryTree.h](lib/BinaryTree.h)
+- [lib/digraph.h](lib/digraph.h)
 
 Some utils:
 

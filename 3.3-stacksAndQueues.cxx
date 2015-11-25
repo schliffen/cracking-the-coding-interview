@@ -11,8 +11,8 @@
  * which performs a pop operation on a specific sub-stack.
  */
 
-#include "lib/datastructures/Stack.h"
-#include "lib/datastructures/vector.h"
+#include "lib/Stack.h"
+#include "lib/vector.h"
 
 #include "assert.h"
 

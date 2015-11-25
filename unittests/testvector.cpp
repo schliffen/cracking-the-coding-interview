@@ -1,6 +1,6 @@
 #include "unittests/testvector.h"
-#include "lib/datastructures/vector.h"
-#include "lib/datastructures/string.h"
+#include "lib/vector.h"
+#include "lib/string.h"
 #include "testhelper.h"
 
 #include <assert.h>

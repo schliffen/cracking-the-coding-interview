@@ -3,7 +3,7 @@
 #include <cstring>
 #include <algorithm>
 #include "assert.h"
-#include "lib/datastructures/string.h"
+#include "lib/string.h"
 
 /*
  * 1.2 Implement a function void reverse(char* str)

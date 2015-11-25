@@ -12,7 +12,7 @@
  * the disks from the first tower to the last using stacks.
  */
 
-#include "lib/datastructures/Stack.h"
+#include "lib/Stack.h"
 #include <assert.h>
 
 void Move_tower_of_hanoi(int disk, Stack<int>* source, Stack<int>* temp, Stack<int>* destination) {

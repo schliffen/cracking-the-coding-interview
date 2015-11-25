@@ -4,7 +4,7 @@
  * and pennies (1 cent), write code to calculate the number of ways of representing n cents.
  */
 
-#include "lib/datastructures/vector.h"
+#include "lib/vector.h"
 #include "lib/numeric.h"
 #include "assert.h"
 #include <cstdio>

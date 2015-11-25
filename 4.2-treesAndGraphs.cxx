@@ -1,8 +1,8 @@
 #include "assert.h"
 
-#include "lib/datastructures/vector.h"
-#include "lib/datastructures/digraph.h"
-#include "lib/datastructures/string.h"
+#include "lib/vector.h"
+#include "lib/digraph.h"
+#include "lib/string.h"
 
 /*
     4.2 Given a directed graph, design an algorithm to

@@ -3,11 +3,11 @@
 #include <math.h>
 #include <assert.h>
 
-#include "lib/utils/SampleBinaryTrees.h"
-#include "lib/utils/Utils.h"
-#include "lib/utils/BinaryTreeRenderer.h"
-#include "lib/datastructures/string.h"
-#include "lib/datastructures/vector.h"
+#include "lib/SampleBinaryTrees.h"
+#include "lib/Utils.h"
+#include "lib/BinaryTreeRenderer.h"
+#include "lib/string.h"
+#include "lib/vector.h"
 
 // 4.8 You have two very large binary trees: Tl, with millions of nodes,
 // and T2, with hundreds of nodes. Create an algorithm to decide ifT2

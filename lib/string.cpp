@@ -1,4 +1,4 @@
-#include "lib/datastructures/string.h"
+#include "lib/string.h"
 
 #include <cstring>
 #include <iostream>

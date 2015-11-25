@@ -1,4 +1,4 @@
-#include "lib/datastructures/DLinkedList.h"
+#include "lib/DLinkedList.h"
 #include <string>
 #include <assert.h>
 #include <iostream>

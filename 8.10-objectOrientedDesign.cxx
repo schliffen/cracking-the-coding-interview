@@ -4,15 +4,15 @@
  * chaining (linked lists) to handle collisions.
  */
 
-#include "lib/datastructures/hash_table.h"
-#include "lib/datastructures/string.h"
-#include "lib/utils/Utils.h"
+#include "lib/hash_table.h"
+#include "lib/string.h"
+#include "lib/Utils.h"
 #include <iostream>
 #include "assert.h"
 
 using namespace ctci;
 
-// Answered in lib/datastructures/hash_table.h
+// Answered in lib/hash_table.h
 
 void test8_10() {
     hash_table<ctci::string> t;

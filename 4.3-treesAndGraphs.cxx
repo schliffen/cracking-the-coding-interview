@@ -1,4 +1,4 @@
-#include "lib/datastructures/BinaryTree.h"
+#include "lib/BinaryTree.h"
 
 #include <iostream>
 #include <assert.h>

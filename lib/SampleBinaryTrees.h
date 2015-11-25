@@ -5,8 +5,8 @@
 #ifndef SAMPLEBINARYTREES_H
 #define SAMPLEBINARYTREES_H
 
-#include "lib/datastructures/BinaryTree.h"
-#include "lib/datastructures/string.h"
+#include "lib/BinaryTree.h"
+#include "lib/string.h"
 #include <string>
 
 typedef std::string(*idFunc)();

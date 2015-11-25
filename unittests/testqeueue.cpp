@@ -1,5 +1,5 @@
 #include "testqeueue.h"
-#include "lib/datastructures/Queue.h"
+#include "lib/Queue.h"
 #include <assert.h>
 
 #include "testhelper.h"

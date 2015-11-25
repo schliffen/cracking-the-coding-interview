@@ -2,7 +2,7 @@
 #include <iostream>
 #include <assert.h>
 #include <limits>
-#include "lib/datastructures/vector.h"
+#include "lib/vector.h"
 
 // 5.7 An array A contains all the integers from 0 to n, except for one number which is missing.
 // In this problem, we cannot access an entire integer in A with a single operation.

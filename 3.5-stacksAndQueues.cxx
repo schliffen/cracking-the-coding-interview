@@ -3,7 +3,7 @@
  * Implement a MyQueue class which implements a queue using two stacks.
  */
 
-#include "lib/datastructures/Stack.h"
+#include "lib/Stack.h"
 #include <assert.h>
 
 template <class Type>

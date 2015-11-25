@@ -3,7 +3,7 @@
 
 #include <assert.h>
 #include <iostream>
-#include "lib/datastructures/DLinkedList.h"
+#include "lib/DLinkedList.h"
 
 template<class Type>
 Stack<Type>::Stack():

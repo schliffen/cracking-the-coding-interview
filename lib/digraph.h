@@ -2,8 +2,8 @@
 #define DIGRAPH_H
 
 #include <deque>
-#include "lib/datastructures/string.h"
-#include "lib/datastructures/vector.h"
+#include "lib/string.h"
+#include "lib/vector.h"
 
 class DiGraph {
     public:

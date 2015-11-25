@@ -2,7 +2,7 @@
 #include <limits.h>
 #include <string>
 #include <assert.h>
-#include "lib/utils/Utils.h"
+#include "lib/Utils.h"
 
 #include <stdlib.h>     /* atoi */
 

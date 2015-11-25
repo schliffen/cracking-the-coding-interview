@@ -3,7 +3,7 @@
 #include <string>
 #include <assert.h>
 #include <stdlib.h>
-#include "lib/datastructures/vector.h"
+#include "lib/vector.h"
 
 void swap(void* a, void* b, unsigned short size)
 {

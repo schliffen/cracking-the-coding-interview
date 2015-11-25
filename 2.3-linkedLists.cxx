@@ -1,4 +1,4 @@
-#include "lib/datastructures/LinkedList.h"
+#include "lib/LinkedList.h"
 #include <iostream>
 #include <assert.h>
 

@@ -1,6 +1,6 @@
 #include <cstdio>
 #include "assert.h"
-#include "lib/utils/Utils.h"
+#include "lib/Utils.h"
 
 /*
     1.6 Given an image represented by an NxN matrix, where

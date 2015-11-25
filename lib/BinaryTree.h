@@ -2,7 +2,7 @@
 #define BINARYTREE_H
 
 #include <iostream>
-#include "lib/datastructures/vector.h"
+#include "lib/vector.h"
 
 using namespace std;
 

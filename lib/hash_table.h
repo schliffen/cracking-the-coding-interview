@@ -1,8 +1,8 @@
 #ifndef HASH_TABLE_H
 #define HASH_TABLE_H
 
-#include "lib/datastructures/string.h"
-#include "lib/datastructures/vector.h"
+#include "lib/string.h"
+#include "lib/vector.h"
 #include "assert.h"
 
 // todo: this hash table only works with strings, generalise it to work with

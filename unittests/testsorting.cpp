@@ -1,7 +1,7 @@
 #include "unittests/testsorting.h"
-#include "lib/algorithms/bubblesort.h"
+#include "lib/bubblesort.h"
 #include <assert.h>
-#include "lib/utils/Utils.h"
+#include "lib/Utils.h"
 
 #include "testhelper.h"
 

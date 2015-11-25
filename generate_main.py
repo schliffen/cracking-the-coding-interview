@@ -26,10 +26,10 @@ def main():
     main_cxx.write("""
 #include <cstdio>
 
-#include "lib/utils/Utils.h"
-#include "lib/datastructures/LinkedList.h"
-#include "lib/datastructures/Stack.h"
-#include "lib/datastructures/vector.h"
+#include "lib/Utils.h"
+#include "lib/LinkedList.h"
+#include "lib/Stack.h"
+#include "lib/vector.h"
 #include "unittests/testdlinkedlist.h"
 #include "unittests/testlinkedlist.h"
 #include "unittests/testvector.h"

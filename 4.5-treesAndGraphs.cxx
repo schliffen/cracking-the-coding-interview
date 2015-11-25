@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "lib/datastructures/BinaryTree.h"
+#include "lib/BinaryTree.h"
 #include "assert.h"
 
 using namespace std;

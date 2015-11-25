@@ -1,8 +1,8 @@
 #include "assert.h"
 #include <iostream>
 #include <map>
-#include "lib/datastructures/string.h"
-#include "lib/datastructures/hash_table.h"
+#include "lib/string.h"
+#include "lib/hash_table.h"
 
 /*
  * 1.1 Implement an algorithm to determine if a string has

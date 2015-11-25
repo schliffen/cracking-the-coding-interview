@@ -3,10 +3,10 @@
 #include <string>
 #include <vector>
 
-#include "lib/datastructures/vector.h"
+#include "lib/vector.h"
 #include "testhelper.h"
 #include "teststring.h"
-#include "lib/datastructures/string.h"
+#include "lib/string.h"
 
 template<class T>
 void testConstruct()

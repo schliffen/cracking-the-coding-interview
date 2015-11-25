@@ -1,6 +1,6 @@
 #include <iostream>
 #include <assert.h>
-#include "lib/datastructures/LinkedList.h"
+#include "lib/LinkedList.h"
 
 /*
     2.1 Write code to remove duplicates from an unsorted linked list.

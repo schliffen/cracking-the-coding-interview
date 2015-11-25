@@ -7,8 +7,8 @@
 
 #include <iostream>
 #include <assert.h>
-#include "lib/datastructures/Stack.h"
-#include "lib/utils/Utils.h"
+#include "lib/Stack.h"
+#include "lib/Utils.h"
 
 using namespace std;
 

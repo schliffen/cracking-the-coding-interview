@@ -7,8 +7,8 @@
  */
 
 #include <iostream>
-#include "lib/datastructures/string.h"
-#include "lib/datastructures/vector.h"
+#include "lib/string.h"
+#include "lib/vector.h"
 #include "assert.h"
 
 template<class S, class V>

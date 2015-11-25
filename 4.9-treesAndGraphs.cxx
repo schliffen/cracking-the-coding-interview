@@ -1,8 +1,8 @@
 #include <iostream>
 
-#include "lib/datastructures/BinaryTree.h"
-#include "lib/datastructures/vector.h"
-#include "lib/utils/SampleBinaryTrees.h"
+#include "lib/BinaryTree.h"
+#include "lib/vector.h"
+#include "lib/SampleBinaryTrees.h"
 
 using namespace std;
 

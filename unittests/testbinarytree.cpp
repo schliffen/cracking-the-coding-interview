@@ -8,9 +8,9 @@
 
 #include "testbinarytree.h"
 
-#include "lib/utils/Utils.h"
-#include "lib/utils/SampleBinaryTrees.h"
-#include "lib/datastructures/vector.h"
+#include "lib/Utils.h"
+#include "lib/SampleBinaryTrees.h"
+#include "lib/vector.h"
 
 using namespace std;
 

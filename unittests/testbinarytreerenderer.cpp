@@ -5,9 +5,9 @@
 
 #include "testbinarytreerenderer.h"
 
-#include "lib/utils/Utils.h"
-#include "lib/utils/SampleBinaryTrees.h"
-#include "lib/utils/BinaryTreeRenderer.h"
+#include "lib/Utils.h"
+#include "lib/SampleBinaryTrees.h"
+#include "lib/BinaryTreeRenderer.h"
 
 #include <string>
 

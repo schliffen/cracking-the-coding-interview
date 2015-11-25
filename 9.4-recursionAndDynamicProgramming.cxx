@@ -7,7 +7,7 @@
 #include <assert.h>
 #include <vector>
 
-#include "lib/datastructures/vector.h"
+#include "lib/vector.h"
 
 using namespace ctci;
 

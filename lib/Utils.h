@@ -5,8 +5,8 @@
 #include <iterator>
 #include <sstream>
 
-#include "lib/datastructures/string.h"
-#include "lib/datastructures/vector.h"
+#include "lib/string.h"
+#include "lib/vector.h"
 
 template<class a_type>
 void swap(a_type* a, a_type* b)
