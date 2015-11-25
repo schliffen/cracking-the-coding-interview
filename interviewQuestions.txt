@@ -34,8 +34,6 @@
 
 8.9 Explain the data structures and algorithms that you would use to design an in-memory file system. Illustrate with an example in code where possible.
 
-8.10 Design and implement a hash table which uses chaining (linked lists) to handle collisions.
-
 9.3 A magic index in an array A [ 0 . . .n-1] is defined to be an index such that A[i] = i. Given a sorted array of distinct integers, write a method to find a magic index, if one exists, in array A. FOLLOW UP What if the values are not distinct?
 
 9.5 Write a method to compute all permutations of a string.

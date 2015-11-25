@@ -59,6 +59,13 @@ void testPlusEquals()
     assert(str2.size() == 3);
 }
 
+template<class T>
+void testFind() {
+    T str1("foobar");
+    char* c = "bar";
+    assert(str1.find(c) == 3);
+}
+
 template<class V>
 V getVec()
 {
@@ -96,6 +103,7 @@ TEST(testConcat<std::string>)
 TEST(testPlusEquals<std::string>)
 TEST(testStringInVector<std::vector<std::string> >)
 TEST(testSubstr<std::string>)
+TEST(testFind<std::string>)
 
 #if COMPARE_WITH_STANDARD_LIBRARY
 TEST(testConstruct<ctci::string>)
@@ -105,5 +113,6 @@ TEST(testConcat<ctci::string>)
 TEST(testPlusEquals<ctci::string>)
 TEST(testStringInVector<ctci::vector<ctci::string> >)
 TEST(testSubstr<ctci::string>)
+TEST(testFind<ctci::string>)
 #endif
 END_TEST

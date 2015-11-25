@@ -28,7 +28,9 @@ class string {
         char& operator[](const unsigned int ind);
         const char& operator[](const unsigned int ind) const;
         string& operator=(const string& other);
-        //string& operator=(string&& other);
+        size_t find (const char* s, size_t pos = 0) const;
+
+        static size_t npos;
 
     private:
         char* buf;
