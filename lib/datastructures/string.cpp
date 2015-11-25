@@ -116,3 +116,7 @@ size_t ctci::string::find(const char s, size_t pos) const {
     }
     return npos;
 }
+
+char* ctci::string::c_str() {
+    return buf;
+}

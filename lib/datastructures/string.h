@@ -31,6 +31,7 @@ class string {
         string& operator=(const string& other);
         size_t find (const char* s, size_t pos = 0) const;
         size_t find (const char s, size_t pos = 0) const;
+        char* c_str();
 
         static size_t npos;
 
