@@ -15,6 +15,11 @@ ctci::string::string(char* s) {
     buf = strcpy(buf, s);
 }
 
+ctci::string::string(const char s) {
+    buf = (char*)calloc(2, 1);
+    buf[0] = s;
+}
+
 ctci::string::string(const char* s) {
     buf = (char*)calloc(strlen(s) + 1, 1);
     buf = strcpy(buf, s);
@@ -97,6 +102,15 @@ size_t ctci::string::find(const char* s, size_t pos) const {
     int len = strlen(s);
     for (size_t i = pos; i < size(); i++) {
         if (strncmp(s, buf+i, len) == 0) {
+            return i;
+        }
+    }
+    return npos;
+}
+
+size_t ctci::string::find(const char s, size_t pos) const {
+    for (size_t i = pos; i < size(); i++) {
+        if (buf[i] == s) {
             return i;
         }
     }

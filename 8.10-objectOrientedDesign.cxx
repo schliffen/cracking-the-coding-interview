@@ -15,7 +15,7 @@ using namespace ctci;
 // Answered in lib/datastructures/hash_table.h
 
 void test8_10() {
-    hash_table t;
+    hash_table<ctci::string> t;
 
     // create a few thousand key value pairs, all containing keyN -> valueN
     for (int i = 0; i < 10000; i++) {

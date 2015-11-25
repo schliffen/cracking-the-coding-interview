@@ -1,12 +1,14 @@
 namespace ctci {
 
-    hash_table::hash_table() {
+    template<class V>
+    hash_table<V>::hash_table() {
     }
 
-    hash_table::~hash_table() {
+    template<class V>
+    hash_table<V>::~hash_table() {
         for (size_t i = 0; i < table.size(); i++) {
-            Entry* node = table[i];
-            Entry* next = 0;
+            HashEntry<V>* node = table[i];
+            HashEntry<V>* next = 0;
             while (node != 0) {
                 next = node->next;
                 delete node;
@@ -15,7 +17,8 @@ namespace ctci {
         }
     }
 
-    unsigned int hash_table::hash(const ctci::string& k) const {
+    template<class V>
+    unsigned int hash_table<V>::hash(const ctci::string& k) const {
         unsigned int val = 0;
         for (size_t i = 0; i < k.size(); i++) {
             val += abs(int(k[i]));
@@ -23,7 +26,8 @@ namespace ctci {
         return val;
     }
 
-    ctci::string& hash_table::operator[](const ctci::string& k) {
+    template<class V>
+    V& hash_table<V>::operator[](const ctci::string& k) {
 
         // hash key into index
         unsigned int ind = hash(k);
@@ -34,7 +38,7 @@ namespace ctci {
         }
 
         // get node in table for index
-        Entry* node = table[ind];
+        HashEntry<V>* node = table[ind];
 
         // return last node in linked list
         while (node != 0) {
@@ -45,22 +49,22 @@ namespace ctci {
         }
 
         // the key wasn't found, so let's create a node for it
-        Entry* prev = 0;
+        HashEntry<V>* prev = 0;
         node = table[ind];
-        Entry* new_entry = new Entry;
-        new_entry->key = k;
-        new_entry->value = ctci::string("");
-        new_entry->next = 0;
+        HashEntry<V>* new_HashEntry = new HashEntry<V>;
+        new_HashEntry->key = k;
+        new_HashEntry->value = V();
+        new_HashEntry->next = 0;
 
         if (node == 0) {
-            table[ind] = new_entry;
-            node = new_entry;
+            table[ind] = new_HashEntry;
+            node = new_HashEntry;
         } else { // we have a key clash, so add new node to end of linked list
             while (node != 0) {
                 prev = node;
                 node = node->next;
             }
-            node = new_entry;
+            node = new_HashEntry;
             prev->next = node;
         }
         return node->value;

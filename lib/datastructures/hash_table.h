@@ -10,12 +10,15 @@
 // by the caller.
 
 namespace ctci {
-    struct Entry {
+
+    template<class V>
+    struct HashEntry {
         ctci::string key;
-        ctci::string value;
-        Entry* next;
+        V value;
+        HashEntry* next;
     };
 
+    template<class V>
     class hash_table {
     public:
 
@@ -23,10 +26,10 @@ namespace ctci {
         ~hash_table();
 
         unsigned int hash(const ctci::string& k) const;
-        ctci::string& operator[](const ctci::string& k);
+        V& operator[](const ctci::string& k);
 
     private:
-        vector<Entry*> table;
+        vector<HashEntry<V>*> table;
     };
 }
 
