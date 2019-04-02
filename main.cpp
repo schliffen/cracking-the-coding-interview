@@ -1,3 +1,8 @@
+
+void test11_1();
+void test11_4();
+void test12_1();
+void test13_1();
 void test1_1();
 void test1_2();
 void test1_3();
@@ -6,10 +11,6 @@ void test1_5();
 void test1_6();
 void test1_7();
 void test1_8();
-void test11_1();
-void test11_4();
-void test12_1();
-void test13_1();
 void test2_1();
 void test2_2();
 void test2_3();
@@ -49,6 +50,7 @@ void test9_6();
 void test9_7();
 void test9_8();
 
+
 #include <cstdio>
 
 #include "lib/Utils.h"
@@ -72,8 +74,6 @@ using namespace std;
 void assembly_fun();
 
 int main() {
-
-
     teststring();
     testLinkedList();
     testBitFunctions();
@@ -88,6 +88,10 @@ int main() {
     testsorting();
     assembly_fun();
 
+    test11_1();
+    test11_4();
+    test12_1();
+    test13_1();
     test1_1();
     test1_2();
     test1_3();
@@ -96,10 +100,6 @@ int main() {
     test1_6();
     test1_7();
     test1_8();
-    test11_1();
-    test11_4();
-    test12_1();
-    test13_1();
     test2_1();
     test2_2();
     test2_3();
@@ -138,5 +138,6 @@ int main() {
     test9_6();
     test9_7();
     test9_8();
+
     return 0;
 }

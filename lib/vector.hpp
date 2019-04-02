@@ -20,6 +20,8 @@ vector<T>::vector(const vector<T>& v) {
     my_capacity = v.my_capacity;
     buffer = new T[my_size];
     for (unsigned int i = 0; i < my_size; i++)
+        // this looks like a shallow copy
+        // surely should be a deep copy?
         buffer[i] = v.buffer[i];
 }
 

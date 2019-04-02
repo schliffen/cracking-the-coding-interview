@@ -7,8 +7,11 @@ CFLAGS=-I.
 %.o: %.cpp
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-link: $(OBJ)
+$(TARGET): $(OBJ)
 	$(CC) $(OBJ) -o $(TARGET)
+
+run: $(TARGET)
+	./$(TARGET)
 
 clean:
 	rm  -f *.o */*.o

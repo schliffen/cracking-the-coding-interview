@@ -4,33 +4,35 @@
 #include <cstdio>
 #include <ctime>
 
-#if defined(RUN_AS_MAIN)
-#define START_TEST(x) int main(int argc, char* argv[]){
-#define TEST(X)\
-{\
-    std::clock_t start = std::clock();\
-    if (argc == 1)\
-        X();\
-    else if (argc == 2)\
-    {\
-        int n = atoi(argv[1]); \
-        for (int i = 0; i < n; i++)\
-            X();\
-    }\
-    printf("passed: " #X " %lf s\n", (std::clock() - start) / (double)(CLOCKS_PER_SEC)); \
-}
-#define END_TEST }
-#else
+/////////////////////////////////////
+// Helper macros for running tests.//
+/////////////////////////////////////
+
+//
+// START_TEST should be used with the name of
+// the file (with the extension) in which it's being
+// e.g for testvector.cpp, it would be run as:
+// START_TEST(testvector)
+//
 #define START_TEST(x) void x(){
+
+//
+// pass a function into TEST with no arguments
+// so to test the testVectorInit, you'd run:
+// TEST(testVectorInit)
+//
 #define TEST(X) \
 {\
 std::clock_t start = std::clock();\
 X();\
 printf("passed: " #X " %lf s\n", (std::clock() - start) / (double)(CLOCKS_PER_SEC));\
 }
-#define END_TEST }
-#endif
 
+//
+// TEST macros are wrapped with START_TEST and END_TEST
+// so add END_TEST to end your test function creation
+//
+#define END_TEST }
 
 #endif // TESTHELPER_H
 

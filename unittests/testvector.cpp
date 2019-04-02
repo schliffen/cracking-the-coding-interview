@@ -19,10 +19,8 @@ void testVectorInit() {
     }
 }
 
-void testVectorPushBackStd()
-{
+void testVectorPushBackStd(){
     std::vector<std::string> vec;
-
 
     vec.push_back("hello");
     vec.push_back("how");
@@ -35,8 +33,7 @@ void testVectorPushBackStd()
     assert(vec[3] == "you");
 }
 
-void testVectorPushBackCtci()
-{
+void testVectorPushBackCtci(){
     ctci::vector<ctci::string> vec;
 
     vec.push_back("hello");
@@ -51,23 +48,20 @@ void testVectorPushBackCtci()
 }
 
 
-void testGiantVectorPushBackStd()
-{
+void testGiantVectorPushBackStd(){
     std::vector<std::string> vec;
     for (int i = 0; i < 1e5; i++)
         vec.push_back("hello");
 }
 
-void testGiantVectorPushBackCtci()
-{
+void testGiantVectorPushBackCtci(){
     ctci::vector<ctci::string> vec;
 
     for (int i = 0; i < 1e5; i++)
         vec.push_back("hello");
 }
 
-void testEraseCtci()
-{
+void testEraseCtci(){
     ctci::vector<ctci::string> vec;
 
     vec.push_back("foo");
@@ -85,8 +79,7 @@ void testEraseCtci()
     assert(vec[3] == "bacon");
 }
 
-void testEraseStd()
-{
+void testEraseStd(){
     std::vector<std::string> vec;
 
     vec.push_back("foo");
@@ -113,4 +106,3 @@ TEST(testEraseCtci)
 TEST(testEraseStd)
 TEST(testVectorInit)
 END_TEST
-

@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import glob, re
+from textwrap import dedent
 
 def get_n():
     N = []
@@ -13,64 +14,68 @@ def get_n():
             n = "_".join(n.split("."))
             N.append(n)
 
-    return N
+    return sorted(N)
 
 def main():
 
-    main_cpp = open("main.cpp", "w")
+    with open("main.cpp", "w") as main_cpp:
 
-    cpp = get_n()
-    for c in cpp:
-        main_cpp.write("void test%s();\n"%c)
+        cpp = get_n()
 
-    main_cpp.write("""
-#include <cstdio>
+        declarations = ""
+        for c in cpp:
+            declarations += "void test%s();\n"%c
 
-#include "lib/Utils.h"
-#include "lib/LinkedList.h"
-#include "lib/Stack.h"
-#include "lib/vector.h"
-#include "unittests/testdlinkedlist.h"
-#include "unittests/testlinkedlist.h"
-#include "unittests/testvector.h"
-#include "unittests/teststack.h"
-#include "unittests/testqeueue.h"
-#include "unittests/testsorting.h"
-#include "unittests/testbinarytree.h"
-#include "unittests/testbinarytreerenderer.h"
-#include "unittests/teststring.h"
+        tests = ""
+        for c in cpp:
+            tests += "    test%s();\n"%c
 
-#include <iostream>
+        doc = dedent("""
+            %s
 
-using namespace std;
+            #include <cstdio>
 
-void assembly_fun();
+            #include "lib/Utils.h"
+            #include "lib/LinkedList.h"
+            #include "lib/Stack.h"
+            #include "lib/vector.h"
+            #include "unittests/testdlinkedlist.h"
+            #include "unittests/testlinkedlist.h"
+            #include "unittests/testvector.h"
+            #include "unittests/teststack.h"
+            #include "unittests/testqeueue.h"
+            #include "unittests/testsorting.h"
+            #include "unittests/testbinarytree.h"
+            #include "unittests/testbinarytreerenderer.h"
+            #include "unittests/teststring.h"
 
-int main() {
+            #include <iostream>
 
+            using namespace std;
 
-    teststring();
-    testLinkedList();
-    testBitFunctions();
-    testStack();
-    testVector();
-    testDLinkedList();
-    testQueue();
-    testBinaryTree();
-    testBinaryTreeRenderer();
+            void assembly_fun();
 
-    // unit test algorithms
-    testsorting();
-    assembly_fun();
+            int main() {
+                teststring();
+                testLinkedList();
+                testBitFunctions();
+                testStack();
+                testVector();
+                testDLinkedList();
+                testQueue();
+                testBinaryTree();
+                testBinaryTreeRenderer();
 
-""")
+                // unit test algorithms
+                testsorting();
+                assembly_fun();
 
-    for c in cpp:
-        main_cpp.write("    test%s();\n"%c)
+            %s
+                return 0;
+            }
+            """)%(declarations, tests)
 
-    main_cpp.write("    return 0;\n}\n")
-
-    main_cpp.close()
+        main_cpp.write(doc)
 
 if __name__ == "__main__":
     main()
