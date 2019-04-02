@@ -62,7 +62,7 @@ void testPlusEquals()
 template<class T>
 void testFind() {
     T str1("foobar");
-    char* c = "bar";
+    const char* c = "bar";
     assert(str1.find(c) == 3);
 }
 

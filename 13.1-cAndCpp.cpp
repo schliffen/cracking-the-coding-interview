@@ -7,7 +7,7 @@ using namespace std;
 
 /* 13.1 Write a method to print the last K lines of an input file using C++. */
 
-string* printLastKLines(char* fileName, int k, bool print) {
+string* printLastKLines(const char* fileName, int k, bool print) {
     if (k == 0)
         return 0;
 

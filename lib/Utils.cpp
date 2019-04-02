@@ -15,7 +15,7 @@ void swap(void* a, void* b, unsigned short size)
 }
 
 /* is 'a' a substring of 'b' */
-bool isSubstring(char* a, char* b)
+bool isSubstring(const char* a, const char* b)
 {
     /* a = wafer
      b = waterfall

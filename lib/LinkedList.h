@@ -6,7 +6,7 @@ template <class a_type> class Node {
         Node();
         Node(a_type data);
         Node(a_type data, Node<a_type>* pNext);
-        Node(a_type data[], int n);
+        Node(const a_type* data, int n);
         Node(const Node& rOther);
 
         Node* addToEnd(a_type data);

@@ -6,7 +6,7 @@
  * decide if one is a permutation of the other.
  */
 
-int anagrams(char* a, char* b) {
+int anagrams(const char* a, const char* b) {
     int count[128] = {0};
     for (int c = 0; a[c] != '\0';)
         count[(int)a[c++]]++;

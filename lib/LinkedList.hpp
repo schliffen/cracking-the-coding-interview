@@ -28,7 +28,7 @@ Node<a_type>::Node():
 }
 
 template<class a_type>
-Node<a_type>::Node(a_type data[], int n):
+Node<a_type>::Node(const a_type* data, int n):
     m_data(0),
     m_pNext(0) {
     m_data = data[0];

@@ -11,7 +11,7 @@
  */
 
 /* check if a is a rotation of b */
-bool isRotation(char* a, char* b) {
+bool isRotation(const char* a, const char* b) {
     int aLen = strlen(a);
     int bLen = strlen(b);
 

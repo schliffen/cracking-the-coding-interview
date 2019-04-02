@@ -10,7 +10,7 @@ using namespace std;
  */
 
 void test2_7() {
-    char* data = "asantaatnasa";
+    const char* data = "asantaatnasa";
     Node<char> head(data, 12);
     Node<char>* duplicate = head.duplicate();
     Node<char>* reversed = duplicate->reverse();

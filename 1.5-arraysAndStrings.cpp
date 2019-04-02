@@ -11,7 +11,7 @@
     your method should return the original string.
 */
 
-char* compress_string(char* str) {
+char* compress_string(const char* str) {
     int len = strlen(str);
     if (len >= 2) {
         char result[len];
