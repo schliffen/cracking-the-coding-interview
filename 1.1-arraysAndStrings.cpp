@@ -67,7 +67,7 @@ bool unique_c(const char* s) {
 }
 
 
-// this function gets called from main.cxx
+// this function gets called from main.cpp
 void test1_1() {
     // TDD approach: if we don't assert, then we've passed
     assert(!unique_c("foobar"));

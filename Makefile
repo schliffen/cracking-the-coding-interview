@@ -1,82 +1,20 @@
-all:
-	g++ -I . -c lib/assembly-fun.cxx -o lib/assembly-fun.o
-	g++ -I . -c lib/BinaryTreeRenderer.cpp -o lib/BinaryTreeRenderer.o
-	g++ -I . -c lib/SampleBinaryTrees.cpp -o lib/SampleBinaryTrees.o
-	g++ -I . -c lib/Utils.cpp -o lib/Utils.o
-	g++ -I . -c lib/digraph.cpp -o lib/digraph.o
-	g++ -I . -c lib/string.cpp -o lib/string.o
-	g++ -I . -c 1.1-arraysAndStrings.cxx -o 1.1-arraysAndStrings.o
-	g++ -I . -c 1.2-arraysAndStrings.cxx -o 1.2-arraysAndStrings.o
-	g++ -I . -c 1.3-arraysAndStrings.cxx -o 1.3-arraysAndStrings.o
-	g++ -I . -c 1.4-arraysAndStrings.cxx -o 1.4-arraysAndStrings.o
-	g++ -I . -c 1.5-arraysAndStrings.cxx -o 1.5-arraysAndStrings.o
-	g++ -I . -c 1.6-arraysAndStrings.cxx -o 1.6-arraysAndStrings.o
-	g++ -I . -c 1.7-arraysAndStrings.cxx -o 1.7-arraysAndStrings.o
-	g++ -I . -c 1.8-arraysAndStrings.cxx -o 1.8-arraysAndStrings.o
-	g++ -I . -c 11.1-sortingAndSearching.cxx -o 11.1-sortingAndSearching.o
-	g++ -I . -c 11.4-sortingAndSearching.cxx -o 11.4-sortingAndSearching.o
-	g++ -I . -c 12.1-testing.cxx -o 12.1-testing.o
-	g++ -I . -c 12.x.0-testing.cxx -o 12.x.0-testing.o
-	g++ -I . -c 13.1-cAndCpp.cxx -o 13.1-cAndCpp.o
-	g++ -I . -c 2.1-linkedLists.cxx -o 2.1-linkedLists.o
-	g++ -I . -c 2.2-linkedLists.cxx -o 2.2-linkedLists.o
-	g++ -I . -c 2.3-linkedLists.cxx -o 2.3-linkedLists.o
-	g++ -I . -c 2.4-linkedLists.cxx -o 2.4-linkedLists.o
-	g++ -I . -c 2.5-linkedLists.cxx -o 2.5-linkedLists.o
-	g++ -I . -c 2.6-linkedLists.cxx -o 2.6-linkedLists.o
-	g++ -I . -c 2.7-linkedLists.cxx -o 2.7-linkedLists.o
-	g++ -I . -c 3.1-stacksAndQueues.cxx -o 3.1-stacksAndQueues.o
-	g++ -I . -c 3.3-stacksAndQueues.cxx -o 3.3-stacksAndQueues.o
-	g++ -I . -c 3.4-stacksAndQueues.cxx -o 3.4-stacksAndQueues.o
-	g++ -I . -c 3.5-stacksAndQueues.cxx -o 3.5-stacksAndQueues.o
-	g++ -I . -c 3.6-stacksAndQueues.cxx -o 3.6-stacksAndQueues.o
-	g++ -I . -c 3.7-stacksAndQueues.cxx -o 3.7-stacksAndQueues.o
-	g++ -I . -c 4.1-treesAndGraphs.cxx -o 4.1-treesAndGraphs.o
-	g++ -I . -c 4.2-treesAndGraphs.cxx -o 4.2-treesAndGraphs.o
-	g++ -I . -c 4.3-treesAndGraphs.cxx -o 4.3-treesAndGraphs.o
-	g++ -I . -c 4.4-treesAndGraphs.cxx -o 4.4-treesAndGraphs.o
-	g++ -I . -c 4.5-treesAndGraphs.cxx -o 4.5-treesAndGraphs.o
-	g++ -I . -c 4.6-treesAndGraphs.cxx -o 4.6-treesAndGraphs.o
-	g++ -I . -c 4.7-treesAndGraphs.cxx -o 4.7-treesAndGraphs.o
-	g++ -I . -c 4.8-treesAndGraphs.cxx -o 4.8-treesAndGraphs.o
-	g++ -I . -c 4.9-treesAndGraphs.cxx -o 4.9-treesAndGraphs.o
-	g++ -I . -c 5.1-bitManipulation.cxx -o 5.1-bitManipulation.o
-	g++ -I . -c 5.2-bitManipulation.cxx -o 5.2-bitManipulation.o
-	g++ -I . -c 5.3-bitManipulation.cxx -o 5.3-bitManipulation.o
-	g++ -I . -c 5.4-bitManipulation.cxx -o 5.4-bitManipulation.o
-	g++ -I . -c 5.5-bitManipulation.cxx -o 5.5-bitManipulation.o
-	g++ -I . -c 5.6-bitManipulation.cxx -o 5.6-bitManipulation.o
-	g++ -I . -c 5.7-bitManipulation.cxx -o 5.7-bitManipulation.o
-	g++ -I . -c 5.8-bitManipulation.cxx -o 5.8-bitManipulation.o
-	g++ -I . -c 7.3-mathematicsAndProbability.cxx -o 7.3-mathematicsAndProbability.o
-	g++ -I . -c 7.4-mathematicsAndProbability.cxx -o 7.4-mathematicsAndProbability.o
-	g++ -I . -c 8.10-objectOrientedDesign.cxx -o 8.10-objectOrientedDesign.o
-	g++ -I . -c 9.1-recursionAndDynamicProgramming.cxx -o 9.1-recursionAndDynamicProgramming.o
-	g++ -I . -c 9.4-recursionAndDynamicProgramming.cxx -o 9.4-recursionAndDynamicProgramming.o
-	g++ -I . -c 9.6-recursionAndDynamicProgramming.cxx -o 9.6-recursionAndDynamicProgramming.o
-	g++ -I . -c 9.7-recursionAndDynamicProgramming.cxx -o 9.7-recursionAndDynamicProgramming.o
-	g++ -I . -c 9.8-recursionAndDynamicProgramming.cxx -o 9.8-recursionAndDynamicProgramming.o
-	g++ -I . -c 9.x.0-recursionAndDynamicProgramming.cxx -o 9.x.0-recursionAndDynamicProgramming.o
-	g++ -I . -c unittests/testbinarytree.cpp -o unittests/testbinarytree.o
-	g++ -I . -c unittests/testbinarytreerenderer.cpp -o unittests/testbinarytreerenderer.o
-	g++ -I . -c unittests/testdlinkedlist.cpp -o unittests/testdlinkedlist.o
-	g++ -I . -c unittests/testlinkedlist.cpp -o unittests/testlinkedlist.o
-	g++ -I . -c unittests/testqeueue.cpp -o unittests/testqeueue.o
-	g++ -I . -c unittests/testsorting.cpp -o unittests/testsorting.o
-	g++ -I . -c unittests/teststack.cpp -o unittests/teststack.o
-	g++ -I . -c unittests/teststring.cpp -o unittests/teststring.o
-	g++ -I . -c unittests/testvector.cpp -o unittests/testvector.o
-	g++ -I . -c main.cxx -o main.o
+OBJ = $(shell ls *.cpp lib/*.cpp unittests/*.cpp | sed s/\.cpp/\.o/g)
 
-link:
-	g++ main.o lib/assembly-fun.o 7.4-mathematicsAndProbability.o 5.2-bitManipulation.o 4.7-treesAndGraphs.o 11.1-sortingAndSearching.o 9.4-recursionAndDynamicProgramming.o 5.7-bitManipulation.o 1.1-arraysAndStrings.o 4.3-treesAndGraphs.o 1.2-arraysAndStrings.o 5.3-bitManipulation.o 4.8-treesAndGraphs.o 9.8-recursionAndDynamicProgramming.o 5.6-bitManipulation.o 1.4-arraysAndStrings.o 2.3-linkedLists.o 4.6-treesAndGraphs.o 2.7-linkedLists.o 12.1-testing.o 5.5-bitManipulation.o 2.4-linkedLists.o 1.7-arraysAndStrings.o 4.2-treesAndGraphs.o 5.1-bitManipulation.o 9.x.0-recursionAndDynamicProgramming.o 4.9-treesAndGraphs.o 9.7-recursionAndDynamicProgramming.o 5.4-bitManipulation.o 1.6-arraysAndStrings.o 4.5-treesAndGraphs.o 2.5-linkedLists.o 13.1-cAndCpp.o 2.1-linkedLists.o 3.4-stacksAndQueues.o 8.10-objectOrientedDesign.o 5.8-bitManipulation.o 3.1-stacksAndQueues.o 3.5-stacksAndQueues.o 7.3-mathematicsAndProbability.o 9.1-recursionAndDynamicProgramming.o 2.6-linkedLists.o lib/Utils.o lib/BinaryTreeRenderer.o lib/SampleBinaryTrees.o lib/digraph.o lib/string.o 1.5-arraysAndStrings.o 12.x.0-testing.o 1.8-arraysAndStrings.o 4.1-treesAndGraphs.o 2.2-linkedLists.o 9.6-recursionAndDynamicProgramming.o 4.4-treesAndGraphs.o 1.3-arraysAndStrings.o 3.6-stacksAndQueues.o 11.4-sortingAndSearching.o 3.3-stacksAndQueues.o 3.7-stacksAndQueues.o unittests/testbinarytree.o unittests/testbinarytreerenderer.o unittests/testdlinkedlist.o unittests/testlinkedlist.o unittests/testqeueue.o unittests/testsorting.o unittests/teststack.o unittests/teststring.o unittests/testvector.o -o ctci
+TARGET=ctci
+CC=g++
+CFLAGS=-I.
 
+%.o: %.cpp
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+link: $(OBJ)
+	$(CC) $(OBJ) -o $(TARGET)
 
 clean:
-	rm  -f *.o lib/*.o
+	rm  -f *.o */*.o
 
 depend:
-	makedepend lib/*.h lib/*.hpp lib/*.c* *.cxx unittests/*
+	makedepend lib/*.h lib/*.hpp lib/*.c* *.cpp unittests/*
 
 # DO NOT DELETE
 

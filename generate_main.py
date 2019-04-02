@@ -5,8 +5,8 @@ import glob, re
 
 def get_n():
     N = []
-    cxx = glob.glob("*.cxx")
-    for c in cxx:
+    cpp = glob.glob("*.cpp")
+    for c in cpp:
         m = re.match("(\d+\.\d+)-.*", c)
         if m:
             n = m.group(1)
@@ -17,13 +17,13 @@ def get_n():
 
 def main():
 
-    main_cxx = open("main.cxx", "w")
+    main_cpp = open("main.cpp", "w")
 
-    cxx = get_n()
-    for c in cxx:
-        main_cxx.write("void test%s();\n"%c)
+    cpp = get_n()
+    for c in cpp:
+        main_cpp.write("void test%s();\n"%c)
 
-    main_cxx.write("""
+    main_cpp.write("""
 #include <cstdio>
 
 #include "lib/Utils.h"
@@ -65,12 +65,12 @@ int main() {
 
 """)
 
-    for c in cxx:
-        main_cxx.write("    test%s();\n"%c)
+    for c in cpp:
+        main_cpp.write("    test%s();\n"%c)
 
-    main_cxx.write("    return 0;\n}\n")
+    main_cpp.write("    return 0;\n}\n")
 
-    main_cxx.close()
+    main_cpp.close()
 
 if __name__ == "__main__":
     main()

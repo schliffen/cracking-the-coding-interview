@@ -115,7 +115,7 @@ Didn't get very far in this chapter. Some of the questions are really fundamenta
 
 ## Chapter 9 - Recursion and Dynamic Programming
 
-Great chapter, which definitely provides food for thought. I particularly enjoyed question [9.7](9.7-recursionAndDynamicProgramming.cxx) which involved writing a paint fill. I went ahead and rendered them in ascii too, which was a lot of fun.
+Great chapter, which definitely provides food for thought. I particularly enjoyed question [9.7](9.7-recursionAndDynamicProgramming.cpp) which involved writing a paint fill. I went ahead and rendered them in ascii too, which was a lot of fun.
 
 ```
     // 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
