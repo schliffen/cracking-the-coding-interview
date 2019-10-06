@@ -30,8 +30,8 @@ void test2_2() {
     int data[] = {0, 1, 2, 3, 4, 5, 6, 7};
     Node<int> head(data, 8);
 
-    Node<int>* kth = find_k_from_end(&head, 4);
+    Node<int>* kth = find_k_from_end(&head, 2);
 
-    assert(kth->m_data == 4);
+    assert(kth->m_data == 6);
     std::cout << "2.2 passed" << std::endl;
 }

@@ -1,8 +1,8 @@
 digraph BST {
     node [fontname="Arial"];
-    "0x7fcf08d00000" [label="A"];
-    "0x7fcf08d00000" -> "0x7fcf08d00040";
-    "0x7fcf08d00040" [label="A"];
-    "0x7fcf08d00040" -> "0x7fcf08d00080";
-    "0x7fcf08d00080" [label="A"];
+    "0x7feb03300a70" [label="A"];
+    "0x7feb03300a70" -> "0x7feb03300ab0";
+    "0x7feb03300ab0" [label="A"];
+    "0x7feb03300ab0" -> "0x7feb03300b60";
+    "0x7feb03300b60" [label="A"];
 }
